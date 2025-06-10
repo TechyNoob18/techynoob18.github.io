@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechyNoob - Your Source for Android Tech & Guides</title>
+    <title>TechyNoob - Your Guide to Android Customization, Hacking, and More!</title>
     <!-- AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835"
      crossorigin="anonymous"></script>
@@ -28,9 +28,6 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        .hero-section {
-            background: linear-gradient(rgba(26, 32, 44, 0.8), rgba(26, 32, 44, 0.8)), url('https://placehold.co/1920x1080/2d3748/e2e8f0?text=TechBackground') no-repeat center center/cover;
-        }
         .blog-card, .game-card {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
@@ -38,13 +35,12 @@
             transform: scale(1.02);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        /* Mobile Menu styles */
-        #mobile-menu {
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+        /* Custom styles for search bar responsiveness */
+        .search-container {
+            display: flex;
+            flex-grow: 1; /* Allows it to take available space */
+            justify-content: flex-end; /* Aligns to the right within its flex container */
+            margin-left: 1rem; /* Space from nav links */
         }
         /* Style for search suggestions dropdown */
         .suggestions-dropdown {
@@ -68,6 +64,13 @@
                 margin-left: 0;
                 justify-content: center; /* Center search bar on mobile */
             }
+            .header-content {
+                flex-direction: column; /* Stack logo and nav vertically */
+                align-items: center; /* Center items when stacked */
+            }
+            .header-nav {
+                margin-top: 1rem; /* Space between logo/title and nav links */
+            }
         }
     </style>
 </head>
@@ -82,7 +85,7 @@
             </a>
             
             <!-- Desktop Navigation Links and Search Bar -->
-            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative">
+            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative"> <!-- Added relative for suggestions positioning -->
                 <a href="#home" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
                 <a href="#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
                 <a href="#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
@@ -93,7 +96,7 @@
                 </a>
                 <!-- Search Input and Button for Desktop -->
                 <div class="relative flex items-center ml-4">
-                    <input type="text" id="searchInput" placeholder="Search articles..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
+                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
                     <button id="searchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
@@ -119,7 +122,7 @@
             </button>
             <!-- Search Input and Button for Mobile -->
             <div class="relative flex items-center mt-6">
-                <input type="text" id="mobileSearchInput" placeholder="Search articles..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full max-w-xs transition-all duration-300 ease-in-out focus:w-64">
+                <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full max-w-xs transition-all duration-300 ease-in-out focus:w-64">
                 <button id="mobileSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
@@ -138,26 +141,30 @@
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section text-center py-20 md:py-32 lg:py-40">
-            <div class="container mx-auto px-6">
-                <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 gradient-text">
-                    Welcome to TechyNoob
-                </h2>
-                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Your ultimate source for cutting-edge Android technology, in-depth guides, and exciting developments.
-                </p>
+    <main class="container mx-auto px-6 md:px-8 lg:px-12 py-12">
+        <!-- Hero Section - RESTORED EXACTLY FROM ATTACHED FILE -->
+        <section id="home" class="text-center py-20 rounded-xl bg-gray-800 shadow-xl mb-12 animate-fade-in">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 gradient-text leading-tight">
+                Unlock the Hidden Potential of Your Android Device!
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Your ultimate guide to Custom ROMs, Magisk Modules, Ethical Hacking, and more.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#blogs" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-                    Explore Our Blogs
+                    Explore Our Latest Blogs
+                </a>
+                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-6 h-6 mr-2">
+                    Visit Our YouTube Channel
                 </a>
             </div>
         </section>
 
-        <!-- Blogs Section -->
-        <section id="blogs" class="container mx-auto px-6 md:px-8 lg:px-12 py-12">
-            <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Latest Blogs & Articles</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Latest Articles Section -->
+        <section id="blogs" class="py-12">
+            <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Latest Articles & Guides</h2>
+            <div id="blog-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Blog Card for Android 16 Arrives -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Android+16+Arrives" alt="Android 16 Arrives" class="w-full h-48 object-cover">
@@ -190,6 +197,50 @@
                         <a href="Blogs/unlock-samsung-experience.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
+
+                <!-- NEW Blog Card for Material 3 Expressive Theme -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Material+3+Theme" alt="Material 3 Expressive Theme" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Installing Android 16 Material 3 Expressive Theme</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 9, 2025</p>
+                        <p class="text-gray-300 mb-4">Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!</p>
+                        <a href="Blogs/install-material-3-theme.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
+
+                <!-- NEW Blog Card for KernelSU Rooting -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/6EE7B7/000000?text=KernelSU+Root" alt="KernelSU Rooting" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Root Any Android Phone WITHOUT Magisk in 2025</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 9, 2025</p>
+                        <p class="text-gray-300 mb-4">Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!</p>
+                        <a href="Blogs/root-android-without-magisk.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
+
+                <!-- NEW Blog Card for Google Photos Unlimited Storage -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/9333EA/ffffff?text=Unlimited+Google+Photos" alt="Google Photos Unlimited Storage" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Get Google Photos Unlimited Storage (WITHOUT ROOT!)</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 9, 2025</p>
+                        <p class="text-gray-300 mb-4">Unlock unlimited Google Photos cloud storage on your Android device using Revanced & Micro-G, no root required!</p>
+                        <a href="Blogs/google-photos-unlimited-storage.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
+
+                <!-- NEW Blog Card for How to Install Incompatible Older Apps -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Older+Apps+Android+14%2B" alt="Incompatible Older Apps on Android 14+" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">How to Install Incompatible Older Apps on Android 14, 15, and 16</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 9, 2025</p>
+                        <p class="text-gray-300 mb-4">Learn how to bypass Google's app installation block to install your favorite older apps on the latest Android versions, no problem!</p>
+                        <a href="Blogs/install-older-apps.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
             </div>
             <div class="text-center mt-10">
                 <a href="all-articles.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
@@ -198,50 +249,72 @@
             </div>
         </section>
 
-        <!-- Games Section -->
-        <section id="games-section" class="container mx-auto px-6 md:px-8 lg:px-12 py-12">
-            <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Play Our Games!</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Game Card for Flappy Bird -->
+        <!-- Web Games Section -->
+        <section id="games-section" class="py-12 mt-12">
+            <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Play Our Web Games!</h2>
+            <div id="game-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Game Card: Flappy Bird -->
                 <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/70c5ce/ffffff?text=Flappy+Bird" alt="Flappy Bird Game" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x300/70c5ce/000000?text=Flappy+Bird" alt="Flappy Bird Game" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Flappy Bird</h3>
-                        <p class="text-gray-400 text-sm mb-4">A classic pixelated challenge! Tap to make the bird fly through pipes.</p>
-                        <a href="Games/flappy_bird.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
+                        <p class="text-gray-300 mb-4">Test your reflexes in this classic arcade game. Tap to make the bird fly through pipes!</p>
+                        <a href="Games/flappy_bird.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
                     </div>
                 </div>
-                <!-- Game Card for Pong -->
+
+                <!-- Game Card: Snake Game -->
                 <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/2d3748/ffffff?text=Pong" alt="Pong Game" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x300/2d3748/6EE7B7?text=Snake+Game" alt="Snake Game" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Pong</h3>
-                        <p class="text-gray-400 text-sm mb-4">The original arcade classic. Challenge the AI in this timeless game!</p>
-                        <a href="Games/pong_game.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Snake Game</h3>
+                        <p class="text-gray-300 mb-4">Guide your snake to eat the food and grow longer, but don't hit the walls or yourself!</p>
+                        <a href="Games/snake_game.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
                     </div>
                 </div>
-                <!-- Game Card for Snake -->
+
+                <!-- Game Card: Pong Game -->
                 <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/38A169/ffffff?text=Snake" alt="Snake Game" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x300/2d3748/3B82F6?text=Pong+Game" alt="Pong Game" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Snake</h3>
-                        <p class="text-gray-400 text-sm mb-4">Grow your snake by eating food, but don't hit the walls or yourself!</p>
-                        <a href="Games/snake_game.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Pong Game</h3>
+                        <p class="text-gray-300 mb-4">Relive the classic arcade experience with this two-player (or one-player vs. AI) Pong game.</p>
+                        <a href="Games/pong_game.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
                     </div>
                 </div>
-                <!-- Add more game cards here as needed -->
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="container mx-auto px-6 md:px-8 lg:px-12 py-12 text-center">
-            <h2 class="text-4xl font-extrabold mb-6 gradient-text">About TechyNoob</h2>
-            <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-6">
-                At TechyNoob, we're passionate about making advanced Android customization and tech knowledge accessible to everyone. Whether you're looking to root your device, explore custom ROMs, optimize performance, or just stay updated with the latest Android innovations, we've got you covered. Our guides are crafted with clarity and precision, ensuring even "noobs" can become "pros."
-            </p>
-            <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-                Join our community, explore our comprehensive articles, and unlock the full potential of your Android device!
-            </p>
+        <!-- About Section - RESTORED EXACTLY FROM ATTACHED FILE -->
+        <section id="about" class="py-12 bg-gray-800 rounded-xl shadow-xl mt-12 px-6 py-10">
+            <h2 class="text-4xl font-extrabold text-center mb-8 gradient-text">About TechyNoob</h2>
+            <div class="max-w-5xl mx-auto text-gray-300 text-lg leading-relaxed text-center">
+                <p class="mb-4">
+                    Welcome to <span class="gradient-text font-bold">TechyNoob</span>: Your Guide to Android Customization, Hacking, and More! We're here to help you unlock the hidden potential of your Android device.
+                </p>
+                <p class="mb-4">
+                    We'll be your guide to the world of custom ROMs, Magisk modules, and ethical hacking, providing you with tutorials, reviews, and tips to take your Android experience to the next level.
+                </p>
+                <p class="mt-6 text-xl font-semibold mb-6">
+                    What you can expect:
+                </p>
+                <!-- Updated list for better alignment and readability -->
+                <ul class="list-disc list-inside text-left mx-auto max-w-xl space-y-2">
+                    <li>Custom ROM installations and guides: Discover new features and functionalities with custom ROMs.</li>
+                    <li>Magisk module showcases and reviews: Uncover the power and potential of Magisk modules.</li>
+                    <li>Ethical hacking concepts and tutorials: Learn responsible hacking techniques for educational purposes.</li>
+                    <li>Q&A sessions and troubleshooting: Get your Android-related questions answered.</li>
+                </ul>
+                <p class="mt-6 text-xl font-semibold">
+                    Subscribe and join the community of tech enthusiasts! #TechyNoob #Android #CustomROM #Magisk #EthicalHacking #TechCommunity
+                </p>
+            </div>
+             <div class="text-center mt-10">
+                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center justify-center mx-auto w-fit">
+                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-6 h-6 mr-2">
+                    Go to TechyNoob YouTube Channel
+                </a>
+            </div>
         </section>
     </main>
 
@@ -253,6 +326,7 @@
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
                     <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
                 </a>
+                <!-- You can add more social media icons here (e.g., Twitter, Instagram) -->
             </div>
         </div>
     </footer>
@@ -268,58 +342,121 @@
             });
         });
 
-        // Mobile menu toggle logic
+        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMobileMenuButton = document.getElementById('close-mobile-menu'); 
 
+        // Function to open mobile menu
         function openMobileMenu() {
             mobileMenu.classList.remove('hidden');
+            // Allow animation to start before removing translate-x-full
             requestAnimationFrame(() => {
-                mobileMenu.classList.remove('translate-x-full');
-                mobileMenu.classList.add('opacity-100');
+                mobileMenu.classList.remove('translate-x-full'); // Slide in
+                mobileMenu.classList.add('opacity-100'); // Fade in
                 mobileMenu.classList.remove('opacity-0');
             });
         }
 
+        // Function to close mobile menu
         function closeMobileMenu() {
-            mobileMenu.classList.add('translate-x-full');
-            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('translate-x-full'); // Slide out
+            mobileMenu.classList.remove('opacity-100'); // Fade out
             mobileMenu.classList.add('opacity-0');
+            // Add hidden class after animation completes
             setTimeout(() => {
                 mobileMenu.classList.add('hidden');
-            }, 300);
+            }, 300); // Match transition duration
         }
 
         mobileMenuButton.addEventListener('click', openMobileMenu);
         closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when a link is clicked
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
 
-
-        // --- Search Functionality (simplified for index.html) ---
+        // --- Search Functionality ---
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
         const mobileSearchInput = document.getElementById('mobileSearchInput');
         const mobileSearchButton = document.getElementById('mobileSearchButton');
+        const blogCardsContainer = document.getElementById('blog-cards-container');
+        const gameCardsContainer = document.getElementById('game-cards-container');
         const searchResultsDropdown = document.getElementById('searchResultsDropdown');
         const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
 
-        // This data would typically come from an API or a pre-defined list of your blog articles
-        // For this example, we'll hardcode some
-        const blogArticleData = [
-            { title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", link: "Blogs/android-16-arrives.html", description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and setting the stage for future updates and hardware alignment." },
-            { title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", link: "Blogs/fix-play-integrity-rooted-android.html", description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!" },
-            { title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", link: "Blogs/unlock-samsung-experience.html", description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!" },
-            { title: "Install Superior OS (Android 15) with May 2025 Security Patch!", link: "Blogs/install-superior-os.html", description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!" },
-            { title: "Installing Android 16 Material 3 Expressive Theme", link: "Blogs/install-material-3-theme.html", description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!" },
-            { title: "Root Any Android Phone WITHOUT Magisk in 2025", link: "Blogs/root-android-without-magisk.html", description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!" },
-            { title: "Get Google Photos Unlimited Storage (WITHOUT ROOT!)", link: "Blogs/google-photos-unlimited-storage.html", description: "Unlock unlimited Google Photos cloud storage on your Android device using Revanced & Micro-G, no root required!" },
-            { title: "How to Install Incompatible Older Apps on Android 14, 15, and 16", link: "Blogs/install-older-apps.html", description: "Learn how to bypass Google's app installation block to install your favorite older apps on the latest Android versions, no problem!" }
-        ];
+        let allContentData = []; // Store all searchable content
 
-        function filterAndDisplaySuggestions(inputElement, dropdownElement) {
+        // Function to collect all content data on page load
+        function collectContentData() {
+            allContentData = [];
+
+            // Collect blog card data
+            Array.from(blogCardsContainer.children).forEach(card => {
+                const titleElement = card.querySelector('h3');
+                const descriptionElement = card.querySelector('p:nth-of-type(2)'); // Second paragraph for description
+                const linkElement = card.querySelector('a');
+
+                if (titleElement && descriptionElement && linkElement) {
+                    allContentData.push({
+                        type: 'blog',
+                        title: titleElement.textContent.trim(),
+                        description: descriptionElement.textContent.trim(),
+                        link: linkElement.href
+                    });
+                }
+            });
+
+            // Collect game card data
+            Array.from(gameCardsContainer.children).forEach(card => {
+                const titleElement = card.querySelector('h3');
+                const descriptionElement = card.querySelector('p'); // First paragraph for description
+                const linkElement = card.querySelector('a');
+
+                if (titleElement && descriptionElement && linkElement) {
+                    allContentData.push({
+                        type: 'game',
+                        title: titleElement.textContent.trim(),
+                        description: descriptionElement.textContent.trim(),
+                        link: linkElement.href
+                    });
+                }
+            });
+        }
+
+        // Function to perform search on cards
+        function performSearch(query) {
+            const normalizedQuery = query.toLowerCase().trim();
+            
+            // Search blog cards
+            Array.from(blogCardsContainer.children).forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p:nth-of-type(2)').textContent.toLowerCase();
+
+                if (title.includes(normalizedQuery) || description.includes(normalizedQuery) || normalizedQuery === '') {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Search game cards
+            Array.from(gameCardsContainer.children).forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+
+                if (title.includes(normalizedQuery) || description.includes(normalizedQuery) || normalizedQuery === '') {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Function to display suggestions
+        function displaySuggestions(inputElement, dropdownElement) {
             const query = inputElement.value.toLowerCase().trim();
             dropdownElement.innerHTML = ''; // Clear previous suggestions
 
@@ -328,22 +465,21 @@
                 return;
             }
 
-            const filteredSuggestions = blogArticleData.filter(article => 
-                article.title.toLowerCase().includes(query) || article.description.toLowerCase().includes(query)
+            const filteredSuggestions = allContentData.filter(item => 
+                item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
             ).slice(0, 7); // Limit to 7 suggestions
 
             if (filteredSuggestions.length > 0) {
-                filteredSuggestions.forEach(article => {
+                filteredSuggestions.forEach(item => {
                     const suggestionDiv = document.createElement('div');
                     suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
-                    suggestionDiv.textContent = article.title;
+                    suggestionDiv.textContent = item.title;
                     suggestionDiv.addEventListener('click', () => {
-                        window.location.href = article.link; // Navigate to the article
-                        inputElement.value = ''; // Clear search input
+                        inputElement.value = item.title; // Populate input with suggestion
+                        performSearch(item.title); // Perform search for the suggestion
                         dropdownElement.classList.add('hidden'); // Hide dropdown
-                        if (mobileMenu.classList.contains('opacity-100')) { // If mobile menu open
-                            closeMobileMenu();
-                        }
+                        // Optionally, navigate to the link if it's a direct match
+                        // window.location.href = item.link;
                     });
                     dropdownElement.appendChild(suggestionDiv);
                 });
@@ -353,99 +489,64 @@
             }
         }
 
-        // Event listener for desktop search input (typing for suggestions)
-        searchInput.addEventListener('keyup', (e) => {
-            filterAndDisplaySuggestions(searchInput, searchResultsDropdown);
-            if (e.key === 'Enter' && searchInput.value.trim() !== '') {
-                const firstMatch = blogArticleData.find(article => 
-                    article.title.toLowerCase().includes(searchInput.value.toLowerCase().trim()) || 
-                    article.description.toLowerCase().includes(searchInput.value.toLowerCase().trim())
-                );
-                if (firstMatch) {
-                    window.location.href = firstMatch.link;
-                } else {
-                    window.location.href = "all-articles.html"; // Redirect to all articles if no direct match
-                }
-                searchInput.value = ''; // Clear search input
-                searchResultsDropdown.classList.add('hidden'); // Hide dropdown
-            }
-        });
-
-        // Event listener for desktop search button (click)
+        // Event listeners for desktop search
         searchButton.addEventListener('click', () => {
-            if (searchInput.value.trim() !== '') {
-                const firstMatch = blogArticleData.find(article => 
-                    article.title.toLowerCase().includes(searchInput.value.toLowerCase().trim()) || 
-                    article.description.toLowerCase().includes(searchInput.value.toLowerCase().trim())
-                );
-                if (firstMatch) {
-                    window.location.href = firstMatch.link;
-                } else {
-                    window.location.href = "all-articles.html"; // Redirect to all articles if no direct match
-                }
-            } else {
-                window.location.href = "all-articles.html"; // Go to all articles if search is empty
-            }
-            searchInput.value = ''; // Clear search input
-            searchResultsDropdown.classList.add('hidden'); // Hide dropdown
+            performSearch(searchInput.value);
+            searchResultsDropdown.classList.add('hidden'); // Hide suggestions after search
         });
-
-        // Event listener for mobile search input (typing for suggestions)
-        mobileSearchInput.addEventListener('keyup', (e) => {
-            filterAndDisplaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
-            if (e.key === 'Enter' && mobileSearchInput.value.trim() !== '') {
-                const firstMatch = blogArticleData.find(article => 
-                    article.title.toLowerCase().includes(mobileSearchInput.value.toLowerCase().trim()) || 
-                    article.description.toLowerCase().includes(mobileSearchInput.value.toLowerCase().trim())
-                );
-                if (firstMatch) {
-                    window.location.href = firstMatch.link;
-                } else {
-                    window.location.href = "all-articles.html"; // Redirect to all articles if no direct match
-                }
-                mobileSearchInput.value = ''; // Clear search input
-                mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown
-                closeMobileMenu();
+        searchInput.addEventListener('keyup', (e) => {
+            displaySuggestions(searchInput, searchResultsDropdown); // Show suggestions on keyup
+            if (e.key === 'Enter') {
+                performSearch(searchInput.value);
+                searchResultsDropdown.classList.add('hidden'); // Hide suggestions after search
+            } else if (searchInput.value === '') {
+                performSearch(''); // Show all cards if input is cleared
             }
         });
-
-        // Event listener for mobile search button (click)
-        mobileSearchButton.addEventListener('click', () => {
-            if (mobileSearchInput.value.trim() !== '') {
-                const firstMatch = blogArticleData.find(article => 
-                    article.title.toLowerCase().includes(mobileSearchInput.value.toLowerCase().trim()) || 
-                    article.description.toLowerCase().includes(mobileSearchInput.value.toLowerCase().trim())
-                );
-                if (firstMatch) {
-                    window.location.href = firstMatch.link;
-                } else {
-                    window.location.href = "all-articles.html"; // Redirect to all articles if no direct match
-                }
-            } else {
-                window.location.href = "all-articles.html"; // Go to all articles if search is empty
-            }
-            mobileSearchInput.value = ''; // Clear search input
-            mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown
-            closeMobileMenu();
-        });
-
-        // Hide dropdowns if click outside
+        // Hide suggestions when clicking outside search bar
         document.addEventListener('click', (e) => {
             if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
                 searchResultsDropdown.classList.add('hidden');
             }
+        });
+
+
+        // Event listeners for mobile search
+        mobileSearchButton.addEventListener('click', () => {
+            performSearch(mobileSearchInput.value);
+            mobileSearchResultsDropdown.classList.add('hidden'); // Hide suggestions
+            closeMobileMenu(); // Close menu after search
+        });
+        mobileSearchInput.addEventListener('keyup', (e) => {
+            displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown); // Show suggestions on keyup
+            if (e.key === 'Enter') {
+                performSearch(mobileSearchInput.value);
+                mobileSearchResultsDropdown.classList.add('hidden'); // Hide suggestions
+                closeMobileMenu(); // Close menu after search
+            } else if (mobileSearchInput.value === '') {
+                performSearch(''); // Show all cards if input is cleared
+            }
+        });
+        // Hide mobile suggestions when clicking outside search bar
+        document.addEventListener('click', (e) => {
             if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
                 mobileSearchResultsDropdown.classList.add('hidden');
             }
         });
 
-        // Clear search results when mobile menu is closed
+
+        // Clear search results when menu is closed
         mobileMenu.addEventListener('transitionend', () => {
-            if (mobileMenu.classList.contains('translate-x-full')) {
-                mobileSearchInput.value = '';
-                mobileSearchResultsDropdown.classList.add('hidden');
+            if (mobileMenu.classList.contains('translate-x-full')) { // If menu is fully closed
+                mobileSearchInput.value = ''; // Clear mobile search input
+                performSearch(''); // Show all cards
+                mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
             }
         });
+
+        // Initialize content data on page load
+        window.addEventListener('load', collectContentData);
+
     </script>
 </body>
 </html>
