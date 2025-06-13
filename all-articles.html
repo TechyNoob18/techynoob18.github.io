@@ -24,10 +24,6 @@
             background-clip: text;
             color: transparent;
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
         .blog-card {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
@@ -50,14 +46,6 @@
         .suggestion-item:hover {
             background-color: #4a5568; /* Darker hover */
         }
-        @media (max-width: 767px) { /* Adjust for mobile view */
-            .search-container {
-                width: 100%;
-                margin-top: 1rem;
-                margin-left: 0;
-                justify-content: center; /* Center search bar on mobile */
-            }
-        }
     </style>
 </head>
 <body class="antialiased leading-normal">
@@ -65,24 +53,24 @@
     <header class="bg-gray-900 shadow-lg py-4 px-6 md:px-8 lg:px-12 relative z-50">
         <nav class="container mx-auto flex flex-wrap justify-between items-center relative z-50">
             <!-- Logo and Title -->
-            <a href="index.html" class="flex items-center space-x-2 rounded-md p-1 border border-gray-700 flex-shrink-0 relative z-50">
-                <img src="logos/20211212_160808_0000.png" alt="TechyNoob Logo" class="h-10 sm:h-12 w-auto">
+            <a href="../index.html" class="flex items-center space-x-2 rounded-md p-1 border border-gray-700 flex-shrink-0 relative z-50">
+                <img src="../logos/20211212_160808_0000.png" alt="TechyNoob Logo" class="h-10 sm:h-12 w-auto">
                 <span class="text-xl sm:text-2xl lg:text-3xl font-extrabold gradient-text">TechyNoob</span>
             </a>
             
             <!-- Desktop Navigation Links and Search Bar -->
-            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative">
-                <a href="index.html#home" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
-                <a href="index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
-                <a href="index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
-                <a href="index.html#about" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About</a>
+            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative"> <!-- Added relative for suggestions positioning -->
+                <a href="../index.html#home" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
+                <a href="../index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
+                <a href="../index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
+                <a href="../index.html#about" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About</a>
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2 flex items-center">
-                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
+                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
                     YouTube Channel
                 </a>
                 <!-- Search Input and Button for Desktop -->
                 <div class="relative flex items-center ml-4">
-                    <input type="text" id="searchInput" placeholder="Search articles..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
+                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
                     <button id="searchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
@@ -108,7 +96,7 @@
             </button>
             <!-- Search Input and Button for Mobile -->
             <div class="relative flex items-center mt-6">
-                <input type="text" id="mobileSearchInput" placeholder="Search articles..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full max-w-xs transition-all duration-300 ease-in-out focus:w-64">
+                <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full max-w-xs transition-all duration-300 ease-in-out focus:w-64">
                 <button id="mobileSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
@@ -116,111 +104,123 @@
                     <!-- Suggestions will be populated here -->
                 </div>
             </div>
-            <a href="index.html#home" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
-            <a href="index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
-            <a href="index.html#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Games</a>
-            <a href="index.html#about" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">About</a>
-            <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="closeMobileMenu()">
-                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2">
-                YouTube Channel
+            <a href="../index.html#home" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+            <a href="../index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Blogs</a>
+            <a href="../index.html#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Games</a>
+            <a href="../index.html#about" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+            <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+                <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2"> YouTube Channel
             </a>
         </div>
     </header>
 
     <main class="container mx-auto px-6 md:px-8 lg:px-12 py-12">
-        <section id="all-blogs" class="py-12">
-            <h1 class="text-4xl font-extrabold text-center mb-10 gradient-text">All Articles & Guides</h1>
+        <section id="all-articles" class="py-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-10 gradient-text">All Articles & Guides</h1>
             <div id="blog-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- NEW Blog Card for Android 16 Arrives - Placed at the very top -->
+                <!-- Blog Card for ColorBlendr (June 11, 2025) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/9333EA/ffffff?text=ColorBlendr+Guide" alt="ColorBlendr Guide" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 11, 2025</p>
+                        <p class="text-gray-300 mb-4">Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!</p>
+                        <a href="colorblendr-guide.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card for Android 16 Arrives (June 10, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Android+16+Arrives" alt="Android 16 Arrives" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Android 16 Arrives: A New Era for Pixel Devices and Beyond</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 10, 2025</p>
-                        <p class="text-gray-300 mb-4">Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and setting the stage for future updates and hardware alignment.</p>
-                        <a href="Blogs/android-16-arrives.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <p class="text-gray-300 mb-4">Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!</p>
+                        <a href="android-16-arrives.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
 
-                <!-- Blog Card for Fix Play Integrity -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/9333EA/ffffff?text=Play+Integrity+Fix" alt="Play Integrity Fix Guide" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
-                        <p class="text-gray-300 mb-4">Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!</p>
-                        <a href="Blogs/fix-play-integrity-rooted-android.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Blog Card for Unlock Samsung Experience -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Unlock+Samsung+Experience" alt="Unlock Samsung Experience" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Unlock the Samsung Experience: Install One UI Home 35 Magisk Module</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
-                        <p class="text-gray-300 mb-4">Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!</p>
-                        <a href="Blogs/unlock-samsung-experience.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Blog Card for Superior OS -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/6EE7B7/000000?text=Superior+OS+Android+15" alt="Superior OS Android 15" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Install Superior OS (Android 15) with May 2025 Security Patch!</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
-                        <p class="text-gray-300 mb-4">Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!</p>
-                        <a href="Blogs/install-superior-os.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-
-                <!-- NEW Blog Card for Material 3 Expressive Theme -->
+                <!-- Blog Card for Material 3 Expressive Theme (June 9, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Material+3+Theme" alt="Material 3 Expressive Theme" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Installing Android 16 Material 3 Expressive Theme</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 9, 2025</p>
                         <p class="text-gray-300 mb-4">Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!</p>
-                        <a href="Blogs/install-material-3-theme.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="install-material-3-theme.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
 
-                <!-- NEW Blog Card for KernelSU Rooting -->
+                <!-- Blog Card for KernelSU Rooting (June 9, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/6EE7B7/000000?text=KernelSU+Root" alt="KernelSU Rooting" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Root Any Android Phone WITHOUT Magisk in 2025</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 9, 2025</p>
                         <p class="text-gray-300 mb-4">Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!</p>
-                        <a href="Blogs/root-android-without-magisk.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-
-                <!-- NEW Blog Card for Google Photos Unlimited Storage -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/9333EA/ffffff?text=Unlimited+Google+Photos" alt="Google Photos Unlimited Storage" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Get Google Photos Unlimited Storage (WITHOUT ROOT!)</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 9, 2025</p>
-                        <p class="text-gray-300 mb-4">Unlock unlimited Google Photos cloud storage on your Android device using Revanced & Micro-G, no root required!</p>
-                        <a href="Blogs/google-photos-unlimited-storage.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-
-                <!-- NEW Blog Card for How to Install Incompatible Older Apps -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Older+Apps+Android+14%2B" alt="Incompatible Older Apps on Android 14+" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">How to Install Incompatible Older Apps on Android 14, 15, and 16</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 9, 2025</p>
-                        <p class="text-gray-300 mb-4">Learn how to bypass Google's app installation block to install your favorite older apps on the latest Android versions, no problem!</p>
-                        <a href="Blogs/install-older-apps.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="root-android-without-magisk.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
                 
-                <!-- Add more blog cards here as needed for future articles -->
+                <!-- Blog Card for Fix Play Integrity (June 8, 2025) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/9333EA/ffffff?text=Play+Integrity+Fix" alt="Play Integrity Fix Guide" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
+                        <p class="text-gray-300 mb-4">Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!</p>
+                        <a href="fix-play-integrity-rooted-android.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
 
+                <!-- Blog Card for Unlock Samsung Experience (June 8, 2025) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Unlock+Samsung+Experience" alt="Unlock Samsung Experience" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Unlock the Samsung Experience: Install One UI Home 35 Magisk Module</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
+                        <p class="text-gray-300 mb-4">Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!</p>
+                        <a href="unlock-samsung-experience.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card for Superior OS (June 8, 2025) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/6EE7B7/000000?text=Superior+OS+Android+15" alt="Superior OS Android 15" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Install Superior OS (Android 15) with May 2025 Security Patch!</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
+                        <p class="text-gray-300 mb-4">Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!</p>
+                        <a href="install-superior-os.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card for Google Photos Unlimited Storage (Older Article) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/9333EA/ffffff?text=Unlimited+Google+Photos" alt="Unlimited Google Photos Storage" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Unlock Unlimited Google Photos Storage: A Comprehensive Guide</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 7, 2025</p>
+                        <p class="text-gray-300 mb-4">Learn how to regain unlimited high-quality photo storage on Google Photos, bypassing new restrictions!</p>
+                        <a href="google-photos-unlimited-storage.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card for Install Older Apps (Older Article) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Older+Apps+Android+14%2B" alt="Install Older Apps on Android" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">How to Install Incompatible Older Apps on Android 14, 15, and 16</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 6, 2025</p>
+                        <p class="text-gray-300 mb-4">Bypass compatibility issues and run your favorite legacy apps on newer Android versions with this detailed guide.</p>
+                        <a href="install-older-apps.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="../index.html" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Back to Home
+                </a>
             </div>
         </section>
     </main>
@@ -231,28 +231,28 @@
             <p>&copy; 2025 TechyNoob. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mt-4">
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
-                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
+                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
                 </a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links (if you add internal links within this page)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="../#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                // Custom handling for navigating to a section on index.html
+                window.location.href = this.getAttribute('href');
             });
         });
 
-        // Mobile menu toggle logic (copied from index.html for consistency)
+        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMobileMenuButton = document.getElementById('close-mobile-menu'); 
 
+        // Function to open mobile menu
         function openMobileMenu() {
             mobileMenu.classList.remove('hidden');
             requestAnimationFrame(() => {
@@ -262,6 +262,7 @@
             });
         }
 
+        // Function to close mobile menu
         function closeMobileMenu() {
             mobileMenu.classList.add('translate-x-full');
             mobileMenu.classList.remove('opacity-100');
@@ -273,11 +274,13 @@
 
         mobileMenuButton.addEventListener('click', openMobileMenu);
         closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when a link is clicked
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
 
-        // --- Search Functionality for All Articles Page ---
+        // --- Search Functionality (adapted for all-articles.html) ---
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
         const mobileSearchInput = document.getElementById('mobileSearchInput');
@@ -286,9 +289,9 @@
         const searchResultsDropdown = document.getElementById('searchResultsDropdown');
         const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
 
-        let allContentData = []; // Store all searchable content for this page
+        let allContentData = []; // Store all searchable content
 
-        // Function to collect all blog card data on page load
+        // Function to collect all content data from this page
         function collectContentData() {
             allContentData = [];
             Array.from(blogCardsContainer.children).forEach(card => {
@@ -298,6 +301,7 @@
 
                 if (titleElement && descriptionElement && linkElement) {
                     allContentData.push({
+                        type: 'blog',
                         title: titleElement.textContent.trim(),
                         description: descriptionElement.textContent.trim(),
                         link: linkElement.href
