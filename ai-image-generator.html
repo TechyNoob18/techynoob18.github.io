@@ -265,8 +265,10 @@
                     }
                 };
 
-                // The API key is handled by the Canvas environment for `imagen-3.0-generate-002`
-                const apiKey = "";
+                // IMPORTANT: If deploying outside the Canvas environment (e.g., to GitHub Pages),
+                // replace "YOUR_GEMINI_API_KEY_HERE" with your actual Google Gemini API Key.
+                // You can obtain one from Google AI Studio: https://aistudio.google.com/app/apikey
+                const apiKey = "YOUR_GEMINI_API_KEY_HERE";
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
 
                 // Fetch request to the image generation API
@@ -284,13 +286,6 @@
                     const imgElement = document.createElement('img');
                     imgElement.src = imageUrl;
                     imgElement.alt = "Generated AI Image";
-
-                    imgElement.onload = () => {
-                        console.log(`Received from API (actual image): Natural Width = ${imgElement.naturalWidth}, Natural Height = ${imgElement.naturalHeight}`);
-                    };
-                    imgElement.onerror = () => {
-                        console.error("Failed to load generated image.");
-                    };
 
                     imagePreview.innerHTML = ''; // Clear "Generating image..."
                     imagePreview.appendChild(imgElement);
