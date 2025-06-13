@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image & Thumbnail Generator</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Updated energetic and beautiful background gradient for a GenZ vibe */
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 50%, #b39cd0 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #333; /* Default text color */
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            backdrop-filter: blur(8px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(8px); /* For Safari */
+            padding: 30px;
+            border-radius: 20px; /* More rounded corners */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.08); /* Layered shadow */
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Increased gap */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+        }
+        .input-section, .output-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Increased gap */
+        }
+        textarea {
+            resize: vertical;
+            min-height: 120px; /* Slightly taller textarea */
+            border-color: #e0e0e0;
+            transition: all 0.3s ease-in-out;
+        }
+        textarea:focus {
+            border-color: #6366f1; /* More vibrant focus ring */
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+        }
+        button {
+            transition: all 0.3s ease-in-out;
+            font-weight: 600;
+            border-radius: 12px; /* Consistent rounded corners */
+            padding: 14px 28px; /* Larger padding */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        button:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.15); /* Light overlay for hover */
+            transition: all 0.75s ease-out;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: -1;
+        }
+        button:hover:before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Specific button styles */
+        #generateButton {
+            background: linear-gradient(45deg, #6366f1, #9333ea); /* Purple-blue gradient */
+            color: white;
+        }
+        #downloadButton {
+            background: linear-gradient(45deg, #10b981, #34d399); /* Green gradient */
+            color: white;
+        }
+        #copyButton {
+            background: linear-gradient(45deg, #f97316, #fbbf24); /* Orange-yellow gradient */
+            color: white;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white; /* White spinner for dark buttons */
+            border-radius: 50%;
+            width: 24px; /* Slightly smaller */
+            height: 24px;
+            animation: spin 0.8s linear infinite;
+            display: none;
+            margin-left: 10px; /* Spacing from text */
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .image-preview {
+            border: 1px solid #f0f0f0;
+            background-color: #fcfcfc;
+            min-height: 250px; /* Slightly larger preview area */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Inner shadow */
+        }
+        .image-preview img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px; /* Match container rounding */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Shadow for the image itself */
+        }
+        .button-group {
+            display: flex;
+            gap: 15px; /* Increased gap */
+            flex-wrap: wrap;
+            justify-content: center; /* Center buttons */
+        }
+        .button-group button {
+            flex-grow: 1; /* Allow buttons to grow */
+            min-width: 150px; /* Ensure minimum width for smaller screens */
+        }
+        h1, h2 {
+            color: #2c3e50; /* Darker heading color for contrast */
+            font-weight: 700;
+        }
+        p.text-gray-600 {
+            color: #555; /* Slightly darker grey for body text */
+        }
+        p.text-gray-400 {
+            color: #999; /* Lighter grey for placeholder text */
+        }
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                gap: 40px; /* More space between sections on larger screens */
+            }
+            .input-section, .output-section {
+                flex: 1;
+            }
+            .image-preview {
+                min-height: 350px; /* Taller preview for desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Input Section -->
+        <div class="input-section">
+            <h1 class="text-3xl font-extrabold text-center mb-4">Generate AI Images & Thumbnails</h1>
+            <p class="text-gray-600 text-base text-center mb-6">
+                Enter a detailed description below to generate an image. Perfect for social media, YouTube thumbnails, or creative projects!
+            </p>
+            <textarea
+                id="promptInput"
+                class="w-full p-4 border rounded-xl focus:ring-4 focus:ring-opacity-40 transition duration-200 shadow-sm"
+                placeholder="e.g., A vibrant cyberpunk city at night with neon lights and flying cars, highly detailed, cinematic, for a tech YouTube channel intro"
+                rows="6"
+            ></textarea>
+
+            <button
+                id="generateButton"
+                class="text-white py-3 px-6 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-opacity-50 flex items-center justify-center gap-2"
+            >
+                Generate Image
+                <div id="loadingSpinner" class="loading-spinner"></div>
+            </button>
+            <div id="messageBox" class="p-3 text-sm text-red-700 bg-red-100 rounded-lg hidden"></div>
+            <p class="text-xs text-gray-500 mt-2 text-center">
+                Note: This tool uses the `imagen-3.0-generate-002` model for image generation. The generated images are free for you to use and will be at the model's default resolution.
+            </p>
+        </div>
+
+        <!-- Output Section -->
+        <div class="output-section">
+            <h2 class="text-2xl font-bold text-center mb-4">Generated Image</h2>
+            <div class="image-preview" id="imagePreview">
+                <p class="text-gray-400">Your generated image will appear here.</p>
+            </div>
+            <div class="button-group mt-4">
+                <button
+                    id="downloadButton"
+                    class="py-3 px-6 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-opacity-50 disabled:opacity-50"
+                    disabled
+                >
+                    Download Image
+                </button>
+                <button
+                    id="copyButton"
+                    class="py-3 px-6 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-opacity-50 disabled:opacity-50"
+                    disabled
+                >
+                    Copy Image to Clipboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const promptInput = document.getElementById('promptInput');
+        const generateButton = document.getElementById('generateButton');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const imagePreview = document.getElementById('imagePreview');
+        const downloadButton = document.getElementById('downloadButton');
+        const copyButton = document.getElementById('copyButton');
+        const messageBox = document.getElementById('messageBox');
+
+        // Function to show a message in the message box
+        function showMessage(message, isError = false) {
+            messageBox.textContent = message;
+            messageBox.className = `p-3 text-sm rounded-lg ${isError ? 'text-red-700 bg-red-100' : 'text-green-700 bg-green-100'}`;
+            messageBox.classList.remove('hidden');
+        }
+
+        // Function to hide the message box
+        function hideMessageBox() {
+            messageBox.classList.add('hidden');
+        }
+
+        // Function to enable/disable buttons
+        function setButtonState(enabled) {
+            generateButton.disabled = !enabled;
+            downloadButton.disabled = !enabled;
+            copyButton.disabled = !enabled;
+        }
+
+        // Event listener for the Generate button
+        generateButton.addEventListener('click', async () => {
+            const prompt = promptInput.value.trim();
+
+            if (!prompt) {
+                showMessage('Please enter a description for the image.', true);
+                return;
+            }
+
+            hideMessageBox();
+            imagePreview.innerHTML = '<p class="text-gray-400">Generating image...</p>';
+            setButtonState(false); // Disable buttons
+            loadingSpinner.style.display = 'block'; // Show spinner
+
+            try {
+                // Construct the payload for the image generation API
+                const payload = {
+                    instances: { prompt: prompt },
+                    parameters: {
+                        "sampleCount": 1
+                    }
+                };
+
+                // The API key is handled by the Canvas environment for `imagen-3.0-generate-002`
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
+
+                // Fetch request to the image generation API
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                // Check if the response contains the generated image data
+                if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
+                    const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imageUrl;
+                    imgElement.alt = "Generated AI Image";
+
+                    imgElement.onload = () => {
+                        console.log(`Received from API (actual image): Natural Width = ${imgElement.naturalWidth}, Natural Height = ${imgElement.naturalHeight}`);
+                    };
+                    imgElement.onerror = () => {
+                        console.error("Failed to load generated image.");
+                    };
+
+                    imagePreview.innerHTML = ''; // Clear "Generating image..."
+                    imagePreview.appendChild(imgElement);
+
+                    downloadButton.dataset.imageUrl = imageUrl; // Store image URL for download
+                    setButtonState(true); // Enable buttons after successful generation
+                    showMessage('Image generated successfully!', false);
+                } else {
+                    showMessage('Failed to generate image. Please try again with a different prompt.', true);
+                    console.error('API response error:', result);
+                    imagePreview.innerHTML = '<p class="text-red-500">Error generating image.</p>';
+                }
+            } catch (error) {
+                showMessage('An error occurred while communicating with the API. Please check your network connection and try again.', true);
+                console.error('Fetch error:', error);
+                imagePreview.innerHTML = '<p class="text-red-500">Error generating image.</p>';
+            } finally {
+                loadingSpinner.style.display = 'none'; // Hide spinner
+                setButtonState(true); // Ensure buttons are re-enabled even on error for retry
+            }
+        });
+
+        // Event listener for Download button
+        downloadButton.addEventListener('click', () => {
+            const imageUrl = downloadButton.dataset.imageUrl;
+            if (imageUrl) {
+                const a = document.createElement('a');
+                a.href = imageUrl;
+                a.download = 'ai-generated-image.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                showMessage('Image downloaded!', false);
+            } else {
+                showMessage('No image to download.', true);
+            }
+        });
+
+        // Event listener for Copy button
+        copyButton.addEventListener('click', async () => {
+            const imageUrl = downloadButton.dataset.imageUrl;
+            if (imageUrl) {
+                try {
+                    // Fetch the image as a Blob
+                    const response = await fetch(imageUrl);
+                    const blob = await response.blob();
+
+                    // Use the Clipboard API to write the image blob
+                    // Note: This relies on navigator.clipboard.write which might require HTTPS and user gesture.
+                    // For browser compatibility and sandbox environments, document.execCommand('copy') might be more reliable for text,
+                    // but for images, the modern Clipboard API is preferred if available.
+                    if (navigator.clipboard && navigator.clipboard.write) {
+                        await navigator.clipboard.write([
+                            new ClipboardItem({
+                                [blob.type]: blob
+                            })
+                        ]);
+                        showMessage('Image copied to clipboard!', false);
+                    } else {
+                        showMessage('Your browser does not support copying images directly to the clipboard. Please use the download option instead.', true);
+                    }
+                } catch (err) {
+                    console.error('Failed to copy image: ', err);
+                    showMessage('Failed to copy image to clipboard. Please try downloading it.', true);
+                }
+            } else {
+                showMessage('No image to copy.', true);
+            }
+        });
+
+        // Initial state setup
+        setButtonState(true); // Enable buttons on load
+    </script>
+</body>
+</html>
