@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechyNoob - Your Guide to Android Customization, Hacking, and More!</title>
+    <title>All Articles - TechyNoob</title>
     <!-- AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835"
      crossorigin="anonymous"></script>
@@ -33,23 +33,12 @@
             background-clip: text;
             color: transparent;
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .blog-card, .game-card {
+        .blog-card {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-        .blog-card:hover, .game-card:hover {
+        .blog-card:hover {
             transform: scale(1.02);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        /* Custom styles for search bar responsiveness */
-        .search-container {
-            display: flex;
-            flex-grow: 1; /* Allows it to take available space */
-            justify-content: flex-end; /* Aligns to the right within its flex container */
-            margin-left: 1rem; /* Space from nav links */
         }
         /* Style for search suggestions dropdown */
         .suggestions-dropdown {
@@ -66,21 +55,6 @@
         .suggestion-item:hover {
             background-color: #4a5568; /* Darker hover */
         }
-        @media (max-width: 767px) { /* Adjust for mobile view */
-            .search-container {
-                width: 100%;
-                margin-top: 1rem;
-                margin-left: 0;
-                justify-content: center; /* Center search bar on mobile */
-            }
-            .header-content {
-                flex-direction: column; /* Stack logo and nav vertically */
-                align-items: center; /* Center items when stacked */
-            }
-            .header-nav {
-                margin-top: 1rem; /* Space between logo/title and nav links */
-            }
-        }
     </style>
 </head>
 <body class="antialiased leading-normal">
@@ -88,20 +62,20 @@
     <header class="bg-gray-900 shadow-lg py-4 px-6 md:px-8 lg:px-12 relative z-50">
         <nav class="container mx-auto flex flex-wrap justify-between items-center relative z-50">
             <!-- Logo and Title -->
-            <a href="index.html" class="flex items-center space-x-2 rounded-md p-1 border border-gray-700 flex-shrink-0 relative z-50">
-                <img src="logos/20211212_160808_0000.png" alt="TechyNoob Logo" class="h-10 sm:h-12 w-auto">
+            <a href="../index.html" class="flex items-center space-x-2 rounded-md p-1 border border-gray-700 flex-shrink-0 relative z-50">
+                <img src="../logos/20211212_160808_0000.png" alt="TechyNoob Logo" class="h-10 sm:h-12 w-auto">
                 <span class="text-xl sm:text-2xl lg:text-3xl font-extrabold gradient-text">TechyNoob</span>
             </a>
             
             <!-- Desktop Navigation Links and Search Bar -->
             <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative"> <!-- Added relative for suggestions positioning -->
-                <a href="#home" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
-                <a href="#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
-                <a href="#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
-                <a href="ai-image-generator.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">AI Image Gen</a>
-                <a href="#about" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About</a>
+                <a href="../index.html#home" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
+                <a href="../index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
+                <a href="../index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
+                <a href="../ai-image-generator.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">AI Image Gen</a>
+                <a href="../index.html#about" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About</a>
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2 flex items-center">
-                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
+                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
                     YouTube Channel
                 </a>
                 <!-- Search Input and Button for Desktop -->
@@ -140,43 +114,31 @@
                     <!-- Suggestions will be populated here -->
                 </div>
             </div>
-            <a href="#home" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
-            <a href="#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
-            <a href="#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Games</a>
-            <a href="ai-image-generator.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">AI Image Gen</a>
-            <a href="#about" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">About</a>
-            <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="closeMobileMenu()">
-                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2">
-                YouTube Channel
+            <a href="../index.html#home" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+            <a href="../index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Blogs</a>
+            <a href="../index.html#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Games</a>
+            <a href="../ai-image-generator.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">AI Image Gen</a>
+            <a href="../index.html#about" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+            <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+                <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2"> YouTube Channel
             </a>
         </div>
     </header>
 
     <main class="container mx-auto px-6 md:px-8 lg:px-12 py-12">
-        <!-- Hero Section -->
-        <section id="home" class="text-center py-20 rounded-xl bg-gray-800 shadow-xl mb-12 animate-fade-in">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 gradient-text leading-tight">
-                Unlock the Hidden Potential of Your Android Device!
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Your ultimate guide to Custom ROMs, Magisk Modules, Ethical Hacking, and more.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#blogs" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-                    Explore Our Latest Blogs
-                </a>
-                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center justify-center">
-                    <!-- Replaced YouTube SVG with uploaded PNG image -->
-                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-6 h-6 mr-2">
-                    Visit Our YouTube Channel
-                </a>
-            </div>
-        </section>
-
-        <!-- Latest Articles Section -->
-        <section id="blogs" class="py-12">
-            <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Latest Articles & Guides</h2>
+        <section id="all-articles" class="py-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-10 gradient-text">All Articles & Guides</h1>
             <div id="blog-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- New Blog Card for Custom Boot Animations (June 17, 2025) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/6EE7B7/000000?text=Custom+Boot+Animations" alt="Custom Boot Animations Guide" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 17, 2025</p>
+                        <p class="text-gray-300 mb-4">Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.</p>
+                        <a href="Blogs/custom-boot-animations.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
                 <!-- New Blog Card for Launchpad App (June 17, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Launchpad+App" alt="Launchpad App Guide" class="w-full h-48 object-cover">
@@ -197,7 +159,6 @@
                         <a href="Blogs/iconify-installation.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-
                 <!-- Blog Card for CrDroid OTA Update (June 12, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/6EE7B7/000000?text=CrDroid+Update+Guide" alt="CrDroid Update Guide" class="w-full h-48 object-cover">
@@ -252,312 +213,77 @@
                         <a href="Blogs/root-android-without-magisk.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-            </div>
-            <div class="text-center mt-10">
-                <a href="all-articles.html" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-                    View All Articles
-                </a>
-            </div>
-        </section>
-
-        <!-- Web Games Section -->
-        <section id="games-section" class="py-12 mt-12">
-            <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Play Our Web Games!</h2>
-            <div id="game-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Game Card: Flappy Bird -->
-                <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/70c5ce/000000?text=Flappy+Bird" alt="Flappy Bird Game" class="w-full h-48 object-cover">
+                
+                <!-- Blog Card for Fix Play Integrity (June 8, 2025) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/9333EA/ffffff?text=Play+Integrity+Fix" alt="Play Integrity Fix Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Flappy Bird</h3>
-                        <p class="text-gray-300 mb-4">Test your reflexes in this classic arcade game. Tap to make the bird fly through pipes!</p>
-                        <a href="Games/flappy_bird.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
+                        <p class="text-gray-300 mb-4">Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!</p>
+                        <a href="Blogs/fix-play-integrity-rooted-android.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
 
-                <!-- Game Card: Snake Game -->
-                <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/2d3748/6EE7B7?text=Snake+Game" alt="Snake Game" class="w-full h-48 object-cover">
+                <!-- Blog Card for Unlock Samsung Experience (June 8, 2025) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Unlock+Samsung+Experience" alt="Unlock Samsung Experience" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Snake Game</h3>
-                        <p class="text-gray-300 mb-4">Guide your snake to eat the food and grow longer, but don't hit the walls or yourself!</p>
-                        <a href="Games/snake_game.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Unlock the Samsung Experience: Install One UI Home 35 Magisk Module</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
+                        <p class="text-gray-300 mb-4">Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!</p>
+                        <a href="Blogs/unlock-samsung-experience.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
 
-                <!-- Game Card: Pong Game -->
-                <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/2d3748/3B82F6?text=Pong+Game" alt="Pong Game" class="w-full h-48 object-cover">
+                <!-- Blog Card for Superior OS (June 8, 2025) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/6EE7B7/000000?text=Superior+OS+Android+15" alt="Superior OS Android 15" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Pong Game</h3>
-                        <p class="text-gray-300 mb-4">Relive the classic arcade experience with this two-player (or one-player vs. AI) Pong game.</p>
-                        <a href="Games/pong_game.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Install Superior OS (Android 15) with May 2025 Security Patch!</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
+                        <p class="text-gray-300 mb-4">Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!</p>
+                        <a href="Blogs/install-superior-os.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-12 bg-gray-800 rounded-xl shadow-xl mt-12 px-6 py-10">
-            <h2 class="text-4xl font-extrabold text-center mb-8 gradient-text">About TechyNoob</h2>
-            <div class="max-w-5xl mx-auto text-gray-300 text-lg leading-relaxed text-center">
-                <p class="mb-4">
-                    Welcome to <span class="gradient-text font-bold">TechyNoob</span>: Your Guide to Android Customization, Hacking, and More! We're here to help you unlock the hidden potential of your Android device.
-                </p>
-                <p class="mb-4">
-                    We'll be your guide to the world of custom ROMs, Magisk modules, and ethical hacking, providing you with tutorials, reviews, and tips to take your Android experience to the next level.
-                </p>
-                <p class="mt-6 text-xl font-semibold mb-6">
-                    What you can expect:
-                </p>
-                <!-- Updated list for better alignment and readability -->
-                <ul class="list-disc list-inside text-left mx-auto max-w-xl space-y-2">
-                    <li>Custom ROM installations and guides: Discover new features and functionalities with custom ROMs.</li>
-                    <li>Magisk module showcases and reviews: Uncover the power and potential of Magisk modules.</li>
-                    <li>Ethical hacking concepts and tutorials: Learn responsible hacking techniques for educational purposes.</li>
-                    <li>Q&A sessions and troubleshooting: Get your Android-related questions answered.</li>
-                </ul>
-                <p class="mt-6 text-xl font-semibold">
-                    Subscribe and join the community of tech enthusiasts! #TechyNoob #Android #CustomROM #Magisk #EthicalHacking #TechCommunity
-                </p>
-            </div>
-             <div class="text-center mt-10">
-                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center justify-center mx-auto w-fit">
-                    <!-- Replaced YouTube SVG with uploaded PNG image -->
-                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-6 h-6 mr-2">
-                    Go to TechyNoob YouTube Channel
-                </a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8 px-6 md:px-8 lg:px-12 mt-12">
+    <footer class="bg-gray-900 py-8 px-6 mt-12">
         <div class="container mx-auto text-center text-gray-400">
             <p>&copy; 2025 TechyNoob. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mt-4">
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
-                    <!-- Replaced YouTube SVG with uploaded PNG image -->
-                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
+                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
                 </a>
-                <!-- You can add more social media icons here (e.g., Twitter, Instagram) -->
             </div>
         </div>
     </footer>
-
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu'); 
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
 
-        // Function to open mobile menu
-        function openMobileMenu() {
-            mobileMenu.classList.remove('hidden');
-            // Allow animation to start before removing translate-x-full
-            requestAnimationFrame(() => {
-                mobileMenu.classList.remove('translate-x-full'); // Slide in
-                mobileMenu.classList.add('opacity-100'); // Fade in
-                mobileMenu.classList.remove('opacity-0');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
             });
         }
-
-        // Function to close mobile menu
-        function closeMobileMenu() {
-            mobileMenu.classList.add('translate-x-full'); // Slide out
-            mobileMenu.classList.remove('opacity-100'); // Fade out
-            mobileMenu.classList.add('opacity-0');
-            // Add hidden class after animation completes
-            setTimeout(() => {
+        if (closeMobileMenuButton) {
+            closeMobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
-            }, 300); // Match transition duration
+            });
         }
-
-        mobileMenuButton.addEventListener('click', openMobileMenu);
-        closeMobileMenuButton.addEventListener('click', closeMobileMenu);
 
         // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-
-        // --- Search Functionality ---
-        const searchInput = document.getElementById('searchInput');
-        const searchButton = document.getElementById('searchButton');
-        const mobileSearchInput = document.getElementById('mobileSearchInput');
-        const mobileSearchButton = document.getElementById('mobileSearchButton');
-        const blogCardsContainer = document.getElementById('blog-cards-container');
-        const gameCardsContainer = document.getElementById('game-cards-container');
-        const searchResultsDropdown = document.getElementById('searchResultsDropdown');
-        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
-
-        let allContentData = []; // Store all searchable content
-
-        // Function to collect all content data on page load
-        function collectContentData() {
-            allContentData = [];
-
-            // Collect blog card data from currently displayed blogs
-            Array.from(blogCardsContainer.children).forEach(card => {
-                const titleElement = card.querySelector('h3');
-                const descriptionElement = card.querySelector('p:nth-of-type(2)'); // Second paragraph for description
-                const linkElement = card.querySelector('a');
-
-                if (titleElement && descriptionElement && linkElement) {
-                    allContentData.push({
-                        type: 'blog',
-                        title: titleElement.textContent.trim(),
-                        description: descriptionElement.textContent.trim(),
-                        link: linkElement.href
-                    });
-                }
-            });
-
-            // Collect game card data
-            Array.from(gameCardsContainer.children).forEach(card => {
-                const titleElement = card.querySelector('h3');
-                const descriptionElement = card.querySelector('p'); // First paragraph for description
-                const linkElement = card.querySelector('a');
-
-                if (titleElement && descriptionElement && linkElement) {
-                    allContentData.push({
-                        type: 'game',
-                        title: titleElement.textContent.trim(),
-                        description: descriptionElement.textContent.trim(),
-                        link: linkElement.href
-                    });
-                }
-            });
-        }
-
-        // Function to perform search on cards
-        function performSearch(query) {
-            const normalizedQuery = query.toLowerCase().trim();
-            
-            // Search blog cards
-            Array.from(blogCardsContainer.children).forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const description = card.querySelector('p:nth-of-type(2)').textContent.toLowerCase();
-
-                if (title.includes(normalizedQuery) || description.includes(normalizedQuery) || normalizedQuery === '') {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            // Search game cards
-            Array.from(gameCardsContainer.children).forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const description = card.querySelector('p').textContent.toLowerCase();
-
-                if (title.includes(normalizedQuery) || description.includes(normalizedQuery) || normalizedQuery === '') {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        }
-
-        // Function to display suggestions
-        function displaySuggestions(inputElement, dropdownElement) {
-            const query = inputElement.value.toLowerCase().trim();
-            dropdownElement.innerHTML = ''; // Clear previous suggestions
-
-            if (query.length === 0) {
-                dropdownElement.classList.add('hidden');
-                return;
-            }
-
-            const filteredSuggestions = allContentData.filter(item => 
-                item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
-            ).slice(0, 7); // Limit to 7 suggestions
-
-            if (filteredSuggestions.length > 0) {
-                filteredSuggestions.forEach(item => {
-                    const suggestionDiv = document.createElement('div');
-                    suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
-                    suggestionDiv.textContent = item.title;
-                    suggestionDiv.addEventListener('click', () => {
-                        inputElement.value = item.title; // Populate input with suggestion
-                        performSearch(item.title); // Perform search for the suggestion
-                        dropdownElement.classList.add('hidden'); // Hide dropdown
-                    });
-                    dropdownElement.appendChild(suggestionDiv);
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
                 });
-                dropdownElement.classList.remove('hidden');
-            } else {
-                dropdownElement.classList.add('hidden');
-            }
+            });
         }
-
-        // Event listeners for desktop search
-        searchButton.addEventListener('click', () => {
-            performSearch(searchInput.value);
-            searchResultsDropdown.classList.add('hidden'); // Hide suggestions after search
-        });
-        searchInput.addEventListener('keyup', (e) => {
-            displaySuggestions(searchInput, searchResultsDropdown); // Show suggestions on keyup
-            if (e.key === 'Enter') {
-                performSearch(searchInput.value);
-                searchResultsDropdown.classList.add('hidden'); // Hide suggestions after search
-            } else if (searchInput.value === '') {
-                performSearch(''); // Show all cards if input is cleared
-            }
-        });
-        // Hide suggestions when clicking outside search bar
-        document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
-                searchResultsDropdown.classList.add('hidden');
-            }
-        });
-
-
-        // Event listeners for mobile search
-        mobileSearchButton.addEventListener('click', () => {
-            performSearch(mobileSearchInput.value);
-            mobileSearchResultsDropdown.classList.add('hidden'); // Hide suggestions
-            closeMobileMenu(); // Close menu after search
-        });
-        mobileSearchInput.addEventListener('keyup', (e) => {
-            displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown); // Show suggestions on keyup
-            if (e.key === 'Enter') {
-                performSearch(mobileSearchInput.value);
-                mobileSearchResultsDropdown.classList.add('hidden'); // Hide suggestions
-                closeMobileMenu(); // Close menu after search
-            } else if (mobileSearchInput.value === '') {
-                performSearch(''); // Show all cards if input is cleared
-            }
-        });
-        // Hide mobile suggestions when clicking outside search bar
-        document.addEventListener('click', (e) => {
-            if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
-                mobileSearchResultsDropdown.classList.add('hidden');
-            }
-        });
-
-
-        // Clear search results when menu is closed
-        mobileMenu.addEventListener('transitionend', () => {
-            if (mobileMenu.classList.contains('translate-x-full')) { // If menu is fully closed
-                mobileSearchInput.value = ''; // Clear mobile search input
-                performSearch(''); // Show all cards
-                mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
-            }
-        });
-
-        // Initialize content data on page load
-        window.addEventListener('load', collectContentData);
-
     </script>
 </body>
 </html>
