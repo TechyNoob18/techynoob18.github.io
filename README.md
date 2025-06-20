@@ -36,13 +36,12 @@ To get a local copy of the project up and running, follow these simple steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/techynoob-website.git](https://github.com/your-username/techynoob-website.git)
+    git clone [https://github.com/TechyNoob18/techynoob18.github.io.git](https://github.com/TechyNoob18/techynoob18.github.io.git)
     ```
-    (Replace `your-username` with your actual GitHub username or the organization's name)
 
 2.  **Navigate to the project directory:**
     ```bash
-    cd techynoob-website
+    cd techynoob18.github.io
     ```
 
 3.  **Open in your browser:**
@@ -70,11 +69,10 @@ We welcome contributions from the community! If you have suggestions for new art
 
 Please ensure your code adheres to the existing styling and structure.
 
-
 ## 📞 Contact & Social Media
 
-* **YouTube Channel:** [TechyNoob] https://youtube.com/@techynoob1818
-* **Website:** https://www.techynoob18.github.io
+* **YouTube Channel:** [TechyNoob](https://youtube.com/@techynoob1818)
+* **Website:** [techynoob18.github.io](https://techynoob18.github.io)
 
 ---
 Made with ❤️ by TechyNoob
