@@ -11,9 +11,6 @@ TechyNoob is your ultimate online resource for all things Android customization,
 * **Interactive Web Games:** A collection of classic web games like Flappy Bird, Snake Game, and Pong to enjoy.
 * **Responsive Design:** Optimized for seamless viewing and interaction across all devices (desktop, tablet, mobile).
 * **Search Functionality:** Easily find articles and games using the integrated search bar with real-time suggestions.
-* **SEO Optimized:** Meta tags and structured content for better search engine visibility.
-* **Google Analytics & AdSense Integration:** Tracking website performance and supporting content creation.
-* **YouTube Channel Integration:** Quick access to the TechyNoob YouTube channel for video tutorials and reviews.
 
 ## 🚀 Technologies Used
 
@@ -22,8 +19,6 @@ The TechyNoob website is built using standard web technologies:
 * **HTML5:** For structuring the content.
 * **Tailwind CSS:** A utility-first CSS framework for rapid and responsive styling.
 * **JavaScript:** For interactive elements, mobile menu toggling, and search functionality.
-* **Google Analytics:** For website traffic analysis.
-* **Google AdSense:** For displaying advertisements.
 
 ## 📦 Project Structure
 
