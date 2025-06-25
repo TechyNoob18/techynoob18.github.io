@@ -4,30 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechyNoob - Your Guide to Android Customization, Hacking, and More!</title>
-    <!-- SEO Meta Tags -->
     <meta name="description" content="TechyNoob is your ultimate guide to Android customization, including custom ROMs, Magisk modules, ethical hacking, boot animations, and app optimization. Unlock the full potential of your Android device!">
     <meta name="keywords" content="Android customization, custom ROMs, Magisk, ethical hacking, Android tips, boot animations, Launchpad App, Android rooting, LineageOS, CrDroid, Pixel Experience, Android 16, Material You, KernelSU, Google Play Integrity, Samsung One UI, smartphone optimization, Android games, mobile tech, tech tutorials, Android guides, phone mods">
     <meta name="author" content="TechyNoob">
-    <link rel="canonical" href="https://www.techynoob.com/index.html">
+    <link rel="canonical" href="https://techynoob18.github.io/index.html">
 
-    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.techynoob.com/index.html">
+    <meta property="og:url" content="https://techynoob18.github.io/index.html">
     <meta property="og:title" content="TechyNoob - Your Guide to Android Customization, Hacking, and More!">
     <meta property="og:description" content="TechyNoob is your ultimate guide to Android customization, including custom ROMs, Magisk modules, ethical hacking, boot animations, and app optimization. Unlock the full potential of your Android device!">
-    <meta property="og:image" content="https://www.techynoob.com/logos/20211212_160808_0000.png">
+    <meta property="og:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.techynoob.com/index.html">
+    <meta property="twitter:url" content="https://techynoob18.github.io/index.html">
     <meta property="twitter:title" content="TechyNoob - Your Guide to Android Customization, Hacking, and More!">
     <meta property="twitter:description" content="TechyNoob is your ultimate guide to Android customization, including custom ROMs, Magisk modules, ethical hacking, boot animations, and app optimization. Unlock the full potential of your Android device!">
-    <meta property="twitter:image" content="https://www.techynoob.com/logos/20211212_160808_0000.png">
+    <meta property="twitter:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
 
-    <!-- AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835"
      crossorigin="anonymous"></script>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9KWQ18P9"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -36,7 +31,6 @@
 
       gtag('config', 'G-2E9KWQ18P9');
     </script>
-    <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -104,18 +98,14 @@
     </style>
 </head>
 <body class="antialiased leading-normal">
-    <!-- Header/Navigation Bar -->
     <header class="bg-gray-900 shadow-lg py-4 px-6 md:px-8 lg:px-12 relative z-50">
         <nav class="container mx-auto flex flex-wrap justify-between items-center relative z-50">
-            <!-- Logo and Title -->
             <a href="index.html" class="flex items-center space-x-2 rounded-md p-1 border border-gray-700 flex-shrink-0 relative z-50">
                 <img src="logos/20211212_160808_0000.png" alt="TechyNoob Logo" class="h-10 sm:h-12 w-auto">
                 <span class="text-xl sm:text-2xl lg:text-3xl font-extrabold gradient-text">TechyNoob</span>
             </a>
             
-            <!-- Desktop Navigation Links and Search Bar -->
-            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative"> <!-- Added relative for suggestions positioning -->
-                <a href="#home" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
+            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative"> <a href="#home" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
                 <a href="#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
                 <a href="#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
                 <a href="ai-image-generator.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">AI Image Gen</a>
@@ -124,41 +114,35 @@
                     <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
                     YouTube Channel
                 </a>
-                <!-- Search Input and Button for Desktop -->
                 <div class="relative flex items-center ml-4">
                     <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
                     <button id="searchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
                     <div id="searchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
-                        <!-- Suggestions will be populated here -->
-                    </div>
+                        </div>
                 </div>
             </div>
 
-            <!-- Mobile Menu Button (Hamburger) -->
             <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none focus:text-white relative z-[60] p-2 rounded-md bg-gray-800">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu Overlay - Includes Search Bar for Mobile -->
         <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-[100] flex flex-col items-center justify-center space-y-6 transition-all duration-300 ease-in-out opacity-0 transform translate-x-full">
             <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-300 focus:outline-none focus:text-white p-2 rounded-md bg-gray-800">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
-            <!-- Search Input and Button for Mobile -->
             <div class="relative flex items-center mt-6">
                 <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full max-w-xs transition-all duration-300 ease-in-out focus:w-64">
                 <button id="mobileSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
                 <div id="mobileSearchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
-                    <!-- Suggestions will be populated here -->
-                </div>
+                    </div>
             </div>
             <a href="#home" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
             <a href="#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
@@ -173,7 +157,6 @@
     </header>
 
     <main class="container mx-auto px-6 md:px-8 lg:px-12 py-12">
-        <!-- Hero Section -->
         <section id="home" class="text-center py-20 rounded-xl bg-gray-800 shadow-xl mb-12 animate-fade-in">
             <h1 class="text-5xl md:text-6xl font-extrabold mb-4 gradient-text leading-tight">
                 Unlock the Hidden Potential of Your Android Device!
@@ -186,18 +169,24 @@
                     Explore Our Latest Blogs
                 </a>
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center justify-center">
-                    <!-- Replaced YouTube SVG with uploaded PNG image -->
                     <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-6 h-6 mr-2">
                     Visit Our YouTube Channel
                 </a>
             </div>
         </section>
 
-        <!-- Latest Articles Section -->
         <section id="blogs" class="py-12">
             <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Latest Articles & Guides</h2>
             <div id="blog-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- New Blog Card for Magisk Vexiro (June 18, 2025) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Android+16+Redmi+Note+7+Pro" alt="Android 16 on Redmi Note 7 Pro Guide" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 26, 2025</p>
+                        <p class="text-gray-300 mb-4">A comprehensive guide to installing a pure AOSP-based Android 16 custom ROM on your Redmi Note 7 Pro. Unlock enhanced performance, latest features, and a bloatware-free experience.</p>
+                        <a href="Blogs/install-android-16-redmi-note-7-pro.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/9333EA/ffffff?text=Magisk+Vexiro" alt="Magisk Vexiro Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -207,7 +196,6 @@
                         <a href="Blogs/magisk-vexiro.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-                <!-- New Blog Card for Custom Boot Animations (June 17, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/6EE7B7/000000?text=Custom+Boot+Animations" alt="Custom Boot Animations Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -217,7 +205,6 @@
                         <a href="Blogs/custom-boot-animations.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-                <!-- New Blog Card for Launchpad App (June 17, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Launchpad+App" alt="Launchpad App Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -227,7 +214,6 @@
                         <a href="Blogs/launchpad-app.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-                <!-- Blog Card for Iconify Installation (June 12, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/9333EA/ffffff?text=Iconify+Guide" alt="Iconify Installation Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -238,7 +224,6 @@
                     </div>
                 </div>
 
-                <!-- Blog Card for CrDroid OTA Update (June 12, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/6EE7B7/000000?text=CrDroid+Update+Guide" alt="CrDroid Update Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -246,17 +231,6 @@
                         <p class="text-gray-400 text-sm mb-4">Published on June 12, 2025</p>
                         <p class="text-gray-300 mb-4">Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.</p>
                         <a href="Blogs/crdroid-ota-update.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Blog Card for ColorBlendr (June 11, 2025) -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/9333EA/ffffff?text=ColorBlendr+Guide" alt="ColorBlendr Guide" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 11, 2025</p>
-                        <p class="text-gray-300 mb-4">Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!</p>
-                        <a href="Blogs/colorblendr-guide.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
             </div>
@@ -267,11 +241,9 @@
             </div>
         </section>
 
-        <!-- Web Games Section -->
         <section id="games-section" class="py-12 mt-12">
             <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Play Our Web Games!</h2>
             <div id="game-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Game Card: Flappy Bird -->
                 <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/70c5ce/000000?text=Flappy+Bird" alt="Flappy Bird Game" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -281,7 +253,6 @@
                     </div>
                 </div>
 
-                <!-- Game Card: Snake Game -->
                 <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/2d3748/6EE7B7?text=Snake+Game" alt="Snake Game" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -291,7 +262,6 @@
                     </div>
                 </div>
 
-                <!-- Game Card: Pong Game -->
                 <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/2d3748/3B82F6?text=Pong+Game" alt="Pong Game" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -303,7 +273,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="py-12 bg-gray-800 rounded-xl shadow-xl mt-12 px-6 py-10">
             <h2 class="text-4xl font-extrabold text-center mb-8 gradient-text">About TechyNoob</h2>
             <div class="max-w-5xl mx-auto text-gray-300 text-lg leading-relaxed text-center">
@@ -316,7 +285,6 @@
                 <p class="mt-6 text-xl font-semibold mb-6">
                     What you can expect:
                 </p>
-                <!-- Updated list for better alignment and readability -->
                 <ul class="list-disc list-inside text-left mx-auto max-w-xl space-y-2">
                     <li>Custom ROM installations and guides: Discover new features and functionalities with custom ROMs.</li>
                     <li>Magisk module showcases and reviews: Uncover the power and potential of Magisk modules.</li>
@@ -329,7 +297,6 @@
             </div>
              <div class="text-center mt-10">
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center justify-center mx-auto w-fit">
-                    <!-- Replaced YouTube SVG with uploaded PNG image -->
                     <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-6 h-6 mr-2">
                     Go to TechyNoob YouTube Channel
                 </a>
@@ -337,17 +304,14 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 py-8 px-6 md:px-8 lg:px-12 mt-12">
         <div class="container mx-auto text-center text-gray-400">
-            <p>&copy; 2025 TechyNoob. All rights reserved.</p>
+            <p>© 2025 TechyNoob. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mt-4">
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
-                    <!-- Replaced YouTube SVG with uploaded PNG image -->
                     <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
                 </a>
-                <!-- You can add more social media icons here (e.g., Twitter, Instagram) -->
-            </div>
+                </div>
         </div>
     </footer>
 
@@ -414,20 +378,23 @@
             allContentData = [];
 
             // Collect blog card data from currently displayed blogs
-            Array.from(blogCardsContainer.children).forEach(card => {
-                const titleElement = card.querySelector('h3');
-                const descriptionElement = card.querySelector('p:nth-of-type(2)'); // Second paragraph for description
-                const linkElement = card.querySelector('a');
+            // THIS SHOULD BE ALL BLOGS, NOT JUST DISPLAYED ONES FOR SEARCH TO WORK ACROSS ALL ARTICLES
+            // For a complete search, you'd load all article data from a JSON or similar source.
+            // For this example, we'll mimic by adding the new article to the in-memory data
+            allContentData.push({ type: 'blog', title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", description: "A comprehensive guide to installing a pure AOSP-based Android 16 custom ROM on your Redmi Note 7 Pro. Unlock enhanced performance, latest features, and a bloatware-free experience.", link: "Blogs/install-android-16-redmi-note-7-pro.html" });
+            allContentData.push({ type: 'blog', title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", link: "Blogs/magisk-vexiro.html" });
+            allContentData.push({ type: 'blog', title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", link: "Blogs/custom-boot-animations.html" });
+            allContentData.push({ type: 'blog', title: "Revolutionize Your Android Experience: Unveiling the Power of Launchpad App", description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.", link: "Blogs/launchpad-app.html" });
+            allContentData.push({ type: 'blog', title: "Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones", description: "A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.", link: "Blogs/iconify-installation.html" });
+            allContentData.push({ type: 'blog', title: "Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method", description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.", link: "Blogs/crdroid-ota-update.html" });
+            allContentData.push({ type: 'blog', title: "Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+", description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!", link: "Blogs/colorblendr-guide.html" });
+            allContentData.push({ type: 'blog', title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!", link: "Blogs/android-16-arrives.html" });
+            allContentData.push({ type: 'blog', title: "Installing Android 16 Material 3 Expressive Theme", description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!", link: "Blogs/install-material-3-theme.html" });
+            allContentData.push({ type: 'blog', title: "Root Any Android Phone WITHOUT Magisk in 2025", description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!", link: "Blogs/root-android-without-magisk.html" });
+            allContentData.push({ type: 'blog', title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!", link: "Blogs/fix-play-integrity-rooted-android.html" });
+            allContentData.push({ type: 'blog', title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", link: "Blogs/unlock-samsung-experience.html" });
+            allContentData.push({ type: 'blog', title: "Install Superior OS (Android 15) with May 2025 Security Patch!", description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", link: "Blogs/install-superior-os.html" });
 
-                if (titleElement && descriptionElement && linkElement) {
-                    allContentData.push({
-                        type: 'blog',
-                        title: titleElement.textContent.trim(),
-                        description: descriptionElement.textContent.trim(),
-                        link: linkElement.href
-                    });
-                }
-            });
 
             // Collect game card data
             Array.from(gameCardsContainer.children).forEach(card => {
@@ -496,7 +463,8 @@
                     suggestionDiv.textContent = item.title;
                     suggestionDiv.addEventListener('click', () => {
                         inputElement.value = item.title; // Populate input with suggestion
-                        performSearch(item.title); // Perform search for the suggestion
+                        // For index.html, clicking a suggestion should navigate to the article/game page
+                        window.location.href = item.link;
                         dropdownElement.classList.add('hidden'); // Hide dropdown
                     });
                     dropdownElement.appendChild(suggestionDiv);
@@ -509,16 +477,23 @@
 
         // Event listeners for desktop search
         searchButton.addEventListener('click', () => {
-            performSearch(searchInput.value);
+            // On index.html, clicking search button with a query should navigate to all-articles.html with search param
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+            }
             searchResultsDropdown.classList.add('hidden'); // Hide suggestions after search
         });
         searchInput.addEventListener('keyup', (e) => {
             displaySuggestions(searchInput, searchResultsDropdown); // Show suggestions on keyup
             if (e.key === 'Enter') {
-                performSearch(searchInput.value);
+                const query = searchInput.value.trim();
+                if (query) {
+                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+                }
                 searchResultsDropdown.classList.add('hidden'); // Hide suggestions after search
             } else if (searchInput.value === '') {
-                performSearch(''); // Show all cards if input is cleared
+                performSearch(''); // Show all cards if input is cleared (only for local filtering on index page)
             }
         });
         // Hide suggestions when clicking outside search bar
@@ -531,14 +506,20 @@
 
         // Event listeners for mobile search
         mobileSearchButton.addEventListener('click', () => {
-            performSearch(mobileSearchInput.value);
+            const query = mobileSearchInput.value.trim();
+            if (query) {
+                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+            }
             mobileSearchResultsDropdown.classList.add('hidden'); // Hide suggestions
             closeMobileMenu(); // Close menu after search
         });
         mobileSearchInput.addEventListener('keyup', (e) => {
             displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown); // Show suggestions on keyup
             if (e.key === 'Enter') {
-                performSearch(mobileSearchInput.value);
+                const query = mobileSearchInput.value.trim();
+                if (query) {
+                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+                }
                 mobileSearchResultsDropdown.classList.add('hidden'); // Hide suggestions
                 closeMobileMenu(); // Close menu after search
             } else if (mobileSearchInput.value === '') {
