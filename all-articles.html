@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Articles - TechyNoob</title>
-    <!-- AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835"
      crossorigin="anonymous"></script>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9KWQ18P9"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,7 +14,6 @@
 
       gtag('config', 'G-2E9KWQ18P9');
     </script>
-    <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -58,18 +55,14 @@
     </style>
 </head>
 <body class="antialiased leading-normal">
-    <!-- Header/Navigation Bar -->
     <header class="bg-gray-900 shadow-lg py-4 px-6 md:px-8 lg:px-12 relative z-50">
         <nav class="container mx-auto flex flex-wrap justify-between items-center relative z-50">
-            <!-- Logo and Title -->
             <a href="../index.html" class="flex items-center space-x-2 rounded-md p-1 border border-gray-700 flex-shrink-0 relative z-50">
                 <img src="../logos/20211212_160808_0000.png" alt="TechyNoob Logo" class="h-10 sm:h-12 w-auto">
                 <span class="text-xl sm:text-2xl lg:text-3xl font-extrabold gradient-text">TechyNoob</span>
             </a>
             
-            <!-- Desktop Navigation Links and Search Bar -->
-            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative"> <!-- Added relative for suggestions positioning -->
-                <a href="../index.html#home" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
+            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative"> <a href="../index.html#home" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
                 <a href="../index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
                 <a href="../index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
                 <a href="../ai-image-generator.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">AI Image Gen</a>
@@ -78,41 +71,35 @@
                     <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
                     YouTube Channel
                 </a>
-                <!-- Search Input and Button for Desktop -->
                 <div class="relative flex items-center ml-4">
                     <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
                     <button id="searchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
                     <div id="searchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
-                        <!-- Suggestions will be populated here -->
-                    </div>
+                        </div>
                 </div>
             </div>
 
-            <!-- Mobile Menu Button (Hamburger) -->
             <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none focus:text-white relative z-[60] p-2 rounded-md bg-gray-800">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu Overlay - Includes Search Bar for Mobile -->
         <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-[100] flex flex-col items-center justify-center space-y-6 transition-all duration-300 ease-in-out opacity-0 transform translate-x-full">
             <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-300 focus:outline-none focus:text-white p-2 rounded-md bg-gray-800">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
-            <!-- Search Input and Button for Mobile -->
             <div class="relative flex items-center mt-6">
                 <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full max-w-xs transition-all duration-300 ease-in-out focus:w-64">
                 <button id="mobileSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
                 <div id="mobileSearchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
-                    <!-- Suggestions will be populated here -->
-                </div>
+                    </div>
             </div>
             <a href="../index.html#home" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
             <a href="../index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Blogs</a>
@@ -129,131 +116,126 @@
         <section id="all-articles" class="py-12">
             <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-10 gradient-text">All Articles & Guides</h1>
             <div id="blog-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- New Blog Card for Magisk Vexiro (June 18, 2025) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Android+16+Redmi+Note+7+Pro" alt="Android 16 on Redmi Note 7 Pro Guide" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 26, 2025</p>
+                        <p class="text-gray-300 mb-4">A comprehensive guide to installing a pure AOSP-based Android 16 custom ROM on your Redmi Note 7 Pro. Unlock enhanced performance, latest features, and a bloatware-free experience.</p>
+                        <a href="install-android-16-redmi-note-7-pro.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/9333EA/ffffff?text=Magisk+Vexiro" alt="Magisk Vexiro Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 18, 2025</p>
                         <p class="text-gray-300 mb-4">Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.</p>
-                        <a href="Blogs/magisk-vexiro.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="magisk-vexiro.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-                <!-- New Blog Card for Custom Boot Animations (June 17, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/6EE7B7/000000?text=Custom+Boot+Animations" alt="Custom Boot Animations Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 17, 2025</p>
                         <p class="text-gray-300 mb-4">Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.</p>
-                        <a href="Blogs/custom-boot-animations.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="custom-boot-animations.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-                <!-- New Blog Card for Launchpad App (June 17, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Launchpad+App" alt="Launchpad App Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Revolutionize Your Android Experience: Unveiling the Power of Launchpad App</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 17, 2025</p>
                         <p class="text-gray-300 mb-4">Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.</p>
-                        <a href="Blogs/launchpad-app.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="launchpad-app.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-                <!-- Blog Card for Iconify Installation (June 12, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/9333EA/ffffff?text=Iconify+Guide" alt="Iconify Installation Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 12, 2025</p>
                         <p class="text-gray-300 mb-4">A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.</p>
-                        <a href="Blogs/iconify-installation.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="iconify-installation.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-                <!-- Blog Card for CrDroid OTA Update (June 12, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/6EE7B7/000000?text=CrDroid+Update+Guide" alt="CrDroid Update Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 12, 2025</p>
                         <p class="text-gray-300 mb-4">Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.</p>
-                        <a href="Blogs/crdroid-ota-update.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="crdroid-ota-update.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-
-                <!-- Blog Card for ColorBlendr (June 11, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/9333EA/ffffff?text=ColorBlendr+Guide" alt="ColorBlendr Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 11, 2025</p>
                         <p class="text-gray-300 mb-4">Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!</p>
-                        <a href="Blogs/colorblendr-guide.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="colorblendr-guide.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-                
-                <!-- Blog Card for Android 16 Arrives (June 10, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Android+16+Arrives" alt="Android 16 Arrives" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Android 16 Arrives: A New Era for Pixel Devices and Beyond</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 10, 2025</p>
                         <p class="text-gray-300 mb-4">Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!</p>
-                        <a href="Blogs/android-16-arrives.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="android-16-arrives.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
 
-                <!-- Blog Card for Material 3 Expressive Theme (June 9, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Material+3+Theme" alt="Material 3 Expressive Theme" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Installing Android 16 Material 3 Expressive Theme</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 9, 2025</p>
                         <p class="text-gray-300 mb-4">Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!</p>
-                        <a href="Blogs/install-material-3-theme.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="install-material-3-theme.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
                 
-                <!-- Blog Card for KernelSU Rooting (June 9, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/6EE7B7/000000?text=KernelSU+Root" alt="KernelSU Rooting" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Root Any Android Phone WITHOUT Magisk in 2025</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 9, 2025</p>
                         <p class="text-gray-300 mb-4">Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!</p>
-                        <a href="Blogs/root-android-without-magisk.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="root-android-without-magisk.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
                 
-                <!-- Blog Card for Fix Play Integrity (June 8, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/9333EA/ffffff?text=Play+Integrity+Fix" alt="Play Integrity Fix Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
                         <p class="text-gray-300 mb-4">Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!</p>
-                        <a href="Blogs/fix-play-integrity-rooted-android.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="fix-play-integrity-rooted-android.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
 
-                <!-- Blog Card for Unlock Samsung Experience (June 8, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Unlock+Samsung+Experience" alt="Unlock Samsung Experience" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Unlock the Samsung Experience: Install One UI Home 35 Magisk Module</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
                         <p class="text-gray-300 mb-4">Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!</p>
-                        <a href="Blogs/unlock-samsung-experience.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="unlock-samsung-experience.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
 
-                <!-- Blog Card for Superior OS (June 8, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/6EE7B7/000000?text=Superior+OS+Android+15" alt="Superior OS Android 15" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2 text-white">Install Superior OS (Android 15) with May 2025 Security Patch!</h3>
                         <p class="text-gray-400 text-sm mb-4">Published on June 8, 2025</p>
                         <p class="text-gray-300 mb-4">Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!</p>
-                        <a href="Blogs/install-superior-os.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                        <a href="install-superior-os.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
             </div>
@@ -262,7 +244,7 @@
 
     <footer class="bg-gray-900 py-8 px-6 mt-12">
         <div class="container mx-auto text-center text-gray-400">
-            <p>&copy; 2025 TechyNoob. All rights reserved.</p>
+            <p>© 2025 TechyNoob. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mt-4">
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
                     <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
@@ -294,6 +276,156 @@
                 });
             });
         }
+
+        // --- Search Functionality ---
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const mobileSearchInput = document.getElementById('mobileSearchInput');
+        const mobileSearchButton = document.getElementById('mobileSearchButton');
+        const blogCardsContainer = document.getElementById('blog-cards-container');
+        const searchResultsDropdown = document.getElementById('searchResultsDropdown');
+        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
+
+        // Function to filter blog cards based on search query
+        function filterBlogCards(query) {
+            const normalizedQuery = query.toLowerCase().trim();
+            Array.from(blogCardsContainer.children).forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p:nth-of-type(2)').textContent.toLowerCase();
+
+                if (title.includes(normalizedQuery) || description.includes(normalizedQuery) || normalizedQuery === '') {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Function to display search suggestions (on all-articles page, these are for navigation)
+        function displaySuggestions(inputElement, dropdownElement) {
+            const query = inputElement.value.toLowerCase().trim();
+            dropdownElement.innerHTML = ''; // Clear previous suggestions
+
+            if (query.length === 0) {
+                dropdownElement.classList.add('hidden');
+                return;
+            }
+
+            // Dummy data for all content (replace with actual data loading for a real site)
+            const allContentData = [
+                { title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", description: "A comprehensive guide to installing a pure AOSP-based Android 16 custom ROM on your Redmi Note 7 Pro. Unlock enhanced performance, latest features, and a bloatware-free experience.", link: "install-android-16-redmi-note-7-pro.html" },
+                { title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", link: "magisk-vexiro.html" },
+                { title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", link: "custom-boot-animations.html" },
+                { title: "Revolutionize Your Android Experience: Unveiling the Power of Launchpad App", description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.", link: "launchpad-app.html" },
+                { title: "Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones", description: "A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.", link: "iconify-installation.html" },
+                { title: "Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method", description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.", link: "crdroid-ota-update.html" },
+                { title: "Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+", description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!", link: "colorblendr-guide.html" },
+                { title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!", link: "android-16-arrives.html" },
+                { title: "Installing Android 16 Material 3 Expressive Theme", description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!", link: "install-material-3-theme.html" },
+                { title: "Root Any Android Phone WITHOUT Magisk in 2025", description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!", link: "root-android-without-magisk.html" },
+                { title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!", link: "fix-play-integrity-rooted-android.html" },
+                { title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", link: "unlock-samsung-experience.html" },
+                { title: "Install Superior OS (Android 15) with May 2025 Security Patch!", description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", link: "install-superior-os.html" },
+                // Add games as well if they are searchable here
+                { title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "../Games/flappy_bird.html" },
+                { title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "../Games/snake_game.html" },
+                { title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "../Games/pong_game.html" }
+            ];
+
+            const filteredSuggestions = allContentData.filter(item =>
+                item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
+            ).slice(0, 7); // Limit to 7 suggestions
+
+            if (filteredSuggestions.length > 0) {
+                filteredSuggestions.forEach(item => {
+                    const suggestionDiv = document.createElement('div');
+                    suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
+                    suggestionDiv.textContent = item.title;
+                    suggestionDiv.addEventListener('click', () => {
+                        window.location.href = item.link; // Navigate to the article/game page
+                    });
+                    dropdownElement.appendChild(suggestionDiv);
+                });
+                dropdownElement.classList.remove('hidden');
+            } else {
+                dropdownElement.classList.add('hidden');
+            }
+        }
+
+        // Event listeners for desktop search
+        searchButton.addEventListener('click', () => {
+            filterBlogCards(searchInput.value);
+            searchResultsDropdown.classList.add('hidden'); // Hide suggestions after filtering
+        });
+        searchInput.addEventListener('keyup', (e) => {
+            displaySuggestions(searchInput, searchResultsDropdown); // Show suggestions on keyup
+            if (e.key === 'Enter') {
+                filterBlogCards(searchInput.value);
+                searchResultsDropdown.classList.add('hidden'); // Hide suggestions after filtering
+            } else if (searchInput.value === '') {
+                filterBlogCards(''); // Show all cards if input is cleared
+            }
+        });
+        // Hide suggestions when clicking outside search bar
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
+                searchResultsDropdown.classList.add('hidden');
+            }
+        });
+
+        // Event listeners for mobile search
+        mobileSearchButton.addEventListener('click', () => {
+            filterBlogCards(mobileSearchInput.value);
+            mobileSearchResultsDropdown.classList.add('hidden'); // Hide suggestions
+            closeMobileMenu(); // Close menu after search
+        });
+        mobileSearchInput.addEventListener('keyup', (e) => {
+            displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown); // Show suggestions on keyup
+            if (e.key === 'Enter') {
+                filterBlogCards(mobileSearchInput.value);
+                mobileSearchResultsDropdown.classList.add('hidden'); // Hide suggestions
+                closeMobileMenu(); // Close menu after search
+            } else if (mobileSearchInput.value === '') {
+                filterBlogCards(''); // Show all cards if input is cleared
+            }
+        });
+        // Hide mobile suggestions when clicking outside search bar
+        document.addEventListener('click', (e) => {
+            if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
+                mobileSearchResultsDropdown.classList.add('hidden');
+            }
+        });
+
+        // Function to close mobile menu completely (hidden and slide out)
+        function closeMobileMenu() {
+            mobileMenu.classList.add('translate-x-full'); // Start slide-out animation
+            mobileMenu.classList.remove('opacity-100'); // Start fade-out animation
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden'); // Hide after animation
+            }, 300); // Duration of transition
+        }
+
+        // Add event listener to transition end for mobile menu cleanup
+        mobileMenu.addEventListener('transitionend', () => {
+            if (mobileMenu.classList.contains('translate-x-full') && mobileMenu.classList.contains('hidden')) {
+                // Perform cleanup only if menu is fully closed and hidden
+                mobileSearchInput.value = ''; // Clear mobile search input
+                filterBlogCards(''); // Reset filters to show all articles
+                mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
+            }
+        });
+
+        // Handle URL search parameters on page load
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            if (searchQuery) {
+                searchInput.value = searchQuery; // Populate desktop search input
+                mobileSearchInput.value = searchQuery; // Populate mobile search input
+                filterBlogCards(searchQuery); // Filter articles based on query
+            }
+        });
     </script>
 </body>
 </html>
