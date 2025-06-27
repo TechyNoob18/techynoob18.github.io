@@ -196,6 +196,16 @@
         <section id="blogs" class="py-12">
             <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Latest Articles & Guides</h2>
             <div id="blog-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- NEW Blog Card for Magisk Rooting Guide (June 28, 2025) -->
+                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
+                    <img src="https://placehold.co/600x300/9333EA/ffffff?text=Magisk+Rooting" alt="Android Rooting with Magisk Guide" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Unleash the Full Potential: Your Ultimate Guide to Android Rooting with Magisk in 2025</h3>
+                        <p class="text-gray-400 text-sm mb-4">Published on June 28, 2025</p>
+                        <p class="text-gray-300 mb-4">A comprehensive guide to rooting any Android phone with Magisk, covering prerequisites, installation methods, and benefits like ad-blocking and advanced customization.</p>
+                        <a href="Blogs/magisk-rooting-guide.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
+                    </div>
+                </div>
                 <!-- NEW Blog Card for Google Pixel 6a Review (June 27, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Pixel+6a+2025" alt="Google Pixel 6a 2025 Review" class="w-full h-48 object-cover">
@@ -244,16 +254,6 @@
                         <p class="text-gray-400 text-sm mb-4">Published on June 17, 2025</p>
                         <p class="text-gray-300 mb-4">Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.</p>
                         <a href="Blogs/custom-boot-animations.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-                <!-- Blog Card for Launchpad App (June 17, 2025) -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Launchpad+App" alt="Launchpad App Guide" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Revolutionize Your Android Experience: Unveiling the Power of Launchpad App</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 17, 2025</p>
-                        <p class="text-gray-300 mb-4">Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.</p>
-                        <a href="Blogs/launchpad-app.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
             </div>
@@ -409,6 +409,7 @@
             allContentData = [];
 
             // Add all blog articles manually for now, ordered by date (most recent first)
+            allContentData.push({ type: 'blog', title: "Unleash the Full Potential: Your Ultimate Guide to Android Rooting with Magisk in 2025", description: "A comprehensive guide to rooting any Android phone with Magisk, covering prerequisites, installation methods, and benefits like ad-blocking and advanced customization.", link: "Blogs/magisk-rooting-guide.html" });
             allContentData.push({ type: 'blog', title: "Google Pixel 6a in 2025: Is This Budget Gem Still a Worthy Contender? A Deep Dive", description: "A definitive long-term review of the Google Pixel 6a in 2025, covering battery life, Android 16 features, and camera performance.", link: "Blogs/google-pixel-6a-2025-review.html" });
             allContentData.push({ type: 'blog', title: "Android 16 vs. Android 15: A Deep Dive into the Pixel UI Revolution", description: "A comprehensive side-by-side comparison of Android 16 QPR Beta 2.1 and Android 15, highlighting major UI enhancements and new features.", link: "Blogs/android-16-vs-android-15.html" });
             allContentData.push({ type: 'blog', title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", description: "A comprehensive guide to installing a pure AOSP-based Android 16 custom ROM on your Redmi Note 7 Pro. Unlock enhanced performance, latest features, and a bloatware-free experience.", link: "Blogs/install-android-16-redmi-note-7-pro.html" });
