@@ -4,22 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Articles - TechyNoob</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Browse all articles and guides from TechyNoob, covering Android customization, ethical hacking, custom ROMs, Magisk, and more.">
+    <meta name="keywords" content="All articles, TechyNoob blogs, Android customization guides, ethical hacking tutorials, custom ROMs, Magisk modules, tech news">
+    <meta name="author" content="TechyNoob">
+    <link rel="canonical" href="https://techynoob18.github.io/all-articles.html">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techynoob18.github.io/all-articles.html">
+    <meta property="og:title" content="All Articles - TechyNoob">
+    <meta property="og:description" content="Browse all articles and guides from TechyNoob, covering Android customization, ethical hacking, custom ROMs, Magisk, and more.">
+    <meta property="og:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://techynoob18.github.io/all-articles.html">
+    <meta property="twitter:title" content="All Articles - TechyNoob">
+    <meta property="twitter:description" content="Browse all articles and guides from TechyNoob, covering Android customization, ethical hacking, custom ROMs, Magisk, and more.">
+    <meta property="twitter:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
+
     <!-- AdSense Meta Tag -->
     <meta name="google-adsense-account" content="ca-pub-6446522570285835">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9KWQ18P9"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'G-2E9KWQ18P9');
+        gtag('config', 'G-2E9KWQ18P9');
     </script>
     <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles to enhance the energetic look */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #1a202c; /* Dark background for a techy feel */
@@ -39,6 +58,13 @@
             transform: scale(1.02);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+        /* Custom styles for search bar responsiveness */
+        .search-container {
+            display: flex;
+            flex-grow: 1; /* Allows it to take available space */
+            justify-content: flex-end; /* Aligns to the right within its flex container */
+            margin-left: 1rem; /* Space from nav links */
+        }
         /* Style for search suggestions dropdown */
         .suggestions-dropdown {
             max-height: 200px;
@@ -54,27 +80,45 @@
         .suggestion-item:hover {
             background-color: #4a5568; /* Darker hover */
         }
+        @media (max-width: 767px) { /* Adjust for mobile view */
+            .search-container {
+                width: 100%;
+                margin-top: 1rem;
+                margin-left: 0;
+                justify-content: center; /* Center search bar on mobile */
+            }
+            .header-content {
+                flex-direction: column; /* Stack logo and nav vertically */
+                align-items: center; /* Center items when stacked */
+            }
+            .header-nav {
+                margin-top: 1rem; /* Space between logo/title and nav links */
+            }
+        }
     </style>
 </head>
 <body class="antialiased leading-normal">
-    <!-- Header/Navigation Bar -->
+    <!-- Header/Navigation Bar - Consistent with index.html -->
     <header class="bg-gray-900 shadow-lg py-4 px-6 md:px-8 lg:px-12 relative z-50">
         <nav class="container mx-auto flex flex-wrap justify-between items-center relative z-50">
             <!-- Logo and Title -->
-            <a href="../index.html" class="flex items-center space-x-2 rounded-md p-1 border border-gray-700 flex-shrink-0 relative z-50">
-                <img src="../logos/20211212_160808_0000.png" alt="TechyNoob Logo" class="h-10 sm:h-12 w-auto">
+            <a href="index.html" class="flex items-center space-x-2 rounded-md p-1 border border-gray-700 flex-shrink-0 relative z-50">
+                <img src="logos/20211212_160808_0000.png" alt="TechyNoob Logo" class="h-10 sm:h-12 w-auto">
                 <span class="text-xl sm:text-2xl lg:text-3xl font-extrabold gradient-text">TechyNoob</span>
             </a>
             
             <!-- Desktop Navigation Links and Search Bar -->
-            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative"> <!-- Added relative for suggestions positioning -->
-                <a href="../index.html#home" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
-                <a href="../index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
-                <a href="../index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
-                <a href="../ai-image-generator.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">AI Image Gen</a>
-                <a href="../index.html#about" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About</a>
+            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative">
+                <a href="index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
+                <a href="index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
+                <a href="index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
+                <a href="ai-image-generator.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">AI Image Gen</a>
+                <a href="about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
+                <a href="privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
+                <a href="terms.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Terms of Service</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Contact Us</a>
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2 flex items-center">
-                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
+                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
                     YouTube Channel
                 </a>
                 <!-- Search Input and Button for Desktop -->
@@ -96,7 +140,7 @@
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu Overlay - Includes Search Bar for Mobile -->
+        <!-- Mobile Menu Overlay - Consistent with index.html -->
         <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-[100] flex flex-col items-center justify-center space-y-6 transition-all duration-300 ease-in-out opacity-0 transform translate-x-full">
             <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-300 focus:outline-none focus:text-white p-2 rounded-md bg-gray-800">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -113,22 +157,47 @@
                     <!-- Suggestions will be populated here -->
                 </div>
             </div>
-            <a href="../index.html#home" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
-            <a href="../index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Blogs</a>
-            <a href="../index.html#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Games</a>
-            <a href="../ai-image-generator.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">AI Image Gen</a>
-            <a href="../index.html#about" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
-            <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
-                <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2"> YouTube Channel
+            <a href="index.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
+            <a href="index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
+            <a href="index.html#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Games</a>
+            <a href="ai-image-generator.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">AI Image Gen</a>
+            <a href="about.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">About Us</a>
+            <a href="privacy.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Privacy Policy</a>
+            <a href="terms.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Terms of Service</a>
+            <a href="contact.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Contact Us</a>
+            <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="closeMobileMenu()">
+                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2">
+                YouTube Channel
             </a>
         </div>
     </header>
 
     <main class="container mx-auto px-6 md:px-8 lg:px-12 py-12">
-        <section id="all-articles" class="py-12">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-10 gradient-text">All Articles & Guides</h1>
-            <div id="blog-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- NEW Blog Card for Magisk Rooting Guide (June 28, 2025) -->
+        <section class="py-12">
+            <h1 class="text-4xl font-extrabold text-center mb-10 gradient-text">All Articles & Guides</h1>
+            
+            <!-- Google AdSense Ad Placeholder -->
+            <div class="my-12 p-8 bg-gray-800 rounded-xl shadow-xl border border-gray-700 text-center">
+                <p class="text-gray-400 text-xl font-semibold mb-4">Advertisement</p>
+                <div class="w-full h-48 bg-gray-700 flex items-center justify-center rounded-lg border border-dashed border-gray-500 text-gray-500">
+                    <p>Your Google AdSense Ad will appear here</p>
+                </div>
+                <!-- Example AdSense code structure (REPLACE WITH YOUR ACTUAL CODE) -->
+                <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835" crossorigin="anonymous"></script> -->
+                <!-- TechyNoob Display Ad -->
+                <!-- <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-6446522570285835"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script> -->
+            </div>
+
+            <div id="all-blog-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Card for Magisk Rooting Guide (June 28, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/9333EA/ffffff?text=Magisk+Rooting" alt="Android Rooting with Magisk Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -138,7 +207,7 @@
                         <a href="Blogs/magisk-rooting-guide.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-                <!-- NEW Blog Card for Google Pixel 6a Review (June 27, 2025) -->
+                <!-- Blog Card for Google Pixel 6a Review (June 27, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Pixel+6a+2025" alt="Google Pixel 6a 2025 Review" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -148,7 +217,7 @@
                         <a href="Blogs/google-pixel-6a-2025-review.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-                <!-- NEW Blog Card for Android 16 vs Android 15 (June 27, 2025) -->
+                <!-- Blog Card for Android 16 vs Android 15 (June 27, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/6EE7B7/000000?text=Android+16+vs+15" alt="Android 16 vs Android 15 Comparison" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -158,7 +227,7 @@
                         <a href="Blogs/android-16-vs-android-15.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
                     </div>
                 </div>
-                <!-- NEW Blog Card for Install Android 16 on Redmi Note 7 Pro (June 26, 2025) -->
+                <!-- Blog Card for Install Android 16 on Redmi Note 7 Pro (June 26, 2025) -->
                 <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
                     <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Android+16+Redmi+Note+7+Pro" alt="Android 16 on Redmi Note 7 Pro Guide" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -300,9 +369,15 @@
     <footer class="bg-gray-900 py-8 px-6 mt-12">
         <div class="container mx-auto text-center text-gray-400">
             <p>&copy; 2025 TechyNoob. All rights reserved.</p>
+            <div class="flex flex-wrap justify-center space-x-4 md:space-x-6 mt-4 text-sm">
+                <a href="about.html" class="hover:text-white transition duration-300">About Us</a>
+                <a href="privacy.html" class="hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white transition duration-300">Terms of Service</a>
+                <a href="contact.html" class="hover:text-white transition duration-300">Contact Us</a>
+            </div>
             <div class="flex justify-center space-x-6 mt-4">
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
-                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
+                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
                 </a>
             </div>
         </div>
@@ -315,20 +390,42 @@
         if (mobileMenuButton) {
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.remove('translate-x-full');
+                    mobileMenu.classList.add('opacity-100');
+                    mobileMenu.classList.remove('opacity-0');
+                });
             });
         }
         if (closeMobileMenuButton) {
             closeMobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('opacity-100');
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
             });
         }
 
         // Close mobile menu when a link is clicked
         if (mobileMenu) {
             mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
+                // Only close if it's a hash link or one of the new pages, not external
+                if (link.getAttribute('href').startsWith('#') || 
+                    link.getAttribute('href') === 'about.html' ||
+                    link.getAttribute('href') === 'privacy.html' ||
+                    link.getAttribute('href') === 'terms.html' ||
+                    link.getAttribute('href') === 'contact.html') {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('translate-x-full');
+                        mobileMenu.classList.remove('opacity-100');
+                        mobileMenu.classList.add('opacity-0');
+                        setTimeout(() => {
+                            mobileMenu.classList.add('hidden');
+                        }, 300);
+                    });
+                }
             });
         }
 
@@ -337,7 +434,7 @@
         const searchButton = document.getElementById('searchButton');
         const mobileSearchInput = document.getElementById('mobileSearchInput');
         const mobileSearchButton = document.getElementById('mobileSearchButton');
-        const blogCardsContainer = document.getElementById('blog-cards-container');
+        const blogCardsContainer = document.getElementById('all-blog-cards-container'); // Corrected ID for consistency
         const searchResultsDropdown = document.getElementById('searchResultsDropdown');
         const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
 
@@ -385,9 +482,9 @@
                 { title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", link: "Blogs/unlock-samsung-experience.html" },
                 { title: "Install Superior OS (Android 15) with May 2025 Security Patch!", description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", link: "Blogs/install-superior-os.html" },
                 // Add games as well if they are searchable here
-                { title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "../Games/flappy_bird.html" },
-                { title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "../Games/snake_game.html" },
-                { title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "../Games/pong_game.html" }
+                { title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
+                { title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
+                { title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
             ];
 
             const filteredSuggestions = allContentData.filter(item =>
