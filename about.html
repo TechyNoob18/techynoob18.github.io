@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TechyNoob</title>
+    <meta name="description" content="Learn more about TechyNoob, your ultimate guide to Android customization, ethical hacking, and unlocking the full potential of your device.">
+    <meta name="keywords" content="About TechyNoob, Android customization, custom ROMs, Magisk, ethical hacking, Android tips, tech community">
+    <meta name="author" content="TechyNoob">
+    <link rel="canonical" href="https://techynoob18.github.io/about.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techynoob18.github.io/about.html">
+    <meta property="og:title" content="About Us - TechyNoob">
+    <meta property="og:description" content="Learn more about TechyNoob, your ultimate guide to Android customization, ethical hacking, and unlocking the full potential of your device.">
+    <meta property="og:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://techynoob18.github.io/about.html">
+    <meta property="twitter:title" content="About Us - TechyNoob">
+    <meta property="twitter:description" content="Learn more about TechyNoob, your ultimate guide to Android customization, ethical hacking, and unlocking the full potential of your device.">
+    <meta property="twitter:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
+
+    <meta name="google-adsense-account" content="ca-pub-6446522570285835">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9KWQ18P9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2E9KWQ18P9');
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background for a techy feel */
+            color: #e2e8f0; /* Light text for contrast */
+        }
+        .gradient-text {
+            background-image: linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased leading-normal">
+    <header class="bg-gray-900 shadow-lg py-4 px-6 md:px-8 lg:px-12 relative z-50">
+        <nav class="container mx-auto flex flex-wrap justify-between items-center relative z-50">
+            <a href="index.html" class="flex items-center space-x-2 rounded-md p-1 border border-gray-700 flex-shrink-0 relative z-50">
+                <img src="logos/20211212_160808_0000.png" alt="TechyNoob Logo" class="h-10 sm:h-12 w-auto">
+                <span class="text-xl sm:text-2xl lg:text-3xl font-extrabold gradient-text">TechyNoob</span>
+            </a>
+            
+            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative">
+                <a href="index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
+                <a href="index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
+                <a href="index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
+                <a href="ai-image-generator.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">AI Image Gen</a>
+                <a href="about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
+                <a href="privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
+                <a href="terms.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Terms of Service</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Contact Us</a>
+                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2 flex items-center">
+                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
+                    YouTube Channel
+                </a>
+                <div class="relative flex items-center ml-4">
+                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
+                    <button id="searchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                    <div id="searchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
+                        </div>
+                </div>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none focus:text-white relative z-[60] p-2 rounded-md bg-gray-800">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-[100] flex flex-col items-center justify-center space-y-6 transition-all duration-300 ease-in-out opacity-0 transform translate-x-full">
+            <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-300 focus:outline-none focus:text-white p-2 rounded-md bg-gray-800">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="relative flex items-center mt-6">
+                <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full max-w-xs transition-all duration-300 ease-in-out focus:w-64">
+                <button id="mobileSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <div id="mobileSearchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
+                    </div>
+            </div>
+            <a href="index.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
+            <a href="index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
+            <a href="index.html#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Games</a>
+            <a href="ai-image-generator.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">AI Image Gen</a>
+            <a href="about.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">About Us</a>
+            <a href="privacy.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Privacy Policy</a>
+            <a href="terms.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Terms of Service</a>
+            <a href="contact.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Contact Us</a>
+            <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="closeMobileMenu()">
+                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2">
+                YouTube Channel
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 md:px-8 lg:px-12 py-12">
+        <section class="py-12 bg-gray-800 rounded-xl shadow-xl px-6 py-10">
+            <h1 class="text-4xl font-extrabold text-center mb-8 gradient-text">About TechyNoob</h1>
+            <div class="max-w-5xl mx-auto text-gray-300 text-lg leading-relaxed text-center">
+                <p class="mb-4">
+                    Welcome to <span class="gradient-text font-bold">TechyNoob</span>: Your Guide to Android Customization, Hacking, and More! We're here to help you unlock the hidden potential of your Android device.
+                </p>
+                <p class="mb-4">
+                    Our mission is to empower Android users with the knowledge and tools to truly make their devices their own. Whether you're looking to enhance performance, explore new features with custom ROMs and Magisk modules, or delve into the fascinating world of ethical hacking, TechyNoob is your go-to resource.
+                </p>
+                <p class="mb-4">
+                    We believe in providing clear, comprehensive, and up-to-date information. Our team of tech enthusiasts is dedicated to creating high-quality tutorials, in-depth reviews, and practical tips that cater to both beginners and experienced users.
+                </p>
+                <p class="mt-6 text-xl font-semibold mb-6">
+                    What you can expect from TechyNoob:
+                </p>
+                <ul class="list-disc list-inside text-left mx-auto max-w-xl space-y-2">
+                    <li>**Custom ROM Installations:** Step-by-step guides to flash custom ROMs like LineageOS, CrDroid, and Pixel Experience, unlocking new features and optimizing your device.</li>
+                    <li>**Magisk Module Showcases:** Discover and review powerful Magisk modules for ad-blocking, system tweaks, and enhanced functionality without traditional rooting.</li>
+                    <li>**Ethical Hacking Concepts:** Learn responsible hacking techniques for educational purposes, understanding security vulnerabilities and how to protect your device.</li>
+                    <li>**App Optimization & Battery Tips:** Get insights into optimizing your apps for better performance and extending your Android device's battery life.</li>
+                    <li>**Q&A Sessions & Troubleshooting:** Join our community to get your Android-related questions answered and troubleshoot common issues.</li>
+                    <li>**Latest Android Updates & Features:** Stay informed about the newest Android versions (e.g., Android 16), Material You design, and other exciting developments.</li>
+                </ul>
+                <p class="mt-6 text-xl font-semibold">
+                    Join our growing community of tech enthusiasts and unlock the full power of your Android device!
+                </p>
+                <p class="mt-4">#TechyNoob #Android #CustomROM #Magisk #EthicalHacking #TechCommunity</p>
+            </div>
+            <div class="text-center mt-10">
+                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center justify-center mx-auto w-fit">
+                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-6 h-6 mr-2">
+                    Go to TechyNoob YouTube Channel
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-8 px-6 md:px-8 lg:px-12 mt-12">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>© 2025 TechyNoob. All rights reserved.</p>
+            <div class="flex flex-wrap justify-center space-x-4 md:space-x-6 mt-4 text-sm">
+                <a href="about.html" class="hover:text-white transition duration-300">About Us</a>
+                <a href="privacy.html" class="hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white transition duration-300">Terms of Service</a>
+                <a href="contact.html" class="hover:text-white transition duration-300">Contact Us</a>
+            </div>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
+                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu'); 
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('opacity-100');
+                mobileMenu.classList.remove('opacity-0');
+            });
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            // Only close if it's a hash link, not external or new AdSense page links
+            if (link.getAttribute('href').startsWith('#')) {
+                link.addEventListener('click', closeMobileMenu);
+            }
+        });
+        
+        // Basic search functionality for demonstration (no live search on these pages)
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const mobileSearchInput = document.getElementById('mobileSearchInput');
+        const mobileSearchButton = document.getElementById('mobileSearchButton');
+
+        function handleSearch(inputElement) {
+            if (inputElement.value.length > 0) {
+                window.location.href = `search-results.html?q=${encodeURIComponent(inputElement.value)}`;
+            }
+        }
+
+        if(searchInput) {
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') handleSearch(searchInput);
+            });
+            searchButton.addEventListener('click', () => handleSearch(searchInput));
+        }
+
+        if(mobileSearchInput) {
+            mobileSearchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') handleSearch(mobileSearchInput);
+            });
+            mobileSearchButton.addEventListener('click', () => handleSearch(mobileSearchInput));
+        }
+    </script>
+</body>
+</html>
