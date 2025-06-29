@@ -29,11 +29,11 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9KWQ18P9"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'G-2E9KWQ18P9');
+        gtag('config', 'G-2E9KWQ18P9');
     </script>
     <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -114,11 +114,14 @@
             
             <!-- Desktop Navigation Links and Search Bar -->
             <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative"> <!-- Added relative for suggestions positioning -->
-                <a href="#home" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
-                <a href="#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
-                <a href="#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
+                <a href="index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
+                <a href="index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
+                <a href="index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
                 <a href="ai-image-generator.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">AI Image Gen</a>
-                <a href="#about" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About</a>
+                <a href="about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
+                <a href="privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
+                <a href="terms.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Terms of Service</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Contact Us</a>
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2 flex items-center">
                     <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
                     YouTube Channel
@@ -159,11 +162,14 @@
                     <!-- Suggestions will be populated here -->
                 </div>
             </div>
-            <a href="#home" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
-            <a href="#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
-            <a href="#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Games</a>
+            <a href="index.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
+            <a href="index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
+            <a href="index.html#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Games</a>
             <a href="ai-image-generator.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">AI Image Gen</a>
-            <a href="#about" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">About</a>
+            <a href="about.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">About Us</a>
+            <a href="privacy.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Privacy Policy</a>
+            <a href="terms.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Terms of Service</a>
+            <a href="contact.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Contact Us</a>
             <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="closeMobileMenu()">
                 <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2">
                 YouTube Channel
@@ -191,6 +197,26 @@
                 </a>
             </div>
         </section>
+
+        <!-- Google AdSense Ad Placeholder -->
+        <div class="my-12 p-8 bg-gray-800 rounded-xl shadow-xl border border-gray-700 text-center">
+            <p class="text-gray-400 text-xl font-semibold mb-4">Advertisement</p>
+            <div class="w-full h-48 bg-gray-700 flex items-center justify-center rounded-lg border border-dashed border-gray-500 text-gray-500">
+                <p>Your Google AdSense Ad will appear here</p>
+            </div>
+            <!-- Example AdSense code structure (REPLACE WITH YOUR ACTUAL CODE) -->
+            <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835" crossorigin="anonymous"></script> -->
+            <!-- TechyNoob Display Ad -->
+            <!-- <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6446522570285835"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script> -->
+        </div>
 
         <!-- Latest Articles Section -->
         <section id="blogs" class="py-12">
@@ -324,7 +350,7 @@
                     Subscribe and join the community of tech enthusiasts! #TechyNoob #Android #CustomROM #Magisk #EthicalHacking #TechCommunity
                 </p>
             </div>
-             <div class="text-center mt-10">
+            <div class="text-center mt-10">
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center justify-center mx-auto w-fit">
                     <!-- Replaced YouTube SVG with uploaded PNG image -->
                     <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-6 h-6 mr-2">
@@ -337,7 +363,13 @@
     <!-- Footer -->
     <footer class="bg-gray-900 py-8 px-6 md:px-8 lg:px-12 mt-12">
         <div class="container mx-auto text-center text-gray-400">
-            <p>&copy; 2025 TechyNoob. All rights reserved.</p>
+            <p>© 2025 TechyNoob. All rights reserved.</p>
+            <div class="flex flex-wrap justify-center space-x-4 md:space-x-6 mt-4 text-sm">
+                <a href="about.html" class="hover:text-white transition duration-300">About Us</a>
+                <a href="privacy.html" class="hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white transition duration-300">Terms of Service</a>
+                <a href="contact.html" class="hover:text-white transition duration-300">Contact Us</a>
+            </div>
             <div class="flex justify-center space-x-6 mt-4">
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
                     <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
@@ -351,9 +383,12 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                // Ensure it's a local hash link before trying to scroll
+                if (this.hash && document.querySelector(this.hash)) {
+                    document.querySelector(this.hash).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
 
@@ -389,7 +424,10 @@
 
         // Close mobile menu when a link is clicked
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
+            // Only close if it's a hash link, not external or new AdSense page links
+            if (link.getAttribute('href').startsWith('#')) {
+                link.addEventListener('click', closeMobileMenu);
+            }
         });
 
         // --- Search Functionality ---
@@ -415,166 +453,85 @@
             allContentData.push({ type: 'blog', title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", description: "A comprehensive guide to installing a pure AOSP-based Android 16 custom ROM on your Redmi Note 7 Pro. Unlock enhanced performance, latest features, and a bloatware-free experience.", link: "Blogs/install-android-16-redmi-note-7-pro.html" });
             allContentData.push({ type: 'blog', title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", link: "Blogs/magisk-vexiro.html" });
             allContentData.push({ type: 'blog', title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", link: "Blogs/custom-boot-animations.html" });
-            allContentData.push({ type: 'blog', title: "Revolutionize Your Android Experience: Unveiling the Power of Launchpad App", description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.", link: "Blogs/launchpad-app.html" });
-            allContentData.push({ type: 'blog', title: "Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones", description: "A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.", link: "Blogs/iconify-installation.html" });
-            allContentData.push({ type: 'blog', title: "Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method", description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.", link: "Blogs/crdroid-ota-update.html" });
-            allContentData.push({ type: 'blog', title: "Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+", description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!", link: "Blogs/colorblendr-guide.html" });
-            allContentData.push({ type: 'blog', title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!", link: "Blogs/android-16-arrives.html" });
-            allContentData.push({ type: 'blog', title: "Installing Android 16 Material 3 Expressive Theme", description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!", link: "Blogs/install-material-3-theme.html" });
-            allContentData.push({ type: 'blog', title: "Root Any Android Phone WITHOUT Magisk in 2025", description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!", link: "Blogs/root-android-without-magisk.html" });
-            allContentData.push({ type: 'blog', title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!", link: "Blogs/fix-play-integrity-rooted-android.html" });
-            allContentData.push({ type: 'blog', title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", link: "Blogs/unlock-samsung-experience.html" });
-            allContentData.push({ type: 'blog', title: "Install Superior OS (Android 15) with May 2025 Security Patch!", description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", link: "Blogs/install-superior-os.html" });
+            // Add other blog entries here following the same structure
+            // Example:
+            // allContentData.push({ type: 'blog', title: "Another Blog Title", description: "Description here...", link: "Blogs/another-blog.html" });
 
-            // Collect game card data (assuming these are static on index.html)
-            Array.from(gameCardsContainer.children).forEach(card => {
-                const titleElement = card.querySelector('h3');
-                const descriptionElement = card.querySelector('p'); // First paragraph for description
-                const linkElement = card.querySelector('a');
-
-                if (titleElement && descriptionElement && linkElement) {
-                    allContentData.push({
-                        type: 'game',
-                        title: titleElement.textContent.trim(),
-                        description: descriptionElement.textContent.trim(),
-                        link: linkElement.href
-                    });
-                }
-            });
+            // Add game entries
+            allContentData.push({ type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game. Tap to make the bird fly through pipes!", link: "Games/flappy_bird.html" });
+            allContentData.push({ type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer, but don't hit the walls or yourself!", link: "Games/snake_game.html" });
+            allContentData.push({ type: 'game', title: "Pong Game", description: "Relive the classic arcade experience with this two-player (or one-player vs. AI) Pong game.", link: "Games/pong_game.html" });
+            // Add other game entries here
         }
 
-        // Function to perform search on cards
-        function performSearch(query) {
-            const normalizedQuery = query.toLowerCase().trim();
+        // Initialize content data on page load
+        document.addEventListener('DOMContentLoaded', collectContentData);
+
+        function performSearch(query, isMobile = false) {
+            const dropdown = isMobile ? mobileSearchResultsDropdown : searchResultsDropdown;
+            dropdown.innerHTML = '';
             
-            // Search blog cards (only the ones visible on the index page)
-            Array.from(blogCardsContainer.children).forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const description = card.querySelector('p:nth-of-type(2)').textContent.toLowerCase(); // Adjusted for description
-                if (title.includes(normalizedQuery) || description.includes(normalizedQuery) || normalizedQuery === '') {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            // Search game cards
-            Array.from(gameCardsContainer.children).forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const description = card.querySelector('p').textContent.toLowerCase();
-
-                if (title.includes(normalizedQuery) || description.includes(normalizedQuery) || normalizedQuery === '') {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        }
-
-        // Function to display suggestions
-        function displaySuggestions(inputElement, dropdownElement) {
-            const query = inputElement.value.toLowerCase().trim();
-            dropdownElement.innerHTML = ''; // Clear previous suggestions
-
-            if (query.length === 0) {
-                dropdownElement.classList.add('hidden');
+            if (query.length < 2) {
+                dropdown.classList.add('hidden');
                 return;
             }
 
-            const filteredSuggestions = allContentData.filter(item => 
-                item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
-            ).slice(0, 7); // Limit to 7 suggestions
+            const lowerCaseQuery = query.toLowerCase();
+            const filteredContent = allContentData.filter(item =>
+                item.title.toLowerCase().includes(lowerCaseQuery) ||
+                item.description.toLowerCase().includes(lowerCaseQuery)
+            );
 
-            if (filteredSuggestions.length > 0) {
-                filteredSuggestions.forEach(item => {
-                    const suggestionDiv = document.createElement('div');
-                    suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
-                    suggestionDiv.textContent = item.title;
-                    suggestionDiv.addEventListener('click', () => {
-                        inputElement.value = item.title; // Populate input with suggestion
-                        // For index.html, clicking a suggestion should navigate to the article/game page
+            if (filteredContent.length > 0) {
+                filteredContent.forEach(item => {
+                    const div = document.createElement('div');
+                    div.classList.add('suggestion-item');
+                    div.innerHTML = `
+                        <p class="font-semibold">${item.title}</p>
+                        <p class="text-xs text-gray-500">${item.description.substring(0, 70)}...</p>
+                    `;
+                    div.onclick = () => {
                         window.location.href = item.link;
-                        dropdownElement.classList.add('hidden'); // Hide dropdown
-                    });
-                    dropdownElement.appendChild(suggestionDiv);
+                    };
+                    dropdown.appendChild(div);
                 });
-                dropdownElement.classList.remove('hidden');
+                dropdown.classList.remove('hidden');
             } else {
-                dropdownElement.classList.add('hidden');
+                dropdown.classList.add('hidden');
             }
         }
 
         // Event listeners for desktop search
+        searchInput.addEventListener('input', (e) => performSearch(e.target.value));
+        searchInput.addEventListener('focus', (e) => {
+            if (e.target.value.length >= 2) {
+                performSearch(e.target.value);
+            }
+        });
+        searchInput.addEventListener('blur', () => {
+            setTimeout(() => searchResultsDropdown.classList.add('hidden'), 200);
+        });
         searchButton.addEventListener('click', () => {
-            // On index.html, clicking search button with a query should navigate to all-articles.html with search param
-            const query = searchInput.value.trim();
-            if (query) {
-                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
-            }
-            searchResultsDropdown.classList.add('hidden'); // Hide suggestions after search
-        });
-        searchInput.addEventListener('keyup', (e) => {
-            displaySuggestions(searchInput, searchResultsDropdown); // Show suggestions on keyup
-            if (e.key === 'Enter') {
-                const query = searchInput.value.trim();
-                if (query) {
-                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
-                }
-                searchResultsDropdown.classList.add('hidden'); // Hide suggestions after search
-            } else if (searchInput.value === '') {
-                performSearch(''); // Show all cards if input is cleared (only for local filtering on index page)
+            if (searchInput.value.length > 0) {
+                window.location.href = `search-results.html?q=${encodeURIComponent(searchInput.value)}`;
             }
         });
-        // Hide suggestions when clicking outside search bar
-        document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
-                searchResultsDropdown.classList.add('hidden');
-            }
-        });
-
 
         // Event listeners for mobile search
+        mobileSearchInput.addEventListener('input', (e) => performSearch(e.target.value, true));
+        mobileSearchInput.addEventListener('focus', (e) => {
+            if (e.target.value.length >= 2) {
+                performSearch(e.target.value, true);
+            }
+        });
+        mobileSearchInput.addEventListener('blur', () => {
+            setTimeout(() => mobileSearchResultsDropdown.classList.add('hidden'), 200);
+        });
         mobileSearchButton.addEventListener('click', () => {
-            const query = mobileSearchInput.value.trim();
-            if (query) {
-                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
-            }
-            mobileSearchResultsDropdown.classList.add('hidden'); // Hide suggestions
-            closeMobileMenu(); // Close menu after search
-        });
-        mobileSearchInput.addEventListener('keyup', (e) => {
-            displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown); // Show suggestions on keyup
-            if (e.key === 'Enter') {
-                const query = mobileSearchInput.value.trim();
-                if (query) {
-                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
-                }
-                mobileSearchResultsDropdown.classList.add('hidden'); // Hide suggestions
-                closeMobileMenu(); // Close menu after search
-            } else if (mobileSearchInput.value === '') {
-                performSearch(''); // Show all cards if input is cleared
+            if (mobileSearchInput.value.length > 0) {
+                window.location.href = `search-results.html?q=${encodeURIComponent(mobileSearchInput.value)}`;
             }
         });
-        // Hide mobile suggestions when clicking outside search bar
-        document.addEventListener('click', (e) => {
-            if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
-                mobileSearchResultsDropdown.classList.add('hidden');
-            }
-        });
-
-
-        // Clear search results when menu is closed
-        mobileMenu.addEventListener('transitionend', () => {
-            if (mobileMenu.classList.contains('translate-x-full')) { // If menu is fully closed
-                mobileSearchInput.value = ''; // Clear mobile search input
-                performSearch(''); // Show all cards
-                mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
-            }
-        });
-
-        // Initialize content data on page load
-        window.addEventListener('load', collectContentData);
-
     </script>
 </body>
 </html>
