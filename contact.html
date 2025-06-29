@@ -45,6 +45,21 @@
             background-clip: text;
             color: transparent;
         }
+        /* Style for search suggestions dropdown */
+        .suggestions-dropdown {
+            max-height: 200px;
+            overflow-y: auto;
+            border-top: 1px solid #4a5568;
+        }
+        .suggestion-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            color: #e2e8f0;
+            transition: background-color 0.2s ease;
+        }
+        .suggestion-item:hover {
+            background-color: #4a5568; /* Darker hover */
+        }
     </style>
 </head>
 <body class="antialiased leading-normal">
@@ -74,7 +89,8 @@
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
                     <div id="searchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
-                        </div>
+                        <!-- Suggestions will be populated here -->
+                    </div>
                 </div>
             </div>
 
@@ -96,7 +112,8 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
                 <div id="mobileSearchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
-                    </div>
+                        <!-- Suggestions will be populated here -->
+                </div>
             </div>
             <a href="index.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
             <a href="index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
@@ -161,11 +178,11 @@
                         </p>
                         <p class="flex items-center justify-center text-xl">
                             <svg class="w-6 h-6 mr-3 text-red-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                            Email: <a href="mailto:techynoob.official@gmail.com" class="ml-2 text-blue-400 hover:underline">techynoob.official@gmail.com</a>
+                            Email: <a href="mailto:techygamer1818@gmail.com" class="ml-2 text-blue-400 hover:underline">techygamer1818@gmail.com</a>
                         </p>
                         <p class="flex items-center justify-center text-xl">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="w-6 h-6 mr-3">
-                            Telegram: <a href="https://t.me/techynoob_official" target="_blank" rel="noopener noreferrer" class="ml-2 text-blue-400 hover:underline">@techynoob_official</a>
+                            Telegram: <a href="https://t.me/techynoob18" target="_blank" rel="noopener noreferrer" class="ml-2 text-blue-400 hover:underline">@techynoob18</a>
                         </p>
                     </div>
                 </div>
@@ -175,7 +192,7 @@
 
     <footer class="bg-gray-900 py-8 px-6 md:px-8 lg:px-12 mt-12">
         <div class="container mx-auto text-center text-gray-400">
-            <p>© 2025 TechyNoob. All rights reserved.</p>
+            <p>&copy; 2025 TechyNoob. All rights reserved.</p>
             <div class="flex flex-wrap justify-center space-x-4 md:space-x-6 mt-4 text-sm">
                 <a href="about.html" class="hover:text-white transition duration-300">About Us</a>
                 <a href="privacy.html" class="hover:text-white transition duration-300">Privacy Policy</a>
@@ -229,24 +246,231 @@
         const mobileSearchInput = document.getElementById('mobileSearchInput');
         const mobileSearchButton = document.getElementById('mobileSearchButton');
 
+        // Data for search suggestions (needs to be consistent across pages for search to work well)
+        const allContentData = [
+            { 
+                title: "Google AI Edge Gallery: Your Gateway to On-Device Generative AI – A Deep Dive", 
+                description: "The Google AI Edge Gallery isn't just another app; it's a window into the future of mobile computing. Designed as an experimental platform, it allows you to Explore, Experience, and Evaluate cutting-edge Generative AI models that run entirely on your Android device.", 
+                link: "Blogs/google-ai-edge-gallery.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Google+AI+Edge+Gallery"
+            },
+            { 
+                title: "Unleash Your Android's Potential: Install Any Custom Package Installer with Magisk!", 
+                description: "Are you a rooted Android user looking to break free from the mundane default package installer? Do you crave a more visually appealing or feature-rich experience when installing your favorite apps? Look further! This comprehensive guide will walk you through the simple yet powerful process of installing a custom package installer on virtually any rooted Android device using Magisk. Get ready to elevate your Android experience!", 
+                link: "Blogs/custom-package-installer.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Custom+Installer"
+            },
+            { 
+                title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", 
+                description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", 
+                link: "Blogs/magisk-vexiro.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Magisk+Vexiro"
+            },
+            { 
+                title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", 
+                description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", 
+                link: "Blogs/custom-boot-animations.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Custom+Boot+Animations"
+            },
+            { 
+                title: "Revolutionize Your Android Experience: Unveiling the Power of Launchpad App", 
+                description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.", 
+                link: "Blogs/launchpad-app.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Launchpad+App"
+            },
+            { 
+                title: "Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones", 
+                description: "A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.", 
+                link: "Blogs/iconify-installation.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Iconify+Installation"
+            },
+            { 
+                title: "Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method", 
+                description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.", 
+                link: "Blogs/crdroid-ota-update.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=CrDroid+Update"
+            },
+            { 
+                title: "Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+", 
+                description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!", 
+                link: "Blogs/colorblendr-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=ColorBlendr+Guide"
+            },
+            { 
+                title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", 
+                description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!", 
+                link: "Blogs/android-16-arrives.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Arrives"
+            },
+            { 
+                title: "Installing Android 16 Material 3 Expressive Theme", 
+                description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!", 
+                link: "Blogs/install-material-3-theme.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Material+3+Theme"
+            },
+            { 
+                title: "Root Any Android Phone WITHOUT Magisk in 2025", 
+                description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!", 
+                link: "Blogs/root-android-without-magisk.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Root+Without+Magisk"
+            },
+            { 
+                title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", 
+                description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!", 
+                link: "Blogs/fix-play-integrity-rooted-android.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Play+Integrity+Fix"
+            },
+            { 
+                title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", 
+                description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", 
+                link: "Blogs/unlock-samsung-experience.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=One+UI+Home"
+            },
+            { 
+                title: "Install Superior OS (Android 15) with May 2025 Security Patch!", 
+                description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", 
+                link: "Blogs/install-superior-os.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Superior+OS"
+            },
+            { 
+                title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", 
+                description: "The Redmi Note 7 Pro, a beloved device known for its robust performance and excellent value, continues to be a favorite among enthusiasts.", 
+                link: "Blogs/install-android-16-redmi-note-7-pro.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Redmi"
+            },
+            { 
+                title: "Google Pixel 6a in 2025: Is This Budget Gem Still a Worthy Contender?", 
+                description: "A definitive long-term review of the Google Pixel 6a in 2025, covering battery life, Android 16 features, camera performance, and its worth as a budget smartphone contender.", 
+                link: "Blogs/google-pixel-6a-2025-review.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Pixel+6a+2025"
+            },
+            { 
+                title: "How to Install Incompatible Older Apps on Android 14, 15, and 16", 
+                description: "Learn how to bypass Google's app installation block for older apps on Android 14+ using an LSPosed module.", 
+                link: "Blogs/install-older-apps.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Older+Apps+Android"
+            },
+            { 
+                title: "Android 16 vs. Android 15: A Deep Dive into the Pixel UI Revolution", 
+                description: "A comprehensive side-by-side comparison of Android 16 QPR Beta 2.1 and Android 15, highlighting major UI enhancements, Material 3 Expressive design, and new features on Google Pixel devices.", 
+                link: "Blogs/android-16-vs-android-15.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+vs+15"
+            },
+            { 
+                title: "Unlock Unlimited Google Photos Storage", 
+                description: "A definitive guide to getting unlimited Google Photos storage in 2025, leveraging older Pixel devices for seamless photo backups.", 
+                link: "Blogs/google-photos-unlimited-storage.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Unlimited+Google+Photos"
+            },
+            { 
+                title: "Unleash the Full Potential: Your Ultimate Guide to Android Rooting with Magisk in 2025", 
+                description: "A comprehensive guide to rooting any Android phone with Magisk in 2025, covering prerequisites, installation methods (Fastboot and custom recovery), and benefits like ad-blocking and advanced customization.", 
+                link: "Blogs/magisk-rooting-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Magisk+Rooting+Guide"
+            },
+            // Games (these are not displayed in the "Latest Blogs" section, but used for search)
+            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
+            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
+            { type: 'game', title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
+        ];
+
+
         function handleSearch(inputElement) {
+            // In a real application, this would redirect to a search results page
+            // or filter content on the current page. For now, it's a simple redirect.
             if (inputElement.value.length > 0) {
-                window.location.href = `search-results.html?q=${encodeURIComponent(inputElement.value)}`;
+                // Assuming all-articles.html can handle a search query
+                window.location.href = `all-articles.html?search=${encodeURIComponent(inputElement.value)}`;
             }
         }
 
-        if(searchInput) {
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') handleSearch(searchInput);
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const searchResultsDropdown = document.getElementById('searchResultsDropdown');
+
+        if(searchInput && searchButton) {
+            searchInput.addEventListener('keyup', (e) => {
+                const query = e.target.value.toLowerCase();
+                const filteredSuggestions = allContentData.filter(item => 
+                    item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
+                ).slice(0, 7); // Limit to 7 suggestions
+
+                searchResultsDropdown.innerHTML = ''; // Clear previous suggestions
+                if (query.length > 0 && filteredSuggestions.length > 0) {
+                    filteredSuggestions.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'px-4 py-2 hover:bg-gray-700 cursor-pointer text-gray-300';
+                        div.textContent = item.title;
+                        div.onclick = () => { window.location.href = item.link; };
+                        searchResultsDropdown.appendChild(div);
+                    });
+                    searchResultsDropdown.classList.remove('hidden');
+                } else {
+                    searchResultsDropdown.classList.add('hidden');
+                }
+
+                if (e.key === 'Enter') {
+                    handleSearch(searchInput);
+                    searchResultsDropdown.classList.add('hidden'); // Hide dropdown on Enter
+                }
             });
-            searchButton.addEventListener('click', () => handleSearch(searchInput));
+
+            searchButton.addEventListener('click', () => {
+                handleSearch(searchInput);
+                searchResultsDropdown.classList.add('hidden'); // Hide dropdown on button click
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
+                    searchResultsDropdown.classList.add('hidden');
+                }
+            });
         }
 
-        if(mobileSearchInput) {
-            mobileSearchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') handleSearch(mobileSearchInput);
+        // Mobile search functionality
+        const mobileSearchInput = document.getElementById('mobileSearchInput');
+        const mobileSearchButton = document.getElementById('mobileSearchButton');
+        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
+
+        if(mobileSearchInput && mobileSearchButton) {
+            mobileSearchInput.addEventListener('keyup', (e) => {
+                const query = e.target.value.toLowerCase();
+                const filteredSuggestions = allContentData.filter(item => 
+                    item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
+                ).slice(0, 7); // Limit to 7 suggestions
+
+                mobileSearchResultsDropdown.innerHTML = ''; // Clear previous suggestions
+                if (query.length > 0 && filteredSuggestions.length > 0) {
+                    filteredSuggestions.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'px-4 py-2 hover:bg-gray-700 cursor-pointer text-gray-300';
+                        div.textContent = item.title;
+                        div.onclick = () => { window.location.href = item.link; };
+                        mobileSearchResultsDropdown.appendChild(div);
+                    });
+                    mobileSearchResultsDropdown.classList.remove('hidden');
+                } else {
+                    mobileSearchResultsDropdown.classList.add('hidden');
+                }
+
+                if (e.key === 'Enter') {
+                    handleSearch(mobileSearchInput);
+                    mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown on Enter
+                    closeMobileMenu(); // Close mobile menu after search
+                }
             });
-            mobileSearchButton.addEventListener('click', () => handleSearch(mobileSearchInput));
+
+            mobileSearchButton.addEventListener('click', () => {
+                handleSearch(mobileSearchInput);
+                mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown on button click
+                closeMobileMenu(); // Close mobile menu after search
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
+                    mobileSearchResultsDropdown.classList.add('hidden');
+                }
+            });
         }
     </script>
 </body>
