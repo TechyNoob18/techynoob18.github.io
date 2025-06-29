@@ -394,8 +394,14 @@
         // Data for all blog articles and games (used for "Latest Blogs" and search suggestions)
         const allContentData = [
             { 
+                title: "Google AI Edge Gallery: Your Gateway to On-Device Generative AI – A Deep Dive", 
+                description: "The Google AI Edge Gallery isn't just another app; it's a window into the future of mobile computing. Designed as an experimental platform, it allows you to Explore, Experience, and Evaluate cutting-edge Generative AI models that run entirely on your Android device.", 
+                link: "Blogs/google-ai-edge-gallery.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Google+AI+Edge+Gallery"
+            },
+            { 
                 title: "Unleash Your Android's Potential: Install Any Custom Package Installer with Magisk!", 
-                description: "Are you a rooted Android user looking to break free from the mundane default package installer? Do you crave a more visually appealing or feature-rich experience when installing your favorite apps? Look no further! This comprehensive guide will walk you through the simple yet powerful process of installing a custom package installer on virtually any rooted Android device using Magisk. Get ready to elevate your Android experience!", 
+                description: "Are you a rooted Android user looking to break free from the mundane default package installer? Do you crave a more visually appealing or feature-rich experience when installing your favorite apps? Look further! This comprehensive guide will walk you through the simple yet powerful process of installing a custom package installer on virtually any rooted Android device using Magisk. Get ready to elevate your Android experience!", 
                 link: "Blogs/custom-package-installer.html",
                 image: "https://placehold.co/400x200/9333EA/ffffff?text=Custom+Installer"
             },
@@ -507,56 +513,65 @@
                 link: "Blogs/magisk-rooting-guide.html",
                 image: "https://placehold.co/400x200/3B82F6/ffffff?text=Magisk+Rooting+Guide"
             },
-            // Games (these are not displayed in the "Latest Blogs" section, but used for search)
-            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
-            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
-            { type: 'game', title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
         ];
 
         const blogCardsContainer = document.getElementById('blog-cards-container');
-        const searchInput = document.getElementById('searchInput');
-        const searchButton = document.getElementById('searchButton');
+        const articleSearchInput = document.getElementById('articleSearchInput');
+        const articleSearchButton = document.getElementById('articleSearchButton');
+        const articleSearchResultsDropdown = document.getElementById('articleSearchResultsDropdown');
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
         const mobileSearchInput = document.getElementById('mobileSearchInput');
         const mobileSearchButton = document.getElementById('mobileSearchButton');
-        const searchResultsDropdown = document.getElementById('searchResultsDropdown');
         const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
 
         // Function to create and append a blog card
         function createBlogCard(article) {
-            const cardLink = document.createElement('a');
-            cardLink.href = article.link;
-            cardLink.classList.add('block', 'blog-card');
+            const cardDiv = document.createElement('div');
+            cardDiv.classList.add('blog-card');
             
             const truncatedDescription = article.description.length > 100 
                 ? article.description.substring(0, 100) + '...' 
                 : article.description;
 
-            cardLink.innerHTML = `
-                <img src="${article.image || 'https://placehold.co/400x200/1a202c/e2e8f0?text=TechyNoob'}" alt="${article.title}" class="w-full h-48 object-cover rounded-t-xl">
-                <div class="blog-card-content">
-                    <h3>${article.title}</h3>
-                    <p class="text-sm text-gray-300">${truncatedDescription}</p>
-                </div>
-                <div class="blog-card-footer">
-                    <span class="text-xs text-gray-400">Read More</span>
-                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </div>
+            cardDiv.innerHTML = `
+                <a href="${article.link}" class="block">
+                    <img src="${article.image || 'https://placehold.co/400x200/1a202c/e2e8f0?text=TechyNoob'}" alt="${article.title}" class="w-full h-48 object-cover rounded-t-xl">
+                    <div class="blog-card-content">
+                        <h3>${article.title}</h3>
+                        <p class="text-sm text-gray-300">${truncatedDescription}</p>
+                    </div>
+                    <div class="blog-card-footer">
+                        <span class="text-xs text-gray-400">Read More</span>
+                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </a>
             `;
-            return cardLink;
+            return cardDiv;
         }
 
-        // Function to load latest blogs (only blog type articles)
-        function loadLatestBlogs() {
+        // Function to filter and display blog cards
+        function filterBlogCards(query) {
             blogCardsContainer.innerHTML = ''; // Clear existing cards
-            // Filter out games and display only the latest 6 articles
-            const latestArticles = allContentData.filter(item => item.type !== 'game').slice(0, 6);
-            
-            latestArticles.forEach(article => {
-                blogCardsContainer.appendChild(createBlogCard(article));
-            });
+            const lowerCaseQuery = query.toLowerCase();
+
+            const filteredArticles = allContentData.filter(article =>
+                article.title.toLowerCase().includes(lowerCaseQuery) ||
+                article.description.toLowerCase().includes(lowerCaseQuery)
+            );
+
+            if (filteredArticles.length > 0) {
+                filteredArticles.forEach(article => {
+                    blogCardsContainer.appendChild(createBlogCard(article));
+                });
+            } else {
+                blogCardsContainer.innerHTML = '<p class="text-center text-gray-400 col-span-full">No articles found matching your search.</p>';
+            }
         }
 
-        // Function to display search suggestions
+        // Function to display search suggestions (for main search bar and mobile search bar)
         function displaySuggestions(inputElement, dropdownElement) {
             const query = inputElement.value.toLowerCase().trim();
             dropdownElement.innerHTML = ''; // Clear previous suggestions
@@ -586,31 +601,33 @@
             }
         }
 
-        // Event listeners for desktop search
-        searchButton.addEventListener('click', () => {
-            const query = searchInput.value.trim();
-            if (query) {
-                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
-            }
-            searchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+        // Event listeners for desktop search on this page
+        articleSearchButton.addEventListener('click', () => {
+            filterBlogCards(articleSearchInput.value);
+            articleSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
         });
-        searchInput.addEventListener('keyup', (e) => {
-            displaySuggestions(searchInput, searchResultsDropdown);
+        articleSearchInput.addEventListener('keyup', (e) => {
+            displaySuggestions(articleSearchInput, articleSearchResultsDropdown);
             if (e.key === 'Enter') {
-                searchButton.click(); // Trigger search on Enter
+                articleSearchButton.click(); // Trigger search on Enter
             }
         });
         document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
-                searchResultsDropdown.classList.add('hidden');
+            if (!articleSearchInput.contains(e.target) && !articleSearchButton.contains(e.target) && !articleSearchResultsDropdown.contains(e.target)) {
+                articleSearchResultsDropdown.classList.add('hidden');
             }
         });
 
-        // Event listeners for mobile search
+        // Event listeners for mobile search (nav menu)
         mobileSearchButton.addEventListener('click', () => {
             const query = mobileSearchInput.value.trim();
             if (query) {
-                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+                // If on all-articles page, filter. If on other page, redirect.
+                if (window.location.pathname.includes('all-articles.html')) {
+                    filterBlogCards(query);
+                } else {
+                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+                }
             }
             mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
             closeMobileMenu(); // Close mobile menu after search
@@ -621,6 +638,7 @@
                 mobileSearchButton.click(); // Trigger search on Enter
             }
         });
+        // This document click listener handles hiding the mobile dropdown
         document.addEventListener('click', (e) => {
             if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
                 mobileSearchResultsDropdown.classList.add('hidden');
@@ -629,10 +647,6 @@
 
 
         // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-
         function openMobileMenu() {
             mobileMenu.classList.remove('hidden');
             requestAnimationFrame(() => {
@@ -659,7 +673,6 @@
             if (mobileMenu.classList.contains('translate-x-full') && mobileMenu.classList.contains('hidden')) {
                 // Perform cleanup only if menu is fully closed and hidden
                 mobileSearchInput.value = ''; // Clear mobile search input
-                // No need to performSearch('') here as we are navigating to all-articles
                 mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
             }
         });
@@ -670,10 +683,10 @@
                 link.addEventListener('click', () => {
                     // Check if the link is for "All Articles" and potentially apply search query
                     if (link.getAttribute('href') === 'all-articles.html') {
-                        const currentSearchQuery = searchInput.value || mobileSearchInput.value;
+                        const currentSearchQuery = articleSearchInput.value || mobileSearchInput.value;
                         if (currentSearchQuery) {
-                             // This ensures that when navigating to all-articles from the mobile menu,
-                             // the search query is preserved and applied.
+                            // This ensures that when navigating to all-articles from the mobile menu,
+                            // the search query is preserved and applied.
                             window.location.href = `all-articles.html?search=${encodeURIComponent(currentSearchQuery)}`;
                             return; // Stop further execution as we're redirecting
                         }
@@ -683,18 +696,16 @@
             });
         }
 
-        // Initialize latest blogs on page load
-        window.addEventListener('load', loadLatestBlogs);
-
-        // Handle URL search parameters on page load (for cases where user lands directly with search query)
+        // Handle URL search parameters on page load
         window.addEventListener('load', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const searchQuery = urlParams.get('search');
             if (searchQuery) {
-                searchInput.value = searchQuery; // Populate desktop search input
+                articleSearchInput.value = searchQuery; // Populate desktop search input
                 mobileSearchInput.value = searchQuery; // Populate mobile search input
-                // On index.html, we don't filter the main blog section based on URL search query
-                // but the search bar will be pre-filled. User can then click search button.
+                filterBlogCards(searchQuery); // Filter articles based on query
+            } else {
+                filterBlogCards(''); // Load all articles if no search query
             }
         });
     </script>
