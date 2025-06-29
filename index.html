@@ -3,37 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechyNoob - Your Guide to Android Customization, Hacking, and More!</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="TechyNoob is your ultimate guide to Android customization, including custom ROMs, Magisk modules, ethical hacking, boot animations, and app optimization. Unlock the full potential of your Android device!">
-    <meta name="keywords" content="Android customization, custom ROMs, Magisk, ethical hacking, Android tips, boot animations, Launchpad App, Android rooting, LineageOS, CrDroid, Pixel Experience, Android 16, Material You, KernelSU, Google Play Integrity, Samsung One UI, smartphone optimization, Android games, mobile tech, tech tutorials, Android guides, phone mods">
-    <meta name="author" content="TechyNoob">
-    <link rel="canonical" href="https://techynoob18.github.io/index.html">
-
-    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://techynoob18.github.io/index.html">
-    <meta property="og:title" content="TechyNoob - Your Guide to Android Customization, Hacking, and More!">
-    <meta property="og:description" content="TechyNoob is your ultimate guide to Android customization, including custom ROMs, Magisk modules, ethical hacking, boot animations, and app optimization. Unlock the full potential of your Android device!">
-    <meta property="og:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://techynoob18.github.io/index.html">
-    <meta property="twitter:title" content="TechyNoob - Your Guide to Android Customization, Hacking, and More!">
-    <meta property="twitter:description" content="TechyNoob is your ultimate guide to Android customization, including custom ROMs, Magisk modules, ethical hacking, boot animations, and app optimization. Unlock the full potential of your Android device!">
-    <meta property="twitter:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
-
+    <title>TechyNoob - Unleash Your Device's Potential</title>
     <!-- AdSense Meta Tag -->
     <meta name="google-adsense-account" content="ca-pub-6446522570285835">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9KWQ18P9"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        gtag('config', 'G-2E9KWQ18P9');
+      gtag('config', 'G-2E9KWQ18P9');
     </script>
     <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -52,24 +32,138 @@
             background-clip: text;
             color: transparent;
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .blog-card, .game-card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .blog-card:hover, .game-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        /* Custom styles for search bar responsiveness */
-        .search-container {
+        .hero-section {
+            background: url('https://placehold.co/1920x1080/1a202c/e2e8f0?text=Techy+Background') no-repeat center center/cover;
+            min-height: 70vh;
             display: flex;
-            flex-grow: 1; /* Allows it to take available space */
-            justify-content: flex-end; /* Aligns to the right within its flex container */
-            margin-left: 1rem; /* Space from nav links */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 10;
         }
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for text readability */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 20;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 30;
+            max-width: 900px;
+            padding: 2rem;
+        }
+        .blog-card {
+            background-color: #2d3748; /* Darker card background */
+            border-radius: 0.75rem; /* rounded-xl */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; /* Ensures rounded corners apply to image */
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem;
+        }
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+        .blog-card h3 {
+            font-size: 1.5rem; /* text-xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        .blog-card p {
+            font-size: 0.875rem; /* text-sm */
+            color: #cbd5e0; /* text-gray-300 */
+            line-height: 1.5;
+        }
+        .blog-card-footer {
+            padding: 1rem 1.5rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .blog-card-footer a {
+            color: #6EE7B7; /* Light green for links */
+            font-weight: 600; /* font-semibold */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .blog-card-footer a:hover {
+            color: #3B82F6; /* Blue on hover */
+        }
+        /* Game card specific styles */
+        .game-card {
+            background-color: #2d3748; /* Darker card background */
+            border-radius: 0.75rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .game-card .game-icon {
+            font-size: 4rem; /* Larger icon */
+            margin-top: 1.5rem;
+            color: #9333EA; /* Purple for icons */
+        }
+        .game-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            color: #fff;
+        }
+        .game-card p {
+            font-size: 0.875rem;
+            color: #cbd5e0;
+            padding: 0 1.5rem 1rem;
+            flex-grow: 1; /* Allow description to take space */
+        }
+        .game-card .play-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #4CAF50, #8BC34A); /* Green gradient */
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px; /* rounded-full */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .game-card .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            background-image: linear-gradient(to right, #8BC34A, #4CAF50); /* Reverse gradient on hover */
+        }
+
+        /* Mobile Menu styles */
+        #mobile-menu {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
         /* Style for search suggestions dropdown */
         .suggestions-dropdown {
             max-height: 200px;
@@ -85,25 +179,9 @@
         .suggestion-item:hover {
             background-color: #4a5568; /* Darker hover */
         }
-        @media (max-width: 767px) { /* Adjust for mobile view */
-            .search-container {
-                width: 100%;
-                margin-top: 1rem;
-                margin-left: 0;
-                justify-content: center; /* Center search bar on mobile */
-            }
-            .header-content {
-                flex-direction: column; /* Stack logo and nav vertically */
-                align-items: center; /* Center items when stacked */
-            }
-            .header-nav {
-                margin-top: 1rem; /* Space between logo/title and nav links */
-            }
-        }
     </style>
 </head>
 <body class="antialiased leading-normal">
-    <!-- Header/Navigation Bar -->
     <header class="bg-gray-900 shadow-lg py-4 px-6 md:px-8 lg:px-12 relative z-50">
         <nav class="container mx-auto flex flex-wrap justify-between items-center relative z-50">
             <!-- Logo and Title -->
@@ -113,10 +191,10 @@
             </a>
             
             <!-- Desktop Navigation Links and Search Bar -->
-            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative"> <!-- Added relative for suggestions positioning -->
+            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative">
                 <a href="index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
-                <a href="index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
-                <a href="index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
+                <a href="#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
+                <a href="#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
                 <a href="ai-image-generator.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">AI Image Gen</a>
                 <a href="about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
                 <a href="privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
@@ -163,207 +241,116 @@
                 </div>
             </div>
             <a href="index.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
-            <a href="index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
-            <a href="index.html#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Games</a>
+            <a href="#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
+            <a href="#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Games</a>
             <a href="ai-image-generator.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">AI Image Gen</a>
             <a href="about.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">About Us</a>
             <a href="privacy.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Privacy Policy</a>
             <a href="terms.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Terms of Service</a>
             <a href="contact.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Contact Us</a>
             <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="closeMobileMenu()">
-                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2">
-                YouTube Channel
+                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2"> YouTube Channel
             </a>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 md:px-8 lg:px-12 py-12">
+    <main class="flex-grow">
         <!-- Hero Section -->
-        <section id="home" class="text-center py-20 rounded-xl bg-gray-800 shadow-xl mb-12 animate-fade-in">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 gradient-text leading-tight">
-                Unlock the Hidden Potential of Your Android Device!
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Your ultimate guide to Custom ROMs, Magisk Modules, Ethical Hacking, and more.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#blogs" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-                    Explore Our Latest Blogs
-                </a>
-                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center justify-center">
-                    <!-- Replaced YouTube SVG with uploaded PNG image -->
-                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-6 h-6 mr-2">
-                    Visit Our YouTube Channel
-                </a>
+        <section class="hero-section relative">
+            <div class="hero-overlay"></div>
+            <div class="hero-content text-white">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 animate-fade-in gradient-text">
+                    TechyNoob: Unleash Your Device's Potential
+                </h1>
+                <p class="text-lg sm:text-xl mb-8 animate-fade-in-delay-1">
+                    Your ultimate guide to Android customization, reviews, and unlocking hidden features.
+                </p>
+                <div class="animate-fade-in-delay-2">
+                    <a href="#blogs" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 inline-block mr-4">
+                        Explore Blogs
+                    </a>
+                    <a href="#games-section" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 inline-block">
+                        Play Games
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- Google AdSense Ad Placeholder -->
-        <div class="my-12 p-8 bg-gray-800 rounded-xl shadow-xl border border-gray-700 text-center">
-            <p class="text-gray-400 text-xl font-semibold mb-4">Advertisement</p>
-            <div class="w-full h-48 bg-gray-700 flex items-center justify-center rounded-lg border border-dashed border-gray-500 text-gray-500">
-                <p>Your Google AdSense Ad will appear here</p>
+        <!-- Latest Blogs Section -->
+        <section id="blogs" class="container mx-auto px-6 md:px-8 lg:px-12 py-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 gradient-text">Latest Blogs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-cards-container">
+                <!-- Blog cards will be dynamically loaded here by JavaScript -->
             </div>
-            <!-- Example AdSense code structure (REPLACE WITH YOUR ACTUAL CODE) -->
-            <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835" crossorigin="anonymous"></script> -->
-            <!-- TechyNoob Display Ad -->
-            <!-- <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-6446522570285835"
-                 data-ad-slot="YOUR_AD_SLOT_ID"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script> -->
-        </div>
-
-        <!-- Latest Articles Section -->
-        <section id="blogs" class="py-12">
-            <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Latest Articles & Guides</h2>
-            <div id="blog-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- NEW Blog Card for Magisk Rooting Guide (June 28, 2025) -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/9333EA/ffffff?text=Magisk+Rooting" alt="Android Rooting with Magisk Guide" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Unleash the Full Potential: Your Ultimate Guide to Android Rooting with Magisk in 2025</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 28, 2025</p>
-                        <p class="text-gray-300 mb-4">A comprehensive guide to rooting any Android phone with Magisk, covering prerequisites, installation methods, and benefits like ad-blocking and advanced customization.</p>
-                        <a href="Blogs/magisk-rooting-guide.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-                <!-- NEW Blog Card for Google Pixel 6a Review (June 27, 2025) -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Pixel+6a+2025" alt="Google Pixel 6a 2025 Review" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Google Pixel 6a in 2025: Is This Budget Gem Still a Worthy Contender? A Deep Dive</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 27, 2025</p>
-                        <p class="text-gray-300 mb-4">A definitive long-term review of the Google Pixel 6a in 2025, covering battery life, Android 16 features, and camera performance.</p>
-                        <a href="Blogs/google-pixel-6a-2025-review.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-                <!-- NEW Blog Card for Android 16 vs Android 15 (June 27, 2025) -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/6EE7B7/000000?text=Android+16+vs+15" alt="Android 16 vs Android 15 Comparison" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Android 16 vs. Android 15: A Deep Dive into the Pixel UI Revolution</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 27, 2025</p>
-                        <p class="text-gray-300 mb-4">A comprehensive side-by-side comparison of Android 16 QPR Beta 2.1 and Android 15, highlighting major UI enhancements and new features.</p>
-                        <a href="Blogs/android-16-vs-android-15.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-                <!-- NEW Blog Card for Install Android 16 on Redmi Note 7 Pro (June 26, 2025) -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/3B82F6/ffffff?text=Android+16+Redmi+Note+7+Pro" alt="Android 16 on Redmi Note 7 Pro Guide" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 26, 2025</p>
-                        <p class="text-gray-300 mb-4">A comprehensive guide to installing a pure AOSP-based Android 16 custom ROM on your Redmi Note 7 Pro. Unlock enhanced performance, latest features, and a bloatware-free experience.</p>
-                        <a href="Blogs/install-android-16-redmi-note-7-pro.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-                <!-- Blog Card for Magisk Vexiro (June 18, 2025) -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/9333EA/ffffff?text=Magisk+Vexiro" alt="Magisk Vexiro Guide" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 18, 2025</p>
-                        <p class="text-gray-300 mb-4">Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.</p>
-                        <a href="Blogs/magisk-vexiro.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-                <!-- Blog Card for Custom Boot Animations (June 17, 2025) -->
-                <div class="blog-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/6EE7B7/000000?text=Custom+Boot+Animations" alt="Custom Boot Animations Guide" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!</h3>
-                        <p class="text-gray-400 text-sm mb-4">Published on June 17, 2025</p>
-                        <p class="text-gray-300 mb-4">Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.</p>
-                        <a href="Blogs/custom-boot-animations.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-10">
-                <a href="all-articles.html" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+            <div class="text-center mt-12">
+                <a href="all-articles.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
                     View All Articles
                 </a>
             </div>
         </section>
 
-        <!-- Web Games Section -->
-        <section id="games-section" class="py-12 mt-12">
-            <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">Play Our Web Games!</h2>
-            <div id="game-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Game Card: Flappy Bird -->
-                <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/70c5ce/000000?text=Flappy+Bird" alt="Flappy Bird Game" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Flappy Bird</h3>
-                        <p class="text-gray-300 mb-4">Test your reflexes in this classic arcade game. Tap to make the bird fly through pipes!</p>
-                        <a href="Games/flappy_bird.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
-                    </div>
-                </div>
-
-                <!-- Game Card: Snake Game -->
-                <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/2d3748/6EE7B7?text=Snake+Game" alt="Snake Game" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Snake Game</h3>
-                        <p class="text-gray-300 mb-4">Guide your snake to eat the food and grow longer, but don't hit the walls or yourself!</p>
-                        <a href="Games/snake_game.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
-                    </div>
-                </div>
-
-                <!-- Game Card: Pong Game -->
-                <div class="game-card bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                    <img src="https://placehold.co/600x300/2d3748/3B82F6?text=Pong+Game" alt="Pong Game" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Pong Game</h3>
-                        <p class="text-gray-300 mb-4">Relive the classic arcade experience with this two-player (or one-player vs. AI) Pong game.</p>
-                        <a href="Games/pong_game.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Play Now</a>
-                    </div>
-                </div>
+        <!-- About Section (Mini) -->
+        <section id="about-mini" class="bg-gray-800 py-16 px-6 md:px-8 lg:px-12">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 gradient-text">About TechyNoob</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
+                    TechyNoob is your go-to resource for everything Android, from in-depth customization guides and rooting tutorials to honest device reviews and insights into the latest mobile technology. We empower you to unlock the full potential of your smartphone.
+                </p>
+                <a href="about.html" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Learn More About Us
+                </a>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-12 bg-gray-800 rounded-xl shadow-xl mt-12 px-6 py-10">
-            <h2 class="text-4xl font-extrabold text-center mb-8 gradient-text">About TechyNoob</h2>
-            <div class="max-w-5xl mx-auto text-gray-300 text-lg leading-relaxed text-center">
-                <p class="mb-4">
-                    Welcome to <span class="gradient-text font-bold">TechyNoob</span>: Your Guide to Android Customization, Hacking, and More! We're here to help you unlock the hidden potential of your Android device.
-                </p>
-                <p class="mb-4">
-                    We'll be your guide to the world of custom ROMs, Magisk modules, and ethical hacking, providing you with tutorials, reviews, and tips to take your Android experience to the next level.
-                </p>
-                <p class="mt-6 text-xl font-semibold mb-6">
-                    What you can expect:
-                </p>
-                <!-- Updated list for better alignment and readability -->
-                <ul class="list-disc list-inside text-left mx-auto max-w-xl space-y-2">
-                    <li>Custom ROM installations and guides: Discover new features and functionalities with custom ROMs.</li>
-                    <li>Magisk module showcases and reviews: Uncover the power and potential of Magisk modules.</li>
-                    <li>Ethical hacking concepts and tutorials: Learn responsible hacking techniques for educational purposes.</li>
-                    <li>Q&A sessions and troubleshooting: Get your Android-related questions answered.</li>
-                </ul>
-                <p class="mt-6 text-xl font-semibold">
-                    Subscribe and join the community of tech enthusiasts! #TechyNoob #Android #CustomROM #Magisk #EthicalHacking #TechCommunity
-                </p>
-            </div>
-            <div class="text-center mt-10">
-                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center justify-center mx-auto w-fit">
-                    <!-- Replaced YouTube SVG with uploaded PNG image -->
-                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-6 h-6 mr-2">
-                    Go to TechyNoob YouTube Channel
-                </a>
+        <!-- Games Section -->
+        <section id="games-section" class="container mx-auto px-6 md:px-8 lg:px-12 py-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 gradient-text">Fun Games to Play</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Flappy Bird Card -->
+                <div class="game-card">
+                    <div class="game-icon">
+                        <!-- SVG for Flappy Bird - simple bird icon -->
+                        <svg class="mx-auto w-24 h-24" fill="#FFD700" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.5 7C7.462 7 5 9.462 5 12.5S7.462 18 10.5 18c2.47 0 4.542-1.618 5.25-3.875L18 15v-2l2-2h-3.5C14.73 9.444 12.82 7 10.5 7zM10.5 9c.828 0 1.5.672 1.5 1.5S11.328 12 10.5 12 9 11.328 9 10.5 9.672 9 10.5 9zM10.5 13c-.828 0-1.5-.672-1.5-1.5S9.672 10 10.5 10s1.5.672 1.5 1.5S11.328 13 10.5 13z"/>
+                        </svg>
+                    </div>
+                    <h3>Flappy Bird</h3>
+                    <p class="text-sm text-gray-300">Test your reflexes in this classic arcade game. Tap to make the bird fly and avoid obstacles!</p>
+                    <a href="Games/flappy_bird.html" class="play-button">Play Now</a>
+                </div>
+
+                <!-- Snake Game Card -->
+                <div class="game-card">
+                    <div class="game-icon">
+                        <!-- SVG for Snake Game - simple snake icon -->
+                        <svg class="mx-auto w-24 h-24" fill="#4CAF50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1 16H8a1 1 0 010-2h3v-2H8a1 1 0 010-2h3V8H8a1 1 0 010-2h3V4h2v2h3a1 1 0 010 2h-3v2h3a1 1 0 010 2h-3v2h3a1 1 0 010 2h-3v2zm7-6a1 1 0 11-2 0 1 1 0 012 0z"/>
+                        </svg>
+                    </div>
+                    <h3>Snake Game</h3>
+                    <p class="text-sm text-gray-300">Guide your snake to eat the food and grow longer, but don't hit the walls or yourself!</p>
+                    <a href="Games/snake_game.html" class="play-button">Play Now</a>
+                </div>
+
+                <!-- Pong Game Card -->
+                <div class="game-card">
+                    <div class="game-icon">
+                        <!-- SVG for Pong Game - simple paddle and ball icon -->
+                        <svg class="mx-auto w-24 h-24" fill="#F0F0F0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 3h2v18H4V3zm14 0h2v18h-2V3zM12 7a5 5 0 100 10 5 5 0 000-10z"/>
+                        </svg>
+                    </div>
+                    <h3>Pong Game</h3>
+                    <p class="text-sm text-gray-300">Relive the classic arcade experience with this two-player game of skill and precision.</p>
+                    <a href="Games/pong_game.html" class="play-button">Play Now</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8 px-6 md:px-8 lg:px-12 mt-12">
+    <footer class="bg-gray-900 py-8 px-6 mt-12">
         <div class="container mx-auto text-center text-gray-400">
-            <p>© 2025 TechyNoob. All rights reserved.</p>
+            <p>&copy; 2025 TechyNoob. All rights reserved.</p>
             <div class="flex flex-wrap justify-center space-x-4 md:space-x-6 mt-4 text-sm">
                 <a href="about.html" class="hover:text-white transition duration-300">About Us</a>
                 <a href="privacy.html" class="hover:text-white transition duration-300">Privacy Policy</a>
@@ -372,164 +359,317 @@
             </div>
             <div class="flex justify-center space-x-6 mt-4">
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
-                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
+                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
                 </a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                // Ensure it's a local hash link before trying to scroll
-                if (this.hash && document.querySelector(this.hash)) {
-                    document.querySelector(this.hash).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+        // Data for all blog articles and games (used for "Latest Blogs" and search suggestions)
+        const allContentData = [
+            { 
+                title: "Unleash Your Android's Potential: Install Any Custom Package Installer with Magisk!", 
+                description: "Are you a rooted Android user looking to break free from the mundane default package installer? Do you crave a more visually appealing or feature-rich experience when installing your favorite apps? Look no further! This comprehensive guide will walk you through the simple yet powerful process of installing a custom package installer on virtually any rooted Android device using Magisk. Get ready to elevate your Android experience!", 
+                link: "Blogs/custom-package-installer.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Custom+Installer"
+            },
+            { 
+                title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", 
+                description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", 
+                link: "Blogs/magisk-vexiro.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Magisk+Vexiro"
+            },
+            { 
+                title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", 
+                description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", 
+                link: "Blogs/custom-boot-animations.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Custom+Boot+Animations"
+            },
+            { 
+                title: "Revolutionize Your Android Experience: Unveiling the Power of Launchpad App", 
+                description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.", 
+                link: "Blogs/launchpad-app.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Launchpad+App"
+            },
+            { 
+                title: "Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones", 
+                description: "A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.", 
+                link: "Blogs/iconify-installation.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Iconify+Installation"
+            },
+            { 
+                title: "Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method", 
+                description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.", 
+                link: "Blogs/crdroid-ota-update.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=CrDroid+Update"
+            },
+            { 
+                title: "Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+", 
+                description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!", 
+                link: "Blogs/colorblendr-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=ColorBlendr+Guide"
+            },
+            { 
+                title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", 
+                description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!", 
+                link: "Blogs/android-16-arrives.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Arrives"
+            },
+            { 
+                title: "Installing Android 16 Material 3 Expressive Theme", 
+                description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!", 
+                link: "Blogs/install-material-3-theme.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Material+3+Theme"
+            },
+            { 
+                title: "Root Any Android Phone WITHOUT Magisk in 2025", 
+                description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!", 
+                link: "Blogs/root-android-without-magisk.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Root+Without+Magisk"
+            },
+            { 
+                title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", 
+                description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!", 
+                link: "Blogs/fix-play-integrity-rooted-android.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Play+Integrity+Fix"
+            },
+            { 
+                title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", 
+                description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", 
+                link: "Blogs/unlock-samsung-experience.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=One+UI+Home"
+            },
+            { 
+                title: "Install Superior OS (Android 15) with May 2025 Security Patch!", 
+                description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", 
+                link: "Blogs/install-superior-os.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Superior+OS"
+            },
+            { 
+                title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", 
+                description: "The Redmi Note 7 Pro, a beloved device known for its robust performance and excellent value, continues to be a favorite among enthusiasts.", 
+                link: "Blogs/install-android-16-redmi-note-7-pro.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Redmi"
+            },
+            { 
+                title: "Google Pixel 6a in 2025: Is This Budget Gem Still a Worthy Contender?", 
+                description: "A definitive long-term review of the Google Pixel 6a in 2025, covering battery life, Android 16 features, camera performance, and its worth as a budget smartphone contender.", 
+                link: "Blogs/google-pixel-6a-2025-review.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Pixel+6a+2025"
+            },
+            { 
+                title: "How to Install Incompatible Older Apps on Android 14, 15, and 16", 
+                description: "Learn how to bypass Google's app installation block for older apps on Android 14+ using an LSPosed module.", 
+                link: "Blogs/install-older-apps.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Older+Apps+Android"
+            },
+            { 
+                title: "Android 16 vs. Android 15: A Deep Dive into the Pixel UI Revolution", 
+                description: "A comprehensive side-by-side comparison of Android 16 QPR Beta 2.1 and Android 15, highlighting major UI enhancements, Material 3 Expressive design, and new features on Google Pixel devices.", 
+                link: "Blogs/android-16-vs-android-15.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+vs+15"
+            },
+            { 
+                title: "Unlock Unlimited Google Photos Storage", 
+                description: "A definitive guide to getting unlimited Google Photos storage in 2025, leveraging older Pixel devices for seamless photo backups.", 
+                link: "Blogs/google-photos-unlimited-storage.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Unlimited+Google+Photos"
+            },
+            { 
+                title: "Unleash the Full Potential: Your Ultimate Guide to Android Rooting with Magisk in 2025", 
+                description: "A comprehensive guide to rooting any Android phone with Magisk in 2025, covering prerequisites, installation methods (Fastboot and custom recovery), and benefits like ad-blocking and advanced customization.", 
+                link: "Blogs/magisk-rooting-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Magisk+Rooting+Guide"
+            },
+            // Games (these are not displayed in the "Latest Blogs" section, but used for search)
+            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
+            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
+            { type: 'game', title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
+        ];
+
+        const blogCardsContainer = document.getElementById('blog-cards-container');
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const mobileSearchInput = document.getElementById('mobileSearchInput');
+        const mobileSearchButton = document.getElementById('mobileSearchButton');
+        const searchResultsDropdown = document.getElementById('searchResultsDropdown');
+        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
+
+        // Function to create and append a blog card
+        function createBlogCard(article) {
+            const cardLink = document.createElement('a');
+            cardLink.href = article.link;
+            cardLink.classList.add('block', 'blog-card');
+            
+            const truncatedDescription = article.description.length > 100 
+                ? article.description.substring(0, 100) + '...' 
+                : article.description;
+
+            cardLink.innerHTML = `
+                <img src="${article.image || 'https://placehold.co/400x200/1a202c/e2e8f0?text=TechyNoob'}" alt="${article.title}" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="blog-card-content">
+                    <h3>${article.title}</h3>
+                    <p class="text-sm text-gray-300">${truncatedDescription}</p>
+                </div>
+                <div class="blog-card-footer">
+                    <span class="text-xs text-gray-400">Read More</span>
+                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </div>
+            `;
+            return cardLink;
+        }
+
+        // Function to load latest blogs (only blog type articles)
+        function loadLatestBlogs() {
+            blogCardsContainer.innerHTML = ''; // Clear existing cards
+            // Filter out games and display only the latest 6 articles
+            const latestArticles = allContentData.filter(item => item.type !== 'game').slice(0, 6);
+            
+            latestArticles.forEach(article => {
+                blogCardsContainer.appendChild(createBlogCard(article));
             });
+        }
+
+        // Function to display search suggestions
+        function displaySuggestions(inputElement, dropdownElement) {
+            const query = inputElement.value.toLowerCase().trim();
+            dropdownElement.innerHTML = ''; // Clear previous suggestions
+
+            if (query.length === 0) {
+                dropdownElement.classList.add('hidden');
+                return;
+            }
+
+            const filteredSuggestions = allContentData.filter(item =>
+                item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
+            ).slice(0, 7); // Limit to 7 suggestions
+
+            if (filteredSuggestions.length > 0) {
+                filteredSuggestions.forEach(item => {
+                    const suggestionDiv = document.createElement('div');
+                    suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
+                    suggestionDiv.textContent = item.title;
+                    suggestionDiv.addEventListener('click', () => {
+                        window.location.href = item.link; // Navigate to the article/game page
+                    });
+                    dropdownElement.appendChild(suggestionDiv);
+                });
+                dropdownElement.classList.remove('hidden');
+            } else {
+                dropdownElement.classList.add('hidden');
+            }
+        }
+
+        // Event listeners for desktop search
+        searchButton.addEventListener('click', () => {
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+            }
+            searchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
         });
+        searchInput.addEventListener('keyup', (e) => {
+            displaySuggestions(searchInput, searchResultsDropdown);
+            if (e.key === 'Enter') {
+                searchButton.click(); // Trigger search on Enter
+            }
+        });
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
+                searchResultsDropdown.classList.add('hidden');
+            }
+        });
+
+        // Event listeners for mobile search
+        mobileSearchButton.addEventListener('click', () => {
+            const query = mobileSearchInput.value.trim();
+            if (query) {
+                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+            }
+            mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+            closeMobileMenu(); // Close mobile menu after search
+        });
+        mobileSearchInput.addEventListener('keyup', (e) => {
+            displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
+            if (e.key === 'Enter') {
+                mobileSearchButton.click(); // Trigger search on Enter
+            }
+        });
+        document.addEventListener('click', (e) => {
+            if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
+                mobileSearchResultsDropdown.classList.add('hidden');
+            }
+        });
+
 
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu'); 
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
 
-        // Function to open mobile menu
         function openMobileMenu() {
             mobileMenu.classList.remove('hidden');
-            // Allow animation to start before removing translate-x-full
             requestAnimationFrame(() => {
-                mobileMenu.classList.remove('translate-x-full'); // Slide in
-                mobileMenu.classList.add('opacity-100'); // Fade in
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('opacity-100');
                 mobileMenu.classList.remove('opacity-0');
             });
         }
 
-        // Function to close mobile menu
         function closeMobileMenu() {
-            mobileMenu.classList.add('translate-x-full'); // Slide out
-            mobileMenu.classList.remove('opacity-100'); // Fade out
+            mobileMenu.classList.add('translate-x-full'); // Start slide-out animation
+            mobileMenu.classList.remove('opacity-100'); // Start fade-out animation
             mobileMenu.classList.add('opacity-0');
-            // Add hidden class after animation completes
             setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-            }, 300); // Match transition duration
+                mobileMenu.classList.add('hidden'); // Hide after animation
+            }, 300); // Duration of transition
         }
 
         mobileMenuButton.addEventListener('click', openMobileMenu);
         closeMobileMenuButton.addEventListener('click', closeMobileMenu);
 
+        // Add event listener to transition end for mobile menu cleanup
+        mobileMenu.addEventListener('transitionend', () => {
+            if (mobileMenu.classList.contains('translate-x-full') && mobileMenu.classList.contains('hidden')) {
+                // Perform cleanup only if menu is fully closed and hidden
+                mobileSearchInput.value = ''; // Clear mobile search input
+                // No need to performSearch('') here as we are navigating to all-articles
+                mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
+            }
+        });
+
         // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            // Only close if it's a hash link, not external or new AdSense page links
-            if (link.getAttribute('href').startsWith('#')) {
-                link.addEventListener('click', closeMobileMenu);
-            }
-        });
-
-        // --- Search Functionality ---
-        const searchInput = document.getElementById('searchInput');
-        const searchButton = document.getElementById('searchButton');
-        const mobileSearchInput = document.getElementById('mobileSearchInput');
-        const mobileSearchButton = document.getElementById('mobileSearchButton');
-        const blogCardsContainer = document.getElementById('blog-cards-container');
-        const gameCardsContainer = document.getElementById('game-cards-container');
-        const searchResultsDropdown = document.getElementById('searchResultsDropdown');
-        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
-
-        let allContentData = []; // Store all searchable content
-
-        // Function to collect all content data on page load
-        function collectContentData() {
-            allContentData = [];
-
-            // Add all blog articles manually for now, ordered by date (most recent first)
-            allContentData.push({ type: 'blog', title: "Unleash the Full Potential: Your Ultimate Guide to Android Rooting with Magisk in 2025", description: "A comprehensive guide to rooting any Android phone with Magisk, covering prerequisites, installation methods, and benefits like ad-blocking and advanced customization.", link: "Blogs/magisk-rooting-guide.html" });
-            allContentData.push({ type: 'blog', title: "Google Pixel 6a in 2025: Is This Budget Gem Still a Worthy Contender? A Deep Dive", description: "A definitive long-term review of the Google Pixel 6a in 2025, covering battery life, Android 16 features, and camera performance.", link: "Blogs/google-pixel-6a-2025-review.html" });
-            allContentData.push({ type: 'blog', title: "Android 16 vs. Android 15: A Deep Dive into the Pixel UI Revolution", description: "A comprehensive side-by-side comparison of Android 16 QPR Beta 2.1 and Android 15, highlighting major UI enhancements and new features.", link: "Blogs/android-16-vs-android-15.html" });
-            allContentData.push({ type: 'blog', title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", description: "A comprehensive guide to installing a pure AOSP-based Android 16 custom ROM on your Redmi Note 7 Pro. Unlock enhanced performance, latest features, and a bloatware-free experience.", link: "Blogs/install-android-16-redmi-note-7-pro.html" });
-            allContentData.push({ type: 'blog', title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", link: "Blogs/magisk-vexiro.html" });
-            allContentData.push({ type: 'blog', title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", link: "Blogs/custom-boot-animations.html" });
-            // Add other blog entries here following the same structure
-            // Example:
-            // allContentData.push({ type: 'blog', title: "Another Blog Title", description: "Description here...", link: "Blogs/another-blog.html" });
-
-            // Add game entries
-            allContentData.push({ type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game. Tap to make the bird fly through pipes!", link: "Games/flappy_bird.html" });
-            allContentData.push({ type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer, but don't hit the walls or yourself!", link: "Games/snake_game.html" });
-            allContentData.push({ type: 'game', title: "Pong Game", description: "Relive the classic arcade experience with this two-player (or one-player vs. AI) Pong game.", link: "Games/pong_game.html" });
-            // Add other game entries here
-        }
-
-        // Initialize content data on page load
-        document.addEventListener('DOMContentLoaded', collectContentData);
-
-        function performSearch(query, isMobile = false) {
-            const dropdown = isMobile ? mobileSearchResultsDropdown : searchResultsDropdown;
-            dropdown.innerHTML = '';
-            
-            if (query.length < 2) {
-                dropdown.classList.add('hidden');
-                return;
-            }
-
-            const lowerCaseQuery = query.toLowerCase();
-            const filteredContent = allContentData.filter(item =>
-                item.title.toLowerCase().includes(lowerCaseQuery) ||
-                item.description.toLowerCase().includes(lowerCaseQuery)
-            );
-
-            if (filteredContent.length > 0) {
-                filteredContent.forEach(item => {
-                    const div = document.createElement('div');
-                    div.classList.add('suggestion-item');
-                    div.innerHTML = `
-                        <p class="font-semibold">${item.title}</p>
-                        <p class="text-xs text-gray-500">${item.description.substring(0, 70)}...</p>
-                    `;
-                    div.onclick = () => {
-                        window.location.href = item.link;
-                    };
-                    dropdown.appendChild(div);
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Check if the link is for "All Articles" and potentially apply search query
+                    if (link.getAttribute('href') === 'all-articles.html') {
+                        const currentSearchQuery = searchInput.value || mobileSearchInput.value;
+                        if (currentSearchQuery) {
+                             // This ensures that when navigating to all-articles from the mobile menu,
+                             // the search query is preserved and applied.
+                            window.location.href = `all-articles.html?search=${encodeURIComponent(currentSearchQuery)}`;
+                            return; // Stop further execution as we're redirecting
+                        }
+                    }
+                    closeMobileMenu();
                 });
-                dropdown.classList.remove('hidden');
-            } else {
-                dropdown.classList.add('hidden');
-            }
+            });
         }
 
-        // Event listeners for desktop search
-        searchInput.addEventListener('input', (e) => performSearch(e.target.value));
-        searchInput.addEventListener('focus', (e) => {
-            if (e.target.value.length >= 2) {
-                performSearch(e.target.value);
-            }
-        });
-        searchInput.addEventListener('blur', () => {
-            setTimeout(() => searchResultsDropdown.classList.add('hidden'), 200);
-        });
-        searchButton.addEventListener('click', () => {
-            if (searchInput.value.length > 0) {
-                window.location.href = `search-results.html?q=${encodeURIComponent(searchInput.value)}`;
-            }
-        });
+        // Initialize latest blogs on page load
+        window.addEventListener('load', loadLatestBlogs);
 
-        // Event listeners for mobile search
-        mobileSearchInput.addEventListener('input', (e) => performSearch(e.target.value, true));
-        mobileSearchInput.addEventListener('focus', (e) => {
-            if (e.target.value.length >= 2) {
-                performSearch(e.target.value, true);
-            }
-        });
-        mobileSearchInput.addEventListener('blur', () => {
-            setTimeout(() => mobileSearchResultsDropdown.classList.add('hidden'), 200);
-        });
-        mobileSearchButton.addEventListener('click', () => {
-            if (mobileSearchInput.value.length > 0) {
-                window.location.href = `search-results.html?q=${encodeURIComponent(mobileSearchInput.value)}`;
+        // Handle URL search parameters on page load (for cases where user lands directly with search query)
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            if (searchQuery) {
+                searchInput.value = searchQuery; // Populate desktop search input
+                mobileSearchInput.value = searchQuery; // Populate mobile search input
+                // On index.html, we don't filter the main blog section based on URL search query
+                // but the search bar will be pre-filled. User can then click search button.
             }
         });
     </script>
