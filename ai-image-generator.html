@@ -3,45 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Image & Thumbnail Generator - TechyNoob</title>
-    <!-- SEO Meta Tags (Consistent with index.html) -->
-    <meta name="description" content="Generate stunning AI images and thumbnails instantly with TechyNoob's AI Image Generator. Perfect for content creators and designers.">
-    <meta name="keywords" content="AI image generator, AI thumbnail generator, free AI image, image creation, AI art, TechyNoob AI, generate image from text">
-    <meta name="author" content="TechyNoob">
-    <link rel="canonical" href="https://techynoob18.github.io/ai-image-generator.html">
-
-    <!-- Open Graph / Twitter Meta Tags (Adapt as needed) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://techynoob18.github.io/ai-image-generator.html">
-    <meta property="og:title" content="AI Image & Thumbnail Generator - TechyNoob">
-    <meta property="og:description" content="Generate stunning AI images and thumbnails instantly with TechyNoob's AI Image Generator. Perfect for content creators and designers.">
-    <meta property="og:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://techynoob18.github.io/ai-image-generator.html">
-    <meta property="twitter:title" content="AI Image & Thumbnail Generator - TechyNoob">
-    <meta property="twitter:description" content="Generate stunning AI images and thumbnails instantly with TechyNoob's AI Image Generator. Perfect for content creators and designers.">
-    <meta property="twitter:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
-
-    <!-- AdSense Meta Tag -->
-    <meta name="google-adsense-account" content="ca-pub-6446522570285835">
+    <title>AI Image Generator - TechyNoob</title>
+    <!-- AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835"
+     crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9KWQ18P9"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        gtag('config', 'G-2E9KWQ18P9');
+      gtag('config', 'G-2E9KWQ18P9');
     </script>
-    <!-- Tailwind CSS CDN for styling -->
+    <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #1a202c; /* Dark background for a techy feel */
             color: #e2e8f0; /* Light text for contrast */
-            /* Removed original body background and flex properties as they conflict with main site structure */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
         .gradient-text {
             background-image: linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA);
@@ -50,152 +37,34 @@
             background-clip: text;
             color: transparent;
         }
-        .container-ai-gen { /* Renamed to avoid conflict with shared .container */
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-            backdrop-filter: blur(8px); /* Frosted glass effect */
-            -webkit-backdrop-filter: blur(8px); /* For Safari */
-            padding: 30px;
-            border-radius: 20px; /* More rounded corners */
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.08); /* Layered shadow */
-            width: 100%;
-            max-width: 900px;
+        .ai-image-container {
+            min-height: 300px; /* Ensure space for image and loading */
             display: flex;
-            flex-direction: column;
-            gap: 25px; /* Increased gap */
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
-            color: #333; /* Ensure text inside is readable on light background */
-        }
-        .input-section, .output-section {
-            display: flex;
-            flex-direction: column;
-            gap: 20px; /* Increased gap */
-        }
-        textarea {
-            resize: vertical;
-            min-height: 120px; /* Slightly taller textarea */
-            border-color: #e0e0e0;
-            transition: all 0.3s ease-in-out;
-        }
-        textarea:focus {
-            border-color: #6366f1; /* More vibrant focus ring */
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
-        }
-        button {
-            transition: all 0.3s ease-in-out;
-            font-weight: 600;
-            border-radius: 12px; /* Consistent rounded corners */
-            padding: 14px 28px; /* Larger padding */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            align-items: center;
+            justify-content: center;
+            background-color: #2d3748; /* Darker grey for image background */
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            overflow: hidden; /* Hide overflow for rounded corners */
             position: relative;
-            overflow: hidden;
-            z-index: 1;
         }
-        button:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background: rgba(255, 255, 255, 0.15); /* Light overlay for hover */
-            transition: all 0.75s ease-out;
-            border-radius: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            z-index: -1;
-        }
-        button:hover:before {
-            transform: translate(-50%, -50%) scale(1);
-        }
-        button:active {
-            transform: translateY(1px);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Specific button styles */
-        #generateButton {
-            background: linear-gradient(45deg, #6366f1, #9333ea); /* Purple-blue gradient */
-            color: white;
-        }
-        #downloadButton {
-            background: linear-gradient(45deg, #10b981, #34d399); /* Green gradient */
-            color: white;
-        }
-        #copyButton {
-            background: linear-gradient(45deg, #f97316, #fbbf24); /* Orange-yellow gradient */
-            color: white;
-        }
-
         .loading-spinner {
             border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid white; /* White spinner for dark buttons */
+            border-top: 4px solid #6EE7B7; /* Green spinner */
             border-radius: 50%;
-            width: 24px; /* Slightly smaller */
-            height: 24px;
-            animation: spin 0.8s linear infinite;
-            display: none;
-            margin-left: 10px; /* Spacing from text */
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        .image-preview {
-            border: 1px solid #f0f0f0;
-            background-color: #fcfcfc;
-            min-height: 250px; /* Slightly larger preview area */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Inner shadow */
-        }
-        .image-preview img {
+        #generatedImage {
             max-width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px; /* Match container rounding */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Shadow for the image itself */
-        }
-        .button-group {
-            display: flex;
-            gap: 15px; /* Increased gap */
-            flex-wrap: wrap;
-            justify-content: center; /* Center buttons */
-        }
-        .button-group button {
-            flex-grow: 1; /* Allow buttons to grow */
-            min-width: 150px; /* Ensure minimum width for smaller screens */
-        }
-        .container-ai-gen h1, .container-ai-gen h2 { /* Targeting headings within the AI gen container */
-            color: #2c3e50; /* Darker heading color for contrast */
-            font-weight: 700;
-        }
-        .container-ai-gen p.text-gray-600 {
-            color: #555; /* Slightly darker grey for body text */
-        }
-        .container-ai-gen p.text-gray-400 {
-            color: #999; /* Lighter grey for placeholder text */
-        }
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .container-ai-gen {
-                flex-direction: row;
-                gap: 40px; /* More space between sections on larger screens */
-            }
-            .input-section, .output-section {
-                flex: 1;
-            }
-            .image-preview {
-                min-height: 350px; /* Taller preview for desktop */
-            }
-        }
-        /* Custom styles for search bar responsiveness (copied from index/about) */
-        .search-container {
-            display: flex;
-            flex-grow: 1; /* Allows it to take available space */
-            justify-content: flex-end; /* Aligns to the right within its flex container */
-            margin-left: 1rem; /* Space from nav links */
+            max-height: 100%;
+            object-fit: contain; /* Ensure image fits without cropping */
+            display: none; /* Hidden by default */
         }
         /* Style for search suggestions dropdown */
         .suggestions-dropdown {
@@ -212,25 +81,50 @@
         .suggestion-item:hover {
             background-color: #4a5568; /* Darker hover */
         }
-        @media (max-width: 767px) { /* Adjust for mobile view */
-            .search-container {
-                width: 100%;
-                margin-top: 1rem;
-                margin-left: 0;
-                justify-content: center; /* Center search bar on mobile */
-            }
-            .header-content {
-                flex-direction: column; /* Stack logo and nav vertically */
-                align-items: center; /* Center items when stacked */
-            }
-            .header-nav {
-                margin-top: 1rem; /* Space between logo/title and nav links */
-            }
+        #messageBox {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 90%;
+            border: 1px solid #6EE7B7; /* Border matching gradient */
+        }
+        #messageBox button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #3B82F6; /* Blue for action button */
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        #messageBox button:hover {
+            background-color: #2563EB; /* Darker blue on hover */
+        }
+
+        /* Mobile Menu styles */
+        #mobile-menu {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
     </style>
 </head>
 <body class="antialiased leading-normal">
-    <!-- Header/Navigation Bar - Consistent with index.html -->
     <header class="bg-gray-900 shadow-lg py-4 px-6 md:px-8 lg:px-12 relative z-50">
         <nav class="container mx-auto flex flex-wrap justify-between items-center relative z-50">
             <!-- Logo and Title -->
@@ -298,89 +192,35 @@
             <a href="terms.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Terms of Service</a>
             <a href="contact.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Contact Us</a>
             <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="closeMobileMenu()">
-                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2">
-                YouTube Channel
+                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2"> YouTube Channel
             </a>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 md:px-8 lg:px-12 py-12 flex flex-col justify-center items-center">
-        <!-- Main content of the AI Image Generator, now centered within the main tag -->
-        <div class="container-ai-gen">
-            <!-- Input Section -->
-            <div class="input-section">
-                <h1 class="text-3xl font-extrabold text-center mb-4">Generate AI Images & Thumbnails</h1>
-                <p class="text-gray-600 text-base text-center mb-6">
-                    Enter a detailed description below to generate an image. Perfect for social media, YouTube thumbnails, or creative projects!
-                </p>
-                <textarea
-                    id="promptInput"
-                    class="w-full p-4 border rounded-xl focus:ring-4 focus:ring-opacity-40 transition duration-200 shadow-sm"
-                    placeholder="e.g., A vibrant cyberpunk city at night with neon lights and flying cars, highly detailed, cinematic, for a tech YouTube channel intro"
-                    rows="6"
-                ></textarea>
+    <main class="container mx-auto px-6 md:px-8 lg:px-12 py-12 flex-grow">
+        <div class="bg-gray-800 rounded-xl shadow-xl p-8 lg:p-12 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-8 gradient-text">AI Image Generator</h1>
+            <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+                Unleash your creativity! Describe the image you want to generate in detail below, and our AI will bring it to life.
+            </p>
 
-                <button
-                    id="generateButton"
-                    class="text-white py-3 px-6 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-opacity-50 flex items-center justify-center gap-2"
-                >
+            <div class="mb-8 flex flex-col md:flex-row gap-4 items-center max-w-3xl mx-auto">
+                <input type="text" id="imagePrompt" placeholder="A futuristic city at sunset, neon lights, flying cars, cyberpunk style, highly detailed"
+                       class="flex-grow px-4 py-3 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 border border-gray-600 transition duration-300 ease-in-out w-full">
+                <button id="generateButton" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-105 w-full md:w-auto">
                     Generate Image
-                    <div id="loadingSpinner" class="loading-spinner"></div>
                 </button>
-                <div id="messageBox" class="p-3 text-sm text-red-700 bg-red-100 rounded-lg hidden"></div>
-                <p class="text-xs text-gray-500 mt-2 text-center">
-                    Note: This tool uses the `imagen-3.0-generate-002` model for image generation. The generated images are free for you to use and will be at the model's default resolution.
-                </p>
             </div>
 
-            <!-- Output Section -->
-            <div class="output-section">
-                <h2 class="text-2xl font-bold text-center mb-4">Generated Image</h2>
-                <div class="image-preview" id="imagePreview">
-                    <p class="text-gray-400">Your generated image will appear here.</p>
-                </div>
-                <div class="button-group mt-4">
-                    <button
-                        id="downloadButton"
-                        class="py-3 px-6 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-opacity-50 disabled:opacity-50"
-                        disabled
-                    >
-                        Download Image
-                    </button>
-                    <button
-                        id="copyButton"
-                        class="py-3 px-6 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-opacity-50 disabled:opacity-50"
-                        disabled
-                    >
-                        Copy Image to Clipboard
-                    </button>
-                </div>
+            <div class="ai-image-container w-full max-w-3xl mx-auto aspect-video">
+                <div id="loadingIndicator" class="loading-spinner hidden"></div>
+                <img id="generatedImage" src="https://placehold.co/600x400/3B82F6/ffffff?text=Your+AI+Image+Here" alt="Generated Image" class="w-full h-full object-cover rounded-xl">
             </div>
-        </div>
-
-        <!-- Google AdSense Ad Placeholder -->
-        <div class="my-12 p-8 bg-gray-800 rounded-xl shadow-xl border border-gray-700 text-center w-full max-w-4xl">
-            <p class="text-gray-400 text-xl font-semibold mb-4">Advertisement</p>
-            <div class="w-full h-48 bg-gray-700 flex items-center justify-center rounded-lg border border-dashed border-gray-500 text-gray-500">
-                <p>Your Google AdSense Ad will appear here</p>
-            </div>
-            <!-- Example AdSense code structure (REPLACE WITH YOUR ACTUAL CODE) -->
-            <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835" crossorigin="anonymous"></script> -->
-            <!-- TechyNoob Display Ad -->
-            <!-- <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-6446522570285835"
-                 data-ad-slot="YOUR_AD_SLOT_ID"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script> -->
+            <p id="errorMessage" class="text-red-500 mt-4 hidden">An error occurred. Please try again.</p>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8 px-6 md:px-8 lg:px-12 mt-12">
+    <footer class="bg-gray-900 py-8 px-6 mt-12">
         <div class="container mx-auto text-center text-gray-400">
             <p>&copy; 2025 TechyNoob. All rights reserved.</p>
             <div class="flex flex-wrap justify-center space-x-4 md:space-x-6 mt-4 text-sm">
@@ -397,65 +237,59 @@
         </div>
     </footer>
 
-    <script>
-        const promptInput = document.getElementById('promptInput');
-        const generateButton = document.getElementById('generateButton');
-        const loadingSpinner = document.getElementById('loadingSpinner');
-        const imagePreview = document.getElementById('imagePreview');
-        const downloadButton = document.getElementById('downloadButton');
-        const copyButton = document.getElementById('copyButton');
-        const messageBox = document.getElementById('messageBox');
+    <div id="messageBox" class="hidden">
+        <p id="messageText"></p>
+        <button id="messageOkButton">OK</button>
+    </div>
 
-        // Function to show a message in the message box
-        function showMessage(message, isError = false) {
-            messageBox.textContent = message;
-            messageBox.className = `p-3 text-sm rounded-lg ${isError ? 'text-red-700 bg-red-100' : 'text-green-700 bg-green-100'}`;
+    <script>
+        const imagePromptInput = document.getElementById('imagePrompt');
+        const generateButton = document.getElementById('generateButton');
+        const generatedImage = document.getElementById('generatedImage');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const errorMessage = document.getElementById('errorMessage');
+        const messageBox = document.getElementById('messageBox');
+        const messageText = document.getElementById('messageText');
+        const messageOkButton = document.getElementById('messageOkButton');
+
+        // Function to show custom message box
+        function showMessageBox(message) {
+            messageText.textContent = message;
             messageBox.classList.remove('hidden');
+            // Make sure the image is hidden when a message is shown
+            generatedImage.style.display = 'none'; 
+            loadingIndicator.classList.add('hidden');
         }
 
-        // Function to hide the message box
+        // Function to hide custom message box
         function hideMessageBox() {
             messageBox.classList.add('hidden');
         }
 
-        // Function to enable/disable buttons
-        function setButtonState(enabled) {
-            generateButton.disabled = !enabled;
-            downloadButton.disabled = !enabled;
-            copyButton.disabled = !enabled;
-        }
+        messageOkButton.addEventListener('click', hideMessageBox);
 
-        // Event listener for the Generate button
         generateButton.addEventListener('click', async () => {
-            const prompt = promptInput.value.trim();
-
+            const prompt = imagePromptInput.value.trim();
             if (!prompt) {
-                showMessage('Please enter a description for the image.', true);
+                showMessageBox('Please enter a description for the image.');
                 return;
             }
 
-            hideMessageBox();
-            imagePreview.innerHTML = '<p class="text-gray-400">Generating image...</p>';
-            setButtonState(false); // Disable buttons
-            loadingSpinner.style.display = 'block'; // Show spinner
+            // Hide previous image, show loading spinner, hide error message
+            generatedImage.style.display = 'none';
+            loadingIndicator.classList.remove('hidden');
+            errorMessage.classList.add('hidden');
+            hideMessageBox(); // Hide any previous info messages
 
             try {
-                // Construct the payload for the image generation API
                 const payload = {
-                    instances: { prompt: prompt },
-                    parameters: {
-                        "sampleCount": 1
-                    }
+                    instances: [{ prompt: prompt }],
+                    parameters: { "sampleCount": 1 }
                 };
-
-                // IMPORTANT: If deploying outside the Canvas environment (e.g., to GitHub Pages),
-                // replace "YOUR_GEMINI_API_KEY_HERE" with your actual Google Gemini API Key.
-                // You can obtain one from Google AI Studio: https://aistudio.google.com/app/apikey
-                const apiKey = ""; // API key will be automatically provided in Canvas runtime
-                // This apiUrl is correct for image generation using Imagen 3.0
+                // API key is handled by the Canvas environment for specified models
+                const apiKey = ""; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
 
-                // Fetch request to the image generation API
                 const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -464,89 +298,25 @@
 
                 const result = await response.json();
 
-                // Check if the response contains the generated image data
                 if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
                     const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
-                    const imgElement = document.createElement('img');
-                    imgElement.src = imageUrl;
-                    imgElement.alt = "Generated AI Image";
-
-                    imagePreview.innerHTML = ''; // Clear "Generating image..."
-                    imagePreview.appendChild(imgElement);
-
-                    downloadButton.dataset.imageUrl = imageUrl; // Store image URL for download
-                    setButtonState(true); // Enable buttons after successful generation
-                    showMessage('Image generated successfully!', false);
+                    generatedImage.src = imageUrl;
+                    generatedImage.style.display = 'block'; // Show the image
                 } else {
-                    showMessage('Failed to generate image. Please try again with a different prompt.', true);
-                    console.error('API response error:', result);
-                    imagePreview.innerHTML = '<p class="text-red-500">Error generating image.</p>';
+                    showMessageBox('Failed to generate image. Please try a different prompt.');
                 }
             } catch (error) {
-                showMessage('An error occurred while communicating with the API. Please check your network connection and try again.', true);
-                console.error('Fetch error:', error);
-                imagePreview.innerHTML = '<p class="text-red-500">Error generating image.</p>';
+                console.error('Error generating image:', error);
+                showMessageBox('Error generating image. Please check your network connection or try again later.');
             } finally {
-                loadingSpinner.style.display = 'none'; // Hide spinner
-                setButtonState(true); // Ensure buttons are re-enabled even on error for retry
+                loadingIndicator.classList.add('hidden'); // Hide loading spinner
             }
         });
 
-        // Event listener for Download button
-        downloadButton.addEventListener('click', () => {
-            const imageUrl = downloadButton.dataset.imageUrl;
-            if (imageUrl) {
-                const a = document.createElement('a');
-                a.href = imageUrl;
-                a.download = 'ai-generated-image.png';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                showMessage('Image downloaded!', false);
-            } else {
-                showMessage('No image to download.', true);
-            }
-        });
-
-        // Event listener for Copy button
-        copyButton.addEventListener('click', async () => {
-            const imageUrl = downloadButton.dataset.imageUrl;
-            if (imageUrl) {
-                try {
-                    // Fetch the image as a Blob
-                    const response = await fetch(imageUrl);
-                    const blob = await response.blob();
-
-                    // Use the Clipboard API to write the image blob
-                    // Note: This relies on navigator.clipboard.write which might require HTTPS and user gesture.
-                    // For browser compatibility and sandbox environments, document.execCommand('copy') might be more reliable for text,
-                    // but for images, the modern Clipboard API is preferred if available.
-                    if (navigator.clipboard && navigator.clipboard.write) {
-                        await navigator.clipboard.write([
-                            new ClipboardItem({
-                                [blob.type]: blob
-                            })
-                        ]);
-                        showMessage('Image copied to clipboard!', false);
-                    } else {
-                        showMessage('Your browser does not support copying images directly to the clipboard. Please use the download option instead.', true);
-                    }
-                } catch (err) {
-                    console.error('Failed to copy image: ', err);
-                    showMessage('Failed to copy image to clipboard. Please try downloading it.', true);
-                }
-            } else {
-                showMessage('No image to copy.', true);
-            }
-        });
-
-        // Initial state setup
-        setButtonState(true); // Enable buttons on load
-
-        // Mobile menu toggle
+        // Mobile menu toggle logic
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu'); 
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
 
         function openMobileMenu() {
             mobileMenu.classList.remove('hidden');
@@ -576,31 +346,118 @@
             }
         });
         
-        // Basic search functionality for demonstration (no live search on these pages)
+        // --- Search Functionality (for blog articles and games) ---
+        // Dummy data for search (replace with actual dynamic loading if needed)
+        const allContentData = [
+            { title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", link: "Blogs/magisk-vexiro.html" },
+            { title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", link: "Blogs/custom-boot-animations.html" },
+            { title: "Revolutionize Your Android Experience: Unveiling the Power of Launchpad App", description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.", link: "Blogs/launchpad-app.html" },
+            { title: "Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones", description: "A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.", link: "Blogs/iconify-installation.html" },
+            { title: "Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method", description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.", link: "Blogs/crdroid-ota-update.html" },
+            { title: "Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+", description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!", link: "Blogs/colorblendr-guide.html" },
+            { title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!", link: "Blogs/android-16-arrives.html" },
+            { title: "Installing Android 16 Material 3 Expressive Theme", description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!", link: "Blogs/install-material-3-theme.html" },
+            { title: "Root Any Android Phone WITHOUT Magisk in 2025", description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!", link: "Blogs/root-android-without-magisk.html" },
+            { title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!", link: "Blogs/fix-play-integrity-rooted-android.html" },
+            { title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", link: "Blogs/unlock-samsung-experience.html" },
+            { title: "Install Superior OS (Android 15) with May 2025 Security Patch!", description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", link: "Blogs/install-superior-os.html" },
+            { title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", description: "The Redmi Note 7 Pro, a beloved device known for its robust performance and excellent value, continues to be a favorite among enthusiasts.", link: "Blogs/install-android-16-redmi-note-7-pro.html" },
+            { title: "Google Pixel 6a in 2025: Is This Budget Gem Still a Worthy Contender?", description: "A definitive long-term review of the Google Pixel 6a in 2025, covering battery life, Android 16 features, camera performance, and its worth as a budget smartphone contender.", link: "Blogs/google-pixel-6a-2025-review.html" },
+            { title: "How to Install Incompatible Older Apps on Android 14, 15, and 16", description: "Learn how to bypass Google's app installation block for older apps on Android 14+ using an LSPosed module.", link: "Blogs/install-older-apps.html" },
+            { title: "Android 16 vs. Android 15: A Deep Dive into the Pixel UI Revolution", description: "A comprehensive side-by-side comparison of Android 16 QPR Beta 2.1 and Android 15, highlighting major UI enhancements, Material 3 Expressive design, and new features on Google Pixel devices.", link: "Blogs/android-16-vs-android-15.html" },
+
+            // Games (if you had a separate games data structure or if they were integrated)
+            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
+            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
+            { type: 'game', title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
+        ];
+
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
         const mobileSearchInput = document.getElementById('mobileSearchInput');
         const mobileSearchButton = document.getElementById('mobileSearchButton');
+        const searchResultsDropdown = document.getElementById('searchResultsDropdown');
+        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
 
-        function handleSearch(inputElement) {
-            if (inputElement.value.length > 0) {
-                window.location.href = `search-results.html?q=${encodeURIComponent(inputElement.value)}`;
+        // Function to display suggestions
+        function displaySuggestions(inputElement, dropdownElement) {
+            const query = inputElement.value.toLowerCase().trim();
+            dropdownElement.innerHTML = ''; // Clear previous suggestions
+
+            if (query.length === 0) {
+                dropdownElement.classList.add('hidden');
+                return;
+            }
+
+            const filteredSuggestions = allContentData.filter(item =>
+                item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
+            ).slice(0, 7); // Limit to 7 suggestions
+
+            if (filteredSuggestions.length > 0) {
+                filteredSuggestions.forEach(item => {
+                    const suggestionDiv = document.createElement('div');
+                    suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
+                    suggestionDiv.textContent = item.title;
+                    suggestionDiv.addEventListener('click', () => {
+                        window.location.href = item.link; // Navigate to the article/game page
+                    });
+                    dropdownElement.appendChild(suggestionDiv);
+                });
+                dropdownElement.classList.remove('hidden');
+            } else {
+                dropdownElement.classList.add('hidden');
             }
         }
 
-        if(searchInput) {
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') handleSearch(searchInput);
-            });
-            searchButton.addEventListener('click', () => handleSearch(searchInput));
-        }
+        // Event listeners for desktop search
+        searchButton.addEventListener('click', () => {
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+            }
+            searchResultsDropdown.classList.add('hidden');
+        });
+        searchInput.addEventListener('keyup', (e) => {
+            displaySuggestions(searchInput, searchResultsDropdown);
+            if (e.key === 'Enter') {
+                const query = searchInput.value.trim();
+                if (query) {
+                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+                }
+                searchResultsDropdown.classList.add('hidden');
+            }
+        });
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
+                searchResultsDropdown.classList.add('hidden');
+            }
+        });
 
-        if(mobileSearchInput) {
-            mobileSearchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') handleSearch(mobileSearchInput);
-            });
-            mobileSearchButton.addEventListener('click', () => handleSearch(mobileSearchInput));
-        }
+        // Event listeners for mobile search
+        mobileSearchButton.addEventListener('click', () => {
+            const query = mobileSearchInput.value.trim();
+            if (query) {
+                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+            }
+            mobileSearchResultsDropdown.classList.add('hidden');
+            closeMobileMenu();
+        });
+        mobileSearchInput.addEventListener('keyup', (e) => {
+            displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
+            if (e.key === 'Enter') {
+                const query = mobileSearchInput.value.trim();
+                if (query) {
+                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+                }
+                mobileSearchResultsDropdown.classList.add('hidden');
+                closeMobileMenu();
+            }
+        });
+        document.addEventListener('click', (e) => {
+            if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
+                mobileSearchResultsDropdown.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
