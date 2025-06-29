@@ -33,8 +33,21 @@
             color: transparent;
         }
         .hero-section {
-            /* Updated background image for a techy, energetic feel without specific text */
-            background: url('https://placehold.co/1920x1080/1a202c/e2e8f0?text=ABSTRACT+TECH+CIRCUITS+LINES') no-repeat center center/cover;
+            /* Pure CSS generated abstract tech background */
+            background-color: #1a202c; /* Fallback dark background */
+            background-image:
+                /* Grid pattern for circuits/lines */
+                linear-gradient(0deg, transparent 9%, rgba(100, 255, 200, 0.05) 10%, transparent 11%),
+                linear-gradient(90deg, transparent 9%, rgba(100, 255, 200, 0.05) 10%, transparent 11%),
+                linear-gradient(45deg, transparent 49%, rgba(60, 150, 250, 0.08) 50%, transparent 51%),
+                linear-gradient(-45deg, transparent 49%, rgba(150, 50, 200, 0.08) 50%, transparent 51%),
+                /* Subtle dot pattern for texture */
+                radial-gradient(circle at 10px 10px, rgba(255, 255, 255, 0.02) 1px, transparent 0%),
+                /* Large radial gradient for central glow */
+                radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            background-size: 50px 50px, 50px 50px, 50px 50px, 50px 50px, 20px 20px, cover; /* Adjust sizes for patterns */
+            background-position: 0 0, 0 0, 0 0, 0 0, 0 0, center center;
+            
             min-height: 70vh;
             display: flex;
             align-items: center;
@@ -42,7 +55,14 @@
             text-align: center;
             position: relative;
             z-index: 10;
+            animation: backgroundPan 30s linear infinite; /* Optional: subtle animation */
         }
+
+        @keyframes backgroundPan {
+            0% { background-position: 0 0, 0 0, 0 0, 0 0, 0 0, center center; }
+            100% { background-position: 500px 500px, 500px 500px, 500px 500px, 500px 500px, 500px 500px, center center; }
+        }
+
         .hero-overlay {
             background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for text readability */
             position: absolute;
