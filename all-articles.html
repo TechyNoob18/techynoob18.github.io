@@ -10,7 +10,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9KWQ18P9"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}.
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-2E9KWQ18P9');
@@ -32,6 +32,7 @@
             background-clip: text;
             color: transparent;
         }
+        /* Blog card styles (reused from index.html) */
         .blog-card {
             background-color: #2d3748; /* Darker card background */
             border-radius: 0.75rem; /* rounded-xl */
@@ -78,6 +79,7 @@
         .blog-card-footer a:hover {
             color: #3B82F6; /* Blue on hover */
         }
+
         /* Mobile Menu styles */
         #mobile-menu {
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -86,6 +88,7 @@
             right: 0;
             bottom: 0;
         }
+
         /* Style for search suggestions dropdown */
         .suggestions-dropdown {
             max-height: 200px;
@@ -153,8 +156,8 @@
                 </svg>
             </button>
             <!-- Search Input and Button for Mobile -->
-            <div class="relative flex items-center mt-6">
-                <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full max-w-xs transition-all duration-300 ease-in-out focus:w-64">
+            <div class="relative flex items-center mt-6 w-full max-w-xs">
+                <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
                 <button id="mobileSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
@@ -171,31 +174,34 @@
             <a href="terms.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Terms of Service</a>
             <a href="contact.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Contact Us</a>
             <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="closeMobileMenu()">
-                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2"> YouTube Channel
+                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2">
+                YouTube Channel
             </a>
         </div>
     </header>
 
-    <main class="flex-grow">
-        <section class="container mx-auto px-6 md:px-8 lg:px-12 py-16">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 gradient-text">All Articles</h2>
-            <!-- Search Bar for All Articles Page -->
-            <div class="mb-8 flex justify-center">
-                <div class="relative flex items-center w-full max-w-lg">
-                    <input type="text" id="articleSearchInput" placeholder="Search articles..." class="px-4 py-3 rounded-l-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full transition-all duration-300 ease-in-out">
-                    <button id="articleSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-r-lg transition duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </button>
-                    <div id="articleSearchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
-                        <!-- Suggestions will be populated here -->
-                    </div>
+    <main class="flex-grow container mx-auto px-6 md:px-8 lg:px-12 py-12">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-center mb-10 gradient-text">All Articles</h1>
+        
+        <!-- Search Bar for All Articles Page -->
+        <div class="flex flex-col sm:flex-row items-center justify-center mb-10 space-y-4 sm:space-y-0 sm:space-x-4">
+            <div class="relative flex items-center w-full sm:w-auto flex-grow max-w-xl">
+                <input type="text" id="articleSearchInput" placeholder="Search articles..." class="px-4 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
+                <button id="articleSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <div id="articleSearchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
+                    <!-- Suggestions will be populated here -->
                 </div>
             </div>
+            <button id="resetFilterButton" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto">
+                Reset Filter
+            </button>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-cards-container">
-                <!-- Blog cards will be dynamically loaded here by JavaScript -->
-            </div>
-        </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-cards-container">
+            <!-- Blog cards will be dynamically loaded here by JavaScript -->
+        </div>
     </main>
 
     <footer class="bg-gray-900 py-8 px-6 mt-12">
@@ -209,7 +215,7 @@
             </div>
             <div class="flex justify-center space-x-6 mt-4">
                 <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
-                    <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
+                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
                 </a>
             </div>
         </div>
@@ -226,7 +232,7 @@
             },
             { 
                 title: "Unleash Your Android's Potential: Install Any Custom Package Installer with Magisk!", 
-                description: "Are you a rooted Android user looking to break free from the mundane default package installer? Do you crave a more visually appealing or feature-rich experience when installing your favorite apps? Look no further! This comprehensive guide will walk you through the simple yet powerful process of installing a custom package installer on virtually any rooted Android device using Magisk. Get ready to elevate your Android experience!", 
+                description: "Are you a rooted Android user looking to break free from the mundane default package installer? Do you crave a more visually appealing or feature-rich experience when installing your favorite apps? Look further! This comprehensive guide will walk you through the simple yet powerful process of installing a custom package installer on virtually any rooted Android device using Magisk. Get ready to elevate your Android experience!", 
                 link: "Blogs/custom-package-installer.html",
                 image: "https://placehold.co/400x200/9333EA/ffffff?text=Custom+Installer"
             },
@@ -338,19 +344,18 @@
                 link: "Blogs/magisk-rooting-guide.html",
                 image: "https://placehold.co/400x200/3B82F6/ffffff?text=Magisk+Rooting+Guide"
             },
+            // Games (these are not displayed in the "Latest Blogs" section, but used for search)
+            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
+            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
+            { type: "game", title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
         ];
 
         const blogCardsContainer = document.getElementById('blog-cards-container');
         const articleSearchInput = document.getElementById('articleSearchInput');
         const articleSearchButton = document.getElementById('articleSearchButton');
         const articleSearchResultsDropdown = document.getElementById('articleSearchResultsDropdown');
+        const resetFilterButton = document.getElementById('resetFilterButton');
 
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-        const mobileSearchInput = document.getElementById('mobileSearchInput');
-        const mobileSearchButton = document.getElementById('mobileSearchButton');
-        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
 
         // Function to create and append a blog card
         function createBlogCard(article) {
@@ -382,7 +387,10 @@
             blogCardsContainer.innerHTML = ''; // Clear existing cards
             const lowerCaseQuery = query.toLowerCase();
 
-            const filteredArticles = allContentData.filter(article =>
+            // Reverse the array to show newest articles first, then filter
+            const articlesToDisplay = allContentData.filter(item => item.type !== 'game').reverse();
+
+            const filteredArticles = articlesToDisplay.filter(article =>
                 article.title.toLowerCase().includes(lowerCaseQuery) ||
                 article.description.toLowerCase().includes(lowerCaseQuery)
             );
@@ -427,51 +435,85 @@
         }
 
         // Event listeners for desktop search on this page
-        articleSearchButton.addEventListener('click', () => {
-            filterBlogCards(articleSearchInput.value);
-            articleSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
-        });
-        articleSearchInput.addEventListener('keyup', (e) => {
-            displaySuggestions(articleSearchInput, articleSearchResultsDropdown);
-            if (e.key === 'Enter') {
-                articleSearchButton.click(); // Trigger search on Enter
-            }
-        });
+        if (articleSearchButton) {
+            articleSearchButton.addEventListener('click', () => {
+                filterBlogCards(articleSearchInput.value);
+                articleSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+            });
+        }
+        if (articleSearchInput) {
+            articleSearchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(articleSearchInput, articleSearchResultsDropdown);
+                if (e.key === 'Enter') {
+                    if (articleSearchButton) articleSearchButton.click(); // Trigger search on Enter
+                }
+            });
+        }
         document.addEventListener('click', (e) => {
-            if (!articleSearchInput.contains(e.target) && !articleSearchButton.contains(e.target) && !articleSearchResultsDropdown.contains(e.target)) {
-                articleSearchResultsDropdown.classList.add('hidden');
+            if (articleSearchInput && articleSearchButton && articleSearchResultsDropdown) {
+                if (!articleSearchInput.contains(e.target) && !articleSearchButton.contains(e.target) && !articleSearchResultsDropdown.contains(e.target)) {
+                    articleSearchResultsDropdown.classList.add('hidden');
+                }
             }
         });
 
+        // Reset filter button
+        if (resetFilterButton) {
+            resetFilterButton.addEventListener('click', () => {
+                if (articleSearchInput) articleSearchInput.value = ''; // Clear search input
+                filterBlogCards(''); // Reset filters to show all articles
+                if (articleSearchResultsDropdown) articleSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
+                // Remove search query from URL if present
+                const url = new URL(window.location.href);
+                if (url.searchParams.has('search')) {
+                    url.searchParams.delete('search');
+                    window.history.replaceState({}, document.title, url.toString());
+                }
+            });
+        }
+
         // Event listeners for mobile search (nav menu)
-        mobileSearchButton.addEventListener('click', () => {
-            const query = mobileSearchInput.value.trim();
-            if (query) {
-                // If on all-articles page, filter. If on other page, redirect.
-                if (window.location.pathname.includes('all-articles.html')) {
+        const searchInput = document.getElementById('searchInput'); // Desktop search input from header
+        const mobileSearchInput = document.getElementById('mobileSearchInput');
+        const mobileSearchButton = document.getElementById('mobileSearchButton');
+        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
+
+        if (mobileSearchButton) {
+            mobileSearchButton.addEventListener('click', () => {
+                const query = mobileSearchInput.value.trim();
+                if (query) {
+                    // On all-articles page, filter directly
                     filterBlogCards(query);
                 } else {
-                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+                    filterBlogCards(''); // If search is empty, show all
                 }
-            }
-            mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
-            closeMobileMenu(); // Close mobile menu after search
-        });
-        mobileSearchInput.addEventListener('keyup', (e) => {
-            displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
-            if (e.key === 'Enter') {
-                mobileSearchButton.click(); // Trigger search on Enter
-            }
-        });
+                mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+                closeMobileMenu(); // Close mobile menu after search
+            });
+        }
+        if (mobileSearchInput) {
+            mobileSearchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
+                if (e.key === 'Enter') {
+                    if (mobileSearchButton) mobileSearchButton.click(); // Trigger search on Enter
+                }
+            });
+        }
         // This document click listener handles hiding the mobile dropdown
         document.addEventListener('click', (e) => {
-            if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
-                mobileSearchResultsDropdown.classList.add('hidden');
+            if (mobileSearchInput && mobileSearchButton && mobileSearchResultsDropdown) {
+                if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
+                    mobileSearchResultsDropdown.classList.add('hidden');
+                }
             }
         });
 
 
         // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
         function openMobileMenu() {
             mobileMenu.classList.remove('hidden');
             requestAnimationFrame(() => {
@@ -490,32 +532,28 @@
             }, 300); // Duration of transition
         }
 
-        mobileMenuButton.addEventListener('click', openMobileMenu);
-        closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+        }
+        if (closeMobileMenuButton) {
+            closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        }
 
         // Add event listener to transition end for mobile menu cleanup
-        mobileMenu.addEventListener('transitionend', () => {
-            if (mobileMenu.classList.contains('translate-x-full') && mobileMenu.classList.contains('hidden')) {
-                // Perform cleanup only if menu is fully closed and hidden
-                mobileSearchInput.value = ''; // Clear mobile search input
-                mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
-            }
-        });
+        if (mobileMenu) {
+            mobileMenu.addEventListener('transitionend', () => {
+                if (mobileMenu.classList.contains('translate-x-full') && mobileMenu.classList.contains('hidden')) {
+                    // Perform cleanup only if menu is fully closed and hidden
+                    if (mobileSearchInput) mobileSearchInput.value = ''; // Clear mobile search input
+                    if (mobileSearchResultsDropdown) mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
+                }
+            });
+        }
 
         // Close mobile menu when a link is clicked
         if (mobileMenu) {
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
-                    // Check if the link is for "All Articles" and potentially apply search query
-                    if (link.getAttribute('href') === 'all-articles.html') {
-                        const currentSearchQuery = articleSearchInput.value || mobileSearchInput.value;
-                        if (currentSearchQuery) {
-                            // This ensures that when navigating to all-articles from the mobile menu,
-                            // the search query is preserved and applied.
-                            window.location.href = `all-articles.html?search=${encodeURIComponent(currentSearchQuery)}`;
-                            return; // Stop further execution as we're redirecting
-                        }
-                    }
                     closeMobileMenu();
                 });
             });
@@ -526,8 +564,8 @@
             const urlParams = new URLSearchParams(window.location.search);
             const searchQuery = urlParams.get('search');
             if (searchQuery) {
-                articleSearchInput.value = searchQuery; // Populate desktop search input
-                mobileSearchInput.value = searchQuery; // Populate mobile search input
+                if (articleSearchInput) articleSearchInput.value = searchQuery; // Populate desktop search input
+                if (mobileSearchInput) mobileSearchInput.value = searchQuery; // Populate mobile search input
                 filterBlogCards(searchQuery); // Filter articles based on query
             } else {
                 filterBlogCards(''); // Load all articles if no search query
