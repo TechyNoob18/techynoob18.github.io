@@ -274,7 +274,8 @@
             <a href="terms.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Terms of Service</a>
             <a href="contact.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Contact Us</a>
             <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="closeMobileMenu()">
-                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2"> YouTube Channel
+                <img src="logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2">
+                YouTube Channel
             </a>
         </div>
     </header>
@@ -554,8 +555,8 @@
         // Function to load latest blogs (only blog type articles)
         function loadLatestBlogs() {
             blogCardsContainer.innerHTML = ''; // Clear existing cards
-            // Filter out games and display only the latest 6 articles
-            const latestArticles = allContentData.filter(item => item.type !== 'game').slice(0, 6);
+            // Filter out games, reverse the array to get newest first, and then display the latest 6 articles
+            const latestArticles = allContentData.filter(item => item.type !== 'game').reverse().slice(0, 6);
             
             latestArticles.forEach(article => {
                 blogCardsContainer.appendChild(createBlogCard(article));
@@ -581,7 +582,7 @@
                     const suggestionDiv = document.createElement('div');
                     suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
                     suggestionDiv.textContent = item.title;
-                    div.onclick = () => { window.location.href = item.link; }; // Fixed: Added onclick handler to div
+                    suggestionDiv.onclick = () => { window.location.href = item.link; };
                     dropdownElement.appendChild(suggestionDiv);
                 });
                 dropdownElement.classList.remove('hidden');
@@ -591,45 +592,49 @@
         }
 
         // Event listeners for desktop search
-        searchButton.addEventListener('click', () => {
-            const query = searchInput.value.trim();
-            if (query) {
-                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
-            }
-            searchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
-        });
-        searchInput.addEventListener('keyup', (e) => {
-            displaySuggestions(searchInput, searchResultsDropdown);
-            if (e.key === 'Enter') {
-                searchButton.click(); // Trigger search on Enter
-            }
-        });
-        document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
-                searchResultsDropdown.classList.add('hidden');
-            }
-        });
+        if(searchInput && searchButton) {
+            searchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(searchInput, searchResultsDropdown);
+                if (e.key === 'Enter') {
+                    searchButton.click(); // Trigger search on Enter
+                }
+            });
+            searchButton.addEventListener('click', () => {
+                const query = searchInput.value.trim();
+                if (query) {
+                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+                }
+                searchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+            });
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
+                    searchResultsDropdown.classList.add('hidden');
+                }
+            });
+        }
 
         // Event listeners for mobile search
-        mobileSearchButton.addEventListener('click', () => {
-            const query = mobileSearchInput.value.trim();
-            if (query) {
-                window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
-            }
-            mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
-            closeMobileMenu(); // Close mobile menu after search
-        });
-        mobileSearchInput.addEventListener('keyup', (e) => {
-            displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
-            if (e.key === 'Enter') {
-                mobileSearchButton.click(); // Trigger search on Enter
-            }
-        });
-        document.addEventListener('click', (e) => {
-            if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
-                mobileSearchResultsDropdown.classList.add('hidden');
-            }
-        });
+        if(mobileSearchInput && mobileSearchButton) {
+            mobileSearchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
+                if (e.key === 'Enter') {
+                    mobileSearchButton.click(); // Trigger search on Enter
+                }
+            });
+            mobileSearchButton.addEventListener('click', () => {
+                const query = mobileSearchInput.value.trim();
+                if (query) {
+                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
+                }
+                mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+                closeMobileMenu(); // Close mobile menu after search
+            });
+            document.addEventListener('click', (e) => {
+                if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
+                    mobileSearchResultsDropdown.classList.add('hidden');
+                }
+            });
+        }
 
 
         // Mobile menu toggle
@@ -655,31 +660,35 @@
             }, 300); // Duration of transition
         }
 
-        mobileMenuButton.addEventListener('click', openMobileMenu);
-        closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        // Add checks for elements before adding event listeners
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+        }
+        if (closeMobileMenuButton) {
+            closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        }
 
         // Add event listener to transition end for mobile menu cleanup
-        mobileMenu.addEventListener('transitionend', () => {
-            if (mobileMenu.classList.contains('translate-x-full') && mobileMenu.classList.contains('hidden')) {
-                // Perform cleanup only if menu is fully closed and hidden
-                mobileSearchInput.value = ''; // Clear mobile search input
-                // No need to performSearch('') here as we are navigating to all-articles
-                mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
-            }
-        });
+        if (mobileMenu) {
+            mobileMenu.addEventListener('transitionend', () => {
+                if (mobileMenu.classList.contains('translate-x-full') && mobileMenu.classList.contains('hidden')) {
+                    // Perform cleanup only if menu is fully closed and hidden
+                    if (mobileSearchInput) mobileSearchInput.value = ''; // Clear mobile search input
+                    if (mobileSearchResultsDropdown) mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
+                }
+            });
+        }
 
         // Close mobile menu when a link is clicked
         if (mobileMenu) {
             mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
+                link.addEventListener('click', (e) => {
                     // Check if the link is for "All Articles" and potentially apply search query
                     if (link.getAttribute('href') === 'all-articles.html') {
-                        const currentSearchQuery = searchInput.value || mobileSearchInput.value;
+                        const currentSearchQuery = (searchInput ? searchInput.value : '') || (mobileSearchInput ? mobileSearchInput.value : '');
                         if (currentSearchQuery) {
-                             // This ensures that when navigating to all-articles from the mobile menu,
-                             // the search query is preserved and applied.
+                            e.preventDefault(); // Prevent default navigation
                             window.location.href = `all-articles.html?search=${encodeURIComponent(currentSearchQuery)}`;
-                            return; // Stop further execution as we're redirecting
                         }
                     }
                     closeMobileMenu();
@@ -695,8 +704,8 @@
             const urlParams = new URLSearchParams(window.location.search);
             const searchQuery = urlParams.get('search');
             if (searchQuery) {
-                searchInput.value = searchQuery; // Populate desktop search input
-                mobileSearchInput.value = searchQuery; // Populate mobile search input
+                if (searchInput) searchInput.value = searchQuery; // Populate desktop search input
+                if (mobileSearchInput) mobileSearchInput.value = searchQuery; // Populate mobile search input
                 // On index.html, we don't filter the main blog section based on URL search query
                 // but the search bar will be pre-filled. User can then click search button.
             }
