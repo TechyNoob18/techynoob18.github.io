@@ -256,8 +256,8 @@
                 </svg>
             </button>
             <!-- Search Input and Button for Mobile -->
-            <div class="relative flex items-center mt-6">
-                <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full max-w-xs transition-all duration-300 ease-in-out focus:w-64">
+            <div class="relative flex items-center mt-6 w-full max-w-xs">
+                <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
                 <button id="mobileSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
@@ -283,15 +283,15 @@
         <!-- Hero Section -->
         <section class="hero-section relative">
             <div class="hero-overlay"></div>
-            <div class="hero-content text-white">
+            <div class="hero-content text-white px-4"> <!-- Added px-4 for padding on smaller screens -->
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 animate-fade-in gradient-text">
                     TechyNoob: Unleash Your Device's Potential
                 </h1>
-                <p class="text-lg sm:text-xl mb-8 animate-fade-in-delay-1">
+                <p class="text-lg sm:text-xl mb-8 animate-fade-in-delay-1 px-2"> <!-- Added px-2 for padding -->
                     Your ultimate guide to Android customization, reviews, and unlocking hidden features.
                 </p>
-                <div class="animate-fade-in-delay-2">
-                    <a href="#blogs" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 inline-block mr-4">
+                <div class="animate-fade-in-delay-2 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#blogs" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 inline-block">
                         Explore Blogs
                     </a>
                     <a href="#games-section" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 inline-block">
@@ -304,7 +304,7 @@
         <!-- Latest Blogs Section -->
         <section id="blogs" class="container mx-auto px-6 md:px-8 lg:px-12 py-16">
             <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 gradient-text">Latest Blogs</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-cards-container">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-cards-container">
                 <!-- Blog cards will be dynamically loaded here by JavaScript -->
             </div>
             <div class="text-center mt-12">
@@ -581,9 +581,7 @@
                     const suggestionDiv = document.createElement('div');
                     suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
                     suggestionDiv.textContent = item.title;
-                    suggestionDiv.addEventListener('click', () => {
-                        window.location.href = item.link; // Navigate to the article/game page
-                    });
+                    div.onclick = () => { window.location.href = item.link; }; // Fixed: Added onclick handler to div
                     dropdownElement.appendChild(suggestionDiv);
                 });
                 dropdownElement.classList.remove('hidden');
