@@ -514,10 +514,23 @@
                 link: "Blogs/magisk-rooting-guide.html",
                 image: "https://placehold.co/400x200/3B82F6/ffffff?text=Magisk+Rooting+Guide"
             },
+            // New article - added at the end for reverse() to work as "newest"
+            {
+                title: "Unleash Your Android's Full Potential: A Comprehensive Guide to MiXplorer via Magisk Module",
+                description: "A comprehensive guide to installing MiXplorer and its add-ons via Magisk module on rooted Android devices. Learn why MiXplorer is the ultimate file manager for advanced users.",
+                link: "Blogs/mixplorer-magisk-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=MiXplorer+Magisk+Guide"
+            },
+            {
+                title: "Revolutionize Your Android Audio: The Ultimate Guide to Installing ViperFX_RE and Unleashing ViPER4Android!",
+                description: "A comprehensive guide to installing ViperFX_RE and unleashing ViPER4Android for professional-level audio on your rooted Android device. Learn about Float32 processing, custom EQs, and more.",
+                link: "Blogs/viperfx-re-guide.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=ViperFX_RE+Guide"
+            },
             // Games (these are not displayed in the "Latest Blogs" section, but used for search)
             { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
             { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
-            { type: 'game', title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
+            { type: "game", title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
         ];
 
         const blogCardsContainer = document.getElementById('blog-cards-container');
@@ -689,6 +702,7 @@
                         if (currentSearchQuery) {
                             e.preventDefault(); // Prevent default navigation
                             window.location.href = `all-articles.html?search=${encodeURIComponent(currentSearchQuery)}`;
+                            return; // Stop further execution as we're redirecting
                         }
                     }
                     closeMobileMenu();
