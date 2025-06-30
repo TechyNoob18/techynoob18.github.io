@@ -89,8 +89,7 @@
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
                     <div id="searchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
-                        <!-- Suggestions will be populated here -->
-                    </div>
+                        </div>
                 </div>
             </div>
 
@@ -112,8 +111,7 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
                 <div id="mobileSearchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
-                        <!-- Suggestions will be populated here -->
-                </div>
+                        </div>
             </div>
             <a href="index.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
             <a href="index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
@@ -130,9 +128,7 @@
         </div>
     </header>
 
-    <main class="container mx-auto px-4 md:px-8 lg:px-12 py-12"> <!-- Adjusted padding for main content -->
-        <section class="py-12 bg-gray-800 rounded-xl shadow-xl px-4 sm:px-6 py-10"> <!-- Adjusted padding for section -->
-            <h1 class="text-4xl font-extrabold text-center mb-8 gradient-text">Contact Us</h1>
+    <main class="container mx-auto px-4 md:px-8 lg:px-12 py-12"> <section class="py-12 bg-gray-800 rounded-xl shadow-xl px-4 sm:px-6 py-10"> <h1 class="text-4xl font-extrabold text-center mb-8 gradient-text">Contact Us</h1>
             <div class="max-w-3xl mx-auto text-gray-300 text-lg leading-relaxed text-center">
                 <p class="mb-6">
                     Have questions, suggestions, or just want to connect? We'd love to hear from you!
@@ -172,15 +168,15 @@
                 <div class="mt-10">
                     <h2 class="text-3xl font-bold mb-6 text-white gradient-text">Direct Contact</h2>
                     <div class="space-y-4">
-                        <p class="flex items-center text-lg sm:text-xl text-left break-words"> <!-- Adjusted alignment and text size -->
+                        <p class="flex items-center text-lg sm:text-xl text-left break-words">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-6 h-6 mr-3 flex-shrink-0">
                             Instagram: <a href="https://www.instagram.com/techynoob_official/" target="_blank" rel="noopener noreferrer" class="ml-2 text-blue-400 hover:underline">@techynoob_official</a>
                         </p>
-                        <p class="flex items-center text-lg sm:text-xl text-left break-words"> <!-- Adjusted alignment and text size -->
+                        <p class="flex items-center text-lg sm:text-xl text-left break-words">
                             <svg class="w-6 h-6 mr-3 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
                             Email: <a href="mailto:techygamer1818@gmail.com" class="ml-2 text-blue-400 hover:underline">techygamer1818@gmail.com</a>
                         </p>
-                        <p class="flex items-center text-lg sm:text-xl text-left break-words"> <!-- Adjusted alignment and text size -->
+                        <p class="flex items-center text-lg sm:text-xl text-left break-words">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="w-6 h-6 mr-3 flex-shrink-0">
                             Telegram: <a href="https://t.me/techynoob18" target="_blank" rel="noopener noreferrer" class="ml-2 text-blue-400 hover:underline">@techynoob18</a>
                         </p>
@@ -192,7 +188,7 @@
 
     <footer class="bg-gray-900 py-8 px-6 md:px-8 lg:px-12 mt-12">
         <div class="container mx-auto text-center text-gray-400">
-            <p>&copy; 2025 TechyNoob. All rights reserved.</p>
+            <p>© 2025 TechyNoob. All rights reserved.</p>
             <div class="flex flex-wrap justify-center space-x-4 md:space-x-6 mt-4 text-sm">
                 <a href="about.html" class="hover:text-white transition duration-300">About Us</a>
                 <a href="privacy.html" class="hover:text-white transition duration-300">Privacy Policy</a>
@@ -208,49 +204,6 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu'); 
-
-        function openMobileMenu() {
-            mobileMenu.classList.remove('hidden');
-            requestAnimationFrame(() => {
-                mobileMenu.classList.remove('translate-x-full');
-                mobileMenu.classList.add('opacity-100');
-                mobileMenu.classList.remove('opacity-0');
-            });
-        }
-
-        function closeMobileMenu() {
-            mobileMenu.classList.add('translate-x-full');
-            mobileMenu.classList.remove('opacity-100');
-            mobileMenu.classList.add('opacity-0');
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-            }, 300);
-        }
-
-        mobileMenuButton.addEventListener('click', openMobileMenu);
-        closeMobileMenuButton.addEventListener('click', closeMobileMenu);
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            if (link.getAttribute('href').startsWith('#')) {
-                link.addEventListener('click', closeMobileMenu);
-            } else if (link.getAttribute('href') === 'all-articles.html') {
-                link.addEventListener('click', (e) => {
-                    const currentSearchQuery = searchInput.value || mobileSearchInput.value;
-                    if (currentSearchQuery) {
-                        e.preventDefault(); // Prevent default navigation
-                        window.location.href = `all-articles.html?search=${encodeURIComponent(currentSearchQuery)}`;
-                    }
-                    closeMobileMenu();
-                });
-            } else {
-                link.addEventListener('click', closeMobileMenu); // For other valid links, just close menu
-            }
-        });
-
         // Data for search suggestions (needs to be consistent across pages for search to work well)
         const allContentData = [
             { 
@@ -447,13 +400,13 @@
                 if (e.key === 'Enter') {
                     handleSearch(mobileSearchInput);
                     mobileSearchResultsDropdown.classList.add('hidden');
-                    closeMobileMenu();
+                    closeMobileMenu(); // Close mobile menu after search
                 }
             });
             mobileSearchButton.addEventListener('click', () => {
                 handleSearch(mobileSearchInput);
                 mobileSearchResultsDropdown.classList.add('hidden');
-                closeMobileMenu();
+                closeMobileMenu(); // Close mobile menu after search
             });
             document.addEventListener('click', (e) => {
                 if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
@@ -462,7 +415,7 @@
             });
         }
 
-        // Mobile menu toggle
+        // Mobile menu toggle logic
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMobileMenuButton = document.getElementById('close-mobile-menu'); 
@@ -485,15 +438,20 @@
             }, 300);
         }
 
-        mobileMenuButton.addEventListener('click', openMobileMenu);
-        closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        // Add checks for elements before adding event listeners
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+        }
+        if (closeMobileMenuButton) {
+            closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        }
 
         mobileMenu.querySelectorAll('a').forEach(link => {
             if (link.getAttribute('href').startsWith('#')) {
                 link.addEventListener('click', closeMobileMenu);
             } else if (link.getAttribute('href') === 'all-articles.html') {
                 link.addEventListener('click', (e) => {
-                    const currentSearchQuery = searchInput.value || mobileSearchInput.value;
+                    const currentSearchQuery = (searchInput ? searchInput.value : '') || (mobileSearchInput ? mobileSearchInput.value : '');
                     if (currentSearchQuery) {
                         e.preventDefault(); // Prevent default navigation
                         window.location.href = `all-articles.html?search=${encodeURIComponent(currentSearchQuery)}`;
