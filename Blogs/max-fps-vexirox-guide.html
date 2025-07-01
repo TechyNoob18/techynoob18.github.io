@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unleash Max FPS (Rootless!): A Deep Dive into Magisk Vexirox & The Ultimate Optimization Module - TechyNoob</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A comprehensive guide to installing the Max FPS Optimization Module with Magisk Vexirox for rootless Android gaming performance enhancement.">
+    <meta name="keywords" content="magisk vexirox, max fps, rootless android, android gaming, fps optimization, mobile gaming, android performance, magisk module, android customization, tech tutorial, how to, android tips, android tricks, gaming optimization, pubg mobile, free fire, call of duty mobile, genshin impact, android modding, systemless root, gaming experience, high frame rate, android hacks, power user, device optimization, android apps, new tech, android development, custom rom, mobile security, data management, cloud sync, tech guide, smartphone, android community, app review, must have apps, best android apps, system tweaks, android latest, app showcase, utility app, phone hacks, android user, geek tech, android solution, storage management, custom ui, gesture control, quick access, search function, hidden files, official vexirox, xda, android life, essential tools, mobile computing, data control, privacy controls, security features, secure access, device management, smart file manager, universal file manager, all in one, free download, official source, trusted module, safe installation, android tutorial, diy android, tech explained, mobile tips, digital wellbeing, future of android, innovation, tech enthusiast, rooting guide">
+    <meta name="author" content="TechyNoob">
+    <link rel="canonical" href="https://techynoob18.github.io/Blogs/max-fps-vexirox-guide.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://techynoob18.github.io/Blogs/max-fps-vexirox-guide.html">
+    <meta property="og:title" content="Unleash Max FPS (Rootless!): A Deep Dive into Magisk Vexirox & The Ultimate Optimization Module">
+    <meta property="og:description" content="A comprehensive guide to installing the Max FPS Optimization Module with Magisk Vexirox for rootless Android gaming performance enhancement.">
+    <meta property="og:image" content="https://placehold.co/1200x630/9333EA/ffffff?text=Max+FPS+Vexirox+Guide">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://techynoob18.github.io/Blogs/max-fps-vexirox-guide.html">
+    <meta property="twitter:title" content="Unleash Max FPS (Rootless!): A Deep Dive into Magisk Vexirox & The Ultimate Optimization Module">
+    <meta property="twitter:description" content="A comprehensive guide to installing the Max FPS Optimization Module with Magisk Vexirox for rootless Android gaming performance enhancement.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/9333EA/ffffff?text=Max+FPS+Vexirox+Guide">
+
+    <!-- AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835"
+     crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9KWQ18P9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2E9KWQ18P9');
+    </script>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background for a techy feel */
+            color: #e2e8f0; /* Light text for contrast */
+        }
+        .gradient-text {
+            background-image: linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        /* Basic styling for images inside articles */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem; /* rounded-lg */
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .article-content a {
+            color: #6EE7B7; /* Light green for links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #3B82F6; /* Blue on hover */
+            text-decoration: underline;
+        }
+        .article-content h2, .article-content h3 {
+            color: #fff;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .article-content h2 {
+            font-size: 2.25rem; /* text-3xl */
+        }
+        .article-content h3 {
+            font-size: 1.875rem; /* text-2xl */
+        }
+        .article-content p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .article-content ol {
+            list-style-type: decimal;
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        .article-content strong {
+            color: #fff;
+        }
+        .article-content blockquote {
+            border-left: 4px solid #6EE7B7;
+            padding-left: 1rem;
+            margin-left: 0;
+            font-style: italic;
+            color: #cbd5e0;
+        }
+        /* Mobile Menu styles */
+        #mobile-menu {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        /* Style for search suggestions dropdown */
+        .suggestions-dropdown {
+            max-height: 200px;
+            overflow-y: auto;
+            border-top: 1px solid #4a5568;
+        }
+        .suggestion-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            color: #e2e8f0;
+            transition: background-color 0.2s ease;
+        }
+        .suggestion-item:hover {
+            background-color: #4a5568; /* Darker hover */
+        }
+    </style>
+</head>
+<body class="antialiased leading-normal">
+    <header class="bg-gray-900 shadow-lg py-4 px-6 md:px-8 lg:px-12 relative z-50">
+        <nav class="container mx-auto flex flex-wrap justify-between items-center relative z-50">
+            <!-- Logo and Title -->
+            <a href="../index.html" class="flex items-center space-x-2 rounded-md p-1 border border-gray-700 flex-shrink-0 relative z-50">
+                <img src="../logos/20211212_160808_0000.png" alt="TechyNoob Logo" class="h-10 sm:h-12 w-auto">
+                <span class="text-xl sm:text-2xl lg:text-3xl font-extrabold gradient-text">TechyNoob</span>
+            </a>
+            
+            <!-- Desktop Navigation Links and Search Bar -->
+            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative">
+                <a href="../index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
+                <a href="../index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
+                <a href="../index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
+                <a href="../ai-image-generator.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">AI Image Gen</a>
+                <a href="../about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
+                <a href="../privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
+                <a href="../terms.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Terms of Service</a>
+                <a href="../contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Contact Us</a>
+                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2 flex items-center">
+                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
+                    YouTube Channel
+                </a>
+                <!-- Search Input and Button for Desktop -->
+                <div class="relative flex items-center ml-4">
+                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
+                    <button id="searchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                    <div id="searchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
+                        <!-- Suggestions will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none focus:text-white relative z-[60] p-2 rounded-md bg-gray-800">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay - Includes Search Bar for Mobile -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-[100] flex flex-col items-center justify-center space-y-6 transition-all duration-300 ease-in-out opacity-0 transform translate-x-full">
+            <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-300 focus:outline-none focus:text-white p-2 rounded-md bg-gray-800">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <!-- Search Input and Button for Mobile -->
+            <div class="relative flex items-center mt-6 w-full max-w-xs">
+                <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
+                <button id="mobileSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <div id="mobileSearchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
+                    <!-- Suggestions will be populated here -->
+                </div>
+            </div>
+            <a href="../index.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
+            <a href="../index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
+            <a href="../index.html#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Games</a>
+            <a href="../ai-image-generator.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">AI Image Gen</a>
+            <a href="../about.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">About Us</a>
+            <a href="../privacy.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Privacy Policy</a>
+            <a href="../terms.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Terms of Service</a>
+            <a href="../contact.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Contact Us</a>
+            <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-3xl hover:text-white transition duration-300 flex items-center" onclick="closeMobileMenu()">
+                <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8 mr-2">
+                YouTube Channel
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 md:px-8 lg:px-12 py-12">
+        <section class="bg-gray-800 rounded-xl shadow-xl p-6 md:p-8 lg:p-10">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-center mb-6 gradient-text">
+                Unleash Max FPS (Rootless!): A Deep Dive into Magisk Vexirox & The Ultimate Optimization Module
+            </h1>
+            <p class="text-sm text-gray-400 text-center mb-8">Published: July 01, 2025</p>
+
+            <div class="article-content text-gray-300 text-lg leading-relaxed">
+                <p>
+                    <strong>Introduction: Elevate Your Android Gaming Experience</strong>
+                </p>
+                <p>
+                    Welcome, fellow tech enthusiasts and mobile gamers! If you've been searching for ways to squeeze every last drop of performance from your Android device, especially for gaming, you've landed in the right place. We're not just talking about minor tweaks; we're talking about a significant leap in your mobile gaming experience, achieving smoother gameplay and higher frame rates (FPS) without the complexities of traditional rooting.
+                </p>
+                <p>
+                    A few days ago, we introduced you to the groundbreaking Magisk Vexirox, a revolutionary method that brings the power of Magisk module support to virtually any Android phone, all without requiring a rooted device. This means you can enjoy advanced customizations and optimizations while keeping your bootloader locked and maintaining device integrity. If you're new to Magisk Vexirox, we highly recommend checking out our comprehensive installation guide first: <a href="https://youtu.be/LH1L82oqKg4" target="_blank" rel="noopener noreferrer">Magisk Vexirox Installation</a>.
+                </p>
+                <p>
+                    Today, we're building on that foundation. This article will guide you through the process of installing the powerful Max FPS Optimization Module within your Magisk Vexirox setup. This module is designed to fine-tune your system, prioritize resources, and minimize latency, ensuring your games run at their absolute best.
+                </p>
+
+                <h2>Understanding Your Current FPS: A Baseline for Improvement</h2>
+                <p>
+                    Before we dive into the installation, it's crucial to understand your device's current performance. On our test device, we're currently running a stable version of Magisk Vexirox, specifically version 3.4. While newer versions exist, we've found 3.4 to offer superior stability and prevent crashes on certain custom ROMs.
+                </p>
+                <p>
+                    For many Android users, especially on devices that aren't top-tier flagships, the default frame rate in demanding games often hovers around 40 FPS. This is the native output of the hardware without any software-level optimizations. While 40 FPS is certainly playable, it's far from the buttery-smooth experience that can truly elevate your gaming. Our objective with the Max FPS Optimization Module is to significantly improve this baseline, providing a more fluid and responsive gaming environment.
+                </p>
+
+                <h2>Getting Started: Downloading the Max FPS Optimization Module</h2>
+                <p>
+                    The first step to unlocking better performance is acquiring the module itself. We've made it easy for you to get your hands on the necessary file.
+                </p>
+                <p>
+                    <strong>Download Link:</strong> <a href="https://devuploads.com/iwpez8ndlfpg" target="_blank" rel="noopener noreferrer">https://devuploads.com/iwpez8ndlfpg</a>
+                </p>
+                <p>
+                    Simply click the link above to download the Max FPS Unlock module ZIP file directly to your Android device. Ensure you note the location where the file is saved, typically your "Downloads" folder, as you'll need to access it shortly.
+                </p>
+
+                <h2>Step-by-Step Installation: Integrating the Module with Magisk Vexirox</h2>
+                <p>
+                    Once you have the module ZIP file, the installation process within Magisk Vexirox is straightforward and user-friendly. Follow these steps carefully:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Launch Magisk Vexirox:</strong> Open the Magisk Vexirox application on your Android phone.
+                    </li>
+                    <li>
+                        <strong>Navigate to Modules:</strong> Within the Vexirox interface, locate and tap on the "Modules" section. This area manages all installed and pending modules.
+                    </li>
+                    <li>
+                        <strong>Add a New Module:</strong> Look for the plus icon (often a circular button with a "+" symbol) and tap it. This action initiates the module installation process.
+                    </li>
+                    <li>
+                        <strong>Select an Installation Slot:</strong> Vexirox will present you with a selection of slots, typically ranging from 1 to 20. These slots act as dedicated spaces for your modules. You can choose any available slot; for demonstration purposes, selecting Slot 1 is a common choice.
+                    </li>
+                    <li>
+                        <strong>Locate and Select the Module:</strong> Upon choosing a slot, Vexirox will automatically open your device's file manager. Navigate to the directory where you saved the <a href="https://devuploads.com/iwpez8ndlfpg" target="_blank" rel="noopener noreferrer">Max FPS Unlock module ZIP file</a> (e.g., your "Downloads" folder). Select the ZIP file.
+                    </li>
+                    <li>
+                        <strong>Initiate Installation:</strong> After selecting the module, you'll see an arrow button or an "Install" prompt. Tap this to begin the installation. Vexirox will then extract and integrate the module's files into your system. A progress log will be displayed on your screen.
+                    </li>
+                </ol>
+                <p>
+                    The installation process is generally quick. Once completed, you will receive a confirmation message. For the changes to take full effect, a reboot of your device is required. This ensures the module is properly loaded and integrated into the Vexirox environment.
+                </p>
+
+                <h2>Important Clarification: Optimization vs. True FPS Unlocking</h2>
+                <p>
+                    It's crucial to set clear expectations regarding the capabilities of this module. The Magisk Vexirox Max FPS module is an exceptional tool for optimizing your device's existing frame rate. It works by:
+                </p>
+                <ul>
+                    <li><strong>Prioritizing System Resources:</strong> Ensuring that your games get the CPU and GPU power they need.</li>
+                    <li><strong>Reducing Background Processes:</strong> Minimizing unnecessary resource consumption.</li>
+                    <li><strong>Fine-tuning System Parameters:</strong> Adjusting settings to improve overall responsiveness and reduce input lag.</li>
+                </ul>
+                <p>
+                    This module helps your device consistently deliver its maximum possible FPS within its hardware limitations, leading to a significantly smoother and more stable gaming experience.
+                </p>
+                <p>
+                    However, it's important to distinguish this from "true" FPS unlocking modules that might be available for fully rooted devices. Those modules often use deeper system access to bypass software-imposed frame rate caps, potentially forcing frame rates (e.g., 120 FPS or 144 FPS) that the device's display or GPU might not natively support or sustain stably.
+                </p>
+                <p>
+                    For those aiming for such aggressively "unlocked" frame rates, particularly in competitive gaming, this Vexirox module serves as an excellent foundation. Personally, to push my device to those higher tiers, I often combine this FPS optimization with a specialized LSPosed module. LSPosed offers additional system hooks without traditional root, allowing for more advanced and aggressive frame rate manipulation where your hardware permits. Think of the Vexirox Max FPS module as the essential first step to achieving peak optimized performance, making any further tweaks even more effective.
+                </p>
+
+                <h2>Conclusion: Transform Your Mobile Gaming Today!</h2>
+                <p>
+                    By following this guide, you've successfully installed the Max FPS Optimization Module using Magisk Vexirox. You're now equipped to enjoy a dramatically improved mobile gaming experience, characterized by higher, more stable frame rates and enhanced responsiveness.
+                </p>
+                <p>
+                    Jump into your favorite games – be it PUBG Mobile, Free Fire, Call of Duty Mobile, or Genshin Impact – and feel the difference! We encourage you to share your results and experiences in the comments section below. How much of an FPS improvement did you see?
+                </p>
+                <p>
+                    If this article helped you elevate your Android gaming, please consider sharing it with your friends and fellow gamers. Don't forget to explore more of our content for the latest Android tips, tricks, and optimization guides!
+                </p>
+
+                <h3>Essential Links:</h3>
+                <ul>
+                    <li>Download Max FPS Unlock Module: <a href="https://devuploads.com/iwpez8ndlfpg" target="_blank" rel="noopener noreferrer">https://devuploads.com/iwpez8ndlfpg</a></li>
+                    <li>Magisk Vexirox Installation Guide: <a href="https://youtu.be/LH1L82oqKg4" target="_blank" rel="noopener noreferrer">https://youtu.be/LH1L82oqKg4</a></li>
+                </ul>
+                <div class="mt-8 text-center">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">Watch the Video Tutorial!</h3>
+                    <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000;">
+                        <iframe 
+                            src="https://www.youtube.com/embed/FKAz_cdkoVw" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen 
+                            class="absolute top-0 left-0 w-full h-full"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="mt-8 text-sm text-gray-500">
+                    <p><strong>Tags:</strong> #magisk_vexirox #max_fps #rootless_android #android_gaming #fps_optimization #mobile_gaming #android_performance #magisk_module #android_customization #tech_tutorial #how_to #android_tips #android_tricks #gaming_optimization #pubg_mobile #free_fire #call_of_duty_mobile #genshin_impact #android_modding #systemless_root #gaming_experience #high_frame_rate #android_hacks #power_user #device_optimization #android_apps #new_tech #android_development #custom_rom #mobile_security #data_management #cloud_sync #tech_guide #smartphone #android_community #app_review #must_have_apps #best_android_apps #system_tweaks #android_latest #app_showcase #utility_app #phone_hacks #android_user #geek_tech #android_solution #storage_management #custom_ui #gesture_control #quick_access #search_function #hidden_files #official_vexirox #xda #android_life #essential_tools #mobile_computing #data_control #privacy_controls #security_features #secure_access #device_management #smart_file_manager #universal_file_manager #all_in_one #free_download #official_source #trusted_module #safe_installation #android_tutorial #diy_android #tech_explained #mobile_tips #digital_wellbeing #future_of_android #innovation #tech_enthusiast #rooting_guide</p>
+                </div>
+            </div>
+        </section>
+        <!-- Back to All Articles Button -->
+        <div class="text-center mt-12">
+            <a href="all-articles.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 transform hover:scale-105">
+                <svg class="-ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H16a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                Back to All Articles
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 py-8 px-6 mt-12">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>&copy; 2025 TechyNoob. All rights reserved.</p>
+            <div class="flex flex-wrap justify-center space-x-4 md:space-x-6 mt-4 text-sm">
+                <a href="../about.html" class="hover:text-white transition duration-300">About Us</a>
+                <a href="../privacy.html" class="hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="../terms.html" class="hover:text-white transition duration-300">Terms of Service</a>
+                <a href="../contact.html" class="hover:text-white transition duration-300">Contact Us</a>
+            </div>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
+                    <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-8 h-8">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data for all blog articles and games (needs to be consistent across pages for search to work well)
+        const allContentData = [
+            { 
+                title: "Google AI Edge Gallery: Your Gateway to On-Device Generative AI – A Deep Dive", 
+                description: "The Google AI Edge Gallery isn't just another app; it's a window into the future of mobile computing. Designed as an experimental platform, it allows you to Explore, Experience, and Evaluate cutting-edge Generative AI models that run entirely on your Android device.", 
+                link: "google-ai-edge-gallery.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Google+AI+Edge+Gallery"
+            },
+            { 
+                title: "Unleash Your Android's Potential: Install Any Custom Package Installer with Magisk!", 
+                description: "Are you a rooted Android user looking to break free from the mundane default package installer? Do you crave a more visually appealing or feature-rich experience when installing your favorite apps? Look further! This comprehensive guide will walk you through the simple yet powerful process of installing a custom package installer on virtually any rooted Android device using Magisk. Get ready to elevate your Android experience!", 
+                link: "custom-package-installer.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Custom+Installer"
+            },
+            { 
+                title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", 
+                description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", 
+                link: "magisk-vexiro.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Magisk+Vexiro"
+            },
+            { 
+                title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", 
+                description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", 
+                link: "custom-boot-animations.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Custom+Boot+Animations"
+            },
+            { 
+                title: "Revolutionize Your Android Experience: Unveiling the Power of Launchpad App", 
+                description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.", 
+                link: "launchpad-app.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Launchpad+App"
+            },
+            { 
+                title: "Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones", 
+                description: "A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.", 
+                link: "iconify-installation.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Iconify+Installation"
+            },
+            { 
+                title: "Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method", 
+                description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.", 
+                link: "crdroid-ota-update.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=CrDroid+Update"
+            },
+            { 
+                title: "Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+", 
+                description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!", 
+                link: "colorblendr-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=ColorBlendr+Guide"
+            },
+            { 
+                title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", 
+                description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!", 
+                link: "android-16-arrives.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Arrives"
+            },
+            { 
+                title: "Installing Android 16 Material 3 Expressive Theme", 
+                description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!", 
+                link: "install-material-3-theme.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Material+3+Theme"
+            },
+            { 
+                title: "Root Any Android Phone WITHOUT Magisk in 2025", 
+                description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!", 
+                link: "root-android-without-magisk.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Root+Without+Magisk"
+            },
+            { 
+                title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", 
+                description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!", 
+                link: "fix-play-integrity-rooted-android.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Play+Integrity+Fix"
+            },
+            { 
+                title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", 
+                description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", 
+                link: "unlock-samsung-experience.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=One+UI+Home"
+            },
+            { 
+                title: "Install Superior OS (Android 15) with May 2025 Security Patch!", 
+                description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", 
+                link: "install-superior-os.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Superior+OS"
+            },
+            { 
+                title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", 
+                description: "The Redmi Note 7 Pro, a beloved device known for its robust performance and excellent value, continues to be a favorite among enthusiasts.", 
+                link: "install-android-16-redmi-note-7-pro.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Redmi"
+            },
+            { 
+                title: "Google Pixel 6a in 2025: Is This Budget Gem Still a Worthy Contender?", 
+                description: "A definitive long-term review of the Google Pixel 6a in 2025, covering battery life, Android 16 features, camera performance, and its worth as a budget smartphone contender.", 
+                link: "google-pixel-6a-2025-review.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Pixel+6a+2025"
+            },
+            { 
+                title: "How to Install Incompatible Older Apps on Android 14, 15, and 16", 
+                description: "Learn how to bypass Google's app installation block for older apps on Android 14+ using an LSPosed module.", 
+                link: "install-older-apps.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Older+Apps+Android"
+            },
+            { 
+                title: "Android 16 vs. Android 15: A Deep Dive into the Pixel UI Revolution", 
+                description: "A comprehensive side-by-side comparison of Android 16 QPR Beta 2.1 and Android 15, highlighting major UI enhancements, Material 3 Expressive design, and new features on Google Pixel devices.", 
+                link: "android-16-vs-android-15.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+vs+15"
+            },
+            { 
+                title: "Unlock Unlimited Google Photos Storage", 
+                description: "A definitive guide to getting unlimited Google Photos storage in 2025, leveraging older Pixel devices for seamless photo backups.", 
+                link: "google-photos-unlimited-storage.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Unlimited+Google+Photos"
+            },
+            { 
+                title: "Unleash the Full Potential: Your Ultimate Guide to Android Rooting with Magisk in 2025", 
+                description: "A comprehensive guide to rooting any Android phone with Magisk in 2025, covering prerequisites, installation methods (Fastboot and custom recovery), and benefits like ad-blocking and advanced customization.", 
+                link: "magisk-rooting-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Magisk+Rooting+Guide"
+            },
+            // New articles - added at the end for reverse() to work as "newest"
+            {
+                title: "Unleash Your Android's Full Potential: A Comprehensive Guide to MiXplorer via Magisk Module",
+                description: "A comprehensive guide to installing MiXplorer and its add-ons via Magisk module on rooted Android devices. Learn why MiXplorer is the ultimate file manager for advanced users.",
+                link: "Blogs/mixplorer-magisk-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=MiXplorer+Magisk+Guide"
+            },
+            {
+                title: "Revolutionize Your Android Audio: The Ultimate Guide to Installing ViperFX_RE and Unleashing ViPER4Android!",
+                description: "A comprehensive guide to installing ViperFX_RE and unleashing ViPER4Android for professional-level audio on your rooted Android device. Learn about Float32 processing, custom EQs, and more.",
+                link: "Blogs/viperfx-re-guide.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=ViperFX_RE+Guide"
+            },
+            {
+                title: "Unleash Max FPS (Rootless!): A Deep Dive into Magisk Vexirox & The Ultimate Optimization Module",
+                description: "A comprehensive guide to installing the Max FPS Optimization Module with Magisk Vexirox for rootless Android gaming performance enhancement.",
+                link: "Blogs/max-fps-vexirox-guide.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Max+FPS+Vexirox+Guide"
+            },
+            // Games (these are not displayed in the "Latest Blogs" section, but used for search)
+            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
+            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
+            { type: "game", title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
+        ];
+
+        const blogCardsContainer = document.getElementById('blog-cards-container');
+        const articleSearchInput = document.getElementById('articleSearchInput');
+        const articleSearchButton = document.getElementById('articleSearchButton');
+        const articleSearchResultsDropdown = document.getElementById('articleSearchResultsDropdown');
+        const resetFilterButton = document.getElementById('resetFilterButton');
+
+
+        // Function to create and append a blog card
+        function createBlogCard(article) {
+            const cardDiv = document.createElement('div');
+            cardDiv.classList.add('blog-card');
+            
+            const truncatedDescription = article.description.length > 100 
+                ? article.description.substring(0, 100) + '...' 
+                : article.description;
+
+            cardDiv.innerHTML = `
+                <a href="${article.link}" class="block">
+                    <img src="${article.image || 'https://placehold.co/400x200/1a202c/e2e8f0?text=TechyNoob'}" alt="${article.title}" class="w-full h-48 object-cover rounded-t-xl">
+                    <div class="blog-card-content">
+                        <h3>${article.title}</h3>
+                        <p class="text-sm text-gray-300">${truncatedDescription}</p>
+                    </div>
+                    <div class="blog-card-footer">
+                        <span class="text-xs text-gray-400">Read More</span>
+                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </a>
+            `;
+            return cardDiv;
+        }
+
+        // Function to filter and display blog cards
+        function filterBlogCards(query) {
+            blogCardsContainer.innerHTML = ''; // Clear existing cards
+            const lowerCaseQuery = query.toLowerCase();
+
+            // Reverse the array to show newest articles first, then filter
+            const articlesToDisplay = allContentData.filter(item => item.type !== 'game').reverse();
+
+            const filteredArticles = articlesToDisplay.filter(article =>
+                article.title.toLowerCase().includes(lowerCaseQuery) ||
+                article.description.toLowerCase().includes(lowerCaseQuery)
+            );
+
+            if (filteredArticles.length > 0) {
+                filteredArticles.forEach(article => {
+                    blogCardsContainer.appendChild(createBlogCard(article));
+                });
+            } else {
+                blogCardsContainer.innerHTML = '<p class="text-center text-gray-400 col-span-full">No articles found matching your search.</p>';
+            }
+        }
+
+        // Function to display search suggestions (for main search bar and mobile search bar)
+        function displaySuggestions(inputElement, dropdownElement) {
+            const query = inputElement.value.toLowerCase().trim();
+            dropdownElement.innerHTML = ''; // Clear previous suggestions
+
+            if (query.length === 0) {
+                dropdownElement.classList.add('hidden');
+                return;
+            }
+
+            const filteredSuggestions = allContentData.filter(item =>
+                item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
+            ).slice(0, 7); // Limit to 7 suggestions
+
+            if (filteredSuggestions.length > 0) {
+                filteredSuggestions.forEach(item => {
+                    const suggestionDiv = document.createElement('div');
+                    suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
+                    suggestionDiv.textContent = item.title;
+                    suggestionDiv.addEventListener('click', () => {
+                        window.location.href = item.link; // Navigate to the article/game page
+                    });
+                    dropdownElement.appendChild(suggestionDiv);
+                });
+                dropdownElement.classList.remove('hidden');
+            } else {
+                dropdownElement.classList.add('hidden');
+            }
+        }
+
+        // Event listeners for desktop search on this page
+        if (articleSearchButton) {
+            articleSearchButton.addEventListener('click', () => {
+                filterBlogCards(articleSearchInput.value);
+                articleSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+            });
+        }
+        if (articleSearchInput) {
+            articleSearchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(articleSearchInput, articleSearchResultsDropdown);
+                if (e.key === 'Enter') {
+                    if (articleSearchButton) articleSearchButton.click(); // Trigger search on Enter
+                }
+            });
+        }
+        document.addEventListener('click', (e) => {
+            if (articleSearchInput && articleSearchButton && articleSearchResultsDropdown) {
+                if (!articleSearchInput.contains(e.target) && !articleSearchButton.contains(e.target) && !articleSearchResultsDropdown.contains(e.target)) {
+                    articleSearchResultsDropdown.classList.add('hidden');
+                }
+            }
+        });
+
+        // Reset filter button
+        if (resetFilterButton) {
+            resetFilterButton.addEventListener('click', () => {
+                if (articleSearchInput) articleSearchInput.value = ''; // Clear search input
+                filterBlogCards(''); // Reset filters to show all articles
+                if (articleSearchResultsDropdown) articleSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
+                // Remove search query from URL if present
+                const url = new URL(window.location.href);
+                if (url.searchParams.has('search')) {
+                    url.searchParams.delete('search');
+                    window.history.replaceState({}, document.title, url.toString());
+                }
+            });
+        }
+
+        // Event listeners for mobile search (nav menu)
+        const searchInput = document.getElementById('searchInput'); // Desktop search input from header
+        const mobileSearchInput = document.getElementById('mobileSearchInput');
+        const mobileSearchButton = document.getElementById('mobileSearchButton');
+        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
+
+        if (mobileSearchButton) {
+            mobileSearchButton.addEventListener('click', () => {
+                const query = mobileSearchInput.value.trim();
+                if (query) {
+                    // On all-articles page, filter directly
+                    filterBlogCards(query);
+                } else {
+                    filterBlogCards(''); // If search is empty, show all
+                }
+                mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+                closeMobileMenu(); // Close mobile menu after search
+            });
+        }
+        if (mobileSearchInput) {
+            mobileSearchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
+                if (e.key === 'Enter') {
+                    if (mobileSearchButton) mobileSearchButton.click(); // Trigger search on Enter
+                }
+            });
+        }
+        // This document click listener handles hiding the mobile dropdown
+        document.addEventListener('click', (e) => {
+            if (mobileSearchInput && mobileSearchButton && mobileSearchResultsDropdown) {
+                if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
+                    mobileSearchResultsDropdown.classList.add('hidden');
+                }
+            }
+        });
+
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('opacity-100');
+                mobileMenu.classList.remove('opacity-0');
+            });
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('translate-x-full'); // Start slide-out animation
+            mobileMenu.classList.remove('opacity-100'); // Start fade-out animation
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden'); // Hide after animation
+            }, 300); // Duration of transition
+        }
+
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+        }
+        if (closeMobileMenuButton) {
+            closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        }
+
+        // Add event listener to transition end for mobile menu cleanup
+        if (mobileMenu) {
+            mobileMenu.addEventListener('transitionend', () => {
+                if (mobileMenu.classList.contains('translate-x-full') && mobileMenu.classList.contains('hidden')) {
+                    // Perform cleanup only if menu is fully closed and hidden
+                    if (mobileSearchInput) mobileSearchInput.value = ''; // Clear mobile search input
+                    if (mobileSearchResultsDropdown) mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
+                }
+            });
+        }
+
+        // Close mobile menu when a link is clicked
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Check if the link is for "All Articles" and potentially apply search query
+                    if (link.getAttribute('href') === 'all-articles.html') {
+                        const currentSearchQuery = (searchInput ? searchInput.value : '') || (mobileSearchInput ? mobileSearchInput.value : '');
+                        if (currentSearchQuery) {
+                            e.preventDefault(); // Prevent default navigation
+                            window.location.href = `all-articles.html?search=${encodeURIComponent(currentSearchQuery)}`;
+                            return; // Stop further execution as we're redirecting
+                        }
+                    }
+                    closeMobileMenu();
+                });
+            });
+        }
+
+        // Handle URL search parameters on page load
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            if (searchQuery) {
+                if (articleSearchInput) articleSearchInput.value = searchQuery; // Populate desktop search input
+                if (mobileSearchInput) mobileSearchInput.value = searchQuery; // Populate mobile search input
+                filterBlogCards(searchQuery); // Filter articles based on query
+            } else {
+                filterBlogCards(''); // Load all articles if no search query
+            }
+        });
+    </script>
+</body>
+</html>
