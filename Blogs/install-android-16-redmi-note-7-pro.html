@@ -15,14 +15,14 @@
     <meta property="og:url" content="https://techynoob18.github.io/Blogs/install-android-16-redmi-note-7-pro.html">
     <meta property="og:title" content="Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16">
     <meta property="og:description" content="A comprehensive guide to installing a pure AOSP-based Android 16 custom ROM on your Redmi Note 7 Pro. Unlock enhanced performance, latest features, and a bloatware-free experience.">
-    <meta property="og:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
+    <meta property="og:image" content="https://placehold.co/1200x630/9333EA/ffffff?text=Android+16+Redmi">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://techynoob18.github.io/Blogs/install-android-16-redmi-note-7-pro.html">
     <meta property="twitter:title" content="Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16">
     <meta property="twitter:description" content="A comprehensive guide to installing a pure AOSP-based Android 16 custom ROM on your Redmi Note 7 Pro. Unlock enhanced performance, latest features, and a bloatware-free experience.">
-    <meta property="twitter:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/9333EA/ffffff?text=Android+16+Redmi">
 
     <!-- AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835"
@@ -42,8 +42,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* Dark background */
-            color: #e2e8f0; /* Light text */
+            background-color: #1a202c; /* Dark background for a techy feel */
+            color: #e2e8f0; /* Light text for contrast */
         }
         .gradient-text {
             background-image: linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA);
@@ -52,36 +52,74 @@
             background-clip: text;
             color: transparent;
         }
+        /* Basic styling for images inside articles */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem; /* rounded-lg */
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .article-content a {
+            color: #6EE7B7; /* Light green for links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .article-content a:hover {
+            color: #3B82F6; /* Blue on hover */
+            text-decoration: underline;
+        }
         .article-content h2, .article-content h3 {
-            color: #6EE7B7; /* Green highlight for headings */
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
+            color: #fff;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
             font-weight: 700;
         }
+        .article-content h2 {
+            font-size: 2.25rem; /* text-3xl */
+        }
+        .article-content h3 {
+            font-size: 1.875rem; /* text-2xl */
+        }
         .article-content p {
-            margin-bottom: 1em;
-            line-height: 1.6;
+            margin-bottom: 1rem;
+            line-height: 1.75;
         }
         .article-content ul {
             list-style-type: disc;
-            margin-left: 1.5em;
-            margin-bottom: 1em;
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
         }
         .article-content ol {
             list-style-type: decimal;
-            margin-left: 1.5em;
-            margin-bottom: 1em;
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
         }
         .article-content li {
-            margin-bottom: 0.5em;
+            margin-bottom: 0.5rem;
         }
-        .article-content a {
-            color: #3B82F6; /* Blue for links */
-            text-decoration: none;
+        .article-content strong {
+            color: #fff;
         }
-        .article-content a:hover {
-            text-decoration: underline;
+        .article-content blockquote {
+            border-left: 4px solid #6EE7B7;
+            padding-left: 1rem;
+            margin-left: 0;
+            font-style: italic;
+            color: #cbd5e0;
         }
+        /* Mobile Menu styles */
+        #mobile-menu {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
         /* Style for search suggestions dropdown */
         .suggestions-dropdown {
             max-height: 200px;
@@ -100,7 +138,6 @@
     </style>
 </head>
 <body class="antialiased leading-normal">
-    <!-- Header/Navigation Bar -->
     <header class="bg-gray-900 shadow-lg py-4 px-6 md:px-8 lg:px-12 relative z-50">
         <nav class="container mx-auto flex flex-wrap justify-between items-center relative z-50">
             <!-- Logo and Title -->
@@ -110,7 +147,7 @@
             </a>
             
             <!-- Desktop Navigation Links and Search Bar -->
-            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative"> <!-- Added relative for suggestions positioning -->
+            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative">
                 <a href="../index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
                 <a href="../index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
                 <a href="../index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
@@ -150,8 +187,8 @@
                 </svg>
             </button>
             <!-- Search Input and Button for Mobile -->
-            <div class="relative flex items-center mt-6">
-                <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full max-w-xs transition-all duration-300 ease-in-out focus:w-64">
+            <div class="relative flex items-center mt-6 w-full max-w-xs">
+                <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
                 <button id="mobileSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
@@ -175,112 +212,130 @@
     </header>
 
     <main class="container mx-auto px-6 md:px-8 lg:px-12 py-12">
-        <article class="bg-gray-800 rounded-xl shadow-lg p-8 md:p-12">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-6 gradient-text leading-tight">
+        <section class="bg-gray-800 rounded-xl shadow-xl p-6 md:p-8 lg:p-10">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-center mb-6 gradient-text">
                 Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide
             </h1>
-            <p class="text-gray-400 text-center text-sm mb-8">Published on June 26, 2025</p>
-            <div class="article-content text-gray-300 text-lg">
-                <p>The Redmi Note 7 Pro, a beloved device known for its robust performance and excellent value, continues to be a favorite among enthusiasts. While official updates may have ceased, the vibrant Android custom ROM community keeps it alive and thriving. Today, we're diving deep into transforming your Redmi Note 7 Pro with a pure AOSP-based Android 16 custom ROM. This article serves as your ultimate guide to a clean, fast, and unadulterated Android experience.</p>
+            <p class="text-sm text-gray-400 text-center mb-8">Published: June 20, 2025</p>
 
-                <h2>Why Android 16 AOSP on Redmi Note 7 Pro?</h2>
-                <p>Many users seek alternatives to the stock MIUI, which can sometimes feel bloated or feature-heavy. AOSP, or Android Open Source Project, offers the purest form of Android, delivering a bloatware-free environment with a focus on performance and simplicity. Installing an AOSP-based Android 16 ROM on your Redmi Note 7 Pro brings several compelling benefits:</p>
-                <ul>
-                    <li><strong>Clean & Bloatware-Free Experience:</strong> Say goodbye to unnecessary pre-installed apps and services. Enjoy a lean Android that prioritizes your essential apps and system resources.</li>
-                    <li><strong>Enhanced Performance & Battery Life:</strong> With fewer background processes and optimized code, AOSP ROMs often provide noticeable improvements in daily performance and extended battery life, making your Redmi Note 7 Pro feel like new.</li>
-                    <li><strong>Latest Android Features:</strong> Access the newest functionalities and security patches from Android 16, which may include advancements in privacy controls, system UI refinements, enhanced multimedia capabilities, and deeper integration with AI tools.</li>
-                    <li><strong>GApps Included:</strong> This specific ROM build conveniently includes Google Apps (GApps) right out of the box, saving you the hassle of flashing them separately.</li>
-                    <li><strong>Enforcing Encryption:</strong> For robust data security, this ROM enforces encryption, protecting your personal information.</li>
-                    <li><strong>Dirty Flash Support:</strong> A major convenience! If you're updating from a previous build of this same Android 16 AOSP ROM, you can often perform a "dirty flash" (flashing over the existing ROM without a full data wipe), simplifying future updates.</li>
-                    <li><strong>Community Support:</strong> While unofficial, AOSP ROMs often benefit from dedicated community developers who provide ongoing support and bug fixes.</li>
-                </ul>
-
-                <h2>Pre-Installation Essentials: Prepare Your Device</h2>
-                <p>Before we embark on the flashing journey, careful preparation is paramount to avoid any issues. Do not skip these steps!</p>
-                <ol>
-                    <li><strong>Backup, Backup, Backup! 💾</strong> This cannot be stressed enough. The installation process involves formatting your device's internal storage, which means all your photos, videos, documents, contacts, and app data will be erased. Use cloud services (Google Drive, Google Photos), transfer files to a PC, or use an external drive to secure your precious data.</li>
-                    <li><strong>Unlock Bootloader:</strong> Your Redmi Note 7 Pro's bootloader must be unlocked. This is a prerequisite for flashing any custom recovery or ROM. If your bootloader is locked, you'll need to follow Xiaomi's official procedure to unlock it, which usually involves waiting a specific period after requesting the unlock.</li>
-                    <li><strong>Flash Recommended Dynamic Recovery:</strong> For this specific Android 16 ROM, a compatible dynamic custom recovery (like a recent build of TWRP) is absolutely essential. Ensure you have the correct version for your Redmi Note 7 Pro ('violet' codename). If you don't have it, or if your current recovery is outdated, you must flash the recommended dynamic recovery first. Search for "Redmi Note 7 Pro Dynamic TWRP" to find the right build.</li>
-                    <li><strong>Charge Your Device:</strong> Ensure your Redmi Note 7 Pro has at least 60-70% battery to prevent any power interruptions during the flashing process.</li>
-                    <li><strong>Download the ROM File:</strong> Obtain the Android 16 AOSP ROM file for the Redmi Note 7 Pro. Transfer it to your phone's internal storage or an external USB OTG drive if you plan to flash from there.</li>
-                </ol>
-
-                <h2>Step-by-Step Installation Guide: Flashing Android 16</h2>
-                <p>With all preparations complete, let's proceed with the installation process. Follow these steps meticulously:</p>
-                <ol>
-                    <li><strong>Reboot into Custom Recovery:</strong>
-                        <ul>
-                            <li>Power off your Redmi Note 7 Pro completely.</li>
-                            <li>Press and hold the Power button and Volume Up button simultaneously.</li>
-                            <li>Continue holding until the custom recovery interface (e.g., TWRP) appears on your screen.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Perform Essential Wipes:</strong>
-                        <ul>
-                            <li>In the recovery main menu, tap on "Wipe."</li>
-                            <li>Select "Advanced Wipe."</li>
-                            <li>Crucially, select only the following partitions:
-                                <ul>
-                                    <li>Dalvik / ART Cache</li>
-                                    <li>Cache</li>
-                                    <li>Data</li>
-                                </ul>
-                            </li>
-                            <li>DO NOT select System, Vendor, or any other partitions. Wiping these incorrectly can hard-brick your device.</li>
-                            <li>Swipe to confirm the wipe. This clears the remnants of your previous system and app data, preparing for a clean installation.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Format Data (The Deep Clean):</strong>
-                        <ul>
-                            <li>Go back to the main recovery menu.</li>
-                            <li>Tap on "Wipe" again.</li>
-                            <li>Select "Format Data."</li>
-                            <li>When prompted, type "yes" to confirm.</li>
-                            <li>Be absolutely certain you have backed up everything before this step, as formatting data will erase your entire internal storage, including photos, videos, and all files. This step ensures maximum compatibility and prevents unforeseen issues from leftover old data.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Flash the Android 16 ROM:</strong>
-                        <ul>
-                            <li>Return to the main recovery menu.</li>
-                            <li>Tap on "Install."</li>
-                            <li>Navigate to the location where you saved the downloaded Android 16 ROM .zip file (e.g., your internal storage or USB OTG).</li>
-                            <li>Select the ROM file.</li>
-                            <li>Swipe to confirm the flash.</li>
-                            <li>The installation process will now begin. This can take several minutes. Do not interrupt your device during this process. A progress bar will indicate the status.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Reboot into System:</strong>
-                        <ul>
-                            <li>Once the flashing process completes successfully, you will see a "Reboot System" button.</li>
-                            <li>Tap on it.</li>
-                            <li>Your Redmi Note 7 Pro will now reboot. The first boot after installing a new custom ROM can take significantly longer than usual – often 5 to 10 minutes or even more. This is normal as the system initializes and optimizes apps. Do not panic if it seems stuck on the boot logo.</li>
-                        </ul>
-                    </li>
-                </ol>
-
-                <h2>Watch the Video Tutorial!</h2>
-                <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-8">
-                    <!-- YouTube Video Embed -->
-                    <iframe class="w-full h-96 rounded-lg" src="https://www.youtube.com/embed/QBtal4PX-gI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p class="text-gray-300 mb-6 text-lg leading-relaxed">
-                    For a visual step-by-step guide on installing Android 16 on your Redmi Note 7 Pro, check out our video tutorial above!
+            <div class="article-content text-gray-300 text-lg leading-relaxed">
+                <p>
+                    The Redmi Note 7 Pro, a beloved device known for its robust performance and excellent value, continues to be a favorite among enthusiasts. While official updates might have ceased, the vibrant custom ROM community keeps it alive and thriving. If you're looking to experience the very latest Android 16 on your Redmi Note 7 Pro, you've come to the right place! This comprehensive guide will walk you through the process of installing a pure AOSP (Android Open Source Project) based Android 16 custom ROM, giving you enhanced performance, the latest features, and a bloatware-free experience.
                 </p>
 
-                <h2>Download Links (Add Your Links Manually Here)</h2>
-                <p>Below are placeholder sections for the download links. Please update these with the actual, verified download sources for the ROM and recommended recovery.</p>
-                <p><strong>Android 16 AOSP ROM for Redmi Note 7 Pro:</strong><br>
-                [Link 1: Primary Download Source]</p>
-                <p><strong>Recommended Dynamic Custom Recovery (TWRP for Redmi Note 7 Pro 'violet'):</strong><br>
-                [Link to TWRP Download]</p>
-                <p><strong>ADB & Fastboot Tools (if needed for recovery flashing):</strong><br>
-                [Link to Platform-Tools Download]</p>
+                <h2>Why Install Android 16 on Redmi Note 7 Pro?</h2>
+                <p>
+                    Upgrading to Android 16 via a custom ROM offers numerous benefits:
+                </p>
+                <ul>
+                    <li><strong>Latest Features:</strong> Access to all the new features, UI enhancements, and privacy improvements introduced in Android 16.</li>
+                    <li><strong>Enhanced Performance:</strong> AOSP-based ROMs are often lighter and more optimized than stock MIUI, leading to smoother performance and better battery life.</li>
+                    <li><strong>Bloatware-Free:</strong> Say goodbye to pre-installed apps and services you don't need, freeing up storage and RAM.</li>
+                    <li><strong>Improved Security:</strong> Benefit from the latest Android security patches.</li>
+                    <li><strong>Customization:</strong> Unlock a new level of customization options that stock ROMs simply don't offer.</li>
+                </ul>
+
+                <h2>Prerequisites</h2>
+                <p>
+                    Before you begin, ensure you have the following:
+                </p>
+                <ol>
+                    <li><strong>Unlocked Bootloader:</strong> Your Redmi Note 7 Pro's bootloader must be unlocked. If it's not, you'll need to do this first. Be aware that unlocking the bootloader will wipe your device data.</li>
+                    <li><strong>Custom Recovery (TWRP Recommended):</strong> You need a custom recovery like TWRP (Team Win Recovery Project) installed. This is essential for flashing custom ROMs.</li>
+                    <li><strong>Backup Your Data:</strong> This process will wipe your device. Back up all your important data (photos, videos, contacts, apps, etc.) to a cloud service or your PC.</li>
+                    <li><strong>Charge Your Device:</strong> Ensure your phone is charged to at least 60% to prevent unexpected shutdowns during the flashing process.</li>
+                    <li><strong>ADB & Fastboot Tools:</strong> Have ADB (Android Debug Bridge) and Fastboot tools set up on your PC.</li>
+                    <li><strong>Android 16 Custom ROM for Redmi Note 7 Pro:</strong> Download a stable, AOSP-based Android 16 ROM specifically designed for the Redmi Note 7 Pro (codename: "lavender").</li>
+                    <li><strong>GApps (Google Apps) Package:</strong> Since AOSP ROMs don't come with Google apps pre-installed, you'll need to flash a GApps package compatible with Android 16 and your device's architecture (usually ARM64). Download a Nano or Pico package for a lean experience.</li>
+                    <li><strong>Magisk (Optional, for Root):</strong> If you want root access, download the latest Magisk ZIP file.</li>
+                </ol>
+
+                <h2>Downloads</h2>
+                <p>
+                    Here's the download link for the Android 16 Custom ROM for Redmi Note 7 Pro:
+                </p>
+                <ul>
+                    <li><strong>Android 16 Custom ROM for Redmi Note 7 Pro:</strong> <a href="https://sourceforge.net/projects/joker-builds/files/A16/aosp-signed-fullota-20250617-1153.zip/download" target="_blank" rel="noopener noreferrer">Download Android 16 ROM</a></li>
+                </ul>
+                <p class="text-red-400">
+                    <strong>Note:</strong> You will also need to download a compatible GApps package and optionally Magisk if you desire root access. These are usually available on trusted Android modding forums like XDA-Developers.
+                </p>
+
+                <h2>Installation Steps</h2>
+                <p>
+                    Carefully follow these steps. Any deviation might lead to issues.
+                </p>
+                <ol>
+                    <li>
+                        <strong>Transfer Files to Phone:</strong>
+                        <p>Connect your Redmi Note 7 Pro to your PC. Transfer the downloaded Android 16 ROM ZIP, GApps ZIP, and Magisk ZIP (if you intend to root) to your phone's internal storage. Place them in the root directory or a folder you can easily find.</p>
+                    </li>
+                    <li>
+                        <strong>Boot into TWRP Recovery:</strong>
+                        <p>Power off your phone. Then, press and hold the <strong>Volume Up + Power button</strong> simultaneously until you see the TWRP logo.</p>
+                    </li>
+                    <li>
+                        <strong>Wipe Data:</strong>
+                        <p>In TWRP, go to <strong>Wipe > Advanced Wipe</strong>. Select <strong>Dalvik/ART Cache, System, Data, and Cache</strong>. Do NOT select Internal Storage unless you want to wipe everything (including the ROM files you just transferred).</p>
+                        <p>Swipe to Wipe.</p>
+                    </li>
+                    <li>
+                        <strong>Flash Android 16 ROM:</strong>
+                        <p>Go back to the TWRP main menu and tap on <strong>Install</strong>. Navigate to where you placed the Android 16 ROM ZIP file. Select it and then <strong>Swipe to confirm Flash</strong>.</p>
+                        <p>Wait for the flashing process to complete. This might take a few minutes.</p>
+                    </li>
+                    <li>
+                        <strong>Flash GApps:</strong>
+                        <p>After the ROM flashing is complete, do NOT reboot yet. Go back to the Install screen, select the downloaded GApps ZIP file, and <strong>Swipe to confirm Flash</strong>.</p>
+                        <p>Wait for GApps to install.</p>
+                    </li>
+                    <li>
+                        <strong>Flash Magisk (Optional - for Root):</strong>
+                        <p>If you want root access, repeat the process: Go back to the Install screen, select the Magisk ZIP file, and <strong>Swipe to confirm Flash</strong>.</p>
+                    </li>
+                    <li>
+                        <strong>Reboot to System:</strong>
+                        <p>Once all desired ZIPs are flashed, tap on <strong>Reboot System</strong>. The first boot after flashing a new ROM can take 10-15 minutes. Do not panic or interrupt the process.</p>
+                    </li>
+                    <li>
+                        <strong>Initial Setup:</strong>
+                        <p>Once your phone boots, you will be greeted by the Android 16 setup wizard. Follow the on-screen instructions to set up your device.</p>
+                    </li>
+                </ol>
+
+                <h2>Post-Installation Tips</h2>
+                <ul>
+                    <li><strong>Complete Setup:</strong> Finish the initial Android setup.</li>
+                    <li><strong>Restore Data:</strong> Restore your backed-up data.</li>
+                    <li><strong>Install Apps:</strong> Download your favorite apps from the Play Store.</li>
+                    <li><strong>Check for Updates:</strong> Some custom ROMs offer OTA updates through their settings.</li>
+                    <li><strong>Explore:</strong> Dive into Android 16's new features and enjoy your bloatware-free experience!</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>
+                    You have successfully installed Android 16 on your Redmi Note 7 Pro! This upgrade breathes new life into your device, offering a modern, fast, and highly customizable Android experience. Enjoy the latest features and improved performance on your reliable Redmi Note 7 Pro.
+                </p>
+                <p>
+                    If you encountered any issues or have questions, feel free to consult online communities like XDA-Developers or TechyNoob's forums for assistance. Happy flashing!
+                </p>
+                <div class="mt-8 text-sm text-gray-500">
+                    <p><strong>Tags:</strong> #RedmiNote7Pro #Android16 #AOSPROM #CustomROM #AndroidCustomization #PureAndroid #BloatwareFree #TWRP #UnlockBootloader #FlashROM #Android16Installation #RedmiNote7ProROM #TechyNoob</p>
+                </div>
             </div>
-        </article>
+        </section>
+        <!-- Back to All Articles Button -->
+        <div class="text-center mt-12">
+            <a href="../all-articles.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 transform hover:scale-105">
+                <svg class="-ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H16a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                Back to All Articles
+            </a>
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8 px-6 md:px-8 lg:px-12 mt-12">
+    <footer class="bg-gray-900 py-8 px-6 mt-12">
         <div class="container mx-auto text-center text-gray-400">
             <p>&copy; 2025 TechyNoob. All rights reserved.</p>
             <div class="flex flex-wrap justify-center space-x-4 md:space-x-6 mt-4 text-sm">
@@ -298,76 +353,166 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu'); 
-
-        // Function to open mobile menu
-        function openMobileMenu() {
-            mobileMenu.classList.remove('hidden');
-            // Allow animation to start before removing translate-x-full
-            requestAnimationFrame(() => {
-                mobileMenu.classList.remove('translate-x-full'); // Slide in
-                mobileMenu.classList.add('opacity-100'); // Fade in
-                mobileMenu.classList.remove('opacity-0');
-            });
-        }
-
-        // Function to close mobile menu
-        function closeMobileMenu() {
-            mobileMenu.classList.add('translate-x-full'); // Slide out
-            mobileMenu.classList.remove('opacity-100'); // Fade out
-            mobileMenu.classList.add('opacity-0');
-            // Add hidden class after animation completes
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-            }, 300); // Match transition duration
-        }
-
-        mobileMenuButton.addEventListener('click', openMobileMenu);
-        closeMobileMenuButton.addEventListener('click', closeMobileMenu);
-
-        // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // --- Search Functionality (for blog articles and games) ---
-        // Dummy data for search (replace with actual dynamic loading if needed)
+        // Data for all blog articles and games (needs to be consistent across pages for search to work well)
         const allContentData = [
-            { title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", link: "magisk-vexiro.html" },
-            { title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", link: "custom-boot-animations.html" },
-            { title: "Revolutionize Your Android Experience: Unveiling the Power of Launchpad App", description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.", link: "launchpad-app.html" },
-            { title: "Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones", description: "A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.", link: "iconify-installation.html" },
-            { title: "Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method", description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.", link: "crdroid-ota-update.html" },
-            { title: "Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+", description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!", link: "colorblendr-guide.html" },
-            { title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!", link: "android-16-arrives.html" },
-            { title: "Installing Android 16 Material 3 Expressive Theme", description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!", link: "install-material-3-theme.html" },
-            { title: "Root Any Android Phone WITHOUT Magisk in 2025", description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!", link: "root-android-without-magisk.html" },
-            { title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!", link: "fix-play-integrity-rooted-android.html" },
-            { title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", link: "unlock-samsung-experience.html" },
-            { title: "Install Superior OS (Android 15) with May 2025 Security Patch!", description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", link: "install-superior-os.html" },
-            { title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", description: "The Redmi Note 7 Pro, a beloved device known for its robust performance and excellent value, continues to be a favorite among enthusiasts.", link: "install-android-16-redmi-note-7-pro.html" },
-
-            // Games (if you had a separate games data structure or if they were integrated)
-            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "../Games/flappy_bird.html" },
-            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "../Games/snake_game.html" },
-            { type: 'game', title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "../Games/pong_game.html" }
+            { 
+                title: "Google AI Edge Gallery: Your Gateway to On-Device Generative AI – A Deep Dive", 
+                description: "The Google AI Edge Gallery isn't just another app; it's a window into the future of mobile computing. Designed as an experimental platform, it allows you to Explore, Experience, and Evaluate cutting-edge Generative AI models that run entirely on your Android device.", 
+                link: "google-ai-edge-gallery.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Google+AI+Edge+Gallery"
+            },
+            { 
+                title: "Unleash Your Android's Potential: Install Any Custom Package Installer with Magisk!", 
+                description: "Are you a rooted Android user looking to break free from the mundane default package installer? Do you crave a more visually appealing or feature-rich experience when installing your favorite apps? Look further! This comprehensive guide will walk you through the simple yet powerful process of installing a custom package installer on virtually any rooted Android device using Magisk. Get ready to elevate your Android experience!", 
+                link: "custom-package-installer.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Custom+Installer"
+            },
+            { 
+                title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", 
+                description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", 
+                link: "magisk-vexiro.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Magisk+Vexiro"
+            },
+            { 
+                title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", 
+                description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", 
+                link: "custom-boot-animations.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Custom+Boot+Animations"
+            },
+            { 
+                title: "Revolutionize Your Android Experience: Unveiling the Power of Launchpad App", 
+                description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.", 
+                link: "launchpad-app.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Launchpad+App"
+            },
+            { 
+                title: "Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones", 
+                description: "A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.", 
+                link: "iconify-installation.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Iconify+Installation"
+            },
+            { 
+                title: "Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method", 
+                description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.", 
+                link: "crdroid-ota-update.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=CrDroid+Update"
+            },
+            { 
+                title: "Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+", 
+                description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!", 
+                link: "colorblendr-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=ColorBlendr+Guide"
+            },
+            { 
+                title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", 
+                description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!", 
+                link: "android-16-arrives.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Arrives"
+            },
+            { 
+                title: "Installing Android 16 Material 3 Expressive Theme", 
+                description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!", 
+                link: "install-material-3-theme.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Material+3+Theme"
+            },
+            { 
+                title: "Root Any Android Phone WITHOUT Magisk in 2025", 
+                description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!", 
+                link: "root-android-without-magisk.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Root+Without+Magisk"
+            },
+            { 
+                title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", 
+                description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!", 
+                link: "fix-play-integrity-rooted-android.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Play+Integrity+Fix"
+            },
+            { 
+                title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", 
+                description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", 
+                link: "unlock-samsung-experience.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=One+UI+Home"
+            },
+            { 
+                title: "Install Superior OS (Android 15) with May 2025 Security Patch!", 
+                description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", 
+                link: "install-superior-os.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Superior+OS"
+            },
+            { 
+                title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", 
+                description: "The Redmi Note 7 Pro, a beloved device known for its robust performance and excellent value, continues to be a favorite among enthusiasts.", 
+                link: "install-android-16-redmi-note-7-pro.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Redmi"
+            },
+            { 
+                title: "Google Pixel 6a in 2025: Is This Budget Gem Still a Worthy Contender?", 
+                description: "A definitive long-term review of the Google Pixel 6a in 2025, covering battery life, Android 16 features, camera performance, and its worth as a budget smartphone contender.", 
+                link: "google-pixel-6a-2025-review.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Pixel+6a+2025"
+            },
+            { 
+                title: "How to Install Incompatible Older Apps on Android 14, 15, and 16", 
+                description: "Learn how to bypass Google's app installation block for older apps on Android 14+ using an LSPosed module.", 
+                link: "install-older-apps.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Older+Apps+Android"
+            },
+            { 
+                title: "Android 16 vs. Android 15: A Deep Dive into the Pixel UI Revolution", 
+                description: "A comprehensive side-by-side comparison of Android 16 QPR Beta 2.1 and Android 15, highlighting major UI enhancements, Material 3 Expressive design, and new features on Google Pixel devices.", 
+                link: "android-16-vs-android-15.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+vs+15"
+            },
+            { 
+                title: "Unlock Unlimited Google Photos Storage", 
+                description: "A definitive guide to getting unlimited Google Photos storage in 2025, leveraging older Pixel devices for seamless photo backups.", 
+                link: "google-photos-unlimited-storage.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Unlimited+Google+Photos"
+            },
+            { 
+                title: "Unleash the Full Potential: Your Ultimate Guide to Android Rooting with Magisk in 2025", 
+                description: "A comprehensive guide to rooting any Android phone with Magisk in 2025, covering prerequisites, installation methods (Fastboot and custom recovery), and benefits like ad-blocking and advanced customization.", 
+                link: "magisk-rooting-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Magisk+Rooting+Guide"
+            },
+            // New articles - added at the end for reverse() to work as "newest"
+            {
+                title: "Unleash Your Android's Full Potential: A Comprehensive Guide to MiXplorer via Magisk Module",
+                description: "A comprehensive guide to installing MiXplorer and its add-ons via Magisk module on rooted Android devices. Learn why MiXplorer is the ultimate file manager for advanced users.",
+                link: "mixplorer-magisk-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=MiXplorer+Magisk+Guide"
+            },
+            {
+                title: "Revolutionize Your Android Audio: The Ultimate Guide to Installing ViperFX_RE and Unleashing ViPER4Android!",
+                description: "A comprehensive guide to installing ViperFX_RE and unleashing ViPER4Android for professional-level audio on your rooted Android device. Learn about Float32 processing, custom EQs, and more.",
+                link: "viperfx-re-guide.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=ViperFX_RE+Guide"
+            },
+            {
+                title: "Unleash Max FPS (Rootless!): A Deep Dive into Magisk Vexirox & The Ultimate Optimization Module",
+                description: "A comprehensive guide to installing the Max FPS Optimization Module with Magisk Vexirox for rootless Android gaming performance enhancement.",
+                link: "max-fps-vexirox-guide.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Max+FPS+Vexirox+Guide"
+            },
+            {
+                title: "Top Open Source Mobile Apps: July 2025 Edition",
+                description: "Discover three groundbreaking open-source mobile apps for July 2025: Memno (link/note vault), nNotes (minimalist notes), and AnBoard (modern keyboard). Enhance your productivity and digital life.",
+                link: "july-2025-open-source-apps.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Open+Source+Apps"
+            },
+            {
+                title: "Unleash Your Android's True Potential: Rootless Performance Optimization with Magisk Vexirox",
+                description: "A comprehensive guide to rootless performance optimization (CPU, GPU, RAM) on Android using Magisk Vexirox and its powerful modules.",
+                link: "rootless-performance-optimization.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Rootless+Performance+Optimization"
+            },
+            // Games (these are not displayed in the "Latest Blogs" section, but used for search)
+            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
+            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
+            { type: "game", title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
         ];
 
+        const blogCardsContainer = document.getElementById('blog-cards-container');
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
         const mobileSearchInput = document.getElementById('mobileSearchInput');
@@ -375,7 +520,42 @@
         const searchResultsDropdown = document.getElementById('searchResultsDropdown');
         const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
 
-        // Function to display suggestions
+        // Function to create and append a blog card
+        function createBlogCard(article) {
+            const cardLink = document.createElement('a');
+            cardLink.href = article.link;
+            cardLink.classList.add('block', 'blog-card');
+            
+            const truncatedDescription = article.description.length > 100 
+                ? article.description.substring(0, 100) + '...' 
+                : article.description;
+
+            cardLink.innerHTML = `
+                <img src="${article.image || 'https://placehold.co/400x200/1a202c/e2e8f0?text=TechyNoob'}" alt="${article.title}" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="blog-card-content">
+                    <h3>${article.title}</h3>
+                    <p class="text-sm text-gray-300">${truncatedDescription}</p>
+                </div>
+                <div class="blog-card-footer">
+                    <span class="text-xs text-gray-400">Read More</span>
+                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </div>
+            `;
+            return cardLink;
+        }
+
+        // Function to load latest blogs (only blog type articles)
+        function loadLatestBlogs() {
+            blogCardsContainer.innerHTML = ''; // Clear existing cards
+            // Filter out games, reverse the array to get newest first, and then display the latest 6 articles
+            const latestArticles = allContentData.filter(item => item.type !== 'game').reverse().slice(0, 6);
+            
+            latestArticles.forEach(article => {
+                blogCardsContainer.appendChild(createBlogCard(article));
+            });
+        }
+
+        // Function to display search suggestions
         function displaySuggestions(inputElement, dropdownElement) {
             const query = inputElement.value.toLowerCase().trim();
             dropdownElement.innerHTML = ''; // Clear previous suggestions
@@ -394,9 +574,7 @@
                     const suggestionDiv = document.createElement('div');
                     suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
                     suggestionDiv.textContent = item.title;
-                    suggestionDiv.addEventListener('click', () => {
-                        window.location.href = item.link; // Navigate to the article/game page
-                    });
+                    suggestionDiv.onclick = () => { window.location.href = item.link; };
                     dropdownElement.appendChild(suggestionDiv);
                 });
                 dropdownElement.classList.remove('hidden');
@@ -406,57 +584,65 @@
         }
 
         // Event listeners for desktop search
-        searchButton.addEventListener('click', () => {
-            // In an article page, a search button click should likely navigate to the main search results page or filter all-articles
-            const query = searchInput.value.trim();
-            if (query) {
-                window.location.href = `../all-articles.html?search=${encodeURIComponent(query)}`;
-            }
-            searchResultsDropdown.classList.add('hidden');
-        });
-        searchInput.addEventListener('keyup', (e) => {
-            displaySuggestions(searchInput, searchResultsDropdown);
-            if (e.key === 'Enter') {
+        if(searchInput && searchButton) {
+            searchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(searchInput, searchResultsDropdown);
+                if (e.key === 'Enter') {
+                    searchButton.click(); // Trigger search on Enter
+                }
+            });
+            searchButton.addEventListener('click', () => {
                 const query = searchInput.value.trim();
                 if (query) {
-                    window.location.href = `../all-articles.html?search=${encodeURIComponent(query)}`;
+                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
                 }
-                searchResultsDropdown.classList.add('hidden');
-            }
-        });
-        document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
-                searchResultsDropdown.classList.add('hidden');
-            }
-        });
+                searchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+            });
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
+                    searchResultsDropdown.classList.add('hidden');
+                }
+            });
+        }
 
         // Event listeners for mobile search
-        mobileSearchButton.addEventListener('click', () => {
-            const query = mobileSearchInput.value.trim();
-            if (query) {
-                window.location.href = `../all-articles.html?search=${encodeURIComponent(query)}`;
-            }
-            mobileSearchResultsDropdown.classList.add('hidden');
-            closeMobileMenu();
-        });
-        mobileSearchInput.addEventListener('keyup', (e) => {
-            displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
-            if (e.key === 'Enter') {
+        if(mobileSearchInput && mobileSearchButton) {
+            mobileSearchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
+                if (e.key === 'Enter') {
+                    mobileSearchButton.click(); // Trigger search on Enter
+                }
+            });
+            mobileSearchButton.addEventListener('click', () => {
                 const query = mobileSearchInput.value.trim();
                 if (query) {
-                    window.location.href = `../all-articles.html?search=${encodeURIComponent(query)}`;
+                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
                 }
-                mobileSearchResultsDropdown.classList.add('hidden');
-                closeMobileMenu();
-            }
-        });
-        document.addEventListener('click', (e) => {
-            if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
-                mobileSearchResultsDropdown.classList.add('hidden');
-            }
-        });
+                mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+                closeMobileMenu(); // Close mobile menu after search
+            });
+            document.addEventListener('click', (e) => {
+                if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
+                    mobileSearchResultsDropdown.classList.add('hidden');
+                }
+            });
+        }
 
-        // Close mobile menu completely (hidden and slide out)
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('opacity-100');
+                mobileMenu.classList.remove('opacity-0');
+            });
+        }
+
         function closeMobileMenu() {
             mobileMenu.classList.add('translate-x-full'); // Start slide-out animation
             mobileMenu.classList.remove('opacity-100'); // Start fade-out animation
@@ -466,13 +652,55 @@
             }, 300); // Duration of transition
         }
 
+        // Add checks for elements before adding event listeners
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+        }
+        if (closeMobileMenuButton) {
+            closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        }
+
         // Add event listener to transition end for mobile menu cleanup
-        mobileMenu.addEventListener('transitionend', () => {
-            if (mobileMenu.classList.contains('translate-x-full') && mobileMenu.classList.contains('hidden')) {
-                // Perform cleanup only if menu is fully closed and hidden
-                mobileSearchInput.value = ''; // Clear mobile search input
-                // No need to performSearch('') here as we are navigating to all-articles
-                mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
+        if (mobileMenu) {
+            mobileMenu.addEventListener('transitionend', () => {
+                if (mobileMenu.classList.contains('translate-x-full') && mobileMenu.classList.contains('hidden')) {
+                    // Perform cleanup only if menu is fully closed and hidden
+                    if (mobileSearchInput) mobileSearchInput.value = ''; // Clear mobile search input
+                    if (mobileSearchResultsDropdown) mobileSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
+                }
+            });
+        }
+
+        // Close mobile menu when a link is clicked
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Check if the link is for "All Articles" and potentially apply search query
+                    if (link.getAttribute('href') === 'all-articles.html') {
+                        const currentSearchQuery = (searchInput ? searchInput.value : '') || (mobileSearchInput ? mobileSearchInput.value : '');
+                        if (currentSearchQuery) {
+                            e.preventDefault(); // Prevent default navigation
+                            window.location.href = `all-articles.html?search=${encodeURIComponent(currentSearchQuery)}`;
+                            return; // Stop further execution as we're redirecting
+                        }
+                    }
+                    closeMobileMenu();
+                });
+            });
+        }
+
+        // Initialize latest blogs on page load
+        window.addEventListener('load', loadLatestBlogs);
+
+        // Handle URL search parameters on page load (for cases where user lands directly with search query)
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            if (searchQuery) {
+                if (searchInput) searchInput.value = searchQuery; // Populate desktop search input
+                if (mobileSearchInput) mobileSearchInput.value = searchQuery; // Populate mobile search input
+                // On index.html, we don't filter the main blog section based on URL search query
+                // but the search bar will be pre-filled. User can then click search button.
             }
         });
     </script>
