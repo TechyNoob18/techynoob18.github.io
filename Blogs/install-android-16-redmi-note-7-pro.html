@@ -135,6 +135,26 @@
         .suggestion-item:hover {
             background-color: #4a5568; /* Darker hover */
         }
+
+        /* Responsive YouTube Video Embed */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.5rem; /* rounded-lg */
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
     </style>
 </head>
 <body class="antialiased leading-normal">
@@ -155,8 +175,7 @@
                 <a href="../about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
                 <a href="../privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
                 <a href="../terms.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Terms of Service</a>
-                <a href="../contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Contact Us</a>
-                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2 flex items-center">
+                <a href="../contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2 flex items-center">
                     <img src="../logos/youtube-logo-png-transparent-image-5.png" alt="YouTube Logo" class="w-5 h-5 mr-2">
                     YouTube Channel
                 </a>
@@ -246,7 +265,6 @@
                     <li><strong>Charge Your Device:</strong> Ensure your phone is charged to at least 60% to prevent unexpected shutdowns during the flashing process.</li>
                     <li><strong>ADB & Fastboot Tools:</strong> Have ADB (Android Debug Bridge) and Fastboot tools set up on your PC.</li>
                     <li><strong>Android 16 Custom ROM for Redmi Note 7 Pro:</strong> Download a stable, AOSP-based Android 16 ROM specifically designed for the Redmi Note 7 Pro (codename: "lavender").</li>
-                    <li><strong>GApps (Google Apps) Package:</strong> Since AOSP ROMs don't come with Google apps pre-installed, you'll need to flash a GApps package compatible with Android 16 and your device's architecture (usually ARM64). Download a Nano or Pico package for a lean experience.</li>
                     <li><strong>Magisk (Optional, for Root):</strong> If you want root access, download the latest Magisk ZIP file.</li>
                 </ol>
 
@@ -258,7 +276,7 @@
                     <li><strong>Android 16 Custom ROM for Redmi Note 7 Pro:</strong> <a href="https://sourceforge.net/projects/joker-builds/files/A16/aosp-signed-fullota-20250617-1153.zip/download" target="_blank" rel="noopener noreferrer">Download Android 16 ROM</a></li>
                 </ul>
                 <p class="text-red-400">
-                    <strong>Note:</strong> You will also need to download a compatible GApps package and optionally Magisk if you desire root access. These are usually available on trusted Android modding forums like XDA-Developers.
+                    <strong>Note:</strong> This ROM already includes GApps. You only need to download Magisk separately if you desire root access.
                 </p>
 
                 <h2>Installation Steps</h2>
@@ -268,7 +286,7 @@
                 <ol>
                     <li>
                         <strong>Transfer Files to Phone:</strong>
-                        <p>Connect your Redmi Note 7 Pro to your PC. Transfer the downloaded Android 16 ROM ZIP, GApps ZIP, and Magisk ZIP (if you intend to root) to your phone's internal storage. Place them in the root directory or a folder you can easily find.</p>
+                        <p>Connect your Redmi Note 7 Pro to your PC. Transfer the downloaded Android 16 ROM ZIP and Magisk ZIP (if you intend to root) to your phone's internal storage. Place them in the root directory or a folder you can easily find.</p>
                     </li>
                     <li>
                         <strong>Boot into TWRP Recovery:</strong>
@@ -285,11 +303,6 @@
                         <p>Wait for the flashing process to complete. This might take a few minutes.</p>
                     </li>
                     <li>
-                        <strong>Flash GApps:</strong>
-                        <p>After the ROM flashing is complete, do NOT reboot yet. Go back to the Install screen, select the downloaded GApps ZIP file, and <strong>Swipe to confirm Flash</strong>.</p>
-                        <p>Wait for GApps to install.</p>
-                    </li>
-                    <li>
                         <strong>Flash Magisk (Optional - for Root):</strong>
                         <p>If you want root access, repeat the process: Go back to the Install screen, select the Magisk ZIP file, and <strong>Swipe to confirm Flash</strong>.</p>
                     </li>
@@ -303,6 +316,14 @@
                     </li>
                 </ol>
 
+                <h2>Watch the Installation Guide</h2>
+                <p>
+                    For a visual walkthrough of the installation process, check out our detailed YouTube guide:
+                </p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_HERE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
                 <h2>Post-Installation Tips</h2>
                 <ul>
                     <li><strong>Complete Setup:</strong> Finish the initial Android setup.</li>
