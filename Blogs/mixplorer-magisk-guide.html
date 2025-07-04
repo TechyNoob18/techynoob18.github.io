@@ -135,6 +135,26 @@
         .suggestion-item:hover {
             background-color: #4a5568; /* Darker hover */
         }
+
+        /* Responsive YouTube Video Embed */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.5rem; /* rounded-lg */
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
     </style>
 </head>
 <body class="antialiased leading-normal">
@@ -301,6 +321,14 @@
                     </li>
                 </ol>
 
+                <h2>Watch the Installation Guide</h2>
+                <p>
+                    For a visual walkthrough of the installation process, check out our detailed YouTube guide:
+                </p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Lznny-UsOuY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
                 <h2>Troubleshooting Tips</h2>
                 <ul>
                     <li><strong>Module Not Appearing/Working:</strong> Ensure you downloaded the correct module for your Android version and Magisk version. Try re-flashing.</li>
@@ -313,7 +341,7 @@
                     By following this guide, you've successfully installed MiXplorer and its add-ons as a Magisk module, transforming your Android device into a powerful file management hub. Enjoy unparalleled control over your files, seamless cloud integration, and a wealth of advanced features that make MiXplorer an indispensable tool for any rooted Android user.
                 </p>
                 <p>
-                    Stay tuned to TechyNoob for more in-depth guides and tips to unlock the full potential of your Android device!
+                    Share this guide with fellow audiophiles and stay tuned to TechyNoob for more advanced Android customization tips and tricks!
                 </p>
                 <div class="mt-8 text-sm text-gray-500">
                     <p><strong>Tags:</strong> #MiXplorer #MagiskModule #AndroidFileManger #RootedAndroid #Customization #TechGuide #AndroidHacks #FileManagement #Magisk #Systemless #AndroidCustomization #AdvancedAndroid #TechyNoob #RootAccess #FileExplorer #AndroidTools #MobileTech #DigitalLife #PowerUser #DeviceOptimization #AndroidTips #MobileSecurity #DataManagement #AndroidDevelopment #ModuleInstallation #FileOperations #CloudStorage #FTP #SMB #WebDAV #Archiver #CodeEditor #ImageViewer #PDFViewer #TextEditor #MediaPlayer #AppManager #RootBrowser #AndroidEnthusiast #TechTutorial #StepByStep #FreeAndroid #OpenSource #CustomROM #AndroidModding #DevicePerformance #AndroidExperience #MobileComputing #TechSolutions #DigitalFreedom #Android2025 #LatestTech #FutureTech #XDA #YouTubeTech #TechCommunity #HowToGuide</p>
