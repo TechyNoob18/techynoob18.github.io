@@ -259,7 +259,7 @@
             </a>
             
             <!-- Desktop Navigation Links, YouTube Icon, and Search Bar -->
-            <div class="hidden md:flex flex-grow flex-col items-end relative">
+            <div class="hidden md:flex flex-grow flex-col items-center relative">
                 <!-- Top row for Navigation links and YouTube Icon -->
                 <div class="flex items-center space-x-8 mb-4">
                     <a href="index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
@@ -279,9 +279,9 @@
                     </a>
                 </div>
                 
-                <!-- Search Input and Button for Desktop (moved below tabs) -->
-                <div class="relative flex items-center">
-                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
+                <!-- Search Input and Button for Desktop (moved below tabs and centered) -->
+                <div class="relative flex items-center w-full max-w-lg"> <!-- Added w-full max-w-lg for centering and length -->
+                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full"> <!-- Changed w-40 to w-full -->
                     <button id="searchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
@@ -452,7 +452,7 @@
                 </a>
                 <a href="https://t.me/techynoob18" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10zm4.908 7.5c-.145-.732-1.077-1.12-1.745-.73l-6.32 4.63c-.595.435-.615 1.29-.04 1.74l1.62 1.25c.485.375 1.18.255 1.54-.255l2.4-3.2c.22-.295.66-.295.88 0l2.4 3.2c.36.51.98.66 1.46.285l1.62-1.25c.575-.45.555-1.305-.04-1.74l-6.32-4.63c-.668-.39-1.599-.002-1.745-.732z"/>
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.174 8.52l-1.584 7.55c-.198.945-.733 1.18-1.503.75l-2.457-1.81-1.18 1.14c-.18.17-.334.32-.67.32-.47 0-.404-.15-.76-.485l-.54-.525-1.04-3.23-2.6-1.59c-.93-.57-.91-1.04-.19-1.3l12.87-4.96c.74-.28 1.43.23 1.17 1.05z"/>
                     </svg>
                 </a>
             </div>
