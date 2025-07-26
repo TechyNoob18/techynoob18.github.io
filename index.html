@@ -24,18 +24,16 @@
 
     <!-- AdSense Policy Optimization: Enhanced Meta Description and Keywords -->
     <meta name="description" content="TechyNoob is your ultimate resource for Android customization, in-depth tech guides, custom ROMs, Magisk modules, gaming, and AI tools. Unlock your device's full potential with our comprehensive tutorials, reviews, and insights into the latest mobile technology.">
-    <meta name="keywords" content="Android customization, Tech Guides, Custom ROMs, Magisk Modules, Android Rooting, Mobile Gaming, AI Image Generator, TechyNoob, Android Tips, Phone Optimization, Digital Life, Tech Tutorials, App Reviews, Open Source Apps, Android 16, Pixel, Redmi Note 7 Pro, Smartphone Optimization, Device Unlock">
-    
-    <!-- AdSense Policy Optimization: Ensure search engines can crawl your site -->
-    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Android customization, Tech Guides, Custom ROMs, Magisk Modules, Android Rooting, Mobile Gaming, TechyNoob, Android Tips, Phone Optimization, Digital Life, Tech Tutorials, App Reviews, Open Source Apps, Android 16, Pixel, Redmi Note 7 Pro, Smartphone Optimization, Device Unlock, Intercepter-NG">
+    <meta name="author" content="TechyNoob">
+    <link rel="canonical" href="https://techynoob18.github.io/index.html">
 
-    <!-- AdSense Policy Optimization: Important Note for Publisher -->
-    <!-- For AdSense approval, ensure that: -->
-    <!-- 1. All linked pages (About Us, Privacy Policy, Terms of Service, Contact Us) exist and contain comprehensive, clear, and accurate information. -->
-    <!-- 2. The content on all your blog articles is original, high-quality, substantial, and provides value to users. Avoid thin content. -->
-    <!-- 3. There are no misleading elements, pop-ups, or deceptive navigation that could encourage artificial clicks. -->
-    <!-- 4. Your site offers a good user experience across all devices (responsive design). -->
-    <!-- 5. Ensure all images have appropriate alt text for accessibility and SEO. -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techynoob18.github.io/index.html">
+    <meta property="og:title" content="TechyNoob - Your Go-To for Android Customization, Tech Guides, and More!">
+    <meta property="og:description" content="TechyNoob is your ultimate resource for Android customization, in-depth tech guides, custom ROMs, Magisk modules, gaming, and AI tools. Unlock your device's full potential with our comprehensive tutorials, reviews, and insights into the latest mobile technology.">
+    <meta property="og:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
 
     <style>
         /* Custom styles to enhance the energetic look */
@@ -235,20 +233,28 @@
             </a>
             
             <!-- Desktop Navigation Links and Search Bar -->
-            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative">
-                <a href="index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
-                <a href="#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
-                <a href="#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
-                <a href="about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
-                <a href="privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
-                <a href="terms.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Terms of Service</a>
-                <a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Contact Us</a>
-                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">
-                    YouTube Channel
-                </a>
-                <!-- Search Input and Button for Desktop -->
-                <div class="relative flex items-center ml-4">
-                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
+            <div class="hidden md:flex flex-grow flex-col items-center relative">
+                <!-- Top row for Navigation links and YouTube Icon -->
+                <div class="flex items-center space-x-8 mb-4">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
+                    <a href="#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
+                    <a href="#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
+                    <a href="privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
+                    <a href="terms.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Terms of Service</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Contact Us</a>
+                    <!-- YouTube Icon for Desktop Header - Now SVG -->
+                    <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.543 6.491a3.079 3.079 0 0 0-2.185-2.185C17.625 4 12 4 12 4s-5.625 0-7.358.306a3.079 3.079 0 0 0-2.185 2.185C2 8.375 2 12 2 12s0 3.625.306 5.358a3.079 3.079 0 0 0 2.185 2.185C6.375 20 12 20 12 20s5.625 0 7.358-.306a3.079 3.079 0 0 0 2.185-2.185C22 15.625 22 12 22 12s0-3.625-.306-5.358zM10 15.5v-7l6 3.5-6 3.5z"/>
+                        </svg>
+                        YouTube
+                    </a>
+                </div>
+                
+                <!-- Search Input and Button for Desktop (moved below tabs and centered) -->
+                <div class="relative flex items-center w-full max-w-lg"> <!-- Changed w-40 to w-full max-w-lg -->
+                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
                     <button id="searchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
@@ -283,8 +289,8 @@
                 </div>
             </div>
             <a href="index.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Home</a>
-            <a href="index.html#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
-            <a href="index.html#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Games</a>
+            <a href="#blogs" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Blogs</a>
+            <a href="#games-section" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Games</a>
             <a href="about.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">About Us</a>
             <a href="privacy.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Privacy Policy</a>
             <a href="terms.html" class="text-gray-300 text-3xl hover:text-white transition duration-300" onclick="closeMobileMenu()">Terms of Service</a>
@@ -299,28 +305,98 @@
         </div>
     </header>
 
-    <main class="flex-grow container mx-auto px-6 md:px-8 lg:px-12 py-12">
-        <h1 class="text-3xl md:text-4xl font-extrabold text-center mb-10 gradient-text">All Articles</h1>
-        
-        <!-- Search Bar for All Articles Page -->
-        <div class="flex flex-col sm:flex-row items-center justify-center mb-10 space-y-4 sm:space-y-0 sm:space-x-4">
-            <div class="relative flex items-center w-full sm:w-auto flex-grow max-w-xl">
-                <input type="text" id="articleSearchInput" placeholder="Search articles..." class="px-4 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
-                <button id="articleSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                </button>
-                <div id="articleSearchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
-                    <!-- Suggestions will be populated here -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="hero-section relative">
+            <div class="hero-overlay"></div>
+            <div class="hero-content text-white px-4"> <!-- Added px-4 for padding on smaller screens -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 animate-fade-in gradient-text">
+                    TechyNoob: Unleash Your Device's Potential
+                </h1>
+                <p class="text-lg sm:text-xl mb-8 animate-fade-in-delay-1 px-2"> <!-- Added px-2 for padding -->
+                    Your ultimate guide to Android customization, reviews, and unlocking hidden features.
+                </p>
+                <div class="animate-fade-in-delay-2 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#blogs" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 inline-block">
+                        Explore Blogs
+                    </a>
+                    <a href="#games-section" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 inline-block">
+                        Play Games
+                    </a>
                 </div>
             </div>
-            <button id="resetFilterButton" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto">
-                Reset Filter
-            </button>
-        </div>
+        </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-cards-container">
-            <!-- Blog cards will be dynamically loaded here by JavaScript -->
-        </div>
+        <!-- Latest Blogs Section -->
+        <section id="blogs" class="container mx-auto px-6 md:px-8 lg:px-12 py-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 gradient-text">Latest Blogs</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-cards-container">
+                <!-- Blog cards will be dynamically loaded here by JavaScript -->
+            </div>
+            <div class="text-center mt-12">
+                <a href="all-articles.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    View All Articles
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section (Mini) -->
+        <section id="about-mini" class="bg-gray-800 py-16 px-6 md:px-8 lg:px-12">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 gradient-text">About TechyNoob</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
+                    TechyNoob is your go-to resource for everything Android, from in-depth customization guides and rooting tutorials to honest device reviews and insights into the latest mobile technology. We empower you to unlock the full potential of your smartphone.
+                </p>
+                <a href="about.html" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Learn More About Us
+                </a>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games-section" class="container mx-auto px-6 md:px-8 lg:px-12 py-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 gradient-text">Fun Games to Play</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Flappy Bird Card -->
+                <div class="game-card">
+                    <div class="game-icon">
+                        <!-- SVG for Flappy Bird - simple bird icon -->
+                        <svg class="mx-auto w-24 h-24" fill="#FFD700" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.5 7C7.462 7 5 9.462 5 12.5S7.462 18 10.5 18c2.47 0 4.542-1.618 5.25-3.875L18 15v-2l2-2h-3.5C14.73 9.444 12.82 7 10.5 7zM10.5 9c.828 0 1.5.672 1.5 1.5S11.328 12 10.5 12 9 11.328 9 10.5 9.672 9 10.5 9zM10.5 13c-.828 0-1.5-.672-1.5-1.5S9.672 10 10.5 10s1.5.672 1.5 1.5S11.328 13 10.5 13z"/>
+                        </svg>
+                    </div>
+                    <h3>Flappy Bird</h3>
+                    <p class="text-sm text-gray-300">Test your reflexes in this classic arcade game. Tap to make the bird fly and avoid obstacles!</p>
+                    <a href="Games/flappy_bird.html" class="play-button">Play Now</a>
+                </div>
+
+                <!-- Snake Game Card -->
+                <div class="game-card">
+                    <div class="game-icon">
+                        <!-- SVG for Snake Game - simple snake icon -->
+                        <svg class="mx-auto w-24 h-24" fill="#4CAF50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1 16H8a1 1 0 010-2h3v-2H8a1 1 0 010-2h3V8H8a1 1 0 010-2h3V4h2v2h3a1 1 0 010 2h-3v2h3a1 1 0 010 2h-3v2h3a1 1 0 010 2h-3v2zm7-6a1 1 0 11-2 0 1 1 0 012 0z"/>
+                        </svg>
+                    </div>
+                    <h3>Snake Game</h3>
+                    <p class="text-sm text-gray-300">Guide your snake to eat the food and grow longer, but don't hit the walls or yourself!</p>
+                    <a href="Games/snake_game.html" class="play-button">Play Now</a>
+                </div>
+
+                <!-- Pong Game Card -->
+                <div class="game-card">
+                    <div class="game-icon">
+                        <!-- SVG for Pong Game - simple paddle and ball icon -->
+                        <svg class="mx-auto w-24 h-24" fill="#F0F0F0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 3h2v18H4V3zm14 0h2v18h-2V3zM12 7a5 5 0 100 10 5 5 0 000-10z"/>
+                        </svg>
+                    </div>
+                    <h3>Pong Game</h3>
+                    <p class="text-sm text-gray-300">Relive the classic arcade experience with this two-player game of skill and precision.</p>
+                    <a href="Games/pong_game.html" class="play-button">Play Now</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="bg-gray-900 py-8 px-6 mt-12">
@@ -369,79 +445,79 @@
             },
             { 
                 title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", 
-                description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", 
+                description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device. This guide details the installation process, key features, and how you can achieve deep system modifications and optimizations while maintaining device integrity and warranty.", 
                 link: "Blogs/magisk-vexiro.html",
                 image: "https://placehold.co/400x200/9333EA/ffffff?text=Magisk+Vexiro"
             },
             { 
                 title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", 
-                description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", 
+                description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules. This step-by-step tutorial will show you how to easily customize your device's boot sequence, adding a unique flair every time you power on your phone. Personalize your Android like never before!", 
                 link: "Blogs/custom-boot-animations.html",
                 image: "https://placehold.co/400x200/6EE7B7/000000?text=Custom+Boot+Animations"
             },
             { 
                 title: "Revolutionize Your Android Experience: Unveiling the Power of Launchpad App", 
-                description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.", 
+                description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy. This article delves into how Launchpad integrates various search functionalities, streamlines app access, and protects your data, making your daily smartphone usage more productive and secure.", 
                 link: "Blogs/launchpad-app.html",
                 image: "https://placehold.co/400x200/3B82F6/ffffff?text=Launchpad+App"
             },
             { 
                 title: "Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones", 
-                description: "A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.", 
+                description: "Iconify is a game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality. This comprehensive guide provides detailed instructions on installing and using Iconify on rooted devices, allowing you to personalize icons, themes, and overall UI to your heart's content.", 
                 link: "Blogs/iconify-installation.html",
                 image: "https://placehold.co/400x200/9333EA/ffffff?text=Iconify+Installation"
             },
             { 
                 title: "Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method", 
-                description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.", 
+                description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device. This detailed guide covers everything from downloading the correct update package to flashing it safely, ensuring your system remains stable and up-to-date with the latest features and security patches.", 
                 link: "Blogs/crdroid-ota-update.html",
                 image: "https://placehold.co/400x200/6EE7B7/000000?text=CrDroid+Update"
             },
             { 
                 title: "Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+", 
-                description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!", 
+                description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors! This guide explores how ColorBlendr allows you to fine-tune your device's color palette, matching your personal style and enhancing your visual experience on Android 12 and newer versions.", 
                 link: "Blogs/colorblendr-guide.html",
                 image: "https://placehold.co/400x200/3B82F6/ffffff?text=ColorBlendr+Guide"
             },
             { 
                 title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", 
-                description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!", 
+                description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements! This article provides an overview of the most significant changes, performance improvements, and user interface updates that come with the latest Android iteration, and what it means for the future of Android.", 
                 link: "Blogs/android-16-arrives.html",
                 image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Arrives"
             },
             { 
                 title: "Installing Android 16 Material 3 Expressive Theme", 
-                description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!", 
+                description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device! This guide walks you through the steps to install the new Material 3 Expressive Theme on Android 16, bringing a fresh and modern look to your smartphone's interface with enhanced animations and customizable elements.", 
                 link: "Blogs/install-material-3-theme.html",
                 image: "https://placehold.co/400x200/6EE7B7/000000?text=Material+3+Theme"
             },
             { 
                 title: "Root Any Android Phone WITHOUT Magisk in 2025", 
-                description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!", 
+                description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels! This in-depth guide provides step-by-step instructions for rooting your phone without relying on the traditional Magisk framework, offering new possibilities for customization and system access.", 
                 link: "Blogs/root-android-without-magisk.html",
                 image: "https://placehold.co/400x200/3B82F6/ffffff?text=Root+Without+Magisk"
             },
             { 
                 title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", 
-                description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!", 
+                description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques! This comprehensive 2025 guide provides solutions and workarounds to ensure your rooted phone can still access apps and services that rely on Play Integrity, maintaining full functionality and security.", 
                 link: "Blogs/fix-play-integrity-rooted-android.html",
                 image: "https://placehold.co/400x200/9333EA/ffffff?text=Play+Integrity+Fix"
             },
             { 
                 title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", 
-                description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", 
+                description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface! This guide provides detailed instructions on how to install the One UI Home 35 Magisk Module, enabling you to experience Samsung's intuitive and feature-rich launcher on any compatible rooted Android phone.", 
                 link: "Blogs/unlock-samsung-experience.html",
                 image: "https://placehold.co/400x200/6EE7B7/000000?text=One+UI+Home"
             },
             { 
                 title: "Install Superior OS (Android 15) with May 2025 Security Patch!", 
-                description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", 
+                description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates! This installation guide provides all the necessary steps to flash Superior OS on your device, ensuring improved performance, enhanced features, and up-to-date security for your smartphone.", 
                 link: "Blogs/install-superior-os.html",
                 image: "https://placehold.co/400x200/3B82F6/ffffff?text=Superior+OS"
             },
             { 
                 title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", 
-                description: "The Redmi Note 7 Pro, a beloved device known for its robust performance and excellent value, continues to be a favorite among enthusiasts.", 
+                description: "The Redmi Note 7 Pro, a beloved device known for its robust performance and excellent value, continues to be a favorite among enthusiasts. This comprehensive guide provides step-by-step instructions to install pure Android 16 on your Redmi Note 7 Pro, bringing the latest features and optimizations to your device.", 
                 link: "Blogs/install-android-16-redmi-note-7-pro.html",
                 image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Redmi"
             },
@@ -512,67 +588,57 @@
                 link: "Blogs/intercepter-ng-guide.html",
                 image: "https://placehold.co/400x200/6EE7B7/000000?text=Intercepter-NG"
             },
-            // Games
-            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html", image: "https://placehold.co/400x200/FF0000/FFFFFF?text=Flappy+Bird" },
-            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html", image: "https://placehold.co/400x200/00FF00/000000?text=Snake+Game" },
-            { type: "game", title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html", image: "https://placehold.co/400x200/0000FF/FFFFFF?text=Pong+Game" }
+            // Games (these are not displayed in the "Latest Blogs" section, but used for search)
+            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
+            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
+            { type: "game", title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
         ];
 
         const blogCardsContainer = document.getElementById('blog-cards-container');
-        const articleSearchInput = document.getElementById('articleSearchInput');
-        const articleSearchButton = document.getElementById('articleSearchButton');
-        const articleSearchResultsDropdown = document.getElementById('articleSearchResultsDropdown');
-        const resetFilterButton = document.getElementById('resetFilterButton');
-
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const mobileSearchInput = document.getElementById('mobileSearchInput');
+        const mobileSearchButton = document.getElementById('mobileSearchButton');
+        const searchResultsDropdown = document.getElementById('searchResultsDropdown');
+        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
 
         // Function to create and append a blog card
         function createBlogCard(article) {
-            const cardDiv = document.createElement('div');
-            cardDiv.classList.add('blog-card');
+            const cardLink = document.createElement('a');
+            cardLink.href = article.link;
+            cardLink.classList.add('block', 'blog-card');
             
-            const truncatedDescription = article.description.length > 100 
-                ? article.description.substring(0, 100) + '...' 
+            // AdSense Policy Optimization: Ensure descriptions are sufficiently long for content quality
+            const truncatedDescription = article.description.length > 150 
+                ? article.description.substring(0, 150) + '...' 
                 : article.description;
 
-            cardDiv.innerHTML = `
-                <a href="${article.link}" class="block">
-                    <img src="${article.image || 'https://placehold.co/400x200/1a202c/e2e8f0?text=TechyNoob'}" alt="${article.title}" class="w-full h-48 object-cover rounded-t-xl">
-                    <div class="blog-card-content">
-                        <h3>${article.title}</h3>
-                        <p class="text-sm text-gray-300">${truncatedDescription}</p>
-                    </div>
-                    <div class="blog-card-footer">
-                        <span class="text-xs text-gray-400">Read More</span>
-                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </div>
-                </a>
+            cardLink.innerHTML = `
+                <img src="${article.image || 'https://placehold.co/400x200/1a202c/e2e8f0?text=TechyNoob'}" alt="${article.title}" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="blog-card-content">
+                    <h3>${article.title}</h3>
+                    <p class="text-sm text-gray-300">${truncatedDescription}</p>
+                </div>
+                <div class="blog-card-footer">
+                    <span class="text-xs text-gray-400">Read More</span>
+                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </div>
             `;
-            return cardDiv;
+            return cardLink;
         }
 
-        // Function to filter and display blog cards
-        function filterBlogCards(query) {
+        // Function to load latest blogs (only blog type articles)
+        function loadLatestBlogs() {
             blogCardsContainer.innerHTML = ''; // Clear existing cards
-            const lowerCaseQuery = query.toLowerCase();
-
-            // Reverse the array to show newest articles first, then filter
-            const articlesToDisplay = allContentData.filter(item => item.type !== 'game').reverse();
-
-            const filteredArticles = articlesToDisplay.filter(article =>
-                article.title.toLowerCase().includes(lowerCaseQuery) ||
-                article.description.toLowerCase().includes(lowerCaseQuery)
-            );
-
-            if (filteredArticles.length > 0) {
-                filteredArticles.forEach(article => {
-                    blogCardsContainer.appendChild(createBlogCard(article));
-                });
-            } else {
-                blogCardsContainer.innerHTML = '<p class="text-center text-gray-400 col-span-full">No articles found matching your search.</p>';
-            }
+            // Filter out games, reverse the array to get newest first, and then display the latest 6 articles
+            const latestArticles = allContentData.filter(item => item.type !== 'game').reverse().slice(0, 6);
+            
+            latestArticles.forEach(article => {
+                blogCardsContainer.appendChild(createBlogCard(article));
+            });
         }
 
-        // Function to display search suggestions (for main search bar and mobile search bar)
+        // Function to display search suggestions
         function displaySuggestions(inputElement, dropdownElement) {
             const query = inputElement.value.toLowerCase().trim();
             dropdownElement.innerHTML = ''; // Clear previous suggestions
@@ -591,9 +657,7 @@
                     const suggestionDiv = document.createElement('div');
                     suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
                     suggestionDiv.textContent = item.title;
-                    suggestionDiv.addEventListener('click', () => {
-                        window.location.href = item.link; // Navigate to the article/game page
-                    });
+                    suggestionDiv.onclick = () => { window.location.href = item.link; };
                     dropdownElement.appendChild(suggestionDiv);
                 });
                 dropdownElement.classList.remove('hidden');
@@ -602,79 +666,50 @@
             }
         }
 
-        // Event listeners for desktop search on this page
-        if (articleSearchButton) {
-            articleSearchButton.addEventListener('click', () => {
-                filterBlogCards(articleSearchInput.value);
-                articleSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
-            });
-        }
-        if (articleSearchInput) {
-            articleSearchInput.addEventListener('keyup', (e) => {
-                displaySuggestions(articleSearchInput, articleSearchResultsDropdown);
+        // Event listeners for desktop search
+        if(searchInput && searchButton) {
+            searchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(searchInput, searchResultsDropdown);
                 if (e.key === 'Enter') {
-                    if (articleSearchButton) articleSearchButton.click(); // Trigger search on Enter
+                    searchButton.click(); // Trigger search on Enter
                 }
             });
-        }
-        document.addEventListener('click', (e) => {
-            if (articleSearchInput && articleSearchButton && articleSearchResultsDropdown) {
-                if (!articleSearchInput.contains(e.target) && !articleSearchButton.contains(e.target) && !articleSearchResultsDropdown.contains(e.target)) {
-                    articleSearchResultsDropdown.classList.add('hidden');
+            searchButton.addEventListener('click', () => {
+                const query = searchInput.value.trim();
+                if (query) {
+                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
                 }
-            }
-        });
-
-        // Reset filter button
-        if (resetFilterButton) {
-            resetFilterButton.addEventListener('click', () => {
-                if (articleSearchInput) articleSearchInput.value = ''; // Clear search input
-                filterBlogCards(''); // Reset filters to show all articles
-                if (articleSearchResultsDropdown) articleSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
-                // Remove search query from URL if present
-                const url = new URL(window.location.href);
-                if (url.searchParams.has('search')) {
-                    url.searchParams.delete('search');
-                    window.history.replaceState({}, document.title, url.toString());
+                searchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+            });
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
+                    searchResultsDropdown.classList.add('hidden');
                 }
             });
         }
 
-        // Event listeners for mobile search (nav menu)
-        const searchInput = document.getElementById('searchInput'); // Desktop search input from header
-        const mobileSearchInput = document.getElementById('mobileSearchInput');
-        const mobileSearchButton = document.getElementById('mobileSearchButton');
-        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
-
-        if (mobileSearchButton) {
+        // Event listeners for mobile search
+        if(mobileSearchInput && mobileSearchButton) {
+            mobileSearchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
+                if (e.key === 'Enter') {
+                    mobileSearchButton.click(); // Trigger search on Enter
+                }
+            });
             mobileSearchButton.addEventListener('click', () => {
                 const query = mobileSearchInput.value.trim();
                 if (query) {
-                    // On all-articles page, filter directly
-                    filterBlogCards(query);
-                } else {
-                    filterBlogCards(''); // If search is empty, show all
+                    window.location.href = `all-articles.html?search=${encodeURIComponent(query)}`;
                 }
                 mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
                 closeMobileMenu(); // Close mobile menu after search
             });
-        }
-        if (mobileSearchInput) {
-            mobileSearchInput.addEventListener('keyup', (e) => {
-                displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
-                if (e.key === 'Enter') {
-                    if (mobileSearchButton) mobileSearchButton.click(); // Trigger search on Enter
-                }
-            });
-        }
-        // This document click listener handles hiding the mobile dropdown
-        document.addEventListener('click', (e) => {
-            if (mobileSearchInput && mobileSearchButton && mobileSearchResultsDropdown) {
+            document.addEventListener('click', (e) => {
                 if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
                     mobileSearchResultsDropdown.classList.add('hidden');
                 }
-            }
-        });
+            });
+        }
 
 
         // Mobile menu toggle
@@ -700,6 +735,7 @@
             }, 300); // Duration of transition
         }
 
+        // Add checks for elements before adding event listeners
         if (mobileMenuButton) {
             mobileMenuButton.addEventListener('click', openMobileMenu);
         }
@@ -736,16 +772,18 @@
             });
         }
 
-        // Handle URL search parameters on page load
+        // Initialize latest blogs on page load
+        window.addEventListener('load', loadLatestBlogs);
+
+        // Handle URL search parameters on page load (for cases where user lands directly with search query)
         window.addEventListener('load', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const searchQuery = urlParams.get('search');
             if (searchQuery) {
-                if (articleSearchInput) articleSearchInput.value = searchQuery; // Populate desktop search input
+                if (searchInput) searchInput.value = searchQuery; // Populate desktop search input
                 if (mobileSearchInput) mobileSearchInput.value = searchQuery; // Populate mobile search input
-                filterBlogCards(searchQuery); // Filter articles based on query
-            } else {
-                filterBlogCards(''); // Load all articles if no search query
+                // On index.html, we don't filter the main blog section based on URL search query
+                // but the search bar will be pre-filled. User can then click search button.
             }
         });
     </script>
