@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Articles - TechyNoob</title>
+    <title>TechyNoob - Your Go-To for Android Customization, Tech Guides, and More!</title>
     <!-- AdSense Meta Tag -->
     <meta name="google-adsense-account" content="ca-pub-6446522570285835">
     <!-- Google tag (gtag.js) -->
@@ -15,22 +15,27 @@
 
       gtag('config', 'G-2E9KWQ18P9');
     </script>
+    <!-- Google AdSense Auto-Ad Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6446522570285835"
+     crossorigin="anonymous"></script>
     <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Browse all articles from TechyNoob, covering Android customization, rooting guides, tech reviews, gaming, and AI tools. Find comprehensive tutorials and insights to enhance your device.">
-    <meta name="keywords" content="All TechyNoob articles, Android guides, Custom ROMs, Magisk, Rooting, Mobile tech, Smartphone reviews, AI, Gaming, Tech tutorials, Device optimization, Digital privacy, Cybersecurity, Open source apps">
-    <meta name="author" content="TechyNoob">
-    <link rel="canonical" href="https://techynoob18.github.io/all-articles.html">
+    <!-- AdSense Policy Optimization: Enhanced Meta Description and Keywords -->
+    <meta name="description" content="TechyNoob is your ultimate resource for Android customization, in-depth tech guides, custom ROMs, Magisk modules, gaming, and AI tools. Unlock your device's full potential with our comprehensive tutorials, reviews, and insights into the latest mobile technology.">
+    <meta name="keywords" content="Android customization, Tech Guides, Custom ROMs, Magisk Modules, Android Rooting, Mobile Gaming, AI Image Generator, TechyNoob, Android Tips, Phone Optimization, Digital Life, Tech Tutorials, App Reviews, Open Source Apps, Android 16, Pixel, Redmi Note 7 Pro, Smartphone Optimization, Device Unlock">
+    
+    <!-- AdSense Policy Optimization: Ensure search engines can crawl your site -->
+    <meta name="robots" content="index, follow">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://techynoob18.github.io/all-articles.html">
-    <meta property="og:title" content="All Articles - TechyNoob">
-    <meta property="og:description" content="Browse all articles from TechyNoob, covering Android customization, rooting guides, tech reviews, gaming, and AI tools. Find comprehensive tutorials and insights to enhance your device.">
-    <meta property="og:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
+    <!-- AdSense Policy Optimization: Important Note for Publisher -->
+    <!-- For AdSense approval, ensure that: -->
+    <!-- 1. All linked pages (About Us, Privacy Policy, Terms of Service, Contact Us) exist and contain comprehensive, clear, and accurate information. -->
+    <!-- 2. The content on all your blog articles is original, high-quality, substantial, and provides value to users. Avoid thin content. -->
+    <!-- 3. There are no misleading elements, pop-ups, or deceptive navigation that could encourage artificial clicks. -->
+    <!-- 4. Your site offers a good user experience across all devices (responsive design). -->
+    <!-- 5. Ensure all images have appropriate alt text for accessibility and SEO. -->
 
     <style>
         /* Custom styles to enhance the energetic look */
@@ -46,7 +51,56 @@
             background-clip: text;
             color: transparent;
         }
-        /* Blog card styles (reused from index.html) */
+        .hero-section {
+            /* Pure CSS generated abstract tech background - ENHANCED VISIBILITY */
+            background-color: #1a202c; /* Fallback dark background */
+            background-image:
+                /* Brighter diagonal lines (like data streams) */
+                linear-gradient(45deg, rgba(59, 130, 246, 0.2) 25%, transparent 25%), /* Blue line */
+                linear-gradient(-45deg, rgba(147, 51, 234, 0.2) 25%, transparent 25%), /* Purple line */
+                linear-gradient(45deg, transparent 75%, rgba(59, 130, 246, 0.2) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(147, 51, 234, 0.2) 75%),
+
+                /* Subtle glowing grid lines */
+                linear-gradient(0deg, transparent 49%, rgba(110, 231, 183, 0.1) 50%, transparent 51%), /* Green horizontal */
+                linear-gradient(90deg, transparent 49%, rgba(110, 231, 183, 0.1) 50%, transparent 51%), /* Green vertical */
+
+                /* Subtle radial glow from center */
+                radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+
+            background-size: 80px 80px, 80px 80px, 80px 80px, 80px 80px, 80px 80px, 80px 80px, cover; /* Adjusted sizes for more presence */
+            background-position: 0 0;
+            
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            animation: backgroundPan 60s linear infinite; /* Increased duration for slower, subtle animation */
+        }
+
+        @keyframes backgroundPan {
+            0% { background-position: 0 0; }
+            100% { background-position: 800px 800px; } /* Pan larger distance */
+        }
+
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for text readability */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 20;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 30;
+            max-width: 900px;
+            padding: 2rem;
+        }
         .blog-card {
             background-color: #2d3748; /* Darker card background */
             border-radius: 0.75rem; /* rounded-xl */
@@ -93,6 +147,57 @@
         .blog-card-footer a:hover {
             color: #3B82F6; /* Blue on hover */
         }
+        /* Game card specific styles */
+        .game-card {
+            background-color: #2d3748; /* Darker card background */
+            border-radius: 0.75rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .game-card .game-icon {
+            font-size: 4rem; /* Larger icon */
+            margin-top: 1.5rem;
+            color: #9333EA; /* Purple for icons */
+        }
+        .game-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            color: #fff;
+        }
+        .game-card p {
+            font-size: 0.875rem;
+            color: #cbd5e0;
+            padding: 0 1.5rem 1rem;
+            flex-grow: 1; /* Allow description to take space */
+        }
+        .game-card .play-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #4CAF50, #8BC34A); /* Green gradient */
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px; /* rounded-full */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .game-card .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            background-image: linear-gradient(to right, #8BC34A, #4CAF50); /* Reverse gradient on hover */
+        }
 
         /* Mobile Menu styles */
         #mobile-menu {
@@ -130,28 +235,20 @@
             </a>
             
             <!-- Desktop Navigation Links and Search Bar -->
-            <div class="hidden md:flex flex-grow flex-col items-center relative">
-                <!-- Top row for Navigation links and YouTube Icon -->
-                <div class="flex items-center space-x-8 mb-4">
-                    <a href="index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
-                    <a href="index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
-                    <a href="index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
-                    <a href="about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
-                    <a href="privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
-                    <a href="terms.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Terms of Service</a>
-                    <a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Contact Us</a>
-                    <!-- YouTube Icon for Desktop Header - Now SVG -->
-                    <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2 flex items-center">
-                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21.543 6.491a3.079 3.079 0 0 0-2.185-2.185C17.625 4 12 4 12 4s-5.625 0-7.358.306a3.079 3.079 0 0 0-2.185 2.185C2 8.375 2 12 2 12s0 3.625.306 5.358a3.079 3.079 0 0 0 2.185 2.185C6.375 20 12 20 12 20s5.625 0 7.358-.306a3.079 3.079 0 0 0 2.185-2.185C22 15.625 22 12 22 12s0-3.625-.306-5.358zM10 15.5v-7l6 3.5-6 3.5z"/>
-                        </svg>
-                        YouTube
-                    </a>
-                </div>
-                
-                <!-- Search Input and Button for Desktop (moved below tabs and centered) -->
-                <div class="relative flex items-center w-full max-w-lg"> <!-- Changed w-40 to w-full max-w-lg -->
-                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
+            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative">
+                <a href="index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
+                <a href="#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
+                <a href="#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
+                <a href="about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
+                <a href="privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
+                <a href="terms.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Terms of Service</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Contact Us</a>
+                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">
+                    YouTube Channel
+                </a>
+                <!-- Search Input and Button for Desktop -->
+                <div class="relative flex items-center ml-4">
+                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
                     <button id="searchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
