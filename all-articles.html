@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechyNoob - Your Go-To for Android Customization, Tech Guides, and More!</title>
+    <title>All Articles - TechyNoob</title>
     <!-- AdSense Meta Tag -->
     <meta name="google-adsense-account" content="ca-pub-6446522570285835">
     <!-- Google tag (gtag.js) -->
@@ -22,20 +22,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- AdSense Policy Optimization: Enhanced Meta Description and Keywords -->
-    <meta name="description" content="TechyNoob is your ultimate resource for Android customization, in-depth tech guides, custom ROMs, Magisk modules, gaming, and AI tools. Unlock your device's full potential with our comprehensive tutorials, reviews, and insights into the latest mobile technology.">
-    <meta name="keywords" content="Android customization, Tech Guides, Custom ROMs, Magisk Modules, Android Rooting, Mobile Gaming, AI Image Generator, TechyNoob, Android Tips, Phone Optimization, Digital Life, Tech Tutorials, App Reviews, Open Source Apps, Android 16, Pixel, Redmi Note 7 Pro, Smartphone Optimization, Device Unlock">
-    
-    <!-- AdSense Policy Optimization: Ensure search engines can crawl your site -->
-    <meta name="robots" content="index, follow">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Browse all articles from TechyNoob covering Android customization, tech guides, custom ROMs, Magisk modules, gaming, and more. Find comprehensive tutorials and reviews.">
+    <meta name="keywords" content="All Articles, TechyNoob Blogs, Android Guides, Custom ROMs, Magisk Tutorials, Tech Reviews, Android Customization, Mobile Gaming, Phone Optimization, Digital Life, Tech Tutorials, App Reviews, Open Source Apps, Android 16, Pixel, Redmi Note 7 Pro, Smartphone Optimization, Device Unlock, Intercepter-NG, HyperOS">
+    <meta name="author" content="TechyNoob">
+    <link rel="canonical" href="https://techynoob18.github.io/all-articles.html">
 
-    <!-- AdSense Policy Optimization: Important Note for Publisher -->
-    <!-- For AdSense approval, ensure that: -->
-    <!-- 1. All linked pages (About Us, Privacy Policy, Terms of Service, Contact Us) exist and contain comprehensive, clear, and accurate information. -->
-    <!-- 2. The content on all your blog articles is original, high-quality, substantial, and provides value to users. Avoid thin content. -->
-    <!-- 3. There are no misleading elements, pop-ups, or deceptive navigation that could encourage artificial clicks. -->
-    <!-- 4. Your site offers a good user experience across all devices (responsive design). -->
-    <!-- 5. Ensure all images have appropriate alt text for accessibility and SEO. -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techynoob18.github.io/all-articles.html">
+    <meta property="og:title" content="All Articles - TechyNoob">
+    <meta property="og:description" content="Browse all articles from TechyNoob covering Android customization, tech guides, custom ROMs, Magisk modules, gaming, and more. Find comprehensive tutorials and reviews.">
+    <meta property="og:image" content="https://techynoob18.github.io/logos/20211212_160808_0000.png">
 
     <style>
         /* Custom styles to enhance the energetic look */
@@ -50,56 +48,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
-        }
-        .hero-section {
-            /* Pure CSS generated abstract tech background - ENHANCED VISIBILITY */
-            background-color: #1a202c; /* Fallback dark background */
-            background-image:
-                /* Brighter diagonal lines (like data streams) */
-                linear-gradient(45deg, rgba(59, 130, 246, 0.2) 25%, transparent 25%), /* Blue line */
-                linear-gradient(-45deg, rgba(147, 51, 234, 0.2) 25%, transparent 25%), /* Purple line */
-                linear-gradient(45deg, transparent 75%, rgba(59, 130, 246, 0.2) 75%),
-                linear-gradient(-45deg, transparent 75%, rgba(147, 51, 234, 0.2) 75%),
-
-                /* Subtle glowing grid lines */
-                linear-gradient(0deg, transparent 49%, rgba(110, 231, 183, 0.1) 50%, transparent 51%), /* Green horizontal */
-                linear-gradient(90deg, transparent 49%, rgba(110, 231, 183, 0.1) 50%, transparent 51%), /* Green vertical */
-
-                /* Subtle radial glow from center */
-                radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-
-            background-size: 80px 80px, 80px 80px, 80px 80px, 80px 80px, 80px 80px, 80px 80px, cover; /* Adjusted sizes for more presence */
-            background-position: 0 0;
-            
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-            animation: backgroundPan 60s linear infinite; /* Increased duration for slower, subtle animation */
-        }
-
-        @keyframes backgroundPan {
-            0% { background-position: 0 0; }
-            100% { background-position: 800px 800px; } /* Pan larger distance */
-        }
-
-        .hero-overlay {
-            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for text readability */
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 20;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 30;
-            max-width: 900px;
-            padding: 2rem;
         }
         .blog-card {
             background-color: #2d3748; /* Darker card background */
@@ -147,57 +95,6 @@
         .blog-card-footer a:hover {
             color: #3B82F6; /* Blue on hover */
         }
-        /* Game card specific styles */
-        .game-card {
-            background-color: #2d3748; /* Darker card background */
-            border-radius: 0.75rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-        }
-        .game-card .game-icon {
-            font-size: 4rem; /* Larger icon */
-            margin-top: 1.5rem;
-            color: #9333EA; /* Purple for icons */
-        }
-        .game-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-top: 1rem;
-            color: #fff;
-        }
-        .game-card p {
-            font-size: 0.875rem;
-            color: #cbd5e0;
-            padding: 0 1.5rem 1rem;
-            flex-grow: 1; /* Allow description to take space */
-        }
-        .game-card .play-button {
-            display: inline-block;
-            background-image: linear-gradient(to right, #4CAF50, #8BC34A); /* Green gradient */
-            color: white;
-            font-weight: bold;
-            padding: 0.75rem 2rem;
-            border-radius: 9999px; /* rounded-full */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            margin-bottom: 1.5rem;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .game-card .play-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-            background-image: linear-gradient(to right, #8BC34A, #4CAF50); /* Reverse gradient on hover */
-        }
 
         /* Mobile Menu styles */
         #mobile-menu {
@@ -235,21 +132,29 @@
             </a>
             
             <!-- Desktop Navigation Links and Search Bar -->
-            <div class="hidden md:flex flex-grow items-center justify-end space-x-8 relative">
-                <a href="index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
-                <a href="#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
-                <a href="#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
-                <a href="about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
-                <a href="privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
-                <a href="terms.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Terms of Service</a>
-                <a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Contact Us</a>
-                <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">
-                    YouTube Channel
-                </a>
-                <!-- Search Input and Button for Desktop -->
-                <div class="relative flex items-center ml-4">
-                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-40 transition-all duration-300 ease-in-out focus:w-64">
-                    <button id="searchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+            <div class="hidden md:flex flex-grow flex-col items-center relative">
+                <!-- Top row for Navigation links and YouTube Icon -->
+                <div class="flex items-center space-x-8 mb-4">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Home</a>
+                    <a href="index.html#blogs" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Blogs</a>
+                    <a href="index.html#games-section" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Games</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">About Us</a>
+                    <a href="privacy.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Privacy Policy</a>
+                    <a href="terms.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Terms of Service</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2">Contact Us</a>
+                    <!-- YouTube Icon for Desktop Header - Now SVG -->
+                    <a href="https://youtube.com/@techynoob1818" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 rounded-md px-3 py-2 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.543 6.491a3.079 3.079 0 0 0-2.185-2.185C17.625 4 12 4 12 4s-5.625 0-7.358.306a3.079 3.079 0 0 0-2.185 2.185C2 8.375 2 12 2 12s0 3.625.306 5.358a3.079 3.079 0 0 0 2.185 2.185C6.375 20 12 20 12 20s5.625 0 7.358-.306a3.079 3.079 0 0 0 2.185-2.185C22 15.625 22 12 22 12s0-3.625-.306-5.358zM10 15.5v-7l6 3.5-6 3.5z"/>
+                        </svg>
+                        YouTube
+                    </a>
+                </div>
+                
+                <!-- Search Input and Button for Desktop (moved below tabs and centered) -->
+                <div class="relative flex items-center w-full max-w-lg"> <!-- Changed w-40 to w-full max-w-lg -->
+                    <input type="text" id="articleSearchInput" placeholder="Search articles..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
+                    <button id="articleSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
                     <div id="searchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
@@ -274,7 +179,7 @@
             </button>
             <!-- Search Input and Button for Mobile -->
             <div class="relative flex items-center mt-6 w-full max-w-xs">
-                <input type="text" id="mobileSearchInput" placeholder="Search..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
+                <input type="text" id="mobileSearchInput" placeholder="Search articles..." class="px-3 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
                 <button id="mobileSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
@@ -301,25 +206,17 @@
 
     <main class="flex-grow container mx-auto px-6 md:px-8 lg:px-12 py-12">
         <h1 class="text-3xl md:text-4xl font-extrabold text-center mb-10 gradient-text">All Articles</h1>
-        
-        <!-- Search Bar for All Articles Page -->
-        <div class="flex flex-col sm:flex-row items-center justify-center mb-10 space-y-4 sm:space-y-0 sm:space-x-4">
-            <div class="relative flex items-center w-full sm:w-auto flex-grow max-w-xl">
-                <input type="text" id="articleSearchInput" placeholder="Search articles..." class="px-4 py-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full">
-                <button id="articleSearchButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                </button>
-                <div id="articleSearchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
-                    <!-- Suggestions will be populated here -->
-                </div>
-            </div>
-            <button id="resetFilterButton" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto">
-                Reset Filter
+        <div class="relative mb-8 max-w-lg mx-auto">
+            <input type="text" id="globalSearchInput" placeholder="Search all articles..." class="px-4 py-2 rounded-full bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-600 w-full pr-10">
+            <button id="globalSearchButton" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </button>
+            <div id="globalSearchResultsDropdown" class="absolute top-full left-0 w-full bg-gray-700 rounded-md shadow-lg mt-1 z-50 hidden suggestions-dropdown">
+                <!-- Suggestions will be populated here -->
+            </div>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-cards-container">
-            <!-- Blog cards will be dynamically loaded here by JavaScript -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-container">
+            <!-- Article cards will be dynamically loaded here by JavaScript -->
         </div>
     </main>
 
@@ -512,67 +409,72 @@
                 link: "Blogs/intercepter-ng-guide.html",
                 image: "https://placehold.co/400x200/6EE7B7/000000?text=Intercepter-NG"
             },
-            // Games
-            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html", image: "https://placehold.co/400x200/FF0000/FFFFFF?text=Flappy+Bird" },
-            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html", image: "https://placehold.co/400x200/00FF00/000000?text=Snake+Game" },
-            { type: "game", title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html", image: "https://placehold.co/400x200/0000FF/FFFFFF?text=Pong+Game" }
+            {
+                title: "Elevate Your Android Experience: Install HyperOS File Manager on Any Phone (No Root Required!)",
+                description: "A comprehensive guide to installing Xiaomi's HyperOS File Manager on any Android phone without root. Enhance your file management with modern aesthetics, intuitive organization, and robust features.",
+                link: "Blogs/hyperos-file-manager-guide.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=HyperOS+File+Manager"
+            },
+            // Games (these are not displayed in the "Latest Blogs" section, but used for search)
+            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
+            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
+            { type: "game", title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
         ];
 
-        const blogCardsContainer = document.getElementById('blog-cards-container');
+        const articlesContainer = document.getElementById('articles-container');
         const articleSearchInput = document.getElementById('articleSearchInput');
         const articleSearchButton = document.getElementById('articleSearchButton');
-        const articleSearchResultsDropdown = document.getElementById('articleSearchResultsDropdown');
-        const resetFilterButton = document.getElementById('resetFilterButton');
-
+        const mobileSearchInput = document.getElementById('mobileSearchInput');
+        const mobileSearchButton = document.getElementById('mobileSearchButton');
+        const searchResultsDropdown = document.getElementById('searchResultsDropdown');
+        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
 
         // Function to create and append a blog card
         function createBlogCard(article) {
-            const cardDiv = document.createElement('div');
-            cardDiv.classList.add('blog-card');
+            const cardLink = document.createElement('a');
+            cardLink.href = article.link;
+            cardLink.classList.add('block', 'blog-card');
             
-            const truncatedDescription = article.description.length > 100 
-                ? article.description.substring(0, 100) + '...' 
+            // AdSense Policy Optimization: Ensure descriptions are sufficiently long for content quality
+            const truncatedDescription = article.description.length > 150 
+                ? article.description.substring(0, 150) + '...' 
                 : article.description;
 
-            cardDiv.innerHTML = `
-                <a href="${article.link}" class="block">
-                    <img src="${article.image || 'https://placehold.co/400x200/1a202c/e2e8f0?text=TechyNoob'}" alt="${article.title}" class="w-full h-48 object-cover rounded-t-xl">
-                    <div class="blog-card-content">
-                        <h3>${article.title}</h3>
-                        <p class="text-sm text-gray-300">${truncatedDescription}</p>
-                    </div>
-                    <div class="blog-card-footer">
-                        <span class="text-xs text-gray-400">Read More</span>
-                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </div>
-                </a>
+            cardLink.innerHTML = `
+                <img src="${article.image || 'https://placehold.co/400x200/1a202c/e2e8f0?text=TechyNoob'}" alt="${article.title}" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="blog-card-content">
+                    <h3>${article.title}</h3>
+                    <p class="text-sm text-gray-300">${truncatedDescription}</p>
+                </div>
+                <div class="blog-card-footer">
+                    <span class="text-xs text-gray-400">Read More</span>
+                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </div>
             `;
-            return cardDiv;
+            return cardLink;
         }
 
         // Function to filter and display blog cards
         function filterBlogCards(query) {
-            blogCardsContainer.innerHTML = ''; // Clear existing cards
+            articlesContainer.innerHTML = ''; // Clear existing cards
             const lowerCaseQuery = query.toLowerCase();
 
-            // Reverse the array to show newest articles first, then filter
-            const articlesToDisplay = allContentData.filter(item => item.type !== 'game').reverse();
-
-            const filteredArticles = articlesToDisplay.filter(article =>
-                article.title.toLowerCase().includes(lowerCaseQuery) ||
-                article.description.toLowerCase().includes(lowerCaseQuery)
-            );
+            // Filter out games and then filter by search query
+            const filteredArticles = allContentData.filter(item => 
+                item.type !== 'game' && 
+                (item.title.toLowerCase().includes(lowerCaseQuery) || item.description.toLowerCase().includes(lowerCaseQuery))
+            ).reverse(); // Display newest first
 
             if (filteredArticles.length > 0) {
                 filteredArticles.forEach(article => {
-                    blogCardsContainer.appendChild(createBlogCard(article));
+                    articlesContainer.appendChild(createBlogCard(article));
                 });
             } else {
-                blogCardsContainer.innerHTML = '<p class="text-center text-gray-400 col-span-full">No articles found matching your search.</p>';
+                articlesContainer.innerHTML = '<p class="text-center text-gray-400 col-span-full">No articles found matching your search.</p>';
             }
         }
 
-        // Function to display search suggestions (for main search bar and mobile search bar)
+        // Function to display search suggestions
         function displaySuggestions(inputElement, dropdownElement) {
             const query = inputElement.value.toLowerCase().trim();
             dropdownElement.innerHTML = ''; // Clear previous suggestions
@@ -591,9 +493,7 @@
                     const suggestionDiv = document.createElement('div');
                     suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
                     suggestionDiv.textContent = item.title;
-                    suggestionDiv.addEventListener('click', () => {
-                        window.location.href = item.link; // Navigate to the article/game page
-                    });
+                    suggestionDiv.onclick = () => { window.location.href = item.link; };
                     dropdownElement.appendChild(suggestionDiv);
                 });
                 dropdownElement.classList.remove('hidden');
@@ -602,79 +502,44 @@
             }
         }
 
-        // Event listeners for desktop search on this page
-        if (articleSearchButton) {
+        // Event listeners for desktop search
+        if(articleSearchInput && articleSearchButton) {
+            articleSearchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(articleSearchInput, searchResultsDropdown);
+                if (e.key === 'Enter') {
+                    articleSearchButton.click(); // Trigger search on Enter
+                }
+            });
             articleSearchButton.addEventListener('click', () => {
                 filterBlogCards(articleSearchInput.value);
-                articleSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+                searchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
             });
-        }
-        if (articleSearchInput) {
-            articleSearchInput.addEventListener('keyup', (e) => {
-                displaySuggestions(articleSearchInput, articleSearchResultsDropdown);
-                if (e.key === 'Enter') {
-                    if (articleSearchButton) articleSearchButton.click(); // Trigger search on Enter
-                }
-            });
-        }
-        document.addEventListener('click', (e) => {
-            if (articleSearchInput && articleSearchButton && articleSearchResultsDropdown) {
-                if (!articleSearchInput.contains(e.target) && !articleSearchButton.contains(e.target) && !articleSearchResultsDropdown.contains(e.target)) {
-                    articleSearchResultsDropdown.classList.add('hidden');
-                }
-            }
-        });
-
-        // Reset filter button
-        if (resetFilterButton) {
-            resetFilterButton.addEventListener('click', () => {
-                if (articleSearchInput) articleSearchInput.value = ''; // Clear search input
-                filterBlogCards(''); // Reset filters to show all articles
-                if (articleSearchResultsDropdown) articleSearchResultsDropdown.classList.add('hidden'); // Ensure dropdown is hidden
-                // Remove search query from URL if present
-                const url = new URL(window.location.href);
-                if (url.searchParams.has('search')) {
-                    url.searchParams.delete('search');
-                    window.history.replaceState({}, document.title, url.toString());
+            document.addEventListener('click', (e) => {
+                if (!articleSearchInput.contains(e.target) && !articleSearchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
+                    searchResultsDropdown.classList.add('hidden');
                 }
             });
         }
 
-        // Event listeners for mobile search (nav menu)
-        const searchInput = document.getElementById('searchInput'); // Desktop search input from header
-        const mobileSearchInput = document.getElementById('mobileSearchInput');
-        const mobileSearchButton = document.getElementById('mobileSearchButton');
-        const mobileSearchResultsDropdown = document.getElementById('mobileSearchResultsDropdown');
-
-        if (mobileSearchButton) {
-            mobileSearchButton.addEventListener('click', () => {
-                const query = mobileSearchInput.value.trim();
-                if (query) {
-                    // On all-articles page, filter directly
-                    filterBlogCards(query);
-                } else {
-                    filterBlogCards(''); // If search is empty, show all
-                }
-                mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
-                closeMobileMenu(); // Close mobile menu after search
-            });
-        }
-        if (mobileSearchInput) {
+        // Event listeners for mobile search
+        if(mobileSearchInput && mobileSearchButton) {
             mobileSearchInput.addEventListener('keyup', (e) => {
                 displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
                 if (e.key === 'Enter') {
-                    if (mobileSearchButton) mobileSearchButton.click(); // Trigger search on Enter
+                    mobileSearchButton.click(); // Trigger search on Enter
                 }
             });
-        }
-        // This document click listener handles hiding the mobile dropdown
-        document.addEventListener('click', (e) => {
-            if (mobileSearchInput && mobileSearchButton && mobileSearchResultsDropdown) {
+            mobileSearchButton.addEventListener('click', () => {
+                filterBlogCards(mobileSearchInput.value);
+                mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+                closeMobileMenu(); // Close mobile menu after search
+            });
+            document.addEventListener('click', (e) => {
                 if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
                     mobileSearchResultsDropdown.classList.add('hidden');
                 }
-            }
-        });
+            });
+        }
 
 
         // Mobile menu toggle
@@ -700,6 +565,7 @@
             }, 300); // Duration of transition
         }
 
+        // Add checks for elements before adding event listeners
         if (mobileMenuButton) {
             mobileMenuButton.addEventListener('click', openMobileMenu);
         }
@@ -721,18 +587,16 @@
         // Close mobile menu when a link is clicked
         if (mobileMenu) {
             mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    // Check if the link is for "All Articles" and potentially apply search query
-                    if (link.getAttribute('href') === 'all-articles.html') {
-                        const currentSearchQuery = (searchInput ? searchInput.value : '') || (mobileSearchInput ? mobileSearchInput.value : '');
-                        if (currentSearchQuery) {
-                            e.preventDefault(); // Prevent default navigation
-                            window.location.href = `all-articles.html?search=${encodeURIComponent(currentSearchQuery)}`;
-                            return; // Stop further execution as we're redirecting
-                        }
+                // Check if the link is for "All Articles" and potentially apply search query
+                if (link.getAttribute('href') === 'all-articles.html') {
+                    const currentSearchQuery = (articleSearchInput ? articleSearchInput.value : '') || (mobileSearchInput ? mobileSearchInput.value : '');
+                    if (currentSearchQuery) {
+                        e.preventDefault(); // Prevent default navigation
+                        window.location.href = `all-articles.html?search=${encodeURIComponent(currentSearchQuery)}`;
+                        return; // Stop further execution as we're redirecting
                     }
-                    closeMobileMenu();
-                });
+                }
+                closeMobileMenu();
             });
         }
 
