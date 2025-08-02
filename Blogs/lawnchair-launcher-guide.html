@@ -312,6 +312,189 @@
     </footer>
 
     <script>
+        // Data for all blog articles and games (used for "Latest Blogs" and search suggestions)
+        const allContentData = [
+            { 
+                title: "Google AI Edge Gallery: Your Gateway to On-Device Generative AI – A Deep Dive", 
+                description: "The Google AI Edge Gallery isn't just another app; it's a window into the future of mobile computing. Designed as an experimental platform, it allows you to Explore, Experience, and Evaluate cutting-edge Generative AI models that run entirely on your Android device.", 
+                link: "Blogs/google-ai-edge-gallery.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Google+AI+Edge+Gallery"
+            },
+            { 
+                title: "Unleash Your Android's Potential: Install Any Custom Package Installer with Magisk!", 
+                description: "Are you a rooted Android user looking to break free from the mundane default package installer? Do you crave a more visually appealing or feature-rich experience when installing your favorite apps? Look further! This comprehensive guide will walk you through the simple yet powerful process of installing a custom package installer on virtually any rooted Android device using Magisk. Get ready to elevate your Android experience!", 
+                link: "Blogs/custom-package-installer.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Custom+Installer"
+            },
+            { 
+                title: "Unleash Android Power Without Root: Your Guide to Magisk Vexiro (Magiks Vexiro🫠)", 
+                description: "Explore Magisk Vexiro for non-root Android customization, leveraging Shizuku for powerful modules without rooting your device.", 
+                link: "Blogs/magisk-vexiro.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Magisk+Vexiro"
+            },
+            { 
+                title: "🚀 Transform Your Android Experience: Install Awesome Custom Boot Animations (Harmony OS, Goku, Android Robot) via Magisk Module!", 
+                description: "Upgrade your Android's startup with dynamic Harmony OS, Android Robot, or Goku boot animations using Magisk modules.", 
+                link: "Blogs/custom-boot-animations.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Custom+Boot+Animations"
+            },
+            { 
+                title: "Revolutionize Your Android Experience: Unveiling the Power of Launchpad App", 
+                description: "Discover Launchpad App, the revolutionary unified search engine transforming Android efficiency with speed, convenience, and privacy.", 
+                link: "Blogs/launchpad-app.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Launchpad+App"
+            },
+            { 
+                title: "Unlock Limitless Android Customization: Your Complete Guide to Installing Iconify on Rooted Phones", 
+                description: "A game-changing free and open-source Android customization app that empowers you to redefine your device's aesthetics and functionality.", 
+                link: "Blogs/iconify-installation.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Iconify+Installation"
+            },
+            { 
+                title: "Keeping Your Device Fresh: A Comprehensive Guide to Installing CrDroid ROM OTA Updates via Local Method", 
+                description: "Learn how to easily update your CrDroid custom ROM using the local OTA method on your Android device.", 
+                link: "Blogs/crdroid-ota-update.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=CrDroid+Update"
+            },
+            { 
+                title: "Unleash Your True Colors: The Ultimate Guide to ColorBlendr for Android 12+", 
+                description: "Transform your Android device into a canvas for your creativity with ColorBlendr, gaining unprecedented control over Material You colors!", 
+                link: "Blogs/colorblendr-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=ColorBlendr+Guide"
+            },
+            { 
+                title: "Android 16 Arrives: A New Era for Pixel Devices and Beyond", 
+                description: "Google officially rolls out Android 16 to Pixel devices, marking a strategic shift and ushering in new features and enhancements!", 
+                link: "Blogs/android-16-arrives.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Arrives"
+            },
+            { 
+                title: "Installing Android 16 Material 3 Expressive Theme", 
+                description: "Transform your Android experience with a vibrant and dynamic Material 3 design, if you have a rooted device!", 
+                link: "Blogs/install-material-3-theme.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Material+3+Theme"
+            },
+            { 
+                title: "Root Any Android Phone WITHOUT Magisk in 2025", 
+                description: "Discover how to gain root access on your Android device using KernelSU, a powerful alternative to Magisk, especially for GKI kernels!", 
+                link: "Blogs/root-android-without-magisk.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Root+Without+Magisk"
+            },
+            { 
+                title: "Fix Play Integrity on Rooted Android: The Ultimate 2025 Guide", 
+                description: "Reclaim control over your rooted Android device by learning how to pass Google's Play Integrity checks with the latest tools and techniques!", 
+                link: "Blogs/fix-play-integrity-rooted-android.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Play+Integrity+Fix"
+            },
+            { 
+                title: "Unlock the Samsung Experience: Install One UI Home 35 Magisk Module", 
+                description: "Bring the sleek One UI Home launcher to your rooted non-Samsung Android device and enjoy a premium interface!", 
+                link: "Blogs/unlock-samsung-experience.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=One+UI+Home"
+            },
+            { 
+                title: "Install Superior OS (Android 15) with May 2025 Security Patch!", 
+                description: "Breathe new life into your Redmi Note 7 Pro with a custom ROM based on Android 15 and the latest security updates!", 
+                link: "Blogs/install-superior-os.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Superior+OS"
+            },
+            { 
+                title: "Install Android 16 on Redmi Note 7 Pro: Unleash Pure Android 16 on Your Redmi Note 7 Pro: A Comprehensive Installation Guide", 
+                description: "The Redmi Note 7 Pro, a beloved device known for its robust performance and excellent value, continues to be a favorite among enthusiasts.", 
+                link: "Blogs/install-android-16-redmi-note-7-pro.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+Redmi"
+            },
+            { 
+                title: "Google Pixel 6a in 2025: Is This Budget Gem Still a Worthy Contender?", 
+                description: "A definitive long-term review of the Google Pixel 6a in 2025, covering battery life, Android 16 features, camera performance, and its worth as a budget smartphone contender.", 
+                link: "Blogs/google-pixel-6a-2025-review.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Pixel+6a+2025"
+            },
+            { 
+                title: "How to Install Incompatible Older Apps on Android 14, 15, and 16", 
+                description: "Learn how to bypass Google's app installation block for older apps on Android 14+ using an LSPosed module.", 
+                link: "Blogs/install-older-apps.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Older+Apps+Android"
+            },
+            { 
+                title: "Android 16 vs. Android 15: A Deep Dive into the Pixel UI Revolution", 
+                description: "A comprehensive side-by-side comparison of Android 16 QPR Beta 2.1 and Android 15, highlighting major UI enhancements, Material 3 Expressive design, and new features on Google Pixel devices.", 
+                link: "Blogs/android-16-vs-android-15.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Android+16+vs+15"
+            },
+            { 
+                title: "Unlock Unlimited Google Photos Storage", 
+                description: "A definitive guide to getting unlimited Google Photos storage in 2025, leveraging older Pixel devices for seamless photo backups.", 
+                link: "Blogs/google-photos-unlimited-storage.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Unlimited+Google+Photos"
+            },
+            { 
+                title: "Unleash the Full Potential: Your Ultimate Guide to Android Rooting with Magisk in 2025", 
+                description: "A comprehensive guide to rooting any Android phone with Magisk in 2025, covering prerequisites, installation methods (Fastboot and custom recovery), and benefits like ad-blocking and advanced customization.", 
+                link: "Blogs/magisk-rooting-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Magisk+Rooting+Guide"
+            },
+            // New articles - added at the end for reverse() to work as "newest"
+            {
+                title: "Unleash Your Android's Full Potential: A Comprehensive Guide to MiXplorer via Magisk Module",
+                description: "A comprehensive guide to installing MiXplorer and its add-ons via Magisk module on rooted Android devices. Learn why MiXplorer is the ultimate file manager for advanced users.",
+                link: "Blogs/mixplorer-magisk-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=MiXplorer+Magisk+Guide"
+            },
+            {
+                title: "Revolutionize Your Android Audio: The Ultimate Guide to Installing ViperFX_RE and Unleashing ViPER4Android!",
+                description: "A comprehensive guide to installing ViperFX_RE and unleashing ViPER4Android for professional-level audio on your rooted Android device. Learn about Float32 processing, custom EQs, and more.",
+                link: "Blogs/viperfx-re-guide.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=ViperFX_RE+Guide"
+            },
+            {
+                title: "Unleash Max FPS (Rootless!): A Deep Dive into Magisk Vexirox & The Ultimate Optimization Module",
+                description: "A comprehensive guide to installing the Max FPS Optimization Module with Magisk Vexirox for rootless Android gaming performance enhancement.",
+                link: "Blogs/max-fps-vexirox-guide.html",
+                image: "https://placehold.co/400x200/9333EA/ffffff?text=Max+FPS+Vexirox+Guide"
+            },
+            {
+                title: "Top Open Source Mobile Apps: July 2025 Edition",
+                description: "Discover three groundbreaking open-source mobile apps for July 2025: Memno (link/note vault), nNotes (minimalist notes), and AnBoard (modern keyboard). Enhance your productivity and digital life.",
+                link: "Blogs/july-2025-open-source-apps.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Open+Source+Apps"
+            },
+            {
+                title: "Unleash Your Android's True Potential: Rootless Performance Optimization with Magisk Vexirox",
+                description: "A comprehensive guide to rootless performance optimization (CPU, GPU, RAM) on Android using Magisk Vexirox and its powerful modules.",
+                link: "Blogs/rootless-performance-optimization.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=Rootless+Performance+Optimization"
+            },
+            {
+                title: "Intercepter-NG: Transforming Your Rooted Android into a Network Analysis Powerhouse",
+                description: "Transform your rooted Android into a powerful network analysis tool with Intercepter-NG. This guide covers its features, including network discovery, traffic analysis, password recovery, and file recovery, as a mobile Wireshark alternative.",
+                link: "Blogs/intercepter-ng-guide.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Intercepter-NG"
+            },
+            {
+                title: "Elevate Your Android Experience: Install HyperOS File Manager on Any Phone (No Root Required!)",
+                description: "A comprehensive guide to installing Xiaomi's HyperOS File Manager on any Android phone without root. Enhance your file management with modern aesthetics, intuitive organization, and robust features.",
+                link: "Blogs/hyperos-file-manager-guide.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=HyperOS+File+Manager"
+            },
+            {
+                title: "LSPosed Installation Guide: Unlock Advanced Android Customization",
+                description: "A comprehensive guide to installing LSPosed, a powerful framework for advanced Android customization on rooted devices.",
+                link: "Blogs/lsposed-installation-guide.html",
+                image: "https://placehold.co/400x200/3B82F6/ffffff?text=LSPosed+Guide" // Placeholder image for LSPosed
+            },
+            {
+                title: "Unlock Your Android's True Potential: A Deep Dive into Lawnchair Launcher with Android 16 Support (No Root Required!)",
+                description: "Tired of the same old, uninspired interface on your Android phone? Do you look at the sleek, minimalist design of a Google Pixel device and wish you could have that on your own handset, but with more power and customization? The answer to your digital desires is here: Lawnchair Launcher. This isn't just another home screen replacement; it's a revolutionary open-source project that gives you the best of both worlds—the clean, fluid experience of a Pixel, combined with an unrivaled suite of personalization options. And the best part? It works on any non-rooted Android phone, even offering support for the latest features from Android 16!",
+                link: "Blogs/lawnchair-launcher-guide.html",
+                image: "https://placehold.co/400x200/6EE7B7/000000?text=Lawnchair+Launcher" // Placeholder image
+            },
+            // Games (these are not displayed in the "Latest Blogs" section, but used for search)
+            { type: 'game', title: "Flappy Bird", description: "Test your reflexes in this classic arcade game.", link: "Games/flappy_bird.html" },
+            { type: 'game', title: "Snake Game", description: "Guide your snake to eat the food and grow longer.", link: "Games/snake_game.html" },
+            { type: "game", title: "Pong Game", description: "Relive the classic arcade experience with this two-player game.", link: "Games/pong_game.html" }
+        ];
+
         // Mobile menu toggle logic
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -378,6 +561,79 @@
                 if (e.key === 'Enter') handleSearch(mobileSearchInput);
             });
             mobileSearchButton.addEventListener('click', () => handleSearch(mobileSearchInput));
+        }
+
+        // Function to display search suggestions
+        function displaySuggestions(inputElement, dropdownElement) {
+            const query = inputElement.value.toLowerCase().trim();
+            dropdownElement.innerHTML = ''; // Clear previous suggestions
+
+            if (query.length === 0) {
+                dropdownElement.classList.add('hidden');
+                return;
+            }
+
+            const filteredSuggestions = allContentData.filter(item =>
+                item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
+            ).slice(0, 7); // Limit to 7 suggestions
+
+            if (filteredSuggestions.length > 0) {
+                filteredSuggestions.forEach(item => {
+                    const suggestionDiv = document.createElement('div');
+                    suggestionDiv.classList.add('suggestion-item', 'px-4', 'py-2', 'hover:bg-gray-600', 'cursor-pointer');
+                    suggestionDiv.textContent = item.title;
+                    suggestionDiv.onclick = () => { window.location.href = item.link; };
+                    dropdownElement.appendChild(suggestionDiv);
+                });
+                dropdownElement.classList.remove('hidden');
+            } else {
+                dropdownElement.classList.add('hidden');
+            }
+        }
+
+        // Event listeners for desktop search
+        if(searchInput && searchButton) {
+            searchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(searchInput, searchResultsDropdown);
+                if (e.key === 'Enter') {
+                    searchButton.click(); // Trigger search on Enter
+                }
+            });
+            searchButton.addEventListener('click', () => {
+                const query = searchInput.value.trim();
+                if (query) {
+                    window.location.href = `../../all-articles.html?search=${encodeURIComponent(query)}`;
+                }
+                searchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+            });
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResultsDropdown.contains(e.target)) {
+                    searchResultsDropdown.classList.add('hidden');
+                }
+            });
+        }
+
+        // Event listeners for mobile search
+        if(mobileSearchInput && mobileSearchButton) {
+            mobileSearchInput.addEventListener('keyup', (e) => {
+                displaySuggestions(mobileSearchInput, mobileSearchResultsDropdown);
+                if (e.key === 'Enter') {
+                    mobileSearchButton.click(); // Trigger search on Enter
+                }
+            });
+            mobileSearchButton.addEventListener('click', () => {
+                const query = mobileSearchInput.value.trim();
+                if (query) {
+                    window.location.href = `../../all-articles.html?search=${encodeURIComponent(query)}`;
+                }
+                mobileSearchResultsDropdown.classList.add('hidden'); // Hide dropdown after search
+                closeMobileMenu(); // Close mobile menu after search
+            });
+            document.addEventListener('click', (e) => {
+                if (!mobileSearchInput.contains(e.target) && !mobileSearchButton.contains(e.target) && !mobileSearchResultsDropdown.contains(e.target)) {
+                    mobileSearchResultsDropdown.classList.add('hidden');
+                }
+            });
         }
     </script>
 </body>
