@@ -20,6 +20,34 @@
 
       gtag('config', 'G-2E9KWQ18P9');
     </script>
+
+    <!-- Image Error Handler (Must be in head to load before images) -->
+    <script>
+        function handleImageError(img, type = 'post') {
+            // Safety check to prevent infinite loops or errors if parent is missing
+            if (!img || !img.parentElement) return;
+
+            if (type === 'logo') {
+                img.style.display = 'none';
+                // Show the text/icon fallback if it exists
+                if (img.nextElementSibling) img.nextElementSibling.classList.remove('hidden');
+                return;
+            }
+            
+            const parent = img.parentElement;
+            // Clear the container
+            parent.innerHTML = '';
+            
+            // Create placeholder element
+            const div = document.createElement('div');
+            div.className = type === 'post' 
+                ? 'h-full w-full bg-slate-700 flex items-center justify-center text-gray-500' 
+                : 'h-64 bg-slate-800 flex items-center justify-center text-gray-400';
+                
+            div.innerHTML = `<i class="fas fa-${type === 'post' ? 'image' : 'video'} text-4xl"></i>`;
+            parent.appendChild(div);
+        }
+    </script>
     
     <!-- Google AdSense Script -->
     <!-- IMPORTANT: Replace 'YOUR_ID_HERE' with your actual AdSense Publisher ID (e.g., ca-pub-1234567890) -->
@@ -66,7 +94,8 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 cursor-pointer flex items-center border border-slate-700 p-2 rounded-lg bg-slate-800" onclick="showSection('home')">
-                    <img src="Photos/20211212_160808_0000.png" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden')" alt="TechyNoob Logo" class="h-10 w-10 rounded-full mr-3 object-cover">
+                    <!-- Logo Path: Ensure 'Photos' folder exists and file is '20211212_160808_0000.png' -->
+                    <img src="Photos/20211212_160808_0000.png" onerror="handleImageError(this, 'logo')" alt="TechyNoob Logo" class="h-10 w-10 rounded-full mr-3 object-cover">
                     <i class="fas fa-microchip text-3xl text-blue-500 mr-3 hidden"></i>
                     <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
                         TechyNoob
@@ -253,7 +282,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="col-span-1 md:col-span-1">
                     <div class="flex items-center mb-4">
-                        <img src="Photos/20211212_160808_0000.png" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden')" alt="TechyNoob Logo" class="h-8 w-8 rounded-full mr-2 object-cover">
+                        <img src="Photos/20211212_160808_0000.png" onerror="handleImageError(this, 'logo')" alt="TechyNoob Logo" class="h-8 w-8 rounded-full mr-2 object-cover">
                         <i class="fas fa-microchip text-2xl text-blue-500 mr-2 hidden"></i>
                         <span class="text-xl font-bold text-white">TechyNoob</span>
                     </div>
@@ -366,21 +395,6 @@
     </div>
 
     <script>
-        function handleImageError(img, type = 'post') {
-            const parent = img.parentElement;
-            // Remove the image and overlay
-            parent.innerHTML = '';
-            
-            // Create placeholder
-            const div = document.createElement('div');
-            div.className = type === 'post' 
-                ? 'h-full w-full bg-slate-700 flex items-center justify-center text-gray-500' 
-                : 'h-64 bg-slate-800 flex items-center justify-center text-gray-400';
-                
-            div.innerHTML = `<i class="fas fa-${type === 'post' ? 'image' : 'video'} text-4xl"></i>`;
-            parent.appendChild(div);
-        }
-
         // --- BLOG POST DATA ---
         const posts = [
             {
@@ -437,7 +451,7 @@
                     
                     <div class="my-8">
                          <p class="mb-2 font-bold text-green-400">Proof of Success:</p>
-                         <img src="Photos/DSC00254.JPG" onerror="this.style.display='none'" alt="Integrity Check Passed" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                         <img src="Photos/DSC00254.JPG" onerror="handleImageError(this, 'post')" alt="Integrity Check Passed" class="w-full rounded-xl shadow-2xl border border-slate-700">
                     </div>
 
                     <h3>Conclusion</h3>
@@ -457,7 +471,8 @@
                 title: "Is the Redmi Note 7 Pro Still a King in 2025? My Experience with Voltage OS (Android 16)",
                 excerpt: "Can a 2019 mid-ranger actually handle 2025 software? I spent the last few days using Voltage OS on the legendary Note 7 Pro to find out.",
                 videoUrl: "https://www.youtube.com/embed/JGceBX0RBAk",
-                thumbnail: "Photos/DSC00415.jpg",
+                // UPDATED: Using uppercase JPG based on camera defaults
+                thumbnail: "Photos/DSC00415.JPG",
                 content: `
                     <p>Hello there, dedicated Android modders and custom ROM users.</p>
                     <p>It’s hard to believe the Redmi Note 7 Pro has been around for six years. In the world of smartphones, that’s usually a death sentence. But if you’re an enthusiast like me, you know that hardware never truly dies as long as the developer community is active.</p>
@@ -468,7 +483,7 @@
                     <p>The first thing you notice after booting up is just how clean everything looks. Voltage OS stays very true to its AOSP (Android Open Source Project) roots. If you’ve ever envied the smooth, bloat-free experience of a Google Pixel, this gets you 90% of the way there.</p>
                     
                     <div class="my-8">
-                        <img src="Photos/DSC00415.jpg" onerror="handleImageError(this, 'post')" alt="Redmi Note 7 Pro Home Screen" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                        <img src="Photos/DSC00415.JPG" onerror="handleImageError(this, 'post')" alt="Redmi Note 7 Pro Home Screen" class="w-full rounded-xl shadow-2xl border border-slate-700">
                         <p class="text-sm text-gray-500 mt-2 text-center">The clean, modern look of Android 16 on 6-year-old hardware.</p>
                     </div>
 
@@ -478,7 +493,7 @@
                     <p>While the stock look is nice, the real reason we install custom ROMs is to tinker. Voltage OS organizes all its customization in a dedicated menu called Powerhub. Here is what I found most useful during my testing:</p>
                     
                     <div class="my-8">
-                        <img src="Photos/DSC00410.jpg" onerror="handleImageError(this, 'post')" alt="Voltage OS Powerhub Menu" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                        <img src="Photos/DSC00410.JPG" onerror="handleImageError(this, 'post')" alt="Voltage OS Powerhub Menu" class="w-full rounded-xl shadow-2xl border border-slate-700">
                     </div>
 
                     <ul>
@@ -499,7 +514,7 @@
                     <p>Battery anxiety is real with old phones, but Voltage OS seems to handle background processes efficiently. I easily got through a full day of moderate usage—social media, YouTube, and some music streaming—without needing a mid-day top-up. The idle drain (battery lost while the phone is sleeping) was minimal, which is often a weak point in custom ROMs.</p>
 
                     <div class="my-8">
-                        <img src="Photos/DSC00405.jpg" onerror="handleImageError(this, 'post')" alt="Android 16 Settings Page" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                        <img src="Photos/DSC00405.JPG" onerror="handleImageError(this, 'post')" alt="Android 16 Settings Page" class="w-full rounded-xl shadow-2xl border border-slate-700">
                         <p class="text-sm text-gray-500 mt-2 text-center">Proof of Android 16 running on "violet" (Redmi Note 7 Pro).</p>
                     </div>
 
