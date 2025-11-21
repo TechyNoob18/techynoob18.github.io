@@ -389,6 +389,15 @@
     </div>
 
     <script>
+        // Safe initialization wrapper
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                init();
+            } catch (e) {
+                console.error("Failed to initialize blog posts:", e);
+            }
+        });
+
         // --- BLOG POST DATA ---
         const posts = [
             {
@@ -396,7 +405,8 @@
                 title: "How to Resolve Google Play Integrity Issues on Rooted Devices - October 2025",
                 excerpt: "The definitive guide to restoring full device functionality and passing Strong Integrity checks safely.",
                 videoUrl: "https://www.youtube.com/embed/mBuke2P4PuU", 
-                thumbnail: "Photos/20250930_131652_0000.png",
+                // UPDATED: YouTube Thumbnail
+                thumbnail: "https://img.youtube.com/vi/mBuke2P4PuU/maxresdefault.jpg",
                 content: `
                     <p>Hello there, dedicated Android enthusiasts!</p>
                     <p>If you’re reading this in October 2025, you’ve likely experienced issues with Google’s Play Integrity API. While rooting gives us control, privacy, and customization, it can sometimes conflict with apps like banking services and Google Wallet. This is a common challenge for the modification community.</p>
@@ -406,7 +416,7 @@
                     <div class="my-8">
                         <p class="mb-2 font-bold text-blue-400">Click the image below to watch the full video guide:</p>
                         <a href="https://youtu.be/mBuke2P4PuU" target="_blank" class="block hover:opacity-90 transition group relative rounded-xl overflow-hidden">
-                             <img src="Photos/20250930_131652_0000.png" onerror="handleImageError(this, 'video')" alt="Watch the Video Guide" class="w-full rounded-xl shadow-2xl border border-slate-700 transform group-hover:scale-105 transition duration-500">
+                             <img src="https://img.youtube.com/vi/mBuke2P4PuU/maxresdefault.jpg" onerror="handleImageError(this, 'video')" alt="Watch the Video Guide" class="w-full rounded-xl shadow-2xl border border-slate-700 transform group-hover:scale-105 transition duration-500">
                              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <i class="fas fa-play-circle text-6xl text-white drop-shadow-lg"></i>
                              </div>
@@ -465,7 +475,8 @@
                 title: "Is the Redmi Note 7 Pro Still a King in 2025? My Experience with Voltage OS (Android 16)",
                 excerpt: "Can a 2019 mid-ranger actually handle 2025 software? I spent the last few days using Voltage OS on the legendary Note 7 Pro to find out.",
                 videoUrl: "https://www.youtube.com/embed/JGceBX0RBAk",
-                thumbnail: "Photos/DSC00415.JPG",
+                // UPDATED: YouTube Thumbnail
+                thumbnail: "https://img.youtube.com/vi/JGceBX0RBAk/maxresdefault.jpg",
                 content: `
                     <p>Hello there, dedicated Android modders and custom ROM users.</p>
                     <p>It’s hard to believe the Redmi Note 7 Pro has been around for six years. In the world of smartphones, that’s usually a death sentence. But if you’re an enthusiast like me, you know that hardware never truly dies as long as the developer community is active.</p>
@@ -537,6 +548,7 @@
                 title: "Reviving the Legend: A Deep Dive into DerpFest (Android 16) on the OnePlus 6T",
                 excerpt: "Is this the software update that brings the 6T back to life in 2025? I flashed Android 16 to find out.",
                 videoUrl: "https://www.youtube.com/embed/l0cAAY4I-D4", 
+                // UPDATED: YouTube Thumbnail
                 thumbnail: "https://img.youtube.com/vi/l0cAAY4I-D4/maxresdefault.jpg",
                 content: `
                     <p>Hello there, dedicated Android enthusiasts!</p>
@@ -631,6 +643,8 @@
                 `
             }
         ];
+
+        // --- LOGIC ---
 
         function init() {
             renderPosts(posts);
@@ -799,14 +813,7 @@
             }
         }
 
-        // Safe initialization wrapper
-        document.addEventListener('DOMContentLoaded', () => {
-            try {
-                init();
-            } catch (e) {
-                console.error("Failed to initialize blog posts:", e);
-            }
-        });
+        init();
 
     </script>
 </body>
