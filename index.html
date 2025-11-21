@@ -21,36 +21,32 @@
       gtag('config', 'G-2E9KWQ18P9');
     </script>
 
-    <!-- Image Error Handler (Must be in head to load before images) -->
+    <!-- Image Error Handler (Loaded early to prevent reference errors) -->
     <script>
         function handleImageError(img, type = 'post') {
-            // Safety check to prevent infinite loops or errors if parent is missing
-            if (!img || !img.parentElement) return;
-
+            if (!img) return;
+            
             if (type === 'logo') {
                 img.style.display = 'none';
-                // Show the text/icon fallback if it exists
+                // If there's a fallback icon next to the image, show it
                 if (img.nextElementSibling) img.nextElementSibling.classList.remove('hidden');
                 return;
             }
             
             const parent = img.parentElement;
-            // Clear the container
-            parent.innerHTML = '';
-            
-            // Create placeholder element
-            const div = document.createElement('div');
-            div.className = type === 'post' 
-                ? 'h-full w-full bg-slate-700 flex items-center justify-center text-gray-500' 
-                : 'h-64 bg-slate-800 flex items-center justify-center text-gray-400';
-                
-            div.innerHTML = `<i class="fas fa-${type === 'post' ? 'image' : 'video'} text-4xl"></i>`;
-            parent.appendChild(div);
+            if (parent) {
+                parent.innerHTML = '';
+                const div = document.createElement('div');
+                div.className = type === 'post' 
+                    ? 'h-full w-full bg-slate-700 flex items-center justify-center text-gray-500' 
+                    : 'h-64 bg-slate-800 flex items-center justify-center text-gray-400';
+                div.innerHTML = `<i class="fas fa-${type === 'post' ? 'image' : 'video'} text-4xl"></i><span class="ml-2 text-sm">Image not found</span>`;
+                parent.appendChild(div);
+            }
         }
     </script>
     
     <!-- Google AdSense Script -->
-    <!-- IMPORTANT: Replace 'YOUR_ID_HERE' with your actual AdSense Publisher ID (e.g., ca-pub-1234567890) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ID_HERE" crossorigin="anonymous"></script>
 
     <style>
@@ -94,7 +90,6 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 cursor-pointer flex items-center border border-slate-700 p-2 rounded-lg bg-slate-800" onclick="showSection('home')">
-                    <!-- Logo Path: Ensure 'Photos' folder exists and file is '20211212_160808_0000.png' -->
                     <img src="Photos/20211212_160808_0000.png" onerror="handleImageError(this, 'logo')" alt="TechyNoob Logo" class="h-10 w-10 rounded-full mr-3 object-cover">
                     <i class="fas fa-microchip text-3xl text-blue-500 mr-3 hidden"></i>
                     <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
@@ -109,7 +104,6 @@
                         <button onclick="performSearch()" class="absolute right-0 top-0 h-full bg-blue-600 px-4 rounded-r-md hover:bg-blue-700 transition">
                             <i class="fas fa-search"></i>
                         </button>
-                        <!-- Search Suggestions -->
                         <div id="search-suggestions" class="hidden absolute w-full bg-slate-800 border border-slate-700 rounded-b-md mt-1 z-50 max-h-60 overflow-y-auto shadow-2xl"></div>
                     </div>
                 </div>
@@ -471,7 +465,6 @@
                 title: "Is the Redmi Note 7 Pro Still a King in 2025? My Experience with Voltage OS (Android 16)",
                 excerpt: "Can a 2019 mid-ranger actually handle 2025 software? I spent the last few days using Voltage OS on the legendary Note 7 Pro to find out.",
                 videoUrl: "https://www.youtube.com/embed/JGceBX0RBAk",
-                // UPDATED: Using uppercase JPG based on camera defaults
                 thumbnail: "Photos/DSC00415.JPG",
                 content: `
                     <p>Hello there, dedicated Android modders and custom ROM users.</p>
@@ -541,40 +534,103 @@
             },
             {
                 id: 3,
-                title: "Review: Is the iPhone 15 Worth the Upgrade?",
-                excerpt: "An honest look at the new features, camera capabilities, and USB-C implementation after 2 weeks of daily usage.",
-                videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", 
-                thumbnail: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                title: "Reviving the Legend: A Deep Dive into DerpFest (Android 16) on the OnePlus 6T",
+                excerpt: "Is this the software update that brings the 6T back to life in 2025? I flashed Android 16 to find out.",
+                videoUrl: "https://www.youtube.com/embed/l0cAAY4I-D4", 
+                thumbnail: "https://img.youtube.com/vi/l0cAAY4I-D4/maxresdefault.jpg",
                 content: `
-                    <p>Every September, the tech world turns its eyes to Cupertino. This year, the headline feature for the iPhone 15 was finally the inclusion of USB-C. But beyond the port, is there enough here to justify an upgrade from an iPhone 13 or 14? I've spent two weeks with the device, and here is my verdict.</p>
+                    <p>Hello there, dedicated Android enthusiasts!</p>
+                    <p>If there is one device in the history of smartphones that refuses to give up, it is the OnePlus 6T. Years after its release, this legendary phone is still kicking, thanks entirely to the vibrant custom ROM community.</p>
+                    <p>Today, I’m doing something exciting: I’ve flashed the latest DerpFest ROM based on Android 16 onto my trusted 6T. I’ve been using it as a daily driver for a few days to answer one simple question: Is this the software update that brings the 6T back to life in 2025?</p>
 
-                    <h3>Design and USB-C</h3>
-                    <p>The shift to USB-C is fantastic. I can finally charge my MacBook, iPad, and iPhone with a single cable. The phone also features slightly rounded edges compared to the sharp corners of the 12-14 series, making it much more comfortable to hold without a case. The matte back glass is a nice touch, resisting fingerprints far better than the glossy backs of previous non-Pro models.</p>
+                    <div class="my-8">
+                        <p class="mb-2 font-bold text-blue-400">Watch the review:</p>
+                        <a href="https://youtu.be/l0cAAY4I-D4" target="_blank" class="block hover:opacity-90 transition group relative rounded-xl overflow-hidden">
+                             <img src="https://img.youtube.com/vi/l0cAAY4I-D4/maxresdefault.jpg" onerror="handleImageError(this, 'video')" alt="Watch the Video Guide" class="w-full rounded-xl shadow-2xl border border-slate-700 transform group-hover:scale-105 transition duration-500">
+                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fas fa-play-circle text-6xl text-white drop-shadow-lg"></i>
+                             </div>
+                        </a>
+                    </div>
 
-                    <h3>The Dynamic Island</h3>
-                    <p>Previously exclusive to the Pro models, the Dynamic Island is now standard. It’s a clever way to mask the front camera cutout by turning it into a notification hub. Seeing your Uber arrival time or music playback controls there is genuinely useful, though it does cut into full-screen video content slightly more than the old notch.</p>
+                    <h3>First Impressions: Smoothness Meets Customization</h3>
+                    <p>Right off the bat, the first thing you notice after the boot animation is just how clean the interface is. We are looking at a near-stock Android 16 experience, but with that signature "DerpFest" flair. The animations are fluid, app opening times are snappy, and the UI doesn't feel bogged down, which is impressive for a device of this age.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/DSC00590.jpg" onerror="handleImageError(this, 'post')" alt="OnePlus 6T running DerpFest Android 16" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                        <p class="text-sm text-gray-500 mt-2 text-center">A fresh look for the OnePlus 6T with DerpFest.</p>
+                    </div>
 
-                    <h3>Camera Performance</h3>
-                    <p>The main sensor has been bumped to 48MP. By default, it captures 24MP images that offer a significant leap in detail over the old 12MP standard. The new "2x optical-quality zoom" (which is really just a crop of the main sensor) is surprisingly effective and fills the gap left by the lack of a dedicated telephoto lens. Low-light performance is improved, with Night Mode engaging less frequently thanks to the larger aperture.</p>
+                    <p>But let’s be honest—you don’t install a custom ROM just for a stock look. You do it for the features. And DerpFest absolutely delivers on that front.</p>
 
-                    <h3>Battery Life and A16 Bionic</h3>
-                    <p>Powered by the A16 Bionic (from last year's 14 Pro), the phone flies. Gaming, video editing, and multitasking are seamless. Battery life is solid, easily getting me through a day of heavy use with about 20% left in the tank. However, charging speeds are still capped at roughly 20W, which feels slow compared to Android competitors pushing 65W or more.</p>
+                    <h3>The Customization Suite</h3>
+                    <p>The heart of this ROM lies in the "DerpFest Customizations" menu. Here is what stood out to me during my testing:</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/DSC00592.jpg" onerror="handleImageError(this, 'post')" alt="DerpFest Customization Menu" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                    </div>
 
-                    <h3>Verdict</h3>
-                    <p>If you are on an iPhone 13 or older, this is a massive upgrade. The screen brightness, camera resolution, and USB-C convenience make it feel like a modern device. However, if you have an iPhone 14 Pro, sit this one out. The changes are iterative rather than revolutionary.</p>
+                    <ul>
+                        <li><strong>Monet Settings:</strong> Material You is great, but DerpFest takes it a step further. You have granular control over the theme engine, letting you dial in the exact color palettes to match your wallpaper. It makes the phone feel personal.</li>
+                        <li><strong>Status Bar Tweaks:</strong> For the data-obsessed, the ability to add a Network Traffic Monitor directly to the status bar is a godsend. You can also completely rearrange the clock position (left, center, or right) or hide it entirely for a minimalist look.</li>
+                        <li><strong>Quick Settings (QS) Panel:</strong> This is where the visual changes really shine. You can change the shape of your tiles—circles, squares, teardrops, and more. Plus, you can toggle the brightness slider to be always visible, saving you that extra swipe down.</li>
+                        <li><strong>Privacy Indicators:</strong> In the "Miscellaneous" tab, I found the toggle for privacy indicators. These are the green and orange dots that alert you when an app is using your mic or camera. It’s a small feature, but a crucial one for modern privacy standards.</li>
+                    </ul>
+
+                    <h3>Performance Benchmarks: Still Capable?</h3>
+                    <p>It feels fast, but do the numbers back it up? I ran Geekbench to see how the Snapdragon 845 holds up running Android 16.</p>
+                    <p>The results were surprisingly respectable:</p>
+                    <ul>
+                        <li><strong>Single-Core Score:</strong> 558</li>
+                        <li><strong>Multi-Core Score:</strong> 2109</li>
+                    </ul>
+                    <p>While these aren't flagship numbers by 2025 standards, they are more than enough for daily tasks. Social media scrolling, YouTube streaming, and light multitasking felt perfectly fine. The ROM seems well-optimized for the hardware, squeezing every bit of power out of the aged chipset.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/DSC00614.jpg" onerror="handleImageError(this, 'post')" alt="DerpFest About Phone Screen" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                        <p class="text-sm text-gray-500 mt-2 text-center">Android 16 confirmed on the OnePlus 6T.</p>
+                    </div>
+
+                    <h3>The Dealbreakers: What You Need to Know</h3>
+                    <p>Now, in the spirit of full transparency (and saving you a headache), we have to talk about the downsides. AdSense policy requires honest content, and I wouldn't be doing my job if I told you this ROM was perfect.</p>
+                    
+                    <h4>1. The SafetyNet Issue</h4>
+                    <p>This is the "elephant in the room." Out of the box, DerpFest on the OnePlus 6T fails the SafetyNet (Play Integrity) check. What does this mean for you? It means secure apps will likely refuse to run. This includes Google Pay (Wallet) and most banking applications. If you rely on your phone for contactless payments, this is a major hurdle. You can likely fix this by rooting with Magisk and using modules to hide the root status, but that requires technical know-how. It is not a "flash and forget" solution.</p>
+
+                    <h4>2. No Unlimited Google Photos</h4>
+                    <p>A popular feature in many custom ROMs is the ability to "spoof" a Pixel device to get unlimited Google Photos storage. Unfortunately, DerpFest does not include this feature. You will be limited to your standard Google account storage cap.</p>
+
+                    <h4>3. Minor UI Bugs</h4>
+                    <p>I also noticed that some of the Header Image features in the settings menu were unresponsive. It’s a purely cosmetic bug and doesn't affect performance, but it shows that the build is still being polished.</p>
+
+                    <h3>Final Verdict: Should You Flash It?</h3>
+                    <p>So, is DerpFest Android 16 the right move for your OnePlus 6T?</p>
+                    <p><strong>Yes, if:</strong></p>
+                    <ul>
+                        <li>You are a "power user" who loves tweaking every aspect of your phone.</li>
+                        <li>You want to experience the latest Android 16 features on older hardware.</li>
+                        <li>You are comfortable using Magisk to patch SafetyNet yourself.</li>
+                    </ul>
+                    <p><strong>No, if:</strong></p>
+                    <ul>
+                        <li>This is your primary work phone.</li>
+                        <li>You need Google Pay and Banking apps to work instantly without tinkering.</li>
+                        <li>You rely on unlimited photo backups.</li>
+                    </ul>
+                    <p>Overall, DerpFest is a fantastic effort by the developers to keep the OnePlus 6T relevant. It’s fast, beautiful, and fun—just be prepared to tinker a little bit to get everything working perfectly.</p>
 
                     <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
                         <h4 class="text-white font-bold text-lg mb-2">Watch the Review</h4>
-                        <p class="mb-4">See the camera test and performance analysis in the video below:</p>
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                        <p class="mb-4">See the full visual breakdown and performance tests:</p>
+                        <a href="https://youtu.be/l0cAAY4I-D4" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
                             <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Review on YouTube
                         </a>
                     </div>
+                    
+                    <p class="text-xs text-gray-500 italic">Disclaimer: Flashing custom ROMs involves risk. TechyNoob is not responsible for bricked devices. Always backup your data.</p>
                 `
             }
         ];
-
-        // --- LOGIC ---
 
         function init() {
             renderPosts(posts);
@@ -743,7 +799,14 @@
             }
         }
 
-        init();
+        // Safe initialization wrapper
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                init();
+            } catch (e) {
+                console.error("Failed to initialize blog posts:", e);
+            }
+        });
 
     </script>
 </body>
