@@ -66,7 +66,6 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 cursor-pointer flex items-center border border-slate-700 p-2 rounded-lg bg-slate-800" onclick="showSection('home')">
-                    <!-- Added onerror fallback to show an icon if image fails -->
                     <img src="Photos/20211212_160808_0000.png" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden')" alt="TechyNoob Logo" class="h-10 w-10 rounded-full mr-3 object-cover">
                     <i class="fas fa-microchip text-3xl text-blue-500 mr-3 hidden"></i>
                     <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
@@ -89,7 +88,8 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-6">
                     <button onclick="showSection('home')" class="hover:text-blue-400 transition font-medium">Home</button>
-                    <button onclick="showSection('blog')" class="hover:text-blue-400 transition font-medium">Blogs</button>
+                    <!-- Updated: "Blogs" now scrolls to the grid instead of opening empty reader -->
+                    <button onclick="goToBlogGrid()" class="hover:text-blue-400 transition font-medium">Blogs</button>
                     <button onclick="showSection('about')" class="hover:text-blue-400 transition font-medium">About Us</button>
                     <a href="https://www.youtube.com/@TechyNoob1818" target="_blank" class="text-red-500 hover:text-red-400 transition flex items-center font-bold">
                         <i class="fab fa-youtube mr-2"></i> YouTube
@@ -109,7 +109,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <button onclick="showSection('home'); toggleMobileMenu()" class="block w-full text-left hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">Home</button>
-                <button onclick="showSection('blog'); toggleMobileMenu()" class="block w-full text-left hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">Blogs</button>
+                <button onclick="goToBlogGrid(); toggleMobileMenu()" class="block w-full text-left hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">Blogs</button>
                 <button onclick="showSection('about'); toggleMobileMenu()" class="block w-full text-left hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">About Us</button>
             </div>
         </div>
@@ -129,14 +129,15 @@
                         Your ultimate guide to Android customization, reviews, and unlocking hidden features.
                     </p>
                     <div class="flex justify-center space-x-4">
-                        <button onclick="showSection('blog')" class="px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold transition shadow-lg shadow-blue-500/30 transform hover:-translate-y-1">
+                        <!-- Updated: Now scrolls to grid instead of opening empty page -->
+                        <button onclick="goToBlogGrid()" class="px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold transition shadow-lg shadow-blue-500/30 transform hover:-translate-y-1">
                             Explore Guides
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="latest-posts-grid-container" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-blue-400">Latest Tutorials & Reviews</h2>
                     <p class="text-gray-400 mt-2">In-depth articles to help you master your tech.</p>
@@ -159,24 +160,35 @@
                 <button onclick="showSection('home')" class="text-blue-400 hover:text-blue-300 mb-6 flex items-center font-medium group">
                     <i class="fas fa-arrow-left mr-2 transform group-hover:-translate-x-1 transition"></i> Back to Home
                 </button>
-                <h1 id="blog-title" class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight"></h1>
                 
-                <div class="flex items-center text-sm text-gray-400 mb-6">
-                    <span class="mr-4"><i class="far fa-calendar mr-2"></i>Updated recently</span>
-                    <span><i class="far fa-user mr-2"></i>By TechyNoob</span>
+                <!-- Empty State Message (Hidden by default, shown if no article loaded) -->
+                <div id="empty-blog-state" class="hidden text-center py-20">
+                    <i class="fas fa-book-open text-6xl text-slate-700 mb-4"></i>
+                    <h2 class="text-2xl font-bold text-gray-400">Select an article to start reading</h2>
+                    <button onclick="goToBlogGrid()" class="mt-4 text-blue-400 hover:underline">Go to Library</button>
                 </div>
 
-                <div class="aspect-w-16 aspect-h-9 mb-8 bg-black rounded-xl overflow-hidden shadow-2xl border border-slate-700">
-                    <iframe id="blog-video" class="w-full h-96" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                <!-- Article Container -->
+                <div id="blog-article-container">
+                    <h1 id="blog-title" class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight"></h1>
+                    
+                    <div class="flex items-center text-sm text-gray-400 mb-6">
+                        <span class="mr-4"><i class="far fa-calendar mr-2"></i>Updated recently</span>
+                        <span><i class="far fa-user mr-2"></i>By TechyNoob</span>
+                    </div>
 
-                <!-- In-Article Ad Slot -->
-                <div class="w-full h-24 bg-slate-800/50 border border-slate-700 border-dashed flex items-center justify-center mb-8 rounded-lg">
-                    <span class="text-slate-500 text-sm font-mono">Google AdSense In-Article Ad</span>
-                </div>
+                    <div class="aspect-w-16 aspect-h-9 mb-8 bg-black rounded-xl overflow-hidden shadow-2xl border border-slate-700">
+                        <iframe id="blog-video" class="w-full h-96" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
 
-                <div id="blog-content" class="prose prose-invert prose-lg max-w-none text-gray-300 leading-8">
-                    <!-- Content injected via JS -->
+                    <!-- In-Article Ad Slot -->
+                    <div class="w-full h-24 bg-slate-800/50 border border-slate-700 border-dashed flex items-center justify-center mb-8 rounded-lg">
+                        <span class="text-slate-500 text-sm font-mono">Google AdSense In-Article Ad</span>
+                    </div>
+
+                    <div id="blog-content" class="prose prose-invert prose-lg max-w-none text-gray-300 leading-8">
+                        <!-- Content injected via JS -->
+                    </div>
                 </div>
                 
                 <!-- Multiplex Ad Slot -->
@@ -432,32 +444,86 @@
 
                     <h3>Conclusion</h3>
                     <p>You no longer have to choose between system control and app compatibility. By correctly configuring these tools, you can enjoy a fully rooted device with working banking and payment apps.</p>
-                    <p><strong>Full Video Guide:</strong> <a href="https://youtu.be/mBuke2P4PuU" class="text-blue-400 hover:underline">https://youtu.be/mBuke2P4PuU</a></p>
+                    
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Guide</h4>
+                        <p class="mb-4">Watch the full step-by-step tutorial to ensure you get every step correct:</p>
+                        <a href="https://youtu.be/mBuke2P4PuU" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Guide on YouTube
+                        </a>
+                    </div>
                 `
             },
             {
                 id: 2,
-                title: "Top 5 Coding Extensions for VS Code You Need",
-                excerpt: "Boost your productivity instantly with these essential Visual Studio Code extensions that every developer needs in their toolkit.",
-                videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-                thumbnail: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                title: "Is the Redmi Note 7 Pro Still a King in 2025? My Experience with Voltage OS (Android 16)",
+                excerpt: "Can a 2019 mid-ranger actually handle 2025 software? I spent the last few days using Voltage OS on the legendary Note 7 Pro to find out.",
+                videoUrl: "https://www.youtube.com/embed/JGceBX0RBAk",
+                thumbnail: "Photos/DSC00415.jpg",
                 content: `
-                    <p>Visual Studio Code (VS Code) has taken the development world by storm, largely due to its massive ecosystem of extensions. While the editor is powerful out of the box, the right plugins can turn it into a specialized IDE for any language. Here are the top 5 extensions I use daily.</p>
+                    <p>Hello there, dedicated Android modders and custom ROM users.</p>
+                    <p>It’s hard to believe the Redmi Note 7 Pro has been around for six years. In the world of smartphones, that’s usually a death sentence. But if you’re an enthusiast like me, you know that hardware never truly dies as long as the developer community is active.</p>
+                    <p>Today, I’m doing something that sounds a bit crazy: I’m testing Android 16 on the Redmi Note 7 Pro using the latest build of Voltage OS.</p>
+                    <p>I’ve spent the last few days using this ROM as my daily driver to answer one big question: Can a 2019 mid-ranger actually handle 2025 software? The answer surprised me, but there is one major catch you need to know before you flash it.</p>
 
-                    <h3>1. Prettier - Code Formatter</h3>
-                    <p>Stop wasting time manually indenting your code. Prettier parses your code and re-prints it with its own rules that take the maximum line length into account, wrapping code when necessary. It ensures a consistent style across your entire project, which is crucial when working in teams.</p>
+                    <h3>First Impressions: The "Pixel" Feel</h3>
+                    <p>The first thing you notice after booting up is just how clean everything looks. Voltage OS stays very true to its AOSP (Android Open Source Project) roots. If you’ve ever envied the smooth, bloat-free experience of a Google Pixel, this gets you 90% of the way there.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/DSC00415.jpg" onerror="handleImageError(this, 'post')" alt="Redmi Note 7 Pro Home Screen" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                        <p class="text-sm text-gray-500 mt-2 text-center">The clean, modern look of Android 16 on 6-year-old hardware.</p>
+                    </div>
 
-                    <h3>2. GitLens</h3>
-                    <p>GitLens supercharges the built-in Git capabilities of VS Code. It helps you visualize code authorship at a glance via Git blame annotations and code lens, seamlessly navigate and explore Git repositories, and gain valuable insights via powerful comparison commands. You can see exactly who wrote that buggy line of code 6 months ago!</p>
+                    <p>Navigating through the UI feels incredibly fluid. I was expecting lags or stutters—after all, we are asking an older Snapdragon 675 processor to run the latest Android version—but everyday tasks like scrolling through Instagram or switching between apps felt snappy.</p>
 
-                    <h3>3. Live Server</h3>
-                    <p>If you are a web developer, this is non-negotiable. Live Server launches a local development server with a live reload feature for static and dynamic pages. Every time you save your HTML or CSS file, the browser automatically refreshes. It saves thousands of clicks over the course of a project.</p>
+                    <h3>The "Powerhub": Customization Heaven</h3>
+                    <p>While the stock look is nice, the real reason we install custom ROMs is to tinker. Voltage OS organizes all its customization in a dedicated menu called Powerhub. Here is what I found most useful during my testing:</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/DSC00410.jpg" onerror="handleImageError(this, 'post')" alt="Voltage OS Powerhub Menu" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                    </div>
 
-                    <h3>4. ES7+ React/Redux/React-Native snippets</h3>
-                    <p>Efficiency is about writing less boilerplate. This extension provides you with shorthand commands to generate common code structures. Typing 'rafce' instantly creates a React Arrow Function Component with Export. It supports TypeScript and is regularly updated.</p>
+                    <ul>
+                        <li><strong>Theming Engine:</strong> The "Monet" theming is fully present here. You can override accent colors, change background luminance, and even set a dual-tone shade for your notification panel. It makes the phone feel personal.</li>
+                        <li><strong>Status Bar & Lock Screen:</strong> You get granular control here. I loved the ability to add a network traffic indicator (essential for spotting bad data connections) and the "Ripple Effect" on the lock screen when using the fingerprint scanner.</li>
+                        <li><strong>Privacy Features:</strong> This was a standout for me. The ROM includes GrapheneOS-style privacy toggles. You can actually reroute internet connectivity checks through GrapheneOS servers instead of Google’s, or disable them entirely. For the privacy-conscious, this is a massive win.</li>
+                    </ul>
 
-                    <h3>5. Docker</h3>
-                    <p>The Docker extension makes it easy to build, manage, and deploy containerized applications from Visual Studio Code. It also provides one-click debugging of Node.js, Python, and .NET Core inside a container. The explorer view allows you to manage images, networks, and volumes directly from the sidebar.</p>
+                    <h3>Performance & Benchmarks</h3>
+                    <p>I know "smooth" is subjective, so I ran Geekbench to see what the numbers say.</p>
+                    <ul>
+                        <li><strong>Single-Core Score:</strong> 674</li>
+                        <li><strong>Multi-Core Score:</strong> 1657</li>
+                    </ul>
+                    <p>For a device of this age, these are respectable numbers. It shows that the developers have optimized the kernel specifically for this hardware. In real-world terms, this means you can handle light gaming and multitasking without the phone gasping for air.</p>
+
+                    <h3>Battery Life</h3>
+                    <p>Battery anxiety is real with old phones, but Voltage OS seems to handle background processes efficiently. I easily got through a full day of moderate usage—social media, YouTube, and some music streaming—without needing a mid-day top-up. The idle drain (battery lost while the phone is sleeping) was minimal, which is often a weak point in custom ROMs.</p>
+
+                    <div class="my-8">
+                        <img src="Photos/DSC00405.jpg" onerror="handleImageError(this, 'post')" alt="Android 16 Settings Page" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                        <p class="text-sm text-gray-500 mt-2 text-center">Proof of Android 16 running on "violet" (Redmi Note 7 Pro).</p>
+                    </div>
+
+                    <h3>The Big Catch: SafetyNet Fails ⚠️</h3>
+                    <p>Here is the part that might be a dealbreaker for some of you.</p>
+                    <p><strong>SafetyNet fails on this build.</strong></p>
+                    <p>I tried everything to fix it. I rooted the device with Magisk, used various hide modules, and tinkered with detailed settings, but I could not get it to pass.</p>
+                    <p>What does this mean for you? It means banking apps, Google Pay (Wallet), and some security-heavy games likely won't work. If this is your primary phone and you rely on tap-to-pay, this ROM isn't ready for you yet. However, if you use this as a secondary device for media or tinkering, it’s not a huge issue.</p>
+
+                    <h3>Final Verdict</h3>
+                    <p>Voltage OS on the Redmi Note 7 Pro is a love letter to this legendary device. It brings a modern, secure, and highly customizable experience that breathes new life into aged hardware.</p>
+                    <p>If you can live without banking apps, I highly recommend flashing this just to see how capable your old phone still is.</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Review</h4>
+                        <p class="mb-4">Watch my full hands-on review below to see the performance in action:</p>
+                        <a href="https://youtu.be/JGceBX0RBAk" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch the Full Review on YouTube
+                        </a>
+                    </div>
+
+                    <p class="text-xs text-gray-500 italic">Disclaimer: Flashing custom ROMs involves risk and may void your warranty (though the Note 7 Pro is likely out of warranty anyway!). Make sure to back up your data before proceeding.</p>
                 `
             },
             {
@@ -483,6 +549,14 @@
 
                     <h3>Verdict</h3>
                     <p>If you are on an iPhone 13 or older, this is a massive upgrade. The screen brightness, camera resolution, and USB-C convenience make it feel like a modern device. However, if you have an iPhone 14 Pro, sit this one out. The changes are iterative rather than revolutionary.</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Review</h4>
+                        <p class="mb-4">See the camera test and performance analysis in the video below:</p>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Review on YouTube
+                        </a>
+                    </div>
                 `
             }
         ];
@@ -609,6 +683,10 @@
             document.getElementById('blog-video').src = post.videoUrl;
             document.getElementById('blog-content').innerHTML = post.content;
 
+            // Hide empty state and show container
+            document.getElementById('empty-blog-state').classList.add('hidden');
+            document.getElementById('blog-article-container').classList.remove('hidden');
+
             showSection('blog');
         }
 
@@ -630,6 +708,17 @@
             if (modal) {
                 modal.classList.add('hidden');
                 document.body.style.overflow = 'auto';
+            }
+        }
+
+        // New Navigation Helper
+        function goToBlogGrid() {
+            showSection('home');
+            const grid = document.getElementById('latest-posts-grid-container');
+            if(grid) {
+                setTimeout(() => {
+                    grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
             }
         }
 
