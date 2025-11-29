@@ -21,13 +21,14 @@
       gtag('config', 'G-2E9KWQ18P9');
     </script>
 
-    <!-- Image Error Handler -->
+    <!-- Image Error Handler (Loaded early to prevent reference errors) -->
     <script>
         function handleImageError(img, type = 'post') {
             if (!img) return;
             
             if (type === 'logo') {
                 img.style.display = 'none';
+                // If there's a fallback icon next to the image, show it
                 if (img.nextElementSibling) img.nextElementSibling.classList.remove('hidden');
                 return;
             }
@@ -49,16 +50,19 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ID_HERE" crossorigin="anonymous"></script>
 
     <style>
+        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #0f172a; }
         ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 5px; }
         
+        /* Animations */
         .fade-in { animation: fadeIn 0.5s ease-in; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Blog Content Typography */
         .prose h3 { margin-top: 2em; margin-bottom: 1em; color: white; font-weight: 700; font-size: 1.5rem; }
         .prose h4 { margin-top: 1.5em; margin-bottom: 0.75em; color: #93c5fd; font-weight: 600; font-size: 1.25rem; }
         .prose p { margin-bottom: 1.5em; line-height: 1.8; color: #d1d5db; }
@@ -68,6 +72,7 @@
         .prose strong { color: #60a5fa; }
         .prose a { color: #3b82f6; text-decoration: underline; }
 
+        /* Hero Background Pattern */
         .hero-bg {
             background-color: #0f172a;
             background-image: linear-gradient(30deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a), linear-gradient(150deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a), linear-gradient(30deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a), linear-gradient(150deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a), linear-gradient(60deg, #1e293b 25%, transparent 25.5%, transparent 75%, #1e293b 75%, #1e293b), linear-gradient(60deg, #1e293b 25%, transparent 25.5%, transparent 75%, #1e293b 75%, #1e293b);
@@ -79,9 +84,11 @@
 </head>
 <body class="bg-slate-900 text-gray-100 font-sans leading-relaxed">
 
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
                 <div class="flex-shrink-0 cursor-pointer flex items-center border border-slate-700 p-2 rounded-lg bg-slate-800" onclick="showSection('home')">
                     <img src="Photos/20211212_160808_0000.png" onerror="handleImageError(this, 'logo')" alt="TechyNoob Logo" class="h-10 w-10 rounded-full mr-3 object-cover">
                     <i class="fas fa-microchip text-3xl text-blue-500 mr-3 hidden"></i>
@@ -90,6 +97,7 @@
                     </span>
                 </div>
                 
+                <!-- Search Bar -->
                 <div class="hidden lg:flex flex-1 justify-center px-8">
                     <div class="relative w-full max-w-md">
                         <input type="text" id="search-input" placeholder="Search guides & reviews..." class="w-full bg-slate-800 text-gray-300 border border-slate-700 rounded-l-md py-2 px-4 focus:outline-none focus:ring-1 focus:ring-blue-500" onkeypress="handleSearchKeyPress(event)" oninput="handleSearchInput(event)" autocomplete="off">
@@ -100,6 +108,7 @@
                     </div>
                 </div>
 
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-6">
                     <button onclick="showSection('home')" class="hover:text-blue-400 transition font-medium">Home</button>
                     <button onclick="goToBlogGrid()" class="hover:text-blue-400 transition font-medium">Blogs</button>
@@ -109,6 +118,7 @@
                     </a>
                 </div>
 
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden">
                     <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none p-2">
                         <i class="fas fa-bars text-xl"></i>
@@ -117,6 +127,7 @@
             </div>
         </div>
 
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <button onclick="showSection('home'); toggleMobileMenu()" class="block w-full text-left hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">Home</button>
@@ -128,6 +139,7 @@
 
     <main class="pt-20 pb-12 min-h-screen">
         
+        <!-- Home / Hero Section -->
         <div id="home-section" class="fade-in">
             <div class="hero-bg relative overflow-hidden mb-16 py-20 md:py-32">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -152,6 +164,7 @@
                     <p class="text-gray-400 mt-2">In-depth articles to help you master your tech.</p>
                 </div>
 
+                <!-- AdSense Responsive Slot -->
                 <div class="w-full h-32 bg-slate-800/50 border border-slate-700 border-dashed flex items-center justify-center mb-10 rounded-lg">
                     <span class="text-slate-500 text-sm font-mono">Google AdSense Display Ad</span>
                 </div>
@@ -162,18 +175,21 @@
             </div>
         </div>
 
+        <!-- Blog Reading Section -->
         <div id="blog-section" class="hidden fade-in max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-8 pt-8">
                 <button onclick="showSection('home')" class="text-blue-400 hover:text-blue-300 mb-6 flex items-center font-medium group">
                     <i class="fas fa-arrow-left mr-2 transform group-hover:-translate-x-1 transition"></i> Back to Home
                 </button>
                 
+                <!-- Empty State Message -->
                 <div id="empty-blog-state" class="hidden text-center py-20">
                     <i class="fas fa-book-open text-6xl text-slate-700 mb-4"></i>
                     <h2 class="text-2xl font-bold text-gray-400">Select an article to start reading</h2>
                     <button onclick="goToBlogGrid()" class="mt-4 text-blue-400 hover:underline">Go to Library</button>
                 </div>
 
+                <!-- Article Container -->
                 <div id="blog-article-container">
                     <h1 id="blog-title" class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight"></h1>
                     
@@ -186,6 +202,7 @@
                         <iframe id="blog-video" class="w-full h-96" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
 
+                    <!-- In-Article Ad Slot -->
                     <div class="w-full h-24 bg-slate-800/50 border border-slate-700 border-dashed flex items-center justify-center mb-8 rounded-lg">
                         <span class="text-slate-500 text-sm font-mono">Google AdSense In-Article Ad</span>
                     </div>
@@ -195,12 +212,14 @@
                     </div>
                 </div>
                 
+                <!-- Multiplex Ad Slot -->
                 <div class="w-full h-24 bg-slate-800/50 border border-slate-700 border-dashed flex items-center justify-center mt-12 rounded-lg">
                     <span class="text-slate-500 text-sm font-mono">Google AdSense Multiplex Ad</span>
                 </div>
             </div>
         </div>
 
+        <!-- About Section -->
         <div id="about-section" class="hidden fade-in max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
             <div class="bg-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-700">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8 text-center">About TechyNoob</h2>
@@ -219,6 +238,7 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="bg-slate-900 border-t border-slate-800">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -242,6 +262,7 @@
                     <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase mb-4">Support</h3>
                     <div id="contact" class="space-y-3">
                         <p class="text-sm text-gray-400 flex items-center"><i class="fas fa-envelope mr-2"></i> techygamer1818@gmail.com</p>
+                        <p class="text-xs text-gray-500">For business inquiries & collaborations</p>
                     </div>
                 </div>
                 <div>
@@ -266,7 +287,7 @@
         </div>
     </footer>
 
-    <!-- Legal Modals (Privacy, Terms, Disclaimer) -->
+    <!-- Modals -->
     <div id="privacy-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" onclick="closeModal('privacy-modal')"></div>
@@ -274,7 +295,14 @@
                 <div class="bg-slate-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <h3 class="text-xl font-semibold text-white mb-4">Privacy Policy</h3>
                     <div class="mt-2 text-gray-300 text-sm space-y-4 h-96 overflow-y-auto pr-2 custom-scrollbar">
-                        <p>At TechyNoob, accessible from our website, one of our main priorities is the privacy of our visitors.</p>
+                        <p>At TechyNoob, accessible from our website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by TechyNoob and how we use it.</p>
+                        <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
+                        <h4 class="text-white font-bold mt-4">Log Files</h4>
+                        <p>TechyNoob follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
+                        <h4 class="text-white font-bold mt-4">Cookies and Web Beacons</h4>
+                        <p>Like any other website, TechyNoob uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+                        <h4 class="text-white font-bold mt-4">Google DoubleClick DART Cookie</h4>
+                        <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet.</p>
                     </div>
                 </div>
                 <div class="bg-slate-700 px-4 py-3 sm:px-6 flex justify-end">
@@ -284,15 +312,18 @@
         </div>
     </div>
 
-    <!-- Terms and Disclaimer modals follow same structure -->
     <div id="terms-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" onclick="closeModal('terms-modal')"></div>
             <div class="inline-block align-bottom bg-slate-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full border border-slate-700">
                 <div class="bg-slate-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <h3 class="text-xl font-semibold text-white mb-4">Terms of Service</h3>
                     <div class="mt-2 text-gray-300 text-sm space-y-4 h-96 overflow-y-auto pr-2 custom-scrollbar">
-                         <p>By accessing this website, you agree to be bound by these website Terms and Conditions of Use.</p>
+                        <p>By accessing this website, you agree to be bound by these website Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
+                        <h4 class="text-white font-bold mt-4">Use License</h4>
+                        <p>Permission is granted to temporarily download one copy of the materials (information or software) on TechyNoob's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not: modify or copy the materials; use the materials for any commercial purpose, or for any public display; attempt to decompile or reverse engineer any software contained on TechyNoob's website.</p>
+                        <h4 class="text-white font-bold mt-4">Disclaimer</h4>
+                        <p>The materials on TechyNoob's website are provided "as is". TechyNoob makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
                     </div>
                 </div>
                 <div class="bg-slate-700 px-4 py-3 sm:px-6 flex justify-end">
@@ -301,15 +332,24 @@
             </div>
         </div>
     </div>
-    
+
     <div id="disclaimer-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" onclick="closeModal('disclaimer-modal')"></div>
             <div class="inline-block align-bottom bg-slate-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full border border-slate-700">
                 <div class="bg-slate-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <h3 class="text-xl font-semibold text-white mb-4">Disclaimer</h3>
                     <div class="mt-2 text-gray-300 text-sm space-y-4 h-96 overflow-y-auto pr-2 custom-scrollbar">
-                         <p>The information provided by TechyNoob is for general informational purposes only.</p>
+                        <p>The information provided by TechyNoob ("we," "us", or "our") on this website is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on the Site.</p>
+                        
+                        <h4 class="text-white font-bold mt-4">Educational Purpose Disclaimer</h4>
+                        <p>Content on this website related to rooting, system modification, and security research is intended solely for educational and informational purposes. TechyNoob does not condone or encourage illegal activities, bypassing security for malicious intent, or copyright infringement.</p>
+
+                        <h4 class="text-white font-bold mt-4">External Links Disclaimer</h4>
+                        <p>The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties or links to websites and features in banners or other advertising. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability or completeness by us.</p>
+                        
+                        <h4 class="text-white font-bold mt-4">Professional Disclaimer</h4>
+                        <p>The Site cannot and does not contain technical advice. The technical information is provided for general informational and educational purposes only and is not a substitute for professional advice. Accordingly, before taking any actions based upon such information, we encourage you to consult with the appropriate professionals.</p>
                     </div>
                 </div>
                 <div class="bg-slate-700 px-4 py-3 sm:px-6 flex justify-end">
@@ -320,6 +360,7 @@
     </div>
 
     <script>
+        // Safe initialization wrapper
         document.addEventListener('DOMContentLoaded', () => {
             try {
                 init();
@@ -328,6 +369,7 @@
             }
         });
 
+        // --- BLOG POST DATA ---
         const posts = [
             {
                 id: 1,
@@ -338,7 +380,65 @@
                 thumbnail: "https://img.youtube.com/vi/mBuke2P4PuU/hqdefault.jpg",
                 content: `
                     <p>Hello there, dedicated Android enthusiasts!</p>
-                    <!-- ... (content truncated for brevity, refer to full file) ... -->
+                    <p>If you’re reading this in October 2025, you’ve likely experienced issues with Google’s Play Integrity API. While rooting gives us control, privacy, and customization, it can sometimes conflict with apps like banking services and Google Wallet. This is a common challenge for the modification community.</p>
+                    
+                    <p>However, after extensive testing, I am thrilled to share the definitive, working solution that restores full functionality by satisfying the <strong>MEETS_STRONG_INTEGRITY</strong> requirements. That means a fully functional device that passes security validation.</p>
+
+                    <div class="my-8">
+                        <p class="mb-2 font-bold text-blue-400">Click the image below to watch the full video guide:</p>
+                        <a href="https://youtu.be/mBuke2P4PuU" target="_blank" class="block hover:opacity-90 transition group relative rounded-xl overflow-hidden">
+                             <img src="Photos/20250930_131652_0000.png" onerror="handleImageError(this, 'video')" alt="Watch the Video Guide" class="w-full rounded-xl shadow-2xl border border-slate-700 transform group-hover:scale-105 transition duration-500">
+                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fas fa-play-circle text-6xl text-white drop-shadow-lg"></i>
+                             </div>
+                        </a>
+                    </div>
+
+                    <p>This guide breaks down the essential tools needed to resolve these compatibility issues. Follow along to restore full access to your device.</p>
+
+                    <h3>The Challenge: Why Standard Fixes May Fail</h3>
+                    <p>Google’s Play Integrity API checks three key points. To ensure app compatibility, your device needs to pass these checks:</p>
+                    <ul>
+                        <li><strong>MEETS_BASIC_INTEGRITY & MEETS_DEVICE_INTEGRITY:</strong> These checks verify the device's software status. System modifications can trigger these checks.</li>
+                        <li><strong>MEETS_STRONG_INTEGRITY:</strong> This requires hardware-backed validation via the Trusted Execution Environment (TEE). This is the highest level of security validation.</li>
+                    </ul>
+
+                    <h3>The Solution: October 2025 Toolkit</h3>
+                    <p>To resolve these integrity failures, we use a specific set of Magisk modules designed to correct system flags:</p>
+                    
+                    <h4>1. The Foundation: Play Integrity Fix (Fork)</h4>
+                    <p><strong>Role:</strong> This module corrects the device fingerprint and other identifiers to match a certified model, helping resolve Basic and Device integrity issues.</p>
+
+                    <h4>2. The Certificate Handler: Tricky Store</h4>
+                    <p><strong>Role:</strong> Tricky Store helps manage the key attestation process, ensuring stable communication during security checks. <strong>Note:</strong> Magisk users should install the Tricky Store Addon for proper configuration.</p>
+
+                    <h4>3. The Hardware Fix: Integrity Box</h4>
+                    <p><strong>Role:</strong> This module manages the keybox files required for Strong Integrity validation. Using the latest version is crucial for maintaining access.</p>
+
+                    <h3>Installation Steps</h3>
+                    <ol class="list-decimal ml-6 space-y-2 text-gray-300">
+                        <li><strong>Preparation:</strong> Ensure Zygisk is enabled in your root manager.</li>
+                        <li><strong>Install Base Modules:</strong> Flash Play Integrity Fix and Tricky Store.</li>
+                        <li><strong>Install Integrity Box:</strong> Flash the Integrity Box module.</li>
+                        <li><strong>Reboot:</strong> Reboot your device to apply changes.</li>
+                        <li><strong>Verify:</strong> Use a Play Integrity Checker app to confirm all checks are passing.</li>
+                    </ol>
+                    
+                    <div class="my-8">
+                         <p class="mb-2 font-bold text-green-400">Proof of Success:</p>
+                         <img src="Photos/DSC00254.JPG" onerror="handleImageError(this, 'post')" alt="Integrity Check Passed" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                    </div>
+
+                    <h3>Conclusion</h3>
+                    <p>You no longer have to choose between system control and app compatibility. By correctly configuring these tools, you can enjoy a fully rooted device with working banking and payment apps.</p>
+                    
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Guide</h4>
+                        <p class="mb-4">Watch the full step-by-step tutorial to ensure you get every step correct:</p>
+                        <a href="https://youtu.be/mBuke2P4PuU" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Guide on YouTube
+                        </a>
+                    </div>
                 `
             },
             {
@@ -349,7 +449,68 @@
                 thumbnail: "https://img.youtube.com/vi/JGceBX0RBAk/hqdefault.jpg",
                 content: `
                     <p>Hello there, dedicated Android modders and custom ROM users.</p>
-                     <!-- ... (content truncated for brevity, refer to full file) ... -->
+                    <p>It’s hard to believe the Redmi Note 7 Pro has been around for six years. In the world of smartphones, that’s usually a death sentence. But if you’re an enthusiast like me, you know that hardware never truly dies as long as the developer community is active.</p>
+                    <p>Today, I’m doing something that sounds a bit crazy: I’m testing Android 16 on the Redmi Note 7 Pro using the latest build of Voltage OS.</p>
+                    <p>I’ve spent the last few days using this ROM as my daily driver to answer one big question: Can a 2019 mid-ranger actually handle 2025 software? The answer surprised me, but there is one major catch you need to know before you flash it.</p>
+
+                    <h3>First Impressions: The "Pixel" Feel</h3>
+                    <p>The first thing you notice after booting up is just how clean everything looks. Voltage OS stays very true to its AOSP (Android Open Source Project) roots. If you’ve ever envied the smooth, bloat-free experience of a Google Pixel, this gets you 90% of the way there.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/DSC00415.JPG" onerror="handleImageError(this, 'post')" alt="Redmi Note 7 Pro Home Screen" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                        <p class="text-sm text-gray-500 mt-2 text-center">The clean, modern look of Android 16 on 6-year-old hardware.</p>
+                    </div>
+
+                    <p>Navigating through the UI feels incredibly fluid. I was expecting lags or stutters—after all, we are asking an older Snapdragon 675 processor to run the latest Android version—but everyday tasks like scrolling through Instagram or switching between apps felt snappy.</p>
+
+                    <h3>The "Powerhub": Customization Heaven</h3>
+                    <p>While the stock look is nice, the real reason we install custom ROMs is to tinker. Voltage OS organizes all its customization in a dedicated menu called Powerhub. Here is what I found most useful during my testing:</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/DSC00410.JPG" onerror="handleImageError(this, 'post')" alt="Voltage OS Powerhub Menu" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                    </div>
+
+                    <ul>
+                        <li><strong>Theming Engine:</strong> The "Monet" theming is fully present here. You can override accent colors, change background luminance, and even set a dual-tone shade for your notification panel. It makes the phone feel personal.</li>
+                        <li><strong>Status Bar & Lock Screen:</strong> You get granular control here. I loved the ability to add a network traffic indicator (essential for spotting bad data connections) and the "Ripple Effect" on the lock screen when using the fingerprint scanner.</li>
+                        <li><strong>Privacy Features:</strong> This was a standout for me. The ROM includes GrapheneOS-style privacy toggles. You can actually reroute internet connectivity checks through GrapheneOS servers instead of Google’s, or disable them entirely. For the privacy-conscious, this is a massive win.</li>
+                    </ul>
+
+                    <h3>Performance & Benchmarks</h3>
+                    <p>I know "smooth" is subjective, so I ran Geekbench to see what the numbers say.</p>
+                    <ul>
+                        <li><strong>Single-Core Score:</strong> 674</li>
+                        <li><strong>Multi-Core Score:</strong> 1657</li>
+                    </ul>
+                    <p>For a device of this age, these are respectable numbers. It shows that the developers have optimized the kernel specifically for this hardware. In real-world terms, this means you can handle light gaming and multitasking without the phone gasping for air.</p>
+
+                    <h3>Battery Life</h3>
+                    <p>Battery anxiety is real with old phones, but Voltage OS seems to handle background processes efficiently. I easily got through a full day of moderate usage—social media, YouTube, and some music streaming—without needing a mid-day top-up. The idle drain (battery lost while the phone is sleeping) was minimal, which is often a weak point in custom ROMs.</p>
+
+                    <div class="my-8">
+                        <img src="Photos/DSC00405.JPG" onerror="handleImageError(this, 'post')" alt="Android 16 Settings Page" class="w-full rounded-xl shadow-2xl border border-slate-700">
+                        <p class="text-sm text-gray-500 mt-2 text-center">Proof of Android 16 running on "violet" (Redmi Note 7 Pro).</p>
+                    </div>
+
+                    <h3>The Big Catch: SafetyNet Fails ⚠️</h3>
+                    <p>Here is the part that might be a dealbreaker for some of you.</p>
+                    <p><strong>SafetyNet fails on this build.</strong></p>
+                    <p>I tried everything to fix it. I rooted the device with Magisk, used various hide modules, and tinkered with detailed settings, but I could not get it to pass.</p>
+                    <p>What does this mean for you? It means banking apps, Google Pay (Wallet), and some security-heavy games likely won't work. If this is your primary phone and you rely on tap-to-pay, this ROM isn't ready for you yet. However, if you use this as a secondary device for media or tinkering, it’s not a huge issue.</p>
+
+                    <h3>Final Verdict</h3>
+                    <p>Voltage OS on the Redmi Note 7 Pro is a love letter to this legendary device. It brings a modern, secure, and highly customizable experience that breathes new life into aged hardware.</p>
+                    <p>If you can live without banking apps, I highly recommend flashing this just to see how capable your old phone still is.</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Review</h4>
+                        <p class="mb-4">Watch my full hands-on review below to see the performance in action:</p>
+                        <a href="https://youtu.be/JGceBX0RBAk" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch the Full Review on YouTube
+                        </a>
+                    </div>
+
+                    <p class="text-xs text-gray-500 italic">Disclaimer: Flashing custom ROMs involves risk and may void your warranty (though the Note 7 Pro is likely out of warranty anyway!). Make sure to back up your data before proceeding.</p>
                 `
             },
             {
@@ -360,7 +521,94 @@
                 thumbnail: "https://img.youtube.com/vi/l0cAAY4I-D4/hqdefault.jpg",
                 content: `
                     <p>Hello there, dedicated Android enthusiasts!</p>
-                    <!-- ... (content truncated for brevity, refer to full file) ... -->
+                    <p>If there is one device in the history of smartphones that refuses to give up, it is the OnePlus 6T. Years after its release, this legendary phone is still kicking, thanks entirely to the vibrant custom ROM community.</p>
+                    <p>Today, I’m doing something exciting: I’ve flashed the latest DerpFest ROM based on Android 16 onto my trusted 6T. I’ve been using it as a daily driver for a few days to answer one simple question: Is this the software update that brings the 6T back to life in 2025?</p>
+
+                    <div class="my-8">
+                        <p class="mb-2 font-bold text-blue-400">Watch the review:</p>
+                        <a href="https://youtu.be/l0cAAY4I-D4" target="_blank" class="block hover:opacity-90 transition group relative rounded-xl overflow-hidden">
+                             <img src="https://img.youtube.com/vi/l0cAAY4I-D4/hqdefault.jpg" onerror="handleImageError(this, 'video')" alt="Watch the Video Guide" class="w-full rounded-xl shadow-2xl border border-slate-700 transform group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fas fa-play-circle text-6xl text-white drop-shadow-lg"></i>
+                             </div>
+                        </a>
+                    </div>
+
+                    <h3>First Impressions: Smoothness Meets Customization</h3>
+                    <p>Right off the bat, the first thing you notice after the boot animation is just how clean the interface is. We are looking at a near-stock Android 16 experience, but with that signature "DerpFest" flair. The animations are fluid, app opening times are snappy, and the UI doesn't feel bogged down, which is impressive for a device of this age.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/DSC00590.JPG" onerror="handleImageError(this, 'post')" alt="OnePlus 6T running DerpFest Android 16" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <p class="text-sm text-gray-500 mt-2 text-center">A fresh look for the OnePlus 6T with DerpFest.</p>
+                    </div>
+
+                    <p>But let’s be honest—you don’t install a custom ROM just for a stock look. You do it for the features. And DerpFest absolutely delivers on that front.</p>
+
+                    <h3>The Customization Suite</h3>
+                    <p>The heart of this ROM lies in the "DerpFest Customizations" menu. Here is what stood out to me during my testing:</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/DSC00592.JPG" onerror="handleImageError(this, 'post')" alt="DerpFest Customization Menu" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <ul>
+                        <li><strong>Monet Settings:</strong> Material You is great, but DerpFest takes it a step further. You have granular control over the theme engine, letting you dial in the exact color palettes to match your wallpaper. It makes the phone feel personal.</li>
+                        <li><strong>Status Bar Tweaks:</strong> For the data-obsessed, the ability to add a Network Traffic Monitor directly to the status bar is a godsend. You can also completely rearrange the clock position (left, center, or right) or hide it entirely for a minimalist look.</li>
+                        <li><strong>Quick Settings (QS) Panel:</strong> This is where the visual changes really shine. You can change the shape of your tiles—circles, squares, teardrops, and more. Plus, you can toggle the brightness slider to be always visible, saving you that extra swipe down.</li>
+                        <li><strong>Privacy Indicators:</strong> In the "Miscellaneous" tab, I found the toggle for privacy indicators. These are the green and orange dots that alert you when an app is using your mic or camera. It’s a small feature, but a crucial one for modern privacy standards.</li>
+                    </ul>
+
+                    <h3>Performance Benchmarks: Still Capable?</h3>
+                    <p>It feels fast, but do the numbers back it up? I ran Geekbench to see how the Snapdragon 845 holds up running Android 16.</p>
+                    <p>The results were surprisingly respectable:</p>
+                    <ul>
+                        <li><strong>Single-Core Score:</strong> 558</li>
+                        <li><strong>Multi-Core Score:</strong> 2109</li>
+                    </ul>
+                    <p>While these aren't flagship numbers by 2025 standards, they are more than enough for daily tasks. Social media scrolling, YouTube streaming, and light multitasking felt perfectly fine. The ROM seems well-optimized for the hardware, squeezing every bit of power out of the aged chipset.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/DSC00614.JPG" onerror="handleImageError(this, 'post')" alt="DerpFest About Phone Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <p class="text-sm text-gray-500 mt-2 text-center">Android 16 confirmed on the OnePlus 6T.</p>
+                    </div>
+
+                    <h3>The Dealbreakers: What You Need to Know</h3>
+                    <p>Now, in the spirit of full transparency (and saving you a headache), we have to talk about the downsides. AdSense policy requires honest content, and I wouldn't be doing my job if I told you this ROM was perfect.</p>
+                    
+                    <h4>1. The SafetyNet Issue</h4>
+                    <p>This is the "elephant in the room." Out of the box, DerpFest on the OnePlus 6T fails the SafetyNet (Play Integrity) check. What does this mean for you? It means secure apps will likely refuse to run. This includes Google Pay (Wallet) and most banking applications. If you rely on your phone for contactless payments, this is a major hurdle. You can likely fix this by rooting with Magisk and using modules to hide the root status, but that requires technical know-how. It is not a "flash and forget" solution.</p>
+
+                    <h4>2. No Unlimited Google Photos</h4>
+                    <p>A popular feature in many custom ROMs is the ability to "spoof" a Pixel device to get unlimited Google Photos storage. Unfortunately, DerpFest does not include this feature. You will be limited to your standard Google account storage cap.</p>
+
+                    <h4>3. Minor UI Bugs</h4>
+                    <p>I also noticed that some of the Header Image features in the settings menu were unresponsive. It’s a purely cosmetic bug and doesn't affect performance, but it shows that the build is still being polished.</p>
+
+                    <h3>Final Verdict: Should You Flash It?</h3>
+                    <p>So, is DerpFest Android 16 the right move for your OnePlus 6T?</p>
+                    <p><strong>Yes, if:</strong></p>
+                    <ul>
+                        <li>You are a "power user" who loves tweaking every aspect of your phone.</li>
+                        <li>You want to experience the latest Android 16 features on older hardware.</li>
+                        <li>You are comfortable using Magisk to patch SafetyNet yourself.</li>
+                    </ul>
+                    <p><strong>No, if:</strong></p>
+                    <ul>
+                        <li>This is your primary work phone.</li>
+                        <li>You need Google Pay and Banking apps to work instantly without tinkering.</li>
+                        <li>You rely on unlimited photo backups.</li>
+                    </ul>
+                    <p>Overall, DerpFest is a fantastic effort by the developers to keep the OnePlus 6T relevant. It’s fast, beautiful, and fun—just be prepared to tinker a little bit to get everything working perfectly.</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Review</h4>
+                        <p class="mb-4">See the full visual breakdown and performance tests:</p>
+                        <a href="https://youtu.be/l0cAAY4I-D4" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Review on YouTube
+                        </a>
+                    </div>
+                    
+                    <p class="text-xs text-gray-500 italic">Disclaimer: Flashing custom ROMs involves risk. TechyNoob is not responsible for bricked devices. Always backup your data.</p>
                 `
             },
             {
@@ -371,7 +619,72 @@
                 thumbnail: "https://img.youtube.com/vi/AQVuZfiGUF8/hqdefault.jpg",
                 content: `
                     <p>Hello there, Android modders and custom ROM users!</p>
-                    <!-- ... (content truncated for brevity, refer to full file) ... -->
+                    <p>Can you believe we are already closing out 2025? It feels like just yesterday the modding community was worried about the future of root access. Yet, here we are in November, and the Android rooting scene is perhaps more vibrant and diverse than it has ever been.</p>
+                    <p>We’ve moved beyond just Magisk. With the rise of robust alternatives like KernelSU and APatch becoming mainstream, enthusiasts have more ways than ever to take full control of the hardware they own.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/lv_0_20251127235920_exported_14600.jpg" onerror="handleImageError(this, 'post')" alt="Custom Android Home Screen Setup" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <p class="text-sm text-gray-500 mt-2 text-center">My November 2025 Daily Driver Setup.</p>
+                    </div>
+
+                    <p>But let’s be honest: having "root access" is just opening the door. The real magic happens when you install the right modules to customize your experience. You don't want to just root your phone; you want to optimize it.</p>
+                    <p>Today, I’m sharing my personal "holy trinity" of modules for late 2025. These aren't flashy gimmick modules; these are the essential workhorses that cover the three pillars of a perfect rooted setup: Deep Customization, Ironclad Privacy, and All-Day Battery Life.</p>
+
+                    <div class="my-8">
+                        <p class="mb-2 font-bold text-blue-400">See them in action:</p>
+                        <a href="https://youtu.be/AQVuZfiGUF8" target="_blank" class="block hover:opacity-90 transition group relative rounded-xl overflow-hidden">
+                             <img src="Photos/Gemini_Generated_Image_hjf43khjf43khjf4~2.png" onerror="handleImageError(this, 'video')" alt="Watch the Video Guide" class="w-full rounded-xl shadow-2xl border border-slate-700 transform group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fas fa-play-circle text-6xl text-white drop-shadow-lg"></i>
+                             </div>
+                        </a>
+                    </div>
+
+                    <h3>1. The Mobile Modder’s Dream: Jancox-tool</h3>
+                    <p>If you have been tinkering with Android for more than a few years, you remember "the struggle." If you wanted to modify a custom ROM zip file—maybe debloat some system apps or tweak the build.prop before flashing—you were stuck chained to a desktop PC, dealing with complicated kitchen software.</p>
+                    <p>In 2025, we do that stuff on the fly, right from our phones.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/lv_0_20251127235920_exported_81566.jpg" onerror="handleImageError(this, 'post')" alt="Jancox Tool Terminal Interface" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>Jancox-tool is absolute game-changer for developers and hardcore enthusiasts. It’s a cross-platform unpack/repack utility that runs natively as a module on your Android device (usually via a terminal app like Termux).</p>
+                    <p>It essentially turns your phone’s internal storage into a portable ROM kitchen. You can download a massive GSI (Generic System Image) or a ROM update, unpack the entire system partition with a single command, make your edits to the raw files, and repack it into a flashable ZIP in minutes. No PC required. If you love DIY modding, this tool is liberating.</p>
+
+                    <h3>2. Privacy Without Penalty: Net Switch</h3>
+                    <p>Next up, let’s talk about locking down your data. In an era where every app seems hungry for internet access, a good firewall is non-negotiable.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/lv_0_20251127235920_exported_140766.jpg" onerror="handleImageError(this, 'post')" alt="Magisk Modules List showing Net Switch" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>For years, non-root users had to rely on firewalls that used a local VPN "hack" to filter traffic. While they worked, they had a major downside: running a constant VPN service keeps your phone's CPU awake, draining your battery faster than the apps you were trying to block.</p>
+                    <p>Net Switch is different. Because it utilizes root access, it operates directly on iptables—the Linux kernel's native firewall built right into Android. This means it cuts off internet access to specific apps at the system level with virtually zero performance or battery overhead.</p>
+                    <p>We are looking at the latest version here in late 2025, which introduced a beautiful, responsive WebUI instead of a clunky app. It also features a brilliant new Profile System. You can create a "Gaming Profile" that instantly blocks internet to offline games to stop annoying interruptions, and then switch back to a "Daily Use" profile with one tap. It’s the cleanest, most efficient way to manage app permissions right now.</p>
+
+                    <h3>3. The Universal Battery Fix: GMS Doze</h3>
+                    <p>Finally, we have the module that I honestly believe should come pre-installed on every rooted device.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/lv_0_20251127235920_exported_34533.jpg" onerror="handleImageError(this, 'post')" alt="Files and Modules Manager" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>We all have a love-hate relationship with Google Play Services (GMS). It powers the essential APIs that make our apps work, but it is notorious for staying awake in the background. It constantly pings for location, syncs data, and keeps your phone from entering deep sleep, leading to that frustrating idle battery drain overnight.</p>
+                    <p>By default, Android actually prevents you from optimizing Google Play Services in the battery settings. It's locked down.</p>
+                    <p>Universal GMS Doze systemlessly patches that restriction. It forces Google Play Services to respect Android's native Doze mode. Put simply: when you turn your screen off and put your phone in your pocket, Google actually goes to sleep instead of running a marathon in the background.</p>
+                    <p>The best part about this module in 2025 is its broad compatibility. Whether you are still on classic Magisk, or you've migrated to KernelSU or APatch, and whether you are on Android 14 or the newest Android 16 builds, it just works. It’s a "set it and forget it" fix for better standby time.</p>
+
+                    <h3>Wrapping Up</h3>
+                    <p>So, that’s my current setup for November 2025. Jancox for the fun of modding, Net Switch for peace of mind, and GMS Doze to keep the phone running longer.</p>
+                    <p>The rooting scene is constantly changing, and that's what makes it exciting. What does your current root setup look like? Are you team Magisk, KSU, or APatch this year? Let me know in the comments below!</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Breakdown</h4>
+                        <p class="mb-4">See these modules running live on my device:</p>
+                        <a href="https://youtu.be/AQVuZfiGUF8" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Guide on YouTube
+                        </a>
+                    </div>
                 `
             },
             {
@@ -379,11 +692,102 @@
                 title: "How to Install \"Incompatible\" Apps on Android 14: The LSposed Fix",
                 excerpt: "Android 14 blocks older apps targeting API 22. Learn how to bypass this restriction and install your favorite classics using a simple LSposed module.",
                 videoUrl: "https://www.youtube.com/embed/ZO0A2Vb4Ir8", 
+                // FIXED: Using YouTube Video Thumbnail URL (hqdefault.jpg)
                 thumbnail: "https://img.youtube.com/vi/ZO0A2Vb4Ir8/hqdefault.jpg",
                 content: `
                     <p>Hello there, Android modders and custom ROM users!</p>
-                    <p>If you’ve recently upgraded to Android 14, you might have hit a frustrating new wall.</p>
-                    <!-- ... (content truncated for brevity, refer to full file) ... -->
+                    <p>If you’ve recently upgraded to Android 14, you might have hit a frustrating new wall. You go to install that classic game you’ve loved for years—maybe a nostalgic round of the original Flappy Bird or an old utility app that hasn't been updated since 2016—and suddenly, you’re greeted with a refusal. The "App not installed" error pops up, or perhaps a more specific warning telling you the app isn't compatible with your phone.</p>
+                    
+                    <div class="my-8">
+                        <p class="mb-2 font-bold text-blue-400">Watch the tutorial:</p>
+                        <a href="https://youtu.be/ZO0A2Vb4Ir8" target="_blank" class="block hover:opacity-90 transition group relative rounded-xl overflow-hidden">
+                             <img src="https://img.youtube.com/vi/ZO0A2Vb4Ir8/hqdefault.jpg" onerror="handleImageError(this, 'video')" alt="Watch the Video Guide" class="w-full rounded-xl shadow-2xl border border-slate-700 transform group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fas fa-play-circle text-6xl text-white drop-shadow-lg"></i>
+                             </div>
+                        </a>
+                    </div>
+
+                    <p>For years, one of Android’s biggest selling points over its competitors was backward compatibility. You could drag and drop an APK file from a decade ago, and it would likely just work. But with Android 14, Google has tightened the reins significantly.</p>
+                    
+                    <div class="my-8">
+                        <!-- CORRECTED: Using .png to match your uploaded file -->
+                        <img src="Photos/Thubnail.png" onerror="handleImageError(this, 'post')" alt="Install Incompatible Apps Thumbnail" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>In this guide, we’re going to break down exactly why this is happening and, more importantly, how to bypass it using a nifty LSposed module. If you are rooted and ready to regain control of your device, keep reading.</p>
+
+                    <h3>The "Why": Android 14’s Security Stance</h3>
+                    <p>Before we dive into the fix, it helps to understand the logic behind the change. With the release of Android 14, Google enforced stricter requirements for <code>targetSdkVersion</code>.</p>
+                    <p>In plain English, every Android app is built to target a specific version of Android. When developers update their apps, they update this target to match the latest features and security standards. However, malware developers often intentionally build their malicious apps to target very old versions of Android (specifically Android 5.1 Lollipop and older) to bypass modern security permissions that were introduced in later versions (like runtime permissions in Android 6.0 Marshmallow).</p>
+                    <p>To stop this loophole, Android 14 blocks the installation of apps that target API level 22 or lower. While this is great for general security, it’s a headache for power users who just want to run legitimate, safe, older software (often called "abandonware") that the original developer simply stopped updating.</p>
+
+                    <h3>The Solution: "Disable Target API Block"</h3>
+                    <p>While you can bypass this restriction using a computer and a specific ADB command (<code>adb install --bypass-low-target-sdk-block app.apk</code>), that is hardly convenient when you just want to tap an APK file in your file manager and go.</p>
+                    <p>Enter the <strong>"Disable Target API Block"</strong> module.</p>
+                    
+                    <div class="my-8">
+                        <!-- CORRECTED: Using .png -->
+                        <img src="Photos/@TechyNoob1818_20251129_195406_0000.png" onerror="handleImageError(this, 'post')" alt="LSposed Module Search" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <p class="text-sm text-gray-500 mt-2 text-center">Finding the module in LSposed Repository.</p>
+                    </div>
+
+                    <p>Developed by the talented developer <em>buttercookie42</em>, this module acts as a bridge. It hooks into the system's package manager and essentially tells Android, "It's okay, let this one through." It mimics the bypass flag used in ADB commands but applies it system-wide for manual installations.</p>
+
+                    <h3>Prerequisites</h3>
+                    <p>Before we proceed, ensure your device meets the following criteria. This is an advanced tutorial for modded devices:</p>
+                    <ul>
+                        <li><strong>Root Access:</strong> Your device must be rooted (usually via Magisk or KernelSU).</li>
+                        <li><strong>LSposed Framework:</strong> You must have the LSposed framework installed and active. (This is the modern successor to the Xposed Framework).</li>
+                        <li><strong>Android 14:</strong> This guide is specifically for devices running Android 14 where this restriction is enforced.</li>
+                    </ul>
+
+                    <h3>Step-by-Step Guide</h3>
+                    <p>Here is how to get your classic apps running again.</p>
+
+                    <h4>1. Access the Repository</h4>
+                    <p>Open your LSposed Manager app (or whatever manager you use for your Xposed modules). Navigate to the repository or download section.</p>
+
+                    <h4>2. Search for the Module</h4>
+                    <p>In the search bar, type: <strong>Disable Target API Block</strong>.<br>You should see a module appear by the developer <em>buttercookie42</em>.</p>
+                    <p><em>Note: If you don't see it in the built-in repository, you may need to check the "IzzyOnDroid" repo or download the APK directly from the developer's GitHub release page.</em></p>
+
+                    <h4>3. Install the Module</h4>
+                    <p>Tap on the module to view its description. Hit the Download or Install button. Follow the on-screen prompts to get the module onto your system.</p>
+                    
+                    <div class="my-8">
+                        <!-- CORRECTED: Using .png -->
+                        <img src="Photos/@TechyNoob1818_20251129_195623_0000.png" onerror="handleImageError(this, 'post')" alt="Module Installation Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <p class="text-sm text-gray-500 mt-2 text-center">Installing the bypass module.</p>
+                    </div>
+
+                    <h4>4. Enable the Module</h4>
+                    <p>Once installed, the module won't work immediately. You need to activate it:</p>
+                    <ol>
+                        <li>Go back to the <strong>Modules</strong> tab in your LSposed Manager.</li>
+                        <li>Find <strong>"Disable Target API Block"</strong> in the list.</li>
+                        <li>Toggle the switch to <strong>ON</strong>.</li>
+                        <li>Ensure the "System Framework" (or "Android System") is checked if the manager asks what scope to apply it to, though usually, this is automatic for this module.</li>
+                    </ol>
+
+                    <h4>5. The Essential Reboot</h4>
+                    <p>Like most deep system modifications, this change requires a fresh boot to hook into the system correctly. Restart your phone.</p>
+
+                    <h4>6. Install Your App</h4>
+                    <p>Once your phone has restarted, open your favorite file manager. Navigate to that old APK file that was failing before. Tap it, and you should now see the standard installation prompt without any compatibility errors.</p>
+
+                    <h3>Important: A Note on Safety</h3>
+                    <p>We cannot stress this enough: Google added this block for a reason.</p>
+                    <p>Old apps often lack modern security sandboxing. When you install an app built for Android 5.0 on an Android 14 device, you are potentially exposing your phone to vulnerabilities that have been patched for a decade.</p>
+                    <ul>
+                        <li><strong>Only install apps you trust 100%.</strong></li>
+                        <li>Stick to APKs from reputable sources (like APKMirror) or backups of games you personally own.</li>
+                        <li>Avoid "modded" or "cracked" versions of old apps from shady websites, as these are exactly the vectors this security feature was designed to block.</li>
+                    </ul>
+
+                    <h3>Conclusion</h3>
+                    <p>Android is about freedom—the freedom to customize your device and run the software you own. While Android 14’s security updates are welcome for the general public, power users often need that extra bit of control. Thanks to the LSposed community and developers like buttercookie42, we can have our cake and eat it too: a modern OS with the ability to revisit the classics.</p>
+                    <p>Happy modding!</p>
                 `
             },
             {
@@ -395,27 +799,76 @@
                 thumbnail: "https://img.youtube.com/vi/4y6I0Z-ZGj4/hqdefault.jpg",
                 content: `
                     <p>Hello there, Android modders and custom ROM users!</p>
-                    <p>If you’ve recently upgraded to Android 14 or the bleeding-edge Android 15, you might have run into a frustrating little roadblock.</p>
+                    <p>If you’ve recently upgraded to Android 14 or the bleeding-edge Android 15, you might have run into a frustrating little roadblock. You try to install one of your favorite legacy apps—maybe an old game that hasn’t been updated in years or a niche utility tool—and suddenly, you’re greeted with a refusal. The "App not installed" error pops up, or perhaps a more specific warning telling you the app isn't compatible with your phone.</p>
                     
                     <div class="my-8">
+                        <!-- User requested .jpg for this specific file -->
                         <img src="Photos/1000023817.jpg" onerror="handleImageError(this, 'post')" alt="Android 14 App Installation Error Fix" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                     </div>
 
-                    <p>It’s not just you, and your phone isn’t broken. This is a deliberate security feature introduced by Google.</p>
+                    <p>It’s not just you, and your phone isn’t broken. This is a deliberate security feature introduced by Google. But as true enthusiasts know, "incompatible" is often just a challenge waiting to be solved. Today, we’re diving into a workaround that lets you bypass these restrictions and install those older apps on Android 14 and 15 without needing root access.</p>
 
                     <h3>The "Why": Understanding the Block</h3>
-                    <p>Before we jump into the solution, it helps to understand why this is happening.</p>
+                    <p>Before we jump into the solution, it helps to understand why this is happening. With Android 14, Google tightened the screws on security by blocking the installation of apps that target API levels lower than 23 (Android 6.0 Marshmallow).</p>
                     
                     <div class="my-8">
+                         <!-- User requested .png for the second image -->
                         <img src="Photos/@TechyNoob1818_20251129_212310_0000.png" onerror="handleImageError(this, 'post')" alt="App not installed error message" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                     </div>
 
-                    <p>Why? Because older versions of Android had different permission models that were easier for malware to exploit.</p>
+                    <p>Why? Because older versions of Android had different permission models that were easier for malware to exploit. By forcing apps to target newer APIs, Google ensures they adhere to modern security sandboxing. While this is great for general users, it’s a headache for those of us who rely on abandoned software or specific older versions of apps that simply work better than their bloated modern counterparts.</p>
 
                     <h3>The Solution: ADB to the Rescue</h3>
-                    <p>The "App not installed" error might seem final, but it’s actually just a software check that can be bypassed using the Android Debug Bridge (ADB).</p>
+                    <p>The "App not installed" error might seem final, but it’s actually just a software check that can be bypassed using the Android Debug Bridge (ADB). ADB is a powerful command-line tool that lets your computer communicate directly with your smartphone. It allows for a level of control that the standard Android interface doesn't offer, including the ability to force-install packages that the system would otherwise reject.</p>
+                    <p>The best part? You don’t need to root your device or unlock your bootloader. You just need a computer, a USB cable, and a little bit of patience.</p>
 
-                    <!-- ... (rest of content) ... -->
+                    <h3>What You’ll Need</h3>
+                    <ul>
+                        <li><strong>A Windows, Mac, or Linux Computer:</strong> You'll be running commands from here.</li>
+                        <li><strong>A USB Data Cable:</strong> Ensure it’s a high-quality cable capable of data transfer, not just charging.</li>
+                        <li><strong>The APK File:</strong> Have the older app file (APK) you want to install saved on your computer.</li>
+                        <li><strong>ADB Tools:</strong> You’ll need the "Platform Tools" folder from Google.</li>
+                    </ul>
+
+                    <h3>Step-by-Step Guide</h3>
+                    
+                    <h4>Step 1: Set Up ADB on Your Computer</h4>
+                    <p>If you haven't used ADB before, you'll need to download the SDK Platform Tools from the official Android developer website. Extract the zip file to a folder you can easily access, like your Desktop.</p>
+
+                    <h4>Step 2: Prepare Your Phone</h4>
+                    <p>You need to tell your phone to accept commands from your computer.</p>
+                    <ol>
+                        <li>Go to <strong>Settings > About Phone</strong>.</li>
+                        <li>Find the <strong>Build Number</strong> and tap it 7 times rapidly until you see a toast message saying "You are now a developer!"</li>
+                        <li>Go back to <strong>Settings > System > Developer Options</strong>.</li>
+                        <li>Scroll down and enable <strong>USB Debugging</strong>.</li>
+                    </ol>
+
+                    <h4>Step 3: Connect and Verify</h4>
+                    <p>Connect your phone to your PC via USB. You might see a prompt on your phone screen asking to "Allow USB debugging?" Check "Always allow" and tap Allow.</p>
+                    <p>On your computer, open a Command Prompt (Windows) or Terminal (Mac/Linux). Navigate to the folder where you extracted the ADB tools.</p>
+                    <p><em>Tip for Windows users: Open the folder, hold Shift, right-click, and select "Open PowerShell window here" or "Open command window here".</em></p>
+                    <p>Type the following command to make sure your device is recognized: <code>adb devices</code></p>
+                    <p>If you see a serial number followed by "device," you’re good to go.</p>
+
+                    <h4>Step 4: The Magic Command</h4>
+                    <p>This is the critical part. Move your APK file into the same folder as your ADB tools to keep things simple. Let’s say your file is named <code>old_game.apk</code>.</p>
+                    <p>In your command window, type the following command exactly:</p>
+                    <p><code>adb install --bypass-low-target-sdk-block old_game.apk</code></p>
+                    <p><strong>Breakdown of the command:</strong></p>
+                    <ul>
+                        <li><code>adb install</code>: Tells the system to install an app.</li>
+                        <li><code>--bypass-low-target-sdk-block</code>: This is the specific flag that overrides the Android 14/15 restriction.</li>
+                        <li><code>old_game.apk</code>: Replace this with the actual name of your file.</li>
+                    </ul>
+                    <p>Hit Enter. You should see a "Success" message after a few seconds.</p>
+
+                    <h3>Important Safety Considerations</h3>
+                    <p>Once you run the command, you might still see a warning from Google Play Protect on your phone asking if you really want to install this "unsafe" app. You will need to acknowledge this and tap "Install anyway."</p>
+                    <p>However, a word of caution: Google blocked these apps for a reason. Older apps may have unpatched vulnerabilities or might not respect modern privacy permissions (like asking for "Files" access instead of "Scoped Storage"). Only use this method for apps you trust completely and sourced from reputable archives.</p>
+
+                    <h3>Final Thoughts</h3>
+                    <p>This method is a lifesaver for preserving digital history or keeping specific tools in your workflow. While it requires a bit of technical elbow grease, it proves that the open nature of Android is still alive and well if you know where to look.</p>
                     
                     <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
                         <h4 class="text-white font-bold text-lg mb-2">Watch the Guide</h4>
