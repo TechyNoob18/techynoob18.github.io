@@ -1,30 +1,50 @@
 # techynoob18.github.io
 # TechyNoob Website
-Welcome to the official GitHub repository for the TechyNoob website!
-TechyNoob is your ultimate online resource for all things Android customization, ethical hacking, and mobile technology. Our website provides in-depth articles, step-by-step guides, and engaging web games designed to help you unlock the full potential of your Android device and stay updated on the latest tech trends.
+TechyNoob Official 📱💻
 
-✨ Features
+Welcome to the central hub for TechyNoob, the ultimate resource for Android customization, security research, and device modification.
 
-Comprehensive Articles & Guides: Detailed tutorials on Android rooting (Magisk, KernelSU), custom ROMs (CrDroid, Superior OS), Magisk modules (boot animations, One UI Home, Iconify, ColorBlendr, Magisk Vexiro), Play Integrity fixes, and older app compatibility.
+This repository hosts the companion website for the TechyNoob YouTube Channel.
 
-Interactive Web Games: A collection of classic web games like Flappy Bird, Snake Game, and Pong to enjoy.
+🌐 Live Website: https://techynoob18.github.io/
 
-Fully Responsive Design: Optimized for seamless viewing and interaction across all devices (desktop, tablet, mobile), ensuring a great user experience on any screen size.
+🚀 About TechyNoob
 
-Enhanced Search Functionality: Easily find articles and games using the integrated search bar with real-time suggestions, available on both desktop and mobile.
+Our mission is to empower Android users to move beyond stock limitations and unlock the true potential of their hardware safely and responsibly. We bridge the gap between complex technical modifications and everyday usability.
 
+TechyNoob focuses on providing in-depth, reliable content covering:
 
-📞 Contact & Social Media
+✅ Advanced Rooting Solutions: Mastering modern root methods like Magisk, KernelSU, and APatch across various Android versions (up to Android 16).
 
-Email: techygamer1818@gmail.com
+📱 Custom ROM Reviews: Deep-dive real-world testing of popular ROMs like DerpFest, Evolution X, Voltage OS, and LineageOS on legendary devices (e.g., OnePlus 6T, Redmi Note 7 Pro).
 
-Instagram: @techynoob_official
+🛠️ Essential Modules: Curated guides on "must-have" Magisk/KSU modules for customization, privacy enhancement (e.g., Net Switch), and battery optimization (e.g., GMS Doze).
 
-Telegram: @techynoob18
+🛡️ Device Security & Integrity: Defeating Play Integrity (SafetyNet) checks to keep banking apps and Google Wallet working on rooted devices.
 
-YouTube Channel: TechyNoob
+🔧 Modding Tools: Tutorials on using powerful on-device tools like Jancox-tool for ROM modification.
 
-Website: techynoob18.github.io
+💻 The Website Project
 
-Made with ❤️ by TechyNoob
+This website serves as the accessible, readable archive for our video content. It provides a clean, responsive platform for users to follow step-by-step written guides alongside our YouTube tutorials.
+
+Technical Note for Maintainers
+
+The site is a lightweight, performance-focused Single-Page Application built with HTML5, Tailwind CSS, and Vanilla JS.
+
+🤝 Join the Community
+
+Stay updated with the latest developments in the Android modding scene:
+
+📺 YouTube Channel: Subscribe for visual guides and reviews.
+
+✈️ Telegram Channel: Get instant updates and join the discussion.
+
+📸 Instagram Profile: Follow for additional content and updates.
+
+⚖️ Disclaimer
+
+Content provided by TechyNoob regarding rooting, system modification, and security research is intended solely for educational and informational purposes. Flashing custom software and rooting involves inherent risk. TechyNoob is not responsible for bricked devices, voided warranties, or data loss. Always back up your data before proceeding.
+
+© 2024 TechyNoob1818. All rights reserved.
 
