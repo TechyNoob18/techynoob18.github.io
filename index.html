@@ -408,7 +408,7 @@
                 title: "How to Resolve Google Play Integrity Issues on Rooted Devices - October 2025",
                 excerpt: "The definitive guide to restoring full device functionality and passing Strong Integrity checks safely.",
                 videoUrl: "https://www.youtube.com/embed/mBuke2P4PuU", 
-                // FIXED: Using YouTube Video Thumbnail URL (hqdefault.jpg) for reliability
+                // FIXED: Using safe HQ Youtube Thumbnail
                 thumbnail: "https://img.youtube.com/vi/mBuke2P4PuU/hqdefault.jpg",
                 content: `
                     <p>Hello there, dedicated Android enthusiasts!</p>
@@ -724,7 +724,7 @@
                 title: "How to Install \"Incompatible\" Apps on Android 14: The LSposed Fix",
                 excerpt: "Android 14 blocks older apps targeting API 22. Learn how to bypass this restriction and install your favorite classics using a simple LSposed module.",
                 videoUrl: "https://www.youtube.com/embed/ZO0A2Vb4Ir8", 
-                // FIXED: Using YouTube Video Thumbnail URL (hqdefault.jpg)
+                // FIXED: Using safe HQ Youtube Thumbnail
                 thumbnail: "https://img.youtube.com/vi/ZO0A2Vb4Ir8/hqdefault.jpg",
                 content: `
                     <p>Hello there, Android modders and custom ROM users!</p>
@@ -834,7 +834,7 @@
                 id: 6,
                 title: "How to Install Older Apps on Android 14 & 15 (No Root Required)",
                 excerpt: "Bypass the \"App not installed\" error on Android 14+ using ADB. No root required.",
-                videoUrl: "https://www.youtube.com/embed/4y6I0Z-ZGj4",
+                videoUrl: "https://www.youtube.com/embed/4y6I0Z-ZGj4", 
                 // FIXED: Using YouTube Video Thumbnail URL (hqdefault.jpg) for guaranteed availability
                 thumbnail: "https://img.youtube.com/vi/4y6I0Z-ZGj4/hqdefault.jpg",
                 content: `
@@ -919,10 +919,82 @@
                     </div>
                     <p>Happy modding, and enjoy your "unsupported" apps!</p>
                 `
+            },
+            {
+                id: 7,
+                title: "No Computer? No Problem. Create a Bootable USB on Android with EtchDroid",
+                excerpt: "Create bootable USB drives for Linux or Windows directly from your Android phone using EtchDroid. No root required.",
+                videoUrl: "https://www.youtube.com/embed/xBixZ4jcg_Q", 
+                // FIXED: Using safe HQ Youtube Thumbnail
+                thumbnail: "https://img.youtube.com/vi/xBixZ4jcg_Q/hqdefault.jpg",
+                content: `
+                    <p>Hello there, Android modders and custom ROM users! We have all been in this nightmare scenario.</p>
+                    <p>You are working on your laptop, perhaps facing a deadline, and suddenly it happens. A corrupted update, a catastrophic crash, or the dreaded "operating system not found" error screen. Your computer is effectively dead.</p>
+                    <p>To fix it, you usually need to reinstall Windows or boot into a Linux live environment to recover your files. The catch? To create the bootable recovery drive you need to save your PC, you generally need... a second, working PC.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/Gemini_Generated_Image_hglid9hglid9hgli~2.png" onerror="handleImageError(this, 'post')" alt="EtchDroid on Android" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <p class="text-sm text-gray-500 mt-2 text-center">Create bootable USBs directly on your phone.</p>
+                    </div>
+
+                    <p>If you don't have a spare computer lying around, you might feel completely stuck. But if you have an Android smartphone in your pocket, you actually hold the solution right there. Today, we’re diving into EtchDroid, an incredible piece of open-source software that turns your phone into a PC rescue kit—without requiring you to root your device.</p>
+
+                    <div class="my-8">
+                        <p class="mb-2 font-bold text-blue-400">Watch the Video Tutorial</p>
+                        <a href="https://youtu.be/xBixZ4jcg_Q" target="_blank" class="block hover:opacity-90 transition group relative rounded-xl overflow-hidden">
+                             <img src="https://img.youtube.com/vi/xBixZ4jcg_Q/hqdefault.jpg" onerror="handleImageError(this, 'video')" alt="Watch the Video Guide" class="w-full rounded-xl shadow-2xl border border-slate-700 transform group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fas fa-play-circle text-6xl text-white drop-shadow-lg"></i>
+                             </div>
+                        </a>
+                    </div>
+
+                    <h3>What Exactly is EtchDroid?</h3>
+                    <p>If you’ve ever fixed a computer before, you’ve probably used desktop tools like Rufus or BalenaEtcher. These programs take a disk image file (an .ISO) of an operating system and "flash" it onto a USB stick so a computer can boot from it.</p>
+                    <p>EtchDroid is essentially the pocket-sized version of those tools.</p>
+                    <p>It is a clean, straightforward Android application designed to do one job: write operating system images from your phone's storage onto a connected USB drive. Unlike many "system" level tools on the Play Store that look sketchy or require deep system permissions, EtchDroid is open-source (GPL licensed). This means it has no ads, no tracking, and no hidden spyware. It just does what it says on the tin.</p>
+
+                    <h3>The "Magic" Trick: How It Works Without Root</h3>
+                    <p>This is the part that usually surprises tech-savvy users. Historically, if an Android app wanted to interact directly with raw hardware partitions like a USB stick, you needed to "root" your phone to grant superuser permissions. Rooting can void warranties and trip security sensors on banking apps, so many people avoid it.</p>
+                    <p>EtchDroid does not require root.</p>
+                    <p>It achieves this by being clever with the standard Android USB Host API. When you plug a USB stick into your phone using an OTG (On-The-Go) adapter, Android usually tries to mount it so you can look at photos or files. EtchDroid bypasses this. It asks for permission to communicate directly with the USB device's driver. It tells the Android OS, "Don't try to read this drive; just let me send a raw data stream to it."</p>
+
+                    <h3>What Can You Flash? (Compatibility & Features)</h3>
+                    <p>EtchDroid is a powerhouse for Linux users. It handles almost any modern GNU/Linux distribution perfectly. If you need to flash Ubuntu, Linux Mint, Fedora, Arch, or Pop!_OS to save a dying laptop, this app will handle it flawlessly.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/@TechyNoob1818_20251202_234557_0000.png" onerror="handleImageError(this, 'post')" alt="EtchDroid App Interface" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>It also supports Raspberry Pi SD card images, provided you unzip them first.</p>
+                    <p><strong>A Note on Windows ISOs:</strong> The most common question is: "Can I make a Windows 10 or 11 installer boot drive?" The honest answer is: It's complicated. Official Microsoft Windows ISOs use a specific format that is difficult to write correctly using this method. While some users have success with specially prepared Windows images, EtchDroid is primarily designed for Linux images.</p>
+
+                    <h3>Step-by-Step Walkthrough</h3>
+                    <p>Using the app is incredibly simple, but you will need a USB OTG (On-The-Go) adapter. This is a small dongle that plugs into your phone's charging port (usually USB-C or Micro-USB) and gives you a full-sized USB-A port to plug in your flash drive.</p>
+                    <p><strong>Warning: This process will completely wipe all data currently on your USB stick. Back up anything important on the drive before proceeding!</strong></p>
+                    <ol>
+                        <li><strong>Download the ISO:</strong> On your phone browser, download the Linux ISO you need (e.g., the Ubuntu download page).</li>
+                        <li><strong>Connect Hardware:</strong> Plug your USB stick into the OTG adapter, and plug the adapter into your phone.</li>
+                        <li><strong>Open EtchDroid:</strong> The app should detect the USB drive. Tap on the main option, usually labeled "Write raw image or ISO."</li>
+                        <li><strong>Select File & Drive:</strong> Navigate to your phone's "Downloads" folder and pick the ISO file. Then, confirm the USB drive you want to write to.</li>
+                        <li><strong>Flash:</strong> Tap the write button. Grant the permission popup if asked.</li>
+                    </ol>
+                    <p>A progress bar will appear. Depending on the speed of your phone’s USB port and the drive, this could take anywhere from 5 to 20 minutes. Once it hits 100%, you can safely eject the drive, plug it into your dead computer, access the boot menu, and start your recovery.</p>
+
+                    <h3>Final Thoughts</h3>
+                    <p>EtchDroid isn't an app you will use every day. Like a physical first-aid kit, it will probably sit in your app drawer untouched for months. But on that one bad day when your laptop refuses to turn on and you have no other options, EtchDroid is an absolute lifesaver.</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Tutorial</h4>
+                        <p class="mb-4">See the process in action:</p>
+                        <a href="https://youtu.be/xBixZ4jcg_Q" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Tutorial on YouTube
+                        </a>
+                    </div>
+                `
             }
         ];
 
-        // --- LOGIC ---
         function init() {
             renderPosts(posts);
         }
@@ -934,10 +1006,13 @@
                     grid.innerHTML = '<div class="col-span-full text-center py-10"><p class="text-gray-400 text-xl">No results found matching your search.</p><button onclick="document.getElementById(\'search-input\').value=\'\'; performSearch()" class="mt-4 text-blue-400 hover:underline">Clear Search</button></div>';
                     return;
                 }
-                grid.innerHTML = postsToRender.map(post => `
+                // Sort posts by ID descending (newest first)
+                const sortedPosts = [...postsToRender].sort((a, b) => b.id - a.id);
+                
+                grid.innerHTML = sortedPosts.map(post => `
                     <div class="bg-slate-800 rounded-xl overflow-hidden hover:shadow-2xl transition duration-300 border border-slate-700 flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="${post.thumbnail}" onerror="handleImageError(this, 'post')" alt="${post.title}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            <img src="${post.thumbnail}" onerror="handleImageError(this, 'post')" alt="${post.title}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" loading="lazy">
                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 cursor-pointer" onclick="loadBlog(${post.id})">
                                 <i class="fas fa-play-circle text-5xl text-white drop-shadow-lg"></i>
                             </div>
@@ -967,7 +1042,7 @@
             
             document.getElementById('search-suggestions').classList.add('hidden');
             
-            const grid = document.getElementById('latest-posts-grid');
+            const grid = document.getElementById('latest-posts-grid-container');
             if(grid) {
                 grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
