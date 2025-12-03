@@ -223,43 +223,11 @@
         <div id="about-section" class="hidden fade-in max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
             <div class="bg-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-700">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8 text-center">About TechyNoob</h2>
-                
                 <div class="space-y-6 text-gray-300 text-lg">
-                    <p>
-                        Welcome to <span class="text-blue-400 font-bold">TechyNoob</span>: Your Guide to Android Customization, Security Research, and More! We're here to help you unlock the hidden potential of your Android device safely and responsibly.
-                    </p>
-                    <p>
-                        Our mission is to empower Android users with the knowledge and tools to truly make their devices their own. Whether you're looking to enhance performance, explore new features with custom ROMs and Magisk modules, or delve into the fascinating world of advanced device security, TechyNoob is your go-to resource.
-                    </p>
-
-                    <h3 class="text-2xl font-semibold text-white mt-8 mb-4 text-center">What you can expect:</h3>
-                    
-                    <div class="grid md:grid-cols-2 gap-6 mt-6">
-                        <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
-                            <i class="fas fa-bolt text-yellow-400 text-xl mb-2"></i>
-                            <h4 class="font-bold text-white">Custom ROMs</h4>
-                            <p class="text-sm text-gray-400">Step-by-step guides to flash LineageOS, CrDroid, and Evolution X.</p>
-                        </div>
-                        <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
-                            <i class="fas fa-cube text-blue-400 text-xl mb-2"></i>
-                            <h4 class="font-bold text-white">Magisk Modules</h4>
-                            <p class="text-sm text-gray-400">Reviews of modules for ad-blocking and system tweaks.</p>
-                        </div>
-                        <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
-                            <i class="fas fa-user-shield text-red-400 text-xl mb-2"></i>
-                            <h4 class="font-bold text-white">Advanced Security</h4>
-                            <p class="text-sm text-gray-400">Responsible security research and device protection techniques.</p>
-                        </div>
-                        <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
-                            <i class="fas fa-battery-full text-green-400 text-xl mb-2"></i>
-                            <h4 class="font-bold text-white">Optimization</h4>
-                            <p class="text-sm text-gray-400">Insights into optimizing apps and extending battery life.</p>
-                        </div>
-                    </div>
-
+                    <p>Welcome to <span class="text-blue-400 font-bold">TechyNoob</span>: Your Guide to Android Customization, Security Research, and More! We're here to help you unlock the hidden potential of your Android device safely and responsibly.</p>
+                    <p>Our mission is to empower Android users with the knowledge and tools to truly make their devices their own.</p>
                     <div class="mt-12 text-center bg-slate-900 rounded-2xl p-8 border border-slate-700">
                         <h3 class="text-2xl font-bold text-white mb-4">Join the Community</h3>
-                        <p class="text-gray-400 mb-6">Join our growing community of tech enthusiasts!</p>
                         <a href="https://www.youtube.com/@TechyNoob1818" target="_blank" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-white bg-red-600 hover:bg-red-700 md:text-lg transition shadow-lg shadow-red-600/30">
                             <i class="fab fa-youtube mr-2"></i> Go to TechyNoob YouTube Channel
                         </a>
@@ -408,7 +376,6 @@
                 title: "How to Resolve Google Play Integrity Issues on Rooted Devices - October 2025",
                 excerpt: "The definitive guide to restoring full device functionality and passing Strong Integrity checks safely.",
                 videoUrl: "https://www.youtube.com/embed/mBuke2P4PuU", 
-                // FIXED: Using safe HQ Youtube Thumbnail
                 thumbnail: "https://img.youtube.com/vi/mBuke2P4PuU/hqdefault.jpg",
                 content: `
                     <p>Hello there, dedicated Android enthusiasts!</p>
@@ -835,7 +802,7 @@
                 title: "How to Install Older Apps on Android 14 & 15 (No Root Required)",
                 excerpt: "Bypass the \"App not installed\" error on Android 14+ using ADB. No root required.",
                 videoUrl: "https://www.youtube.com/embed/4y6I0Z-ZGj4", 
-                // FIXED: Using YouTube Video Thumbnail URL (hqdefault.jpg) for guaranteed availability
+                // FIXED: Using safe HQ Youtube Thumbnail
                 thumbnail: "https://img.youtube.com/vi/4y6I0Z-ZGj4/hqdefault.jpg",
                 content: `
                     <p>Hello there, Android modders and custom ROM users!</p>
@@ -933,7 +900,8 @@
                     <p>To fix it, you usually need to reinstall Windows or boot into a Linux live environment to recover your files. The catch? To create the bootable recovery drive you need to save your PC, you generally need... a second, working PC.</p>
                     
                     <div class="my-8">
-                        <img src="Photos/Gemini_Generated_Image_hglid9hglid9hgli~2.png" onerror="handleImageError(this, 'post')" alt="EtchDroid on Android" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <!-- Changed extension to .jpg as requested -->
+                        <img src="Photos/Gemini_Generated_Image_hglid9hglid9hgli~2.jpg" onerror="handleImageError(this, 'post')" alt="EtchDroid on Android" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                         <p class="text-sm text-gray-500 mt-2 text-center">Create bootable USBs directly on your phone.</p>
                     </div>
 
@@ -995,6 +963,8 @@
             }
         ];
 
+        // --- LOGIC ---
+
         function init() {
             renderPosts(posts);
         }
@@ -1054,6 +1024,7 @@
             }
         }
 
+        // Auto-complete Logic
         function handleSearchInput(event) {
             const query = event.target.value.toLowerCase();
             const suggestionsBox = document.getElementById('search-suggestions');
@@ -1084,6 +1055,7 @@
             document.getElementById('search-input').value = ''; 
         }
 
+        // Close dropdown when clicking outside
         document.addEventListener('click', function(e) {
             const container = document.querySelector('.relative.w-full.max-w-md');
             const suggestionsBox = document.getElementById('search-suggestions');
@@ -1113,6 +1085,7 @@
             document.getElementById('blog-video').src = post.videoUrl;
             document.getElementById('blog-content').innerHTML = post.content;
 
+            // Hide empty state and show container
             document.getElementById('empty-blog-state').classList.add('hidden');
             document.getElementById('blog-article-container').classList.remove('hidden');
 
@@ -1140,6 +1113,7 @@
             }
         }
 
+        // New Navigation Helper
         function goToBlogGrid() {
             showSection('home');
             const grid = document.getElementById('latest-posts-grid-container');
@@ -1150,12 +1124,16 @@
             }
         }
 
+        // Close modals on outside click
         window.onclick = function(event) {
             if (event.target.classList.contains('bg-opacity-75')) {
                 event.target.parentElement.parentElement.classList.add('hidden');
                 document.body.style.overflow = 'auto';
             }
         }
+
+        init();
+
     </script>
 </body>
 </html>
