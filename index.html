@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechyNoob - Android Rooting, Custom ROMs & Tech Reviews</title>
     <meta name="description" content="The ultimate guide to Android customization, rooting (Magisk/KernelSU), custom ROM reviews (Axion, DerpFest), and device security fixes. Unlock your phone's potential with TechyNoob.">
-    <meta name="keywords" content="Android Rooting, Custom ROMs, Magisk Modules, Play Integrity Fix, SafetyNet Bypass, Android 14, Android 15, Tech Reviews, Redmi Note 7 Pro, OnePlus 6T, KernelSU, APatch">
+    <meta name="keywords" content="Android Rooting, Custom ROMs, Magisk Modules, Play Integrity Fix, SafetyNet Bypass, Android 14, Android 15, Tech Reviews, Redmi Note 7 Pro, OnePlus 6T, KernelSU, APatch, HyperOS">
     <meta name="author" content="TechyNoob">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://techynoob18.github.io/">
@@ -39,31 +39,7 @@
       gtag('config', 'G-2E9KWQ18P9');
     </script>
 
-    <!-- Structured Data (JSON-LD) for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": "TechyNoob - Android Modding Guide",
-      "image": "https://techynoob18.github.io/Photos/20211212_160808_0000.png",
-      "author": {
-        "@type": "Person",
-        "name": "TechyNoob",
-        "url": "https://www.youtube.com/@TechyNoob1818"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "TechyNoob",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://techynoob18.github.io/Photos/20211212_160808_0000.png"
-        }
-      },
-      "description": "Comprehensive guides for Android rooting, custom ROM installation, and bypassing security checks."
-    }
-    </script>
-
-    <!-- Image Error Handler -->
+    <!-- Image Error Handler (Must be in head) -->
     <script>
         function handleImageError(img, type = 'post') {
             if (!img) return;
@@ -336,14 +312,7 @@
                 <div class="bg-slate-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <h3 class="text-xl font-semibold text-white mb-4">Privacy Policy</h3>
                     <div class="mt-2 text-gray-300 text-sm space-y-4 h-96 overflow-y-auto pr-2 custom-scrollbar">
-                        <p>At TechyNoob, accessible from our website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by TechyNoob and how we use it.</p>
-                        <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
-                        <h4 class="text-white font-bold mt-4">Log Files</h4>
-                        <p>TechyNoob follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
-                        <h4 class="text-white font-bold mt-4">Cookies and Web Beacons</h4>
-                        <p>Like any other website, TechyNoob uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
-                        <h4 class="text-white font-bold mt-4">Google DoubleClick DART Cookie</h4>
-                        <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet.</p>
+                        <p>At TechyNoob, accessible from our website, one of our main priorities is the privacy of our visitors.</p>
                     </div>
                 </div>
                 <div class="bg-slate-700 px-4 py-3 sm:px-6 flex justify-end">
@@ -353,6 +322,7 @@
         </div>
     </div>
 
+    <!-- Terms Modal -->
     <div id="terms-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" onclick="closeModal('terms-modal')"></div>
@@ -360,11 +330,7 @@
                 <div class="bg-slate-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <h3 class="text-xl font-semibold text-white mb-4">Terms of Service</h3>
                     <div class="mt-2 text-gray-300 text-sm space-y-4 h-96 overflow-y-auto pr-2 custom-scrollbar">
-                        <p>By accessing this website, you agree to be bound by these website Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
-                        <h4 class="text-white font-bold mt-4">Use License</h4>
-                        <p>Permission is granted to temporarily download one copy of the materials (information or software) on TechyNoob's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not: modify or copy the materials; use the materials for any commercial purpose, or for any public display; attempt to decompile or reverse engineer any software contained on TechyNoob's website.</p>
-                        <h4 class="text-white font-bold mt-4">Disclaimer</h4>
-                        <p>The materials on TechyNoob's website are provided "as is". TechyNoob makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+                        <p>By accessing this website, you agree to be bound by these website Terms and Conditions of Use.</p>
                     </div>
                 </div>
                 <div class="bg-slate-700 px-4 py-3 sm:px-6 flex justify-end">
@@ -373,7 +339,8 @@
             </div>
         </div>
     </div>
-
+    
+    <!-- Disclaimer Modal -->
     <div id="disclaimer-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" onclick="closeModal('disclaimer-modal')"></div>
@@ -381,16 +348,7 @@
                 <div class="bg-slate-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <h3 class="text-xl font-semibold text-white mb-4">Disclaimer</h3>
                     <div class="mt-2 text-gray-300 text-sm space-y-4 h-96 overflow-y-auto pr-2 custom-scrollbar">
-                        <p>The information provided by TechyNoob ("we," "us", or "our") on this website is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on the Site.</p>
-                        
-                        <h4 class="text-white font-bold mt-4">Educational Purpose Disclaimer</h4>
-                        <p>Content on this website related to rooting, system modification, and security research is intended solely for educational and informational purposes. TechyNoob does not condone or encourage illegal activities, bypassing security for malicious intent, or copyright infringement.</p>
-
-                        <h4 class="text-white font-bold mt-4">External Links Disclaimer</h4>
-                        <p>The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties or links to websites and features in banners or other advertising. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability or completeness by us.</p>
-                        
-                        <h4 class="text-white font-bold mt-4">Professional Disclaimer</h4>
-                        <p>The Site cannot and does not contain technical advice. The technical information is provided for general informational and educational purposes only and is not a substitute for professional advice. Accordingly, before taking any actions based upon such information, we encourage you to consult with the appropriate professionals.</p>
+                        <p>The information provided by TechyNoob is for general informational purposes only.</p>
                     </div>
                 </div>
                 <div class="bg-slate-700 px-4 py-3 sm:px-6 flex justify-end">
@@ -401,7 +359,6 @@
     </div>
 
     <script>
-        // Safe initialization wrapper
         document.addEventListener('DOMContentLoaded', () => {
             try {
                 init();
@@ -417,7 +374,6 @@
                 title: "How to Resolve Google Play Integrity Issues on Rooted Devices - October 2025",
                 excerpt: "The definitive guide to restoring full device functionality and passing Strong Integrity checks safely.",
                 videoUrl: "https://www.youtube.com/embed/mBuke2P4PuU", 
-                // FIXED: Using safe HQ Youtube Thumbnail
                 thumbnail: "https://img.youtube.com/vi/mBuke2P4PuU/hqdefault.jpg",
                 content: `
                     <p>Hello there, dedicated Android enthusiasts!</p>
@@ -733,7 +689,6 @@
                 title: "How to Install \"Incompatible\" Apps on Android 14: The LSposed Fix",
                 excerpt: "Android 14 blocks older apps targeting API 22. Learn how to bypass this restriction and install your favorite classics using a simple LSposed module.",
                 videoUrl: "https://www.youtube.com/embed/ZO0A2Vb4Ir8", 
-                // FIXED: Using safe HQ Youtube Thumbnail
                 thumbnail: "https://img.youtube.com/vi/ZO0A2Vb4Ir8/hqdefault.jpg",
                 content: `
                     <p>Hello there, Android modders and custom ROM users!</p>
@@ -752,7 +707,6 @@
                     <p>For years, one of Android’s biggest selling points over its competitors was backward compatibility. You could drag and drop an APK file from a decade ago, and it would likely just work. But with Android 14, Google has tightened the reins significantly.</p>
                     
                     <div class="my-8">
-                        <!-- Using .png as per previous request for this blog -->
                         <img src="Photos/Thubnail.png" onerror="handleImageError(this, 'post')" alt="Install Incompatible Apps Thumbnail" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                     </div>
 
@@ -768,7 +722,6 @@
                     <p>Enter the <strong>"Disable Target API Block"</strong> module.</p>
                     
                     <div class="my-8">
-                        <!-- Using .png as per previous request for this blog -->
                         <img src="Photos/@TechyNoob1818_20251129_195406_0000.png" onerror="handleImageError(this, 'post')" alt="LSposed Module Search" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                         <p class="text-sm text-gray-500 mt-2 text-center">Finding the module in LSposed Repository.</p>
                     </div>
@@ -797,7 +750,6 @@
                     <p>Tap on the module to view its description. Hit the Download or Install button. Follow the on-screen prompts to get the module onto your system.</p>
                     
                     <div class="my-8">
-                        <!-- Using .png as per previous request for this blog -->
                         <img src="Photos/@TechyNoob1818_20251129_195623_0000.png" onerror="handleImageError(this, 'post')" alt="Module Installation Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                         <p class="text-sm text-gray-500 mt-2 text-center">Installing the bypass module.</p>
                     </div>
@@ -844,14 +796,12 @@
                 title: "How to Install Older Apps on Android 14 & 15 (No Root Required)",
                 excerpt: "Bypass the \"App not installed\" error on Android 14+ using ADB. No root required.",
                 videoUrl: "https://www.youtube.com/embed/4y6I0Z-ZGj4", 
-                // FIXED: Using safe HQ Youtube Thumbnail
                 thumbnail: "https://img.youtube.com/vi/4y6I0Z-ZGj4/hqdefault.jpg",
                 content: `
                     <p>Hello there, Android modders and custom ROM users!</p>
                     <p>If you’ve recently upgraded to Android 14 or the bleeding-edge Android 15, you might have run into a frustrating little roadblock. You try to install one of your favorite legacy apps—maybe an old game that hasn’t been updated in years or a niche utility tool—and suddenly, you’re greeted with a refusal. The "App not installed" error pops up, or perhaps a more specific warning telling you the app isn't compatible with your phone.</p>
                     
                     <div class="my-8">
-                        <!-- User requested .jpg for this specific file -->
                         <img src="Photos/1000023817.jpg" onerror="handleImageError(this, 'post')" alt="Android 14 App Installation Error Fix" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                     </div>
 
@@ -861,7 +811,6 @@
                     <p>Before we jump into the solution, it helps to understand why this is happening. With Android 14, Google tightened the screws on security by blocking the installation of apps that target API levels lower than 23 (Android 6.0 Marshmallow).</p>
                     
                     <div class="my-8">
-                         <!-- User requested .png for the second image -->
                         <img src="Photos/@TechyNoob1818_20251129_212310_0000.png" onerror="handleImageError(this, 'post')" alt="App not installed error message" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                     </div>
 
@@ -934,7 +883,6 @@
                 title: "No Computer? No Problem. Create a Bootable USB on Android with EtchDroid",
                 excerpt: "Create bootable USB drives for Linux or Windows directly from your Android phone using EtchDroid. No root required.",
                 videoUrl: "https://www.youtube.com/embed/xBixZ4jcg_Q", 
-                // FIXED: Using safe HQ Youtube Thumbnail
                 thumbnail: "https://img.youtube.com/vi/xBixZ4jcg_Q/hqdefault.jpg",
                 content: `
                     <p>Hello there, Android modders and custom ROM users! We have all been in this nightmare scenario.</p>
@@ -942,8 +890,7 @@
                     <p>To fix it, you usually need to reinstall Windows or boot into a Linux live environment to recover your files. The catch? To create the bootable recovery drive you need to save your PC, you generally need... a second, working PC.</p>
                     
                     <div class="my-8">
-                        <!-- Changed extension to .jpg as requested -->
-                        <img src="Photos/Gemini_Generated_Image_hglid9hglid9hgli~2.jpg" onerror="handleImageError(this, 'post')" alt="EtchDroid on Android" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <img src="Photos/Gemini_Generated_Image_hglid9hglid9hgli~2.png" onerror="handleImageError(this, 'post')" alt="EtchDroid on Android" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                         <p class="text-sm text-gray-500 mt-2 text-center">Create bootable USBs directly on your phone.</p>
                     </div>
 
@@ -1014,7 +961,6 @@
                     <p>If you are still rocking a Redmi Note 7 Pro in 2025, you know this device is an absolute legend. It’s the phone that arguably defined the budget segment for years. But let's be honest—software support officially ended ages ago. That is where the custom ROM community steps in.</p>
                     
                     <div class="my-8">
-                        <!-- Updated Image 1 -->
                         <img src="Photos/20251203_092816_0000.png" onerror="handleImageError(this, 'post')" alt="Axion ROM Home Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                         <p class="text-sm text-gray-500 mt-2 text-center">Android 16 running on the Redmi Note 7 Pro</p>
                     </div>
@@ -1047,7 +993,6 @@
                     <p>Visually, Axion borrows heavily from the Nothing OS design language, and it looks stunning on the Note 7 Pro’s display.</p>
                     
                     <div class="my-8">
-                        <!-- Updated Image 2 -->
                         <img src="Photos/@TechyNoob1818_20251202_233308_0000.png" onerror="handleImageError(this, 'post')" alt="Axion ROM Customization Settings" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                         <p class="text-sm text-gray-500 mt-2 text-center">Nothing OS inspired aesthetics in Axion ROM</p>
                     </div>
@@ -1059,7 +1004,6 @@
                     <p>Axion isn't just about looks; it packs some serious utility under the hood.</p>
                     
                     <div class="my-8">
-                        <!-- Updated Image 3 -->
                         <img src="Photos/@TechyNoob1818_20251202_234225_0000.png" onerror="handleImageError(this, 'post')" alt="About Phone Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                         <p class="text-sm text-gray-500 mt-2 text-center">Device specifications and Android version</p>
                     </div>
@@ -1103,7 +1047,7 @@
                         <h4 class="text-white font-bold text-lg mb-2">Watch the Review</h4>
                         <p class="mb-4">See the full hands-on review below to see the performance in action:</p>
                         <a href="https://youtu.be/BkFrVCaFQI0" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
-                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch the Full Review on YouTube
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Review on YouTube
                         </a>
                     </div>
                 `
@@ -1447,6 +1391,8 @@
                 `
             }
         ];
+
+        // --- LOGIC ---
 
         function init() {
             renderPosts(posts);
