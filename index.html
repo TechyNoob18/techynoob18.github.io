@@ -1103,9 +1103,347 @@
                         <h4 class="text-white font-bold text-lg mb-2">Watch the Review</h4>
                         <p class="mb-4">See the full hands-on review below to see the performance in action:</p>
                         <a href="https://youtu.be/BkFrVCaFQI0" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
-                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Review on YouTube
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch the Full Review on YouTube
                         </a>
                     </div>
+                `
+            },
+            {
+                id: 9,
+                title: "Install HyperOS File Manager on ANY Android (No Root Required) – Updated 2025 Guide",
+                excerpt: "Get the clean, buttery-smooth HyperOS File Manager on your Samsung, Pixel, or OnePlus. No root needed.",
+                videoUrl: "https://www.youtube.com/embed/AfFo7FS9sBw",
+                thumbnail: "https://img.youtube.com/vi/AfFo7FS9sBw/hqdefault.jpg",
+                content: `
+                    <p>Hello there, Android modders and custom ROM users! Are you tired of the boring, basic "Files by Google" app? Do you envy the clean, buttery-smooth aesthetic of Xiaomi’s new HyperOS? You’re in the right place.</p>
+                    <p>If you’ve been following the Android customization scene lately, you’ve likely seen the hype around Xiaomi’s HyperOS 3.0. It’s a massive visual overhaul from the old MIUI days—cleaner, faster, and packed with fluid animations. The good news? You don’t need a Xiaomi phone (or even root access) to get one of its best features: the HyperOS File Manager.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/YT_HyperOS_FileManager.png" onerror="handleImageError(this, 'post')" alt="HyperOS File Manager Interface" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <p class="text-sm text-gray-500 mt-2 text-center">HyperOS File Manager running on non-Xiaomi device</p>
+                    </div>
+
+                    <p>In this guide, I’ll walk you through exactly how to install this ported APK on your Samsung, Pixel, OnePlus, or Motorola device. Plus, I’ll share a critical "crash fix" that most other tutorials skip.</p>
+
+                    <h3>Why Switch to HyperOS File Manager?</h3>
+                    <p>Honest talk: Stock Android file managers are functional, but they’re often ugly or cluttered. The HyperOS port brings a level of polish that feels premium.</p>
+                    <ul>
+                        <li><strong>Visuals that Pop:</strong> Unlike the list-heavy stock apps, this manager uses large, rounded "bubble" icons for your recent categories (Images, Videos, Docs). It looks strikingly modern on high-refresh-rate screens.</li>
+                        <li><strong>Butter-Smooth Animations:</strong> The transition effects when swiping between tabs or opening folders are incredibly fluid. It’s that "Apple-like" smoothness that Android users always chase.</li>
+                        <li><strong>Built-in FTP Server:</strong> This is a power-user favorite. You can start a wireless server directly from the app to transfer files to your PC without hunting for a USB cable. It’s fast, reliable, and just works.</li>
+                    </ul>
+
+                    <div class="my-8">
+                        <img src="Photos/HyperOS_Gallery_FileManager.png" onerror="handleImageError(this, 'post')" alt="Clean Visuals" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <h3>Pre-Requisites</h3>
+                    <ul>
+                        <li><strong>Android Version:</strong> Works best on Android 14, 15, and the latest Android 16 betas.</li>
+                        <li><strong>No Root Needed:</strong> This is a safe, signed APK port.</li>
+                    </ul>
+
+                    <h3>Step-by-Step Installation Guide</h3>
+                    
+                    <h4>Step 1: Download the APK</h4>
+                    <p>Grab the latest ported version of the HyperOS File Manager. (I’ve linked a video below that contains the direct download source in its description).</p>
+
+                    <h4>Step 2: Install the App</h4>
+                    <p>Tap the APK file. You’ll likely get a prompt saying "Install from Unknown Sources." Go ahead and allow it.</p>
+                    <p><em>Note: If it says "App not installed," you might have a conflicting version of another Xiaomi file manager. Uninstall any old versions first.</em></p>
+
+                    <h4>Step 3: THE CRITICAL FIX (Don’t Skip This!)</h4>
+                    <p>This is where 90% of people fail. If you just open the app right now, it will likely crash or show an empty screen. The ported app cannot automatically request the permissions it needs on non-Xiaomi phones.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/HyperOS_Gallery_FileManager_¹.png" onerror="handleImageError(this, 'post')" alt="Permissions Settings" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <p class="text-sm text-gray-500 mt-2 text-center">Manually granting storage permissions is key.</p>
+                    </div>
+
+                    <ol>
+                        <li><strong>Do NOT open the app yet.</strong></li>
+                        <li>Long-press the new "File Manager" icon on your home screen.</li>
+                        <li>Tap the little (i) info button to go to App Info.</li>
+                        <li>Scroll down to <strong>Permissions</strong>.</li>
+                        <li>Find "Files and Media" (or "Storage Access") and set it to <strong>"Allow management of all files."</strong></li>
+                        <li>Go back and find "Modify System Settings". Toggle this <strong>ON</strong>.</li>
+                    </ol>
+                    <p>Without manually granting these two permissions, the app will crash instantly because it can't read your internal storage.</p>
+
+                    <h3>Hands-On Review: Is it Stable?</h3>
+                    <p>I’ve been testing this build (v2025.12.28 port) on a Samsung Galaxy S24 and a Pixel 9 for the last 48 hours.</p>
+                    <p><strong>The Good:</strong> The UI is genuinely refreshing. The "Recent" tab at the top is much smarter than Google's, grouping your latest downloads and screenshots in a way that makes sense. The dark mode looks fantastic—deep blacks rather than the washed-out grey you see in some apps.</p>
+                    <p><strong>The Bad (Bugs):</strong> It’s a port, so it’s not 100% perfect.</p>
+                    <ul>
+                        <li><strong>Dark Mode Glitch:</strong> On some older devices, you might see a white status bar even when dark mode is on. It’s a minor visual annoyance but doesn’t affect functionality.</li>
+                        <li><strong>Private Folder:</strong> The "Secure Folder" feature found in native Xiaomi phones doesn't work on this port because it relies on Xiaomi's specific security encryption chips. Do not try to store sensitive files in the "Private" folder; just stick to standard file management.</li>
+                    </ul>
+
+                    <h3>Final Verdict</h3>
+                    <p>If you want to spice up your phone without rooting or flashing a custom ROM, this is one of the easiest mods you can do. It replaces a boring utility tool with something that is actually fun to use.</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Tutorial</h4>
+                        <p class="mb-4">See the animations in action:</p>
+                        <a href="https://www.youtube.com/watch?v=AfFo7FS9sBw" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Tutorial on YouTube
+                        </a>
+                    </div>
+                `
+            },
+            {
+                id: 10,
+                title: "How to Install the HyperOS 3.0 Gallery Editor on Any Android (No Root Required)",
+                excerpt: "Get the advanced HyperOS 3.0 photo editor with AI features on your Samsung, Pixel, or OnePlus. Simple APK install.",
+                videoUrl: "https://www.youtube.com/embed/LxxJgSb84yE",
+                thumbnail: "https://img.youtube.com/vi/LxxJgSb84yE/hqdefault.jpg",
+                content: `
+                    <p>Hello there, Android modders and custom ROM users! If you’ve been watching the Android modding scene lately, you’ve probably noticed the buzz around Xiaomi’s new HyperOS 3.0. It’s sleek, fast, and honestly, a massive visual upgrade from the older MIUI interface.</p>
+                    <p>But here’s the thing: usually, you have to wait for your specific phone manufacturer to push an update, or worse, buy a new phone to get these features. Not today.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/YT_HyperOS_Gallery.png" onerror="handleImageError(this, 'post')" alt="HyperOS 3.0 Gallery Editor" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <p class="text-sm text-gray-500 mt-2 text-center">New HyperOS 3.0 Editor Interface</p>
+                    </div>
+
+                    <p>I’ve found a way to get the latest HyperOS 3.0 Gallery Editor running on almost any Android device. And the best part? You don’t need to root your phone or mess with complex system files. It works as a simple plugin installation.</p>
+                    <p>In this guide, I’ll walk you through exactly how to set it up, why this update is worth your time, and—most importantly—how to avoid the one mistake that makes the app crash for most people.</p>
+
+                    <h3>Why Upgrade to the HyperOS 3.0 Editor?</h3>
+                    <p>I’ve been testing this build for a few days, and it’s not just a "version number" change. The difference is actually noticeable in daily use.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/HyperOS_Gallery.png" onerror="handleImageError(this, 'post')" alt="Editor Features" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <ul>
+                        <li><strong>A Clean, Modern UI:</strong> The first thing you’ll notice is the visual overhaul. Gone are the cluttered menus of the 2.0 era. The 3.0 update brings rounded corners, floating menus, and a much cleaner aesthetic that feels at home on modern Android devices.</li>
+                        <li><strong>Haptic Feedback Integration:</strong> This is a small detail, but it feels premium. When you move the sliders for brightness or contrast, you get subtle haptic feedback (vibrations) that help you dial in the exact setting you want.</li>
+                        <li><strong>Faster Processing:</strong> If you edit high-resolution photos, you know the lag that happens when you apply a heavy filter. This version is optimized with the new HyperOS source code, making cropping and filtering significantly snappier.</li>
+                        <li><strong>Better Shadow/Highlight Control:</strong> The new granular controls let you recover details from dark shadows without washing out the whole image—a feature that was a bit hit-or-miss in previous versions.</li>
+                    </ul>
+
+                    <h3>The "Secret" Requirement (Read This First!)</h3>
+                    <p>Before you rush to download the file, there is one critical rule you need to know.</p>
+                    <p>The file we are installing is the <strong>Global Editor Extension</strong>. Think of it as a plugin or an add-on. It is not a standalone app.</p>
+                    <p>If you try to install this without having the base HyperOS Gallery app installed first, it will not work. It will either crash immediately or simply refuse to open.</p>
+                    <p><strong>Step 1:</strong> You need the Base HyperOS Gallery App.<br><strong>Step 2:</strong> You install this Editor Extension on top of it.</p>
+                    <p>(If you missed my previous guide on installing the base gallery, don't worry—I’ve linked everything you need below).</p>
+
+                    <h3>Step-by-Step Installation Guide</h3>
+                    <p>Ready to upgrade? Follow these steps exactly, and you’ll be up and running in less than 3 minutes.</p>
+
+                    <h4>1. Download the Required Files</h4>
+                    <p>You'll need the APK file for the HyperOS 3.0 Editor. (Note: Ensure you have downloaded the Base Gallery if you haven't already).</p>
+
+                    <h4>2. Locate the File</h4>
+                    <p>Open your phone's File Manager and head to your Downloads folder. You should see a file labeled something like <code>HyperOS_3.0_Editor_Global.apk</code>.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/HyperOS_Gallery_1.png" onerror="handleImageError(this, 'post')" alt="Installation Process" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <h4>3. Install or Update</h4>
+                    <p>Tap on the file.</p>
+                    <ul>
+                        <li>If you see <strong>"Install"</strong>: This means you don't have an editor installed yet. Click Install.</li>
+                        <li>If you see <strong>"Update"</strong>: This is good! It means the system recognizes your old gallery editor and is ready to upgrade it to the 3.0 version. Click Update.</li>
+                    </ul>
+                    <p><em>Note: If your phone asks for permission to "Install from Unknown Sources," go to Settings > Allow. This is standard for any app installed outside the Play Store.</em></p>
+
+                    <h4>4. The "Done" Button</h4>
+                    <p>Once the installation finishes, you will see a screen that says "App Installed." Click <strong>DONE</strong>. Do not look for an "Open" button. Remember, this is a plugin, so it doesn't have its own icon in your app drawer.</p>
+
+                    <h3>How to Use the New Editor</h3>
+                    <p>Since there is no app icon, here is how you access the new features:</p>
+                    <ol>
+                        <li>Open the <strong>HyperOS Gallery app</strong> (the base app).</li>
+                        <li>Open any photo from your camera roll.</li>
+                        <li>Tap the <strong>Edit button</strong> at the bottom of the screen.</li>
+                    </ol>
+                    <p>Boom! You should now be greeted by the new HyperOS 3.0 interface. You can test it out immediately by playing with the new sliders—if you feel that haptic feedback, you know you’re on the latest build.</p>
+
+                    <h3>Troubleshooting Common Errors</h3>
+                    <p><strong>"App Not Installed" Error</strong><br>Cause: This usually happens if you have a conflicting version of the gallery installed or if your Android version is too old (Android 11+ is recommended).<br>Fix: Try uninstalling updates for your current Gallery app via Settings > Apps > Manage Apps, then try installing the APK again.</p>
+                    <p><strong>App Crashes When Hitting "Edit"</strong><br>Cause: You didn't install the Base Gallery app, or your Base Gallery is too old.<br>Fix: Download and install the latest HyperOS Base Gallery, then reinstall the Editor.</p>
+
+                    <h3>Final Thoughts</h3>
+                    <p>It’s rare to get flagship-level software features ported to other devices this quickly, but the HyperOS 3.0 Editor is a solid win. It’s stable, faster, and just looks better. Give it a try and let me know in the comments if you notice a speed difference on your device!</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Full Video Tutorial</h4>
+                        <p class="mb-4">See the new UI in action and follow the installation steps visually:</p>
+                        <a href="https://youtu.be/LxxJgSb84yE" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Guide on YouTube
+                        </a>
+                    </div>
+                `
+            },
+            {
+                id: 11,
+                title: "StevenBlock: The Ultimate \"Set It and Forget It\" Ad Blocker for Rooted Android",
+                excerpt: "Block ads system-wide without background battery drain. A complete guide to the StevenBlock Magisk module for rooted devices.",
+                videoUrl: "https://www.youtube.com/embed/JWJEubN71K0",
+                thumbnail: "https://img.youtube.com/vi/JWJEubN71K0/hqdefault.jpg",
+                content: `
+                    <p>Hello there, Android modders and custom ROM users! Let’s be honest for a second: the mobile internet has become a bit of a mess.</p>
+                    <p>You click on a recipe, and you’re bombarded by three pop-ups. You open a news article, and the text jumps around because a video ad is loading in the background. And don't even get me started on the battery drain from all those trackers pinging servers every few seconds.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/YT_StevenBlock.png" onerror="handleImageError(this, 'post')" alt="StevenBlock Module Cover" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>If you have a rooted Android phone, you probably know there are a million ways to block ads. But most of them come with a compromise. Some apps run a local VPN that drains your battery. Others constantly sit in your notification shade, reminding you they exist.</p>
+                    <p>That’s why today, I want to talk about <strong>StevenBlock</strong>. It’s not an app; it’s a Magisk module (compatible with KernelSU and APatch too) that cleans up your digital experience at the system level.</p>
+
+                    <h3>Why StevenBlock is Different</h3>
+                    <p>I’ve tested dozens of ad-blockers over the years, and StevenBlock stands out for one main reason: <strong>Invisibility</strong>.</p>
+                    <p>Because it works by modifying your system’s <code>hosts</code> file, it doesn't need to run a background service. Once it's installed, it just works. Your phone doesn't "know" it's blocking ads; it simply refuses to connect to the servers that host them.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/StevenBlock.png" onerror="handleImageError(this, 'post')" alt="Module Invisibility" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>This leads to two massive benefits:</p>
+                    <ul>
+                        <li><strong>Better Battery Life:</strong> Since there is no app processing every data packet in the background, your CPU stays asleep more often.</li>
+                        <li><strong>Universal Coverage:</strong> This doesn't just work in your browser. It kills banners in your free apps, games, and news feeds.</li>
+                    </ul>
+
+                    <h3>Prerequisites: What You Need</h3>
+                    <p>Before we dive in, this is a <strong>root-only</strong> solution. You will need:</p>
+                    <ul>
+                        <li>An Android device rooted with <strong>Magisk</strong>, <strong>KernelSU</strong>, or <strong>APatch</strong>.</li>
+                        <li>The <strong>StevenBlock zip file</strong> downloaded to your phone’s internal storage.</li>
+                        <li>About 5 minutes of your time.</li>
+                    </ul>
+
+                    <h3>Step-by-Step Installation Guide</h3>
+                    <p>Installing StevenBlock is slightly different from your average module because it uses a volume-key selection menu during the flashing process. Here is exactly how to do it.</p>
+
+                    <h4>1. Open Your Root Manager</h4>
+                    <p>Whether you are rocking the classic Magisk App, the newer KernelSU, or APatch, the process is largely the same. Open the app and head to the <strong>Modules</strong> tab (usually the puzzle piece icon or located at the bottom right).</p>
+
+                    <h4>2. Install from Storage</h4>
+                    <p>Tap the button to <strong>Install from storage</strong> and navigate to where you saved the StevenBlock file. Tap it to start the flashing process.</p>
+
+                    <h4>3. The Volume Key "Ritual"</h4>
+                    <p>This is the part that confuses first-time users. You won’t just see a progress bar filling up. Instead, a text menu will appear on the black command screen asking you to choose your "Shield" (Blocklist).</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/StevenBlock1.png" onerror="handleImageError(this, 'post')" alt="Volume Key Selection Menu" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <p class="text-sm text-gray-500 mt-2 text-center">Using volume keys to select options</p>
+                    </div>
+
+                    <p>Since you can't touch the screen to select options in this mode, you have to use your physical buttons:</p>
+                    <ul>
+                        <li><strong>Volume Up (or Down depending on device):</strong> Cycles through the options.</li>
+                        <li><strong>Volume Down (or Up):</strong> Confirms your selection.</li>
+                    </ul>
+
+                    <h4>4. Choosing the Right Blocklist</h4>
+                    <p>This is the most critical step. StevenBlock isn't "one size fits all." You get to choose how aggressive you want the blocking to be. Here is a cheat sheet to help you decide:</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/StevenBlock2.png" onerror="handleImageError(this, 'post')" alt="Blocklist Options" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <ul>
+                        <li><strong>StevenBlack Unified:</strong> The Safe Bet. This is the classic list. It blocks all the major ad servers and malware domains but rarely breaks websites. If you are new to this, start here.</li>
+                        <li><strong>Energized Spark:</strong> The Lightweight Choice. Perfect for older phones. It’s a smaller list that blocks the essentials without slowing down the system lookup time.</li>
+                        <li><strong>Energized Blu:</strong> The Sweet Spot. A step up from Spark, offering broader protection. This is what I personally use on my daily driver.</li>
+                        <li><strong>Energized Ultimate:</strong> The Nuclear Option. This blocks almost everything. While it offers maximum security, be warned that it might occasionally break some links in newsletters or aggressive shopping sites.</li>
+                    </ul>
+
+                    <h4>5. Reboot and Enjoy</h4>
+                    <p>Once you’ve confirmed your choice with the volume key, the script will finish writing the files. You’ll see a "Done" message. Hit <strong>Reboot</strong>.</p>
+
+                    <h3>Living with StevenBlock</h3>
+                    <p>When your phone boots back up, don't go looking for a "StevenBlock" app in your drawer. You won't find one.</p>
+                    <p>The magic is already happening. Open that news site that usually lags your phone. Open that free utility app that usually has a blinking banner at the bottom. You’ll notice the clutter is gone. The empty spaces where ads used to be might collapse, leaving you with a clean, readable interface.</p>
+                    <p>It’s a small change that makes a huge difference in how your phone feels to use. It feels... premium.</p>
+
+                    <h3>Final Thoughts</h3>
+                    <p>In a world where our attention is constantly being sold, tools like StevenBlock give us a little bit of control back. It protects your privacy, saves your data plan, and honestly, just makes using a phone peaceful again.</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Guide</h4>
+                        <p class="mb-4">If you run into any issues or want to see the installation in real-time, definitely check out the video below:</p>
+                        <a href="https://youtu.be/JWJEubN71K0" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Guide on YouTube
+                        </a>
+                    </div>
+                    <p>Happy modding!</p>
+                `
+            },
+            {
+                id: 12,
+                title: "Is This The Ultimate Android Performance Boost? Installing the SuperMario Tweaker Module (2025 Guide)",
+                excerpt: "Boost gaming FPS, improve battery life, and smooth out UI stutters with this all-in-one performance module for rooted Android.",
+                videoUrl: "https://www.youtube.com/embed/ingCLC9hzUY", 
+                thumbnail: "https://img.youtube.com/vi/ingCLC9hzUY/hqdefault.jpg",
+                content: `
+                    <p>Hello there, Android modders and custom ROM users! Let’s be honest: if you’ve rooted your Android device, you’re probably on an endless quest for more. More speed, better battery life, higher gaming frame rates—the works. We all want that feeling of a brand-new, snappy phone without actually buying one.</p>
+                    <p>If you’ve been scrolling through forums looking for that one "magic bullet" module that actually delivers on its promises, you might finally be in luck.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/YT_SuperMario.png" onerror="handleImageError(this, 'post')" alt="SuperMario Tweaker Cover" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>Today, we’re taking a deep dive into the <strong>SuperMario Tweaker</strong>. This isn't just another simple prop-editor; it’s a comprehensive, all-in-one performance module designed to squeeze every last drop of potential out of your specific hardware. Whether you’re a hardcore mobile gamer or just someone tired of UI stutters, this one demands your attention.</p>
+
+                    <h3>Before We Start: The Housekeeping</h3>
+                    <p>We are about to modify system-level parameters. As always with rooting and modding, standard disclaimers apply: You do this at your own risk.</p>
+                    <p>While this module is stable for most, every device is different. Please take a full NANDroid backup via custom recovery before proceeding.</p>
+                    <p><strong>Crucial Step: Remove Conflicts</strong><br>Before you even download the zip file, you need to prepare your current setup. SuperMario Tweaker is a heavy-hitting script. If you try to run it alongside other older performance mods (like ancient DT modules, generic thermal tweaks, or RAM boosters), they will fight for control over your CPU kernel. Do yourself a favor and uninstall any other general performance modules first so SuperMario Tweaker has a clean slate to work with.</p>
+
+                    <h3>Installation Guide</h3>
+                    <p>One of the best things about this module is its versatility in 2025. It doesn't matter what your preferred root management solution is; it plays nicely with virtually all modern setups.</p>
+                    <ul>
+                        <li><strong>Supported Managers:</strong> Magisk, KernelSU (KSU), APatch</li>
+                    </ul>
+
+                    <h4>The Steps:</h4>
+                    <ol>
+                        <li>Download the SuperMario Tweaker zip file to your device.</li>
+                        <li>Open your manager app (Magisk/KSU/APatch) and head to the "Modules" tab.</li>
+                        <li>Tap "Install from storage" and select the zip file.</li>
+                        <li>Let the flashing process run. You'll see terminal text scrolling past as it places the necessary scripts.</li>
+                        <li><strong>The most important step:</strong> Hit the Reboot button.</li>
+                    </ol>
+                    
+                    <div class="my-8">
+                        <img src="Photos/Super_Mario.png" onerror="handleImageError(this, 'post')" alt="Module Installation" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>Don't just swipe the app away. The module needs a full system restart to initialize its scripts during the boot process. Once you're back at your lock screen, give the phone a minute or two to settle, and you’re good to go.</p>
+
+                    <h3>Under the Hood: Why the Hype?</h3>
+                    <p>So, what is this thing actually doing to your phone? It’s a lot more than just changing a few animation speeds. It’s a multi-pronged approach to optimization.</p>
+
+                    <h4>1. Everyday Speed and Snappiness</h4>
+                    <p>The first thing you'll notice is boot times—they are generally much faster. But day-to-day use is where it shines. The module utilizes IORAPD prefetching. The system gets better at predicting which app you're going to open next and starts pre-loading necessary data before you even tap the icon.</p>
+
+                    <h4>2. The Gaming Edge (Vulkan 1.4!)</h4>
+                    <p>For the gamers out there, this is a massive win. The module implements a dynamic CPU-GPU composition and CPU frequency locking. This means when you launch a demanding game (like Genshin Impact or Call of Duty), the module tries to prevent your phone from aggressively throttling performance the moment it gets warm. Furthermore, it includes updated support for Vulkan 1.4 via Mesa Turnip v25.1.3.</p>
+
+                    <h4>3. Buttery Smooth UI</h4>
+                    <p>It’s not just about raw power. The module includes specific tweaks for SurfaceFlinger and HWUI (Hardware User Interface). By optimizing these, scrolling through social media or navigating system menus feels incredibly fluid.</p>
+
+                    <h4>4. Efficiency and Battery</h4>
+                    <p>Usually, "performance modules" destroy battery life. SuperMario Tweaker tries to balance the scales. It uses an aggressive "Deep Doze" mode and tighter background controls to ensure that when your phone is asleep in your pocket, rogue apps aren't draining your battery.</p>
+
+                    <h3>Final Thoughts</h3>
+                    <p>From including Signature Spoofing for the custom ROM crowd to optimizing RAM management for multitaskers, SuperMario Tweaker really is like a Swiss Army knife for rooted Android devices. It manages the difficult balancing act of high-end gaming performance and daily-driver efficiency surprisingly well.</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Video Walkthrough</h4>
+                        <p class="mb-4">See the installation process and features in action:</p>
+                        <a href="https://youtu.be/ingCLC9hzUY" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Guide on YouTube
+                        </a>
+                    </div>
+                    <p>Give it a flash (after backing up!) and let me know your results in the comments below. Did you see that FPS boost?</p>
                 `
             }
         ];
