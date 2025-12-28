@@ -39,7 +39,31 @@
       gtag('config', 'G-2E9KWQ18P9');
     </script>
 
-    <!-- Image Error Handler (Must be in head) -->
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "TechyNoob - Android Modding Guide",
+      "image": "https://techynoob18.github.io/Photos/20211212_160808_0000.png",
+      "author": {
+        "@type": "Person",
+        "name": "TechyNoob",
+        "url": "https://www.youtube.com/@TechyNoob1818"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechyNoob",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://techynoob18.github.io/Photos/20211212_160808_0000.png"
+        }
+      },
+      "description": "Comprehensive guides for Android rooting, custom ROM installation, and bypassing security checks."
+    }
+    </script>
+
+    <!-- Image Error Handler -->
     <script>
         function handleImageError(img, type = 'post') {
             if (!img) return;
@@ -181,10 +205,7 @@
                     <p class="text-gray-400 mt-2">In-depth articles to help you master your tech.</p>
                 </div>
 
-                <!-- AdSense Responsive Slot -->
-                <div class="w-full h-32 bg-slate-800/50 border border-slate-700 border-dashed flex items-center justify-center mb-10 rounded-lg">
-                    <span class="text-slate-500 text-sm font-mono">Google AdSense Display Ad</span>
-                </div>
+                <!-- Removed AdSense Responsive Slot -->
 
                 <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" id="latest-posts-grid">
                     <!-- Posts injected via JS -->
@@ -219,20 +240,22 @@
                         <iframe id="blog-video" class="w-full h-96" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
 
-                    <!-- In-Article Ad Slot -->
-                    <div class="w-full h-24 bg-slate-800/50 border border-slate-700 border-dashed flex items-center justify-center mb-8 rounded-lg">
-                        <span class="text-slate-500 text-sm font-mono">Google AdSense In-Article Ad</span>
-                    </div>
+                    <!-- Removed In-Article Ad Slot -->
 
                     <div id="blog-content" class="prose prose-invert prose-lg max-w-none text-gray-300 leading-8">
                         <!-- Content injected via JS -->
                     </div>
                 </div>
                 
-                <!-- Multiplex Ad Slot -->
-                <div class="w-full h-24 bg-slate-800/50 border border-slate-700 border-dashed flex items-center justify-center mt-12 rounded-lg">
-                    <span class="text-slate-500 text-sm font-mono">Google AdSense Multiplex Ad</span>
+                <!-- Suggested Blogs Section -->
+                <div class="mt-16 border-t border-slate-800 pt-8">
+                    <h3 class="text-2xl font-bold text-white mb-6">You Might Also Like</h3>
+                    <div id="blog-suggestions" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        <!-- Suggestions injected via JS -->
+                    </div>
                 </div>
+                
+                <!-- Removed Multiplex Ad Slot -->
             </div>
         </div>
 
@@ -240,11 +263,43 @@
         <div id="about-section" class="hidden fade-in max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
             <div class="bg-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-700">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8 text-center">About TechyNoob</h2>
+                
                 <div class="space-y-6 text-gray-300 text-lg">
-                    <p>Welcome to <span class="text-blue-400 font-bold">TechyNoob</span>: Your Guide to Android Customization, Security Research, and More! We're here to help you unlock the hidden potential of your Android device safely and responsibly.</p>
-                    <p>Our mission is to empower Android users with the knowledge and tools to truly make their devices their own.</p>
+                    <p>
+                        Welcome to <span class="text-blue-400 font-bold">TechyNoob</span>: Your Guide to Android Customization, Security Research, and More! We're here to help you unlock the hidden potential of your Android device safely and responsibly.
+                    </p>
+                    <p>
+                        Our mission is to empower Android users with the knowledge and tools to truly make their devices their own. Whether you're looking to enhance performance, explore new features with custom ROMs and Magisk modules, or delve into the fascinating world of advanced device security, TechyNoob is your go-to resource.
+                    </p>
+
+                    <h3 class="text-2xl font-semibold text-white mt-8 mb-4 text-center">What you can expect:</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                            <i class="fas fa-bolt text-yellow-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white">Custom ROMs</h4>
+                            <p class="text-sm text-gray-400">Step-by-step guides to flash LineageOS, CrDroid, and Evolution X.</p>
+                        </div>
+                        <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                            <i class="fas fa-cube text-blue-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white">Magisk Modules</h4>
+                            <p class="text-sm text-gray-400">Reviews of modules for ad-blocking and system tweaks.</p>
+                        </div>
+                        <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                            <i class="fas fa-user-shield text-red-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white">Advanced Security</h4>
+                            <p class="text-sm text-gray-400">Responsible security research and device protection techniques.</p>
+                        </div>
+                        <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                            <i class="fas fa-battery-full text-green-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white">Optimization</h4>
+                            <p class="text-sm text-gray-400">Insights into optimizing apps and extending battery life.</p>
+                        </div>
+                    </div>
+
                     <div class="mt-12 text-center bg-slate-900 rounded-2xl p-8 border border-slate-700">
                         <h3 class="text-2xl font-bold text-white mb-4">Join the Community</h3>
+                        <p class="text-gray-400 mb-6">Join our growing community of tech enthusiasts!</p>
                         <a href="https://www.youtube.com/@TechyNoob1818" target="_blank" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-white bg-red-600 hover:bg-red-700 md:text-lg transition shadow-lg shadow-red-600/30">
                             <i class="fab fa-youtube mr-2"></i> Go to TechyNoob YouTube Channel
                         </a>
@@ -304,7 +359,20 @@
         </div>
     </footer>
 
-    <!-- Modals -->
+    <!-- Cookie Consent Popup -->
+    <div id="cookie-consent" class="hidden fixed bottom-0 left-0 right-0 bg-slate-800 border-t border-slate-700 p-6 z-50 animate-slide-up shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.3)]">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-gray-300 text-sm flex-1">
+                <p>We use cookies to improve your experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies as described in our <button onclick="openModal('privacy-modal')" class="text-blue-400 hover:underline">Privacy Policy</button>.</p>
+            </div>
+            <div class="flex space-x-4">
+                <button onclick="declineCookies()" class="px-4 py-2 rounded-lg border border-slate-600 text-gray-300 hover:bg-slate-700 transition text-sm font-medium">Decline</button>
+                <button onclick="acceptCookies()" class="px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition text-sm font-medium shadow-lg shadow-blue-600/20">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals (Privacy, Terms, Disclaimer) -->
     <div id="privacy-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" onclick="closeModal('privacy-modal')"></div>
@@ -312,7 +380,14 @@
                 <div class="bg-slate-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <h3 class="text-xl font-semibold text-white mb-4">Privacy Policy</h3>
                     <div class="mt-2 text-gray-300 text-sm space-y-4 h-96 overflow-y-auto pr-2 custom-scrollbar">
-                        <p>At TechyNoob, accessible from our website, one of our main priorities is the privacy of our visitors.</p>
+                        <p>At TechyNoob, accessible from our website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by TechyNoob and how we use it.</p>
+                        <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
+                        <h4 class="text-white font-bold mt-4">Log Files</h4>
+                        <p>TechyNoob follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
+                        <h4 class="text-white font-bold mt-4">Cookies and Web Beacons</h4>
+                        <p>Like any other website, TechyNoob uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+                        <h4 class="text-white font-bold mt-4">Google DoubleClick DART Cookie</h4>
+                        <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet.</p>
                     </div>
                 </div>
                 <div class="bg-slate-700 px-4 py-3 sm:px-6 flex justify-end">
@@ -322,7 +397,6 @@
         </div>
     </div>
 
-    <!-- Terms Modal -->
     <div id="terms-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" onclick="closeModal('terms-modal')"></div>
@@ -330,7 +404,11 @@
                 <div class="bg-slate-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <h3 class="text-xl font-semibold text-white mb-4">Terms of Service</h3>
                     <div class="mt-2 text-gray-300 text-sm space-y-4 h-96 overflow-y-auto pr-2 custom-scrollbar">
-                        <p>By accessing this website, you agree to be bound by these website Terms and Conditions of Use.</p>
+                        <p>By accessing this website, you agree to be bound by these website Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
+                        <h4 class="text-white font-bold mt-4">Use License</h4>
+                        <p>Permission is granted to temporarily download one copy of the materials (information or software) on TechyNoob's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not: modify or copy the materials; use the materials for any commercial purpose, or for any public display; attempt to decompile or reverse engineer any software contained on TechyNoob's website.</p>
+                        <h4 class="text-white font-bold mt-4">Disclaimer</h4>
+                        <p>The materials on TechyNoob's website are provided "as is". TechyNoob makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
                     </div>
                 </div>
                 <div class="bg-slate-700 px-4 py-3 sm:px-6 flex justify-end">
@@ -339,8 +417,7 @@
             </div>
         </div>
     </div>
-    
-    <!-- Disclaimer Modal -->
+
     <div id="disclaimer-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" onclick="closeModal('disclaimer-modal')"></div>
@@ -348,7 +425,16 @@
                 <div class="bg-slate-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <h3 class="text-xl font-semibold text-white mb-4">Disclaimer</h3>
                     <div class="mt-2 text-gray-300 text-sm space-y-4 h-96 overflow-y-auto pr-2 custom-scrollbar">
-                        <p>The information provided by TechyNoob is for general informational purposes only.</p>
+                        <p>The information provided by TechyNoob ("we," "us", or "our") on this website is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on the Site.</p>
+                        
+                        <h4 class="text-white font-bold mt-4">Educational Purpose Disclaimer</h4>
+                        <p>Content on this website related to rooting, system modification, and security research is intended solely for educational and informational purposes. TechyNoob does not condone or encourage illegal activities, bypassing security for malicious intent, or copyright infringement.</p>
+
+                        <h4 class="text-white font-bold mt-4">External Links Disclaimer</h4>
+                        <p>The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties or links to websites and features in banners or other advertising. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability or completeness by us.</p>
+                        
+                        <h4 class="text-white font-bold mt-4">Professional Disclaimer</h4>
+                        <p>The Site cannot and does not contain technical advice. The technical information is provided for general informational and educational purposes only and is not a substitute for professional advice. Accordingly, before taking any actions based upon such information, we encourage you to consult with the appropriate professionals.</p>
                     </div>
                 </div>
                 <div class="bg-slate-700 px-4 py-3 sm:px-6 flex justify-end">
@@ -359,9 +445,11 @@
     </div>
 
     <script>
+        // Safe initialization wrapper
         document.addEventListener('DOMContentLoaded', () => {
             try {
                 init();
+                checkCookieConsent();
             } catch (e) {
                 console.error("Failed to initialize blog posts:", e);
             }
@@ -455,7 +543,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/DSC00415.JPG" onerror="handleImageError(this, 'post')" alt="Redmi Note 7 Pro Home Screen" class="w-full rounded-xl shadow-2xl border border-slate-700">
-                        <p class="text-sm text-gray-500 mt-2 text-center">The clean, modern look of Android 16 on 6-year-old hardware.</p>
                     </div>
 
                     <p>Navigating through the UI feels incredibly fluid. I was expecting lags or stutters—after all, we are asking an older Snapdragon 675 processor to run the latest Android version—but everyday tasks like scrolling through Instagram or switching between apps felt snappy.</p>
@@ -486,7 +573,6 @@
 
                     <div class="my-8">
                         <img src="Photos/DSC00405.JPG" onerror="handleImageError(this, 'post')" alt="Android 16 Settings Page" class="w-full rounded-xl shadow-2xl border border-slate-700">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Proof of Android 16 running on "violet" (Redmi Note 7 Pro).</p>
                     </div>
 
                     <h3>The Big Catch: SafetyNet Fails ⚠️</h3>
@@ -536,7 +622,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/DSC00590.JPG" onerror="handleImageError(this, 'post')" alt="OnePlus 6T running DerpFest Android 16" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">A fresh look for the OnePlus 6T with DerpFest.</p>
                     </div>
 
                     <p>But let’s be honest—you don’t install a custom ROM just for a stock look. You do it for the features. And DerpFest absolutely delivers on that front.</p>
@@ -566,7 +651,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/DSC00614.JPG" onerror="handleImageError(this, 'post')" alt="DerpFest About Phone Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Android 16 confirmed on the OnePlus 6T.</p>
                     </div>
 
                     <h3>The Dealbreakers: What You Need to Know</h3>
@@ -621,7 +705,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/lv_0_20251127235920_exported_14600.jpg" onerror="handleImageError(this, 'post')" alt="Custom Android Home Screen Setup" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">My November 2025 Daily Driver Setup.</p>
                     </div>
 
                     <p>But let’s be honest: having "root access" is just opening the door. The real magic happens when you install the right modules to customize your experience. You don't want to just root your phone; you want to optimize it.</p>
@@ -723,7 +806,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/@TechyNoob1818_20251129_195406_0000.png" onerror="handleImageError(this, 'post')" alt="LSposed Module Search" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Finding the module in LSposed Repository.</p>
                     </div>
 
                     <p>Developed by the talented developer <em>buttercookie42</em>, this module acts as a bridge. It hooks into the system's package manager and essentially tells Android, "It's okay, let this one through." It mimics the bypass flag used in ADB commands but applies it system-wide for manual installations.</p>
@@ -751,7 +833,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/@TechyNoob1818_20251129_195623_0000.png" onerror="handleImageError(this, 'post')" alt="Module Installation Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Installing the bypass module.</p>
                     </div>
 
                     <h4>4. Enable the Module</h4>
@@ -890,7 +971,7 @@
                     <p>To fix it, you usually need to reinstall Windows or boot into a Linux live environment to recover your files. The catch? To create the bootable recovery drive you need to save your PC, you generally need... a second, working PC.</p>
                     
                     <div class="my-8">
-                        <img src="Photos/Gemini_Generated_Image_hglid9hglid9hgli~2.png" onerror="handleImageError(this, 'post')" alt="EtchDroid on Android" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <img src="Photos/Gemini_Generated_Image_hglid9hglid9hgli~2.jpg" onerror="handleImageError(this, 'post')" alt="EtchDroid on Android" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
                         <p class="text-sm text-gray-500 mt-2 text-center">Create bootable USBs directly on your phone.</p>
                     </div>
 
@@ -1050,6 +1131,8 @@
                             <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Review on YouTube
                         </a>
                     </div>
+
+                    <p class="text-xs text-gray-500 italic">Disclaimer: Flashing custom ROMs involves risk and may void your warranty (though the Note 7 Pro is likely out of warranty anyway!). Make sure to back up your data before proceeding.</p>
                 `
             },
             {
@@ -1288,10 +1371,6 @@
                     <h4>4. Choosing the Right Blocklist</h4>
                     <p>This is the most critical step. StevenBlock isn't "one size fits all." You get to choose how aggressive you want the blocking to be. Here is a cheat sheet to help you decide:</p>
                     
-                    <div class="my-8">
-                        <img src="Photos/StevenBlock2.png" onerror="handleImageError(this, 'post')" alt="Blocklist Options" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                    </div>
-
                     <ul>
                         <li><strong>StevenBlack Unified:</strong> The Safe Bet. This is the classic list. It blocks all the major ad servers and malware domains but rarely breaks websites. If you are new to this, start here.</li>
                         <li><strong>Energized Spark:</strong> The Lightweight Choice. Perfect for older phones. It’s a smaller list that blocks the essentials without slowing down the system lookup time.</li>
@@ -1391,11 +1470,10 @@
                 `
             }
         ];
-
-        // --- LOGIC ---
-
+        
         function init() {
             renderPosts(posts);
+            checkCookieConsent();
         }
 
         function renderPosts(postsToRender) {
@@ -1405,23 +1483,19 @@
                     grid.innerHTML = '<div class="col-span-full text-center py-10"><p class="text-gray-400 text-xl">No results found matching your search.</p><button onclick="document.getElementById(\'search-input\').value=\'\'; performSearch()" class="mt-4 text-blue-400 hover:underline">Clear Search</button></div>';
                     return;
                 }
-                // Sort posts by ID descending (newest first)
                 const sortedPosts = [...postsToRender].sort((a, b) => b.id - a.id);
-                
                 grid.innerHTML = sortedPosts.map(post => `
-                    <div class="bg-slate-800 rounded-xl overflow-hidden hover:shadow-2xl transition duration-300 border border-slate-700 flex flex-col group">
+                    <div class="bg-slate-800 rounded-xl overflow-hidden hover:shadow-2xl transition duration-300 border border-slate-700 flex flex-col group cursor-pointer" onclick="loadBlog(${post.id})">
                         <div class="h-48 overflow-hidden relative">
                             <img src="${post.thumbnail}" onerror="handleImageError(this, 'post')" alt="${post.title}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" loading="lazy">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 cursor-pointer" onclick="loadBlog(${post.id})">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <i class="fas fa-play-circle text-5xl text-white drop-shadow-lg"></i>
                             </div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col">
                             <h3 class="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-blue-400 transition">${post.title}</h3>
-                            <p class="text-gray-400 text-sm mb-4 flex-1 leading-relaxed">${post.excerpt}</p>
-                            <button onclick="loadBlog(${post.id})" class="w-full bg-slate-700 hover:bg-blue-600 text-white py-2 rounded-lg transition font-medium">
-                                Read Guide
-                            </button>
+                            <p class="text-gray-400 text-sm mb-4 flex-1 leading-relaxed line-clamp-3">${post.excerpt}</p>
+                            <span class="text-blue-500 text-sm font-bold uppercase tracking-wider mt-auto">Read Guide &rarr;</span>
                         </div>
                     </div>
                 `).join('');
@@ -1504,6 +1578,33 @@
             }
         }
 
+        function renderSuggestions(currentId) {
+            const suggestionsContainer = document.getElementById('blog-suggestions');
+            if (!suggestionsContainer) return;
+            
+            // Filter out current post
+            const otherPosts = posts.filter(p => p.id !== currentId);
+            
+            // simple shuffle for suggestions
+            const shuffled = otherPosts.sort(() => 0.5 - Math.random());
+            const suggestions = shuffled.slice(0, 3);
+            
+            suggestionsContainer.innerHTML = suggestions.map(post => `
+                <div class="bg-slate-900 rounded-xl overflow-hidden hover:shadow-2xl transition duration-300 border border-slate-700 flex flex-col group cursor-pointer" onclick="loadBlog(${post.id})">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="${post.thumbnail}" onerror="handleImageError(this, 'post')" alt="${post.title}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-play-circle text-3xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col">
+                        <h4 class="text-base font-bold text-white mb-2 line-clamp-2 group-hover:text-blue-400 transition">${post.title}</h4>
+                        <span class="text-blue-500 text-xs font-bold uppercase tracking-wider mt-auto">Read &rarr;</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
         function loadBlog(id) {
             const post = posts.find(p => p.id === id);
             if(!post) return;
@@ -1515,6 +1616,7 @@
             document.getElementById('empty-blog-state').classList.add('hidden');
             document.getElementById('blog-article-container').classList.remove('hidden');
 
+            renderSuggestions(id);
             showSection('blog');
         }
 
@@ -1547,6 +1649,24 @@
                     grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 100);
             }
+        }
+
+        // Cookie Consent Logic
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookie-consent').classList.remove('hidden');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-consent').classList.add('hidden');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookie-consent').classList.add('hidden');
         }
 
         window.onclick = function(event) {
