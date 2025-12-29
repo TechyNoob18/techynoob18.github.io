@@ -39,6 +39,30 @@
       gtag('config', 'G-2E9KWQ18P9');
     </script>
 
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "TechyNoob - Android Modding Guide",
+      "image": "https://techynoob18.github.io/Photos/20211212_160808_0000.png",
+      "author": {
+        "@type": "Person",
+        "name": "TechyNoob",
+        "url": "https://www.youtube.com/@TechyNoob1818"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechyNoob",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://techynoob18.github.io/Photos/20211212_160808_0000.png"
+        }
+      },
+      "description": "Comprehensive guides for Android rooting, custom ROM installation, and bypassing security checks."
+    }
+    </script>
+
     <!-- Image Error Handler -->
     <script>
         function handleImageError(img, type = 'post') {
@@ -59,33 +83,6 @@
                     : 'h-64 bg-slate-800 flex items-center justify-center text-gray-400';
                 div.innerHTML = `<i class="fas fa-${type === 'post' ? 'image' : 'video'} text-4xl"></i><span class="ml-2 text-sm">Image not found</span>`;
                 parent.appendChild(div);
-            }
-        }
-
-        // Cookie Consent Logic - Defined early to be available
-        function checkCookieConsent() {
-            const consent = localStorage.getItem('cookieConsent');
-            if (!consent) {
-                const cookieBanner = document.getElementById('cookie-consent');
-                if (cookieBanner) {
-                    cookieBanner.classList.remove('hidden');
-                }
-            }
-        }
-
-        function acceptCookies() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            const cookieBanner = document.getElementById('cookie-consent');
-            if (cookieBanner) {
-                cookieBanner.classList.add('hidden');
-            }
-        }
-
-        function declineCookies() {
-            localStorage.setItem('cookieConsent', 'declined');
-            const cookieBanner = document.getElementById('cookie-consent');
-            if (cookieBanner) {
-                cookieBanner.classList.add('hidden');
             }
         }
     </script>
@@ -141,7 +138,7 @@
                     </span>
                 </div>
                 
-                <!-- Desktop & Tablet Search Bar -->
+                <!-- Search Bar -->
                 <div class="hidden md:flex flex-1 justify-center px-8">
                     <div class="relative w-full max-w-md">
                         <input type="text" id="search-input" placeholder="Search guides & reviews..." class="w-full bg-slate-800 text-gray-300 border border-slate-700 rounded-l-md py-2 px-4 focus:outline-none focus:ring-1 focus:ring-blue-500" onkeypress="handleSearchKeyPress(event)" oninput="handleSearchInput(event)" autocomplete="off">
@@ -171,7 +168,7 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (with Search) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
             <div class="px-2 pt-4 pb-3 space-y-2 sm:px-3">
                 <!-- Mobile Search Input -->
@@ -268,6 +265,7 @@
         <div id="about-section" class="hidden fade-in max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
             <div class="bg-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-700">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8 text-center">About TechyNoob</h2>
+                
                 <div class="space-y-6 text-gray-300 text-lg">
                     <p>
                         Welcome to <span class="text-blue-400 font-bold">TechyNoob</span>: Your Guide to Android Customization, Security Research, and More! We're here to help you unlock the hidden potential of your Android device safely and responsibly.
@@ -303,6 +301,7 @@
 
                     <div class="mt-12 text-center bg-slate-900 rounded-2xl p-8 border border-slate-700">
                         <h3 class="text-2xl font-bold text-white mb-4">Join the Community</h3>
+                        <p class="text-gray-400 mb-6">Join our growing community of tech enthusiasts!</p>
                         <a href="https://www.youtube.com/@TechyNoob1818" target="_blank" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-white bg-red-600 hover:bg-red-700 md:text-lg transition shadow-lg shadow-red-600/30">
                             <i class="fab fa-youtube mr-2"></i> Go to TechyNoob YouTube Channel
                         </a>
@@ -448,10 +447,40 @@
     </div>
 
     <script>
+        // Check cookie consent
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                const cookieBanner = document.getElementById('cookie-consent');
+                if (cookieBanner) {
+                    cookieBanner.classList.remove('hidden');
+                }
+            }
+        }
+
+        // Accept cookies
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            const cookieBanner = document.getElementById('cookie-consent');
+            if (cookieBanner) {
+                cookieBanner.classList.add('hidden');
+            }
+        }
+
+        // Decline cookies
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            const cookieBanner = document.getElementById('cookie-consent');
+            if (cookieBanner) {
+                cookieBanner.classList.add('hidden');
+            }
+        }
+
         // Safe initialization wrapper
         document.addEventListener('DOMContentLoaded', () => {
             try {
                 init();
+                checkCookieConsent();
             } catch (e) {
                 console.error("Failed to initialize blog posts:", e);
             }
@@ -975,7 +1004,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/Gemini_Generated_Image_hglid9hglid9hgli~2.jpg" onerror="handleImageError(this, 'post')" alt="EtchDroid on Android" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Create bootable USBs directly on your phone.</p>
                     </div>
 
                     <p>If you don't have a spare computer lying around, you might feel completely stuck. But if you have an Android smartphone in your pocket, you actually hold the solution right there. Today, we’re diving into EtchDroid, an incredible piece of open-source software that turns your phone into a PC rescue kit—without requiring you to root your device.</p>
@@ -1046,7 +1074,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/20251203_092816_0000.png" onerror="handleImageError(this, 'post')" alt="Axion ROM Home Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Android 16 running on the Redmi Note 7 Pro</p>
                     </div>
 
                     <p>Recently, I decided to breathe some new life into my unit by flashing the Axion Custom ROM, which is based on the brand-new Android 16. Yes, you read that right—Android 16 on a device from 2019.</p>
@@ -1078,7 +1105,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/@TechyNoob1818_20251202_233308_0000.png" onerror="handleImageError(this, 'post')" alt="Axion ROM Customization Settings" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Nothing OS inspired aesthetics in Axion ROM</p>
                     </div>
 
                     <p>The standout feature here is the lock screen. You get that distinct, dot-matrix style clock font that Nothing phones are famous for. You can also stack widgets directly on the lock screen, making it functional rather than just pretty.</p>
@@ -1089,7 +1115,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/@TechyNoob1818_20251202_234225_0000.png" onerror="handleImageError(this, 'post')" alt="About Phone Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Device specifications and Android version</p>
                     </div>
 
                     <p><strong>Special Features:</strong> There is a "Special Features" tab in the settings menu where you can find experimental flags like notification row transparency. For multitaskers, the Sidebar feature is a win—it lets you pull up apps in a floating window overlay without leaving your current screen. There is also a Spoofing menu, which allows the phone to identify as a different device (often a Pixel) to unlock unlimited photo storage or higher frame rates in supported games.</p>
@@ -1134,8 +1159,6 @@
                             <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Review on YouTube
                         </a>
                     </div>
-
-                    <p class="text-xs text-gray-500 italic">Disclaimer: Flashing custom ROMs involves risk and may void your warranty (though the Note 7 Pro is likely out of warranty anyway!). Make sure to back up your data before proceeding.</p>
                 `
             },
             {
@@ -1362,7 +1385,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/StevenBlock1.png" onerror="handleImageError(this, 'post')" alt="Volume Key Selection Menu" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Using volume keys to select options</p>
                     </div>
 
                     <p>Since you can't touch the screen to select options in this mode, you have to use your physical buttons:</p>
@@ -1374,10 +1396,6 @@
                     <h4>4. Choosing the Right Blocklist</h4>
                     <p>This is the most critical step. StevenBlock isn't "one size fits all." You get to choose how aggressive you want the blocking to be. Here is a cheat sheet to help you decide:</p>
                     
-                    <div class="my-8">
-                        <img src="Photos/StevenBlock2.png" onerror="handleImageError(this, 'post')" alt="Blocklist Options" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                    </div>
-
                     <ul>
                         <li><strong>StevenBlack Unified:</strong> The Safe Bet. This is the classic list. It blocks all the major ad servers and malware domains but rarely breaks websites. If you are new to this, start here.</li>
                         <li><strong>Energized Spark:</strong> The Lightweight Choice. Perfect for older phones. It’s a smaller list that blocks the essentials without slowing down the system lookup time.</li>
@@ -1474,6 +1492,181 @@
                         </a>
                     </div>
                     <p>Give it a flash (after backing up!) and let me know your results in the comments below. Did you see that FPS boost?</p>
+                `
+            },
+            {
+                id: 13,
+                title: "Maximize Your Android’s Potential: The Ultimate Guide to Installing the CrazyX Tweak Module on Magisk Vexirox",
+                excerpt: "Boost gaming FPS, eliminate UI lag, and make scrolling buttery smooth with the CrazyX Tweak module.",
+                videoUrl: "https://www.youtube.com/embed/tPDopaJLg_w",
+                thumbnail: "https://img.youtube.com/vi/tPDopaJLg_w/hqdefault.jpg",
+                content: `
+                    <p>Hello there, Android modders and custom ROM users!</p>
+                    <p>If you’re reading this, you’re probably just like me—never quite satisfied with "stock" performance. We know our devices are capable of more, whether it’s squeezing out a few extra frames per second in the latest mobile game, eliminating that half-second of UI lag, or just making scrolling feel buttery smooth.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/YT_Crazy_Module.png" onerror="handleImageError(this, 'post')" alt="CrazyX Tweak Module Cover" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>Today, I want to walk you through a specific installation process that I covered in my latest YouTube video. We are diving deep into optimizing your device by installing the <strong>CrazyX Tweak Magisk Vexirox module</strong>.</p>
+                    <p>I’ve tested a lot of modules over the years, and this one has shown some seriously promising results for general system responsiveness. But, the installation process inside the Vexirox environment can sometimes be a little tricky if you haven't done it before.</p>
+                    <p>So, grab your phone, make sure your battery is charged, and let’s get boosting.</p>
+
+                    <h3>A Quick, Crucial Clarification</h3>
+                    <p>Before we jump into the steps, I need to make a very important distinction based on some questions I got on my previous videos.</p>
+                    <p>We are using <strong>Magisk Vexirox</strong>. It is vital to remember that there is the Vexirox <em>application/platform</em> itself, and then there are performance <em>modules</em> that you install <em>inside</em> of that platform.</p>
+                    <p>In my previous guide, I showed you how to set up the main Magisk Vexirox app. Today, we are taking the next step: installing the actual <strong>CrazyX performance module</strong> within that app.</p>
+                    <p><strong>Prerequisite:</strong> Please ensure you have the Vexirox app installed and running properly before following this guide.</p>
+
+                    <h3>Step-by-Step Installation Guide</h3>
+                    <p>First things first, make sure you have downloaded the CrazyX Tweak module zip file. Keep it somewhere easy to find in your phone's internal storage (like your Downloads folder).</p>
+                    <p>There are two ways this installation usually goes. We will start with the standard method, which works 90% of the time.</p>
+
+                    <h4>Method 1: The Standard Installation</h4>
+                    <ol>
+                        <li><strong>Open the Vexirox App:</strong> Launch Magisk Vexirox from your app drawer.</li>
+                        <li><strong>Navigate to Modules:</strong> Once the app loads, look at the tabs and tap on the <strong>"Module"</strong> section.</li>
+                        <li><strong>Find the Magic Button:</strong> This part isn't super obvious. Look at the <strong>bottom left side</strong> of the Module screen. You should see a small, somewhat nondescript box icon. Go ahead and tap that.</li>
+                        <li><strong>Select the File:</strong> This will open up Vexirox's internal file manager. Navigate to where you saved the CrazyX Tweak zip file and select it.</li>
+                    </ol>
+                    
+                    <div class="my-8">
+                        <img src="Photos/Crazy_Module1.png" onerror="handleImageError(this, 'post')" alt="Vexirox Module Installation" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>Ideally, the script will automatically start running, you'll see some text flash by, and it will say done. If that happens, congratulations! You just need to <strong>restart your phone</strong> to apply the changes.</p>
+                    <p>However, technology likes to throw curveballs.</p>
+
+                    <h4>Method 2: The "Select Zip File Only" Fix</h4>
+                    <p>Sometimes, when you try Method 1, Vexirox might throw an error message at you that says something like <strong>"Select Zip File Only,"</strong> even though you definitely just selected a zip file. It’s frustrating, but don’t panic. I ran into this too, and here is the workaround that works perfectly.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/Crazy Module_2.png" onerror="handleImageError(this, 'post')" alt="Shell Command Install" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <ol>
+                        <li><strong>Unzip the Module:</strong> Close the Vexirox app for a moment. Open your phone's standard, built-in File Manager app. Find that CrazyX zip file you downloaded and <strong>extract (unzip)</strong> it right there in your storage. You need the actual folder, not the zip file, for this step.</li>
+                        <li><strong>Use Shell Command:</strong> Open Magisk Vexirox again. This time, <strong>do not</strong> go to the Module section. Instead, tap on the <strong>"Shell Command"</strong> tab.</li>
+                        <li><strong>Locate the Script:</strong> You will see a file browser interface again. Use it to navigate inside the unzipped folder you just created.</li>
+                        <li><strong>Run the Installer:</strong> Inside that folder, look for a specific file named <code>install.sh</code>. Tap on that file.</li>
+                    </ol>
+                    <p>By selecting the <code>.sh</code> file directly in the Shell Command section, you are manually forcing the installation script to run, bypassing whatever glitch was causing the zip error.</p>
+
+                    <h3>The Final Step: Reboot and Enjoy</h3>
+                    <p>Whether you used Method 1 or Method 2, once the installation text stops scrolling and says it's complete, there is one last non-negotiable step:</p>
+                    <p><strong>Restart Your Phone Immediately.</strong></p>
+                    <p>These kinds of deep system tweaks do not apply until the operating system reloads completely. Once your phone boots back up, go ahead and test it out. Launch your heaviest game, scroll through image-heavy apps, and see if you feel that extra layer of smoothness.</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Video Walkthrough</h4>
+                        <p class="mb-4">If you are a visual learner and want to see exactly which buttons I'm pressing in real-time, check out the full video tutorial right here:</p>
+                        <a href="https://youtu.be/tPDopaJLg_w" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Guide on YouTube
+                        </a>
+                    </div>
+                    <p>Thanks for reading, and happy modding! Let me know in the comments below if you felt the difference in performance.</p>
+                `
+            },
+            {
+                id: 14,
+                title: "How to Install Magisk Vexirox on Any Android (The Rootless Magisk)",
+                excerpt: "Get root-like features without unlocking your bootloader. The complete guide to installing Magisk Vexirox using Shizuku.",
+                videoUrl: "https://www.youtube.com/embed/bg9tONb3cvE",
+                thumbnail: "https://img.youtube.com/vi/bg9tONb3cvE/hqdefault.jpg",
+                content: `
+                    <p>Hello there, Android modders and custom ROM users!</p>
+                    <p>If you are reading this, you are probably exactly where I was a few weeks ago: staring at your phone, itching to customize it, but dreading the process of unlocking the bootloader. We all know the drill—backing up terabytes of data, wiping the device, flashing a recovery, and then praying you don't end up with a fancy brick.</p>
+                    <p>For years, that was the only price of admission if you wanted the cool stuff. But recently, the Android modding scene has shifted. We are seeing a rise in "rootless" solutions, and the biggest name making waves right now is <strong>Magisk Vexirox</strong>.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/YT_Magisk_Rootless.png" onerror="handleImageError(this, 'post')" alt="Magisk Vexirox Cover" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>I finally got around to testing the latest version, and honestly? It’s kind of a game-changer. It gives you that taste of power—modules, themes, tweaks—without the heart-stopping moment of flashing a <code>boot.img</code> file.</p>
+                    <p>In this post, I’m going to walk you through exactly how to get it running. It’s a little different from the old-school methods, specifically because of one major requirement: <strong>Shizuku</strong>.</p>
+
+                    <h3>What is Magisk Vexirox?</h3>
+                    <p>Before we start tapping buttons, let’s clear up what this actually <em>is</em>.</p>
+                    <p>If you’ve used the original Magisk by John Wu, you know it works by patching the boot image of your phone to gain "Superuser" rights. It lives deep in the system.</p>
+                    <p><strong>Magisk Vexirox</strong> is different. It’s an alternative developed for devices that <em>cannot</em> or <em>should not</em> be rooted. Instead of hacking the system partition, it creates a virtualized environment—a sandbox, essentially—where it can run modules.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/Rootless_Magisk.png" onerror="handleImageError(this, 'post')" alt="Vexirox Interface" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <p>The beauty of this approach is safety. Since you aren't actually modifying the Android system files, Google’s SafetyNet usually remains intact. This means your banking apps, Google Pay, and Pokémon GO likely won't even know you're modding the phone.</p>
+
+                    <h3>The Secret Sauce: Shizuku</h3>
+                    <p>Here is the part where most people get stuck.</p>
+                    <p>Magisk Vexirox is just an app. By itself, it has the same permissions as a calculator or a calendar—which is to say, not much. To apply themes or tweaks, it needs higher privileges.</p>
+                    <p>Since we aren't using "Root" to get those privileges, we use <strong>Shizuku</strong>.</p>
+                    <p>Shizuku utilizes a feature built into Android 11 and up called <strong>Wireless Debugging</strong>. It basically allows an app to send commands to the system as if it were a computer connected via ADB (Android Debug Bridge).</p>
+                    <p><strong>Critical Note:</strong> If you do not have Shizuku installed and running, Magisk Vexirox will refuse to work. Period.</p>
+
+                    <h3>Step-by-Step Installation Guide</h3>
+                    <p>Ready? Let’s get this set up. I’ve broken this down so it’s impossible to mess up.</p>
+
+                    <h4>Phase 1: Prepare Shizuku</h4>
+                    <ol>
+                        <li>Go to the Play Store and download <strong>Shizuku</strong>.</li>
+                        <li>Enable <strong>Developer Options</strong> on your phone. (Go to Settings > About Phone > Tap "Build Number" 7 times until it says "You are a developer").</li>
+                        <li>In Developer Options, enable <strong>Wireless Debugging</strong>.</li>
+                        <li>Open the Shizuku app and follow the pairing instructions to start the service. You want to see "Shizuku is running" at the top.</li>
+                    </ol>
+
+                    <h4>Phase 2: Install Vexirox</h4>
+                    <p>Now that our bridge is built, we can install the main event.</p>
+                    <ol>
+                        <li>Download the latest <strong>Magisk Vexirox APK</strong>. (Always aim for the latest release to avoid bugs with newer Android versions).</li>
+                        <li>Open your file manager and tap the APK.</li>
+                        <li>You’ll likely get a prompt about "Unknown Sources." Toggle that permission on and hit <strong>Install</strong>.</li>
+                    </ol>
+
+                    <h4>Phase 3: The Connection</h4>
+                    <p>This is the moment of truth.</p>
+                    
+                    <div class="my-8">
+                        <img src="Photos/Rootless_Magisk_1.png" onerror="handleImageError(this, 'post')" alt="Vexirox Home Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                    </div>
+
+                    <ol>
+                        <li>Open the Magisk Vexirox app.</li>
+                        <li><strong>Don't panic</strong> when you see a popup immediately. This is the app asking for Shizuku access.</li>
+                        <li>Select <strong>"Allow Always"</strong>.</li>
+                    </ol>
+                    <p>Once you do that, the dashboard will load. If you see the familiar interface with the "Install" buttons and module lists, congratulations—you are in.</p>
+
+                    <h3>Why Would You Choose This Over Normal Root?</h3>
+                    <p>I’ve been asked this a lot: "Why not just root the phone for real?"</p>
+                    <p>It comes down to <strong>convenience vs. control</strong>.</p>
+                    <ul>
+                        <li><strong>Traditional Root (Magisk)</strong> gives you 100% control. You can overclock your CPU, change your kernel, and delete system apps. But, it triggers security alarms. You have to play a constant game of cat-and-mouse with banking apps, hiding root status, and fixing SafetyNet.</li>
+                        <li><strong>Magisk Vexirox (Rootless)</strong> gives you maybe 70% of that control. You can still theme apps, change emojis, and use UI mods. But, you don't trip those security alarms.</li>
+                    </ul>
+                    <p>For the average user who just wants their phone to look cool and have a few extra features, Vexirox is frankly the smarter choice in 2025. You get the fun without the headache.</p>
+
+                    <h3>Troubleshooting: "Service Not Running"</h3>
+                    <p>I want to address the one bug that plagues everyone. You open Vexirox, and it says "Service Not Running" or "Shizuku not detected," even though you installed it.</p>
+                    <p>This happens because Android is aggressive about killing background apps to save battery. If your phone "sleeps" Shizuku, the connection breaks.</p>
+                    <p><strong>The Fix:</strong></p>
+                    <ul>
+                        <li>Close Vexirox completely from your recent apps.</li>
+                        <li>Open Shizuku again.</li>
+                        <li>If the service has stopped, restart it via Wireless Debugging.</li>
+                        <li>Re-launch Vexirox.</li>
+                    </ul>
+
+                    <h3>Final Thoughts</h3>
+                    <p>It’s exciting to see how far Android modding has come. We used to have to risk bricking our phones just to get a dark mode or a different font. Now, thanks to tools like Shizuku and Vexirox, we can have our cake and eat it too.</p>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 my-8">
+                        <h4 class="text-white font-bold text-lg mb-2">Watch the Full Walkthrough</h4>
+                        <p class="mb-4">See the installation happen in real-time:</p>
+                        <a href="https://youtu.be/bg9tONb3cvE" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-bold transition">
+                            <i class="fab fa-youtube mr-2 text-red-500 text-xl"></i> Watch Full Guide on YouTube
+                        </a>
+                    </div>
+                    <p>If you give this a try, drop a comment below or on the YouTube video. I’d love to hear which modules you’re running!</p>
                 `
             }
         ];
