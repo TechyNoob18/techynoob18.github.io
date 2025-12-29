@@ -39,30 +39,6 @@
       gtag('config', 'G-2E9KWQ18P9');
     </script>
 
-    <!-- Structured Data (JSON-LD) for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": "TechyNoob - Android Modding Guide",
-      "image": "https://techynoob18.github.io/Photos/20211212_160808_0000.png",
-      "author": {
-        "@type": "Person",
-        "name": "TechyNoob",
-        "url": "https://www.youtube.com/@TechyNoob1818"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "TechyNoob",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://techynoob18.github.io/Photos/20211212_160808_0000.png"
-        }
-      },
-      "description": "Comprehensive guides for Android rooting, custom ROM installation, and bypassing security checks."
-    }
-    </script>
-
     <!-- Image Error Handler -->
     <script>
         function handleImageError(img, type = 'post') {
@@ -138,8 +114,8 @@
                     </span>
                 </div>
                 
-                <!-- Search Bar -->
-                <div class="hidden lg:flex flex-1 justify-center px-8">
+                <!-- Desktop & Tablet Search Bar -->
+                <div class="hidden md:flex flex-1 justify-center px-8">
                     <div class="relative w-full max-w-md">
                         <input type="text" id="search-input" placeholder="Search guides & reviews..." class="w-full bg-slate-800 text-gray-300 border border-slate-700 rounded-l-md py-2 px-4 focus:outline-none focus:ring-1 focus:ring-blue-500" onkeypress="handleSearchKeyPress(event)" oninput="handleSearchInput(event)" autocomplete="off">
                         <button onclick="performSearch()" class="absolute right-0 top-0 h-full bg-blue-600 px-4 rounded-r-md hover:bg-blue-700 transition">
@@ -170,7 +146,15 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div class="px-2 pt-4 pb-3 space-y-2 sm:px-3">
+                <!-- Mobile Search Input -->
+                <div class="mb-4 relative">
+                     <input type="text" id="mobile-search-input" placeholder="Search..." class="w-full bg-slate-900 text-gray-300 border border-slate-700 rounded-md py-2 px-4 focus:outline-none focus:ring-1 focus:ring-blue-500" onkeypress="if(event.key === 'Enter') { document.getElementById('search-input').value = this.value; performSearch(); toggleMobileMenu(); }">
+                     <button onclick="document.getElementById('search-input').value = document.getElementById('mobile-search-input').value; performSearch(); toggleMobileMenu();" class="absolute right-0 top-0 h-full bg-blue-600 px-4 rounded-r-md hover:bg-blue-700 transition">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
                 <button onclick="showSection('home'); toggleMobileMenu()" class="block w-full text-left hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">Home</button>
                 <button onclick="goToBlogGrid(); toggleMobileMenu()" class="block w-full text-left hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">Blogs</button>
                 <button onclick="showSection('about'); toggleMobileMenu()" class="block w-full text-left hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">About Us</button>
@@ -205,8 +189,6 @@
                     <p class="text-gray-400 mt-2">In-depth articles to help you master your tech.</p>
                 </div>
 
-                <!-- Removed AdSense Responsive Slot -->
-
                 <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" id="latest-posts-grid">
                     <!-- Posts injected via JS -->
                 </div>
@@ -220,14 +202,12 @@
                     <i class="fas fa-arrow-left mr-2 transform group-hover:-translate-x-1 transition"></i> Back to Home
                 </button>
                 
-                <!-- Empty State Message -->
                 <div id="empty-blog-state" class="hidden text-center py-20">
                     <i class="fas fa-book-open text-6xl text-slate-700 mb-4"></i>
                     <h2 class="text-2xl font-bold text-gray-400">Select an article to start reading</h2>
                     <button onclick="goToBlogGrid()" class="mt-4 text-blue-400 hover:underline">Go to Library</button>
                 </div>
 
-                <!-- Article Container -->
                 <div id="blog-article-container">
                     <h1 id="blog-title" class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight"></h1>
                     
@@ -240,22 +220,17 @@
                         <iframe id="blog-video" class="w-full h-96" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
 
-                    <!-- Removed In-Article Ad Slot -->
-
                     <div id="blog-content" class="prose prose-invert prose-lg max-w-none text-gray-300 leading-8">
                         <!-- Content injected via JS -->
                     </div>
                 </div>
                 
-                <!-- Suggested Blogs Section -->
                 <div class="mt-16 border-t border-slate-800 pt-8">
                     <h3 class="text-2xl font-bold text-white mb-6">You Might Also Like</h3>
                     <div id="blog-suggestions" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                         <!-- Suggestions injected via JS -->
                     </div>
                 </div>
-                
-                <!-- Removed Multiplex Ad Slot -->
             </div>
         </div>
 
@@ -263,7 +238,6 @@
         <div id="about-section" class="hidden fade-in max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
             <div class="bg-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-700">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8 text-center">About TechyNoob</h2>
-                
                 <div class="space-y-6 text-gray-300 text-lg">
                     <p>
                         Welcome to <span class="text-blue-400 font-bold">TechyNoob</span>: Your Guide to Android Customization, Security Research, and More! We're here to help you unlock the hidden potential of your Android device safely and responsibly.
@@ -299,7 +273,6 @@
 
                     <div class="mt-12 text-center bg-slate-900 rounded-2xl p-8 border border-slate-700">
                         <h3 class="text-2xl font-bold text-white mb-4">Join the Community</h3>
-                        <p class="text-gray-400 mb-6">Join our growing community of tech enthusiasts!</p>
                         <a href="https://www.youtube.com/@TechyNoob1818" target="_blank" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-white bg-red-600 hover:bg-red-700 md:text-lg transition shadow-lg shadow-red-600/30">
                             <i class="fab fa-youtube mr-2"></i> Go to TechyNoob YouTube Channel
                         </a>
@@ -346,7 +319,7 @@
                 </div>
             </div>
             <div class="mt-12 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm text-gray-500">&copy; 2025 TechyNoob18. All rights reserved.</p>
+                <p class="text-sm text-gray-500">&copy; 2025 TechyNoob. All rights reserved.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="https://t.me/techynoob18" target="_blank" class="text-gray-400 hover:text-white transition">
                         <i class="fab fa-telegram-plane text-2xl"></i>
@@ -372,7 +345,7 @@
         </div>
     </div>
 
-    <!-- Modals (Privacy, Terms, Disclaimer) -->
+    <!-- Modals -->
     <div id="privacy-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" onclick="closeModal('privacy-modal')"></div>
@@ -445,15 +418,34 @@
     </div>
 
     <script>
-        // Safe initialization wrapper
-        document.addEventListener('DOMContentLoaded', () => {
-            try {
-                init();
-                checkCookieConsent();
-            } catch (e) {
-                console.error("Failed to initialize blog posts:", e);
+        // Check cookie consent
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                const cookieBanner = document.getElementById('cookie-consent');
+                if (cookieBanner) {
+                    cookieBanner.classList.remove('hidden');
+                }
             }
-        });
+        }
+
+        // Accept cookies
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            const cookieBanner = document.getElementById('cookie-consent');
+            if (cookieBanner) {
+                cookieBanner.classList.add('hidden');
+            }
+        }
+
+        // Decline cookies
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            const cookieBanner = document.getElementById('cookie-consent');
+            if (cookieBanner) {
+                cookieBanner.classList.add('hidden');
+            }
+        }
 
         // --- BLOG POST DATA ---
         const posts = [
@@ -462,6 +454,7 @@
                 title: "How to Resolve Google Play Integrity Issues on Rooted Devices - October 2025",
                 excerpt: "The definitive guide to restoring full device functionality and passing Strong Integrity checks safely.",
                 videoUrl: "https://www.youtube.com/embed/mBuke2P4PuU", 
+                // FIXED: Using safe HQ Youtube Thumbnail
                 thumbnail: "https://img.youtube.com/vi/mBuke2P4PuU/hqdefault.jpg",
                 content: `
                     <p>Hello there, dedicated Android enthusiasts!</p>
@@ -705,6 +698,7 @@
                     
                     <div class="my-8">
                         <img src="Photos/lv_0_20251127235920_exported_14600.jpg" onerror="handleImageError(this, 'post')" alt="Custom Android Home Screen Setup" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
+                        <p class="text-sm text-gray-500 mt-2 text-center">My November 2025 Daily Driver Setup.</p>
                     </div>
 
                     <p>But let’s be honest: having "root access" is just opening the door. The real magic happens when you install the right modules to customize your experience. You don't want to just root your phone; you want to optimize it.</p>
@@ -1043,7 +1037,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/20251203_092816_0000.png" onerror="handleImageError(this, 'post')" alt="Axion ROM Home Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Android 16 running on the Redmi Note 7 Pro</p>
                     </div>
 
                     <p>Recently, I decided to breathe some new life into my unit by flashing the Axion Custom ROM, which is based on the brand-new Android 16. Yes, you read that right—Android 16 on a device from 2019.</p>
@@ -1075,7 +1068,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/@TechyNoob1818_20251202_233308_0000.png" onerror="handleImageError(this, 'post')" alt="Axion ROM Customization Settings" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Nothing OS inspired aesthetics in Axion ROM</p>
                     </div>
 
                     <p>The standout feature here is the lock screen. You get that distinct, dot-matrix style clock font that Nothing phones are famous for. You can also stack widgets directly on the lock screen, making it functional rather than just pretty.</p>
@@ -1086,7 +1078,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/@TechyNoob1818_20251202_234225_0000.png" onerror="handleImageError(this, 'post')" alt="About Phone Screen" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Device specifications and Android version</p>
                     </div>
 
                     <p><strong>Special Features:</strong> There is a "Special Features" tab in the settings menu where you can find experimental flags like notification row transparency. For multitaskers, the Sidebar feature is a win—it lets you pull up apps in a floating window overlay without leaving your current screen. There is also a Spoofing menu, which allows the phone to identify as a different device (often a Pixel) to unlock unlimited photo storage or higher frame rates in supported games.</p>
@@ -1147,7 +1138,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/YT_HyperOS_FileManager.png" onerror="handleImageError(this, 'post')" alt="HyperOS File Manager Interface" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">HyperOS File Manager running on non-Xiaomi device</p>
                     </div>
 
                     <p>In this guide, I’ll walk you through exactly how to install this ported APK on your Samsung, Pixel, OnePlus, or Motorola device. Plus, I’ll share a critical "crash fix" that most other tutorials skip.</p>
@@ -1184,7 +1174,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/HyperOS_Gallery_FileManager_¹.png" onerror="handleImageError(this, 'post')" alt="Permissions Settings" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Manually granting storage permissions is key.</p>
                     </div>
 
                     <ol>
@@ -1230,7 +1219,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/YT_HyperOS_Gallery.png" onerror="handleImageError(this, 'post')" alt="HyperOS 3.0 Gallery Editor" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">New HyperOS 3.0 Editor Interface</p>
                     </div>
 
                     <p>I’ve found a way to get the latest HyperOS 3.0 Gallery Editor running on almost any Android device. And the best part? You don’t need to root your phone or mess with complex system files. It works as a simple plugin installation.</p>
@@ -1359,7 +1347,6 @@
                     
                     <div class="my-8">
                         <img src="Photos/StevenBlock1.png" onerror="handleImageError(this, 'post')" alt="Volume Key Selection Menu" class="w-full rounded-xl shadow-2xl border border-slate-700" loading="lazy" decoding="async">
-                        <p class="text-sm text-gray-500 mt-2 text-center">Using volume keys to select options</p>
                     </div>
 
                     <p>Since you can't touch the screen to select options in this mode, you have to use your physical buttons:</p>
@@ -1470,7 +1457,9 @@
                 `
             }
         ];
-        
+
+        // --- LOGIC ---
+
         function init() {
             renderPosts(posts);
             checkCookieConsent();
@@ -1649,24 +1638,6 @@
                     grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 100);
             }
-        }
-
-        // Cookie Consent Logic
-        function checkCookieConsent() {
-            const consent = localStorage.getItem('cookieConsent');
-            if (!consent) {
-                document.getElementById('cookie-consent').classList.remove('hidden');
-            }
-        }
-
-        function acceptCookies() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            document.getElementById('cookie-consent').classList.add('hidden');
-        }
-
-        function declineCookies() {
-            localStorage.setItem('cookieConsent', 'declined');
-            document.getElementById('cookie-consent').classList.add('hidden');
         }
 
         window.onclick = function(event) {
