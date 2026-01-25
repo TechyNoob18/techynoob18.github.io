@@ -46,5 +46,5 @@ Stay updated with the latest developments in the Android modding scene:
 
 Content provided by TechyNoob regarding rooting, system modification, and security research is intended solely for educational and informational purposes. Flashing custom software and rooting involves inherent risk. TechyNoob is not responsible for bricked devices, voided warranties, or data loss. Always back up your data before proceeding.
 
-© 2025 TechyNoob1818. All rights reserved.
+© 2025-2026 TechyNoob1818. All rights reserved.
 
